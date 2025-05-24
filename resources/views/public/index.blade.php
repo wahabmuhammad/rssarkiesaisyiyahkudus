@@ -41,14 +41,15 @@
                 <i class="contact-nav"></i>Hubungi Kami
             </div>
             <div class="d-flex align-items-center">
-                <i class="bi bi-phone"></i> Call us (0291) 4150501
+                <i class="bi bi-whatsapp p-1"></i> 0858-1415-0000
+                <i class="bi bi-phone p-1"></i> Call us (0291) 4150501
             </div>
         </div>
     </div>
 
     <!-- ======= Header ======= -->
     <header id="header" class="fixed-top">
-        <div class="container d-flex align-items-center">
+        <div class="container-fluid d-flex align-items-center">
 
             <a href="index.html" class="logo me-auto"><img src="{{ asset('/assets/img/logo_sarkies.png') }}"
                     alt=""></a>
@@ -79,6 +80,7 @@
                         </ul>
                     </li>
                     <li><a class="nav-link scrollto" href="#doctors">Cari Dokter</a></li>
+                    <li><a class="nav-link scrollto" href="#">Jadwal Dokter</a></li>
                     {{-- <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
                         <ul>
                             <li><a href="#">Drop Down 1</a></li>
