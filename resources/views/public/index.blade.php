@@ -11,7 +11,7 @@
 
     <!-- Favicons -->
     <link href="{{ asset('assets/img/Logo_RSSA.png') }}" rel="icon">
-    <link href="{{ asset('assets/img/apple-touch-icon.png') }}" rel="apple-touch-icon">
+    <link href="{{ asset('assets/img/Logo_RSSA.png') }}" rel="apple-touch-icon">
 
     <!-- Google Fonts -->
     <link
@@ -30,6 +30,16 @@
 
     <!-- Template Main CSS File -->
     <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet">
+    <script type="application/ld+json">
+        {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Rumah Sakit Sarkies 'Aisyiyah Kudus",
+        "url": "https://rssarkiesaisiyyahkudus.co.id",
+        "logo": "https://rssarkiesaisyiyahkudus.co.id/assets/img/Logo_RSSA.png",
+        }
+    </script>
+
 </head>
 
 <body>
@@ -220,7 +230,7 @@
                             </div>
                         </div>
                         <div class="card-link-wrapper">
-                            <a href="" >Baca Selengkapnya <span><i class="bi bi-arrow-right"></i></span></a>
+                            <a href="">Baca Selengkapnya <span><i class="bi bi-arrow-right"></i></span></a>
                         </div>
                     </li>
                     <li class="card">
@@ -232,7 +242,7 @@
                             </div>
                         </div>
                         <div class="card-link-wrapper">
-                            <a href="" >Baca Selengkapnya <span><i class="bi bi-arrow-right"></i></span></a>
+                            <a href="">Baca Selengkapnya <span><i class="bi bi-arrow-right"></i></span></a>
                         </div>
                     </li>
                     <li class="card">
@@ -244,7 +254,7 @@
                             </div>
                         </div>
                         <div class="card-link-wrapper">
-                            <a href="" >Baca Selengkapnya <span><i class="bi bi-arrow-right"></i></span></a>
+                            <a href="">Baca Selengkapnya <span><i class="bi bi-arrow-right"></i></span></a>
                         </div>
                     </li>
                     <li class="card">
@@ -257,7 +267,7 @@
                             </div>
                         </div>
                         <div class="card-link-wrapper">
-                            <a href="" >Baca Selengkapnya <span><i class="bi bi-arrow-right"></i></span></a>
+                            <a href="">Baca Selengkapnya <span><i class="bi bi-arrow-right"></i></span></a>
                         </div>
                     </li>
                     <li class="card">
@@ -271,7 +281,7 @@
                             </div>
                         </div>
                         <div class="card-link-wrapper">
-                            <a href="" >Baca Selengkapnya <span><i class="bi bi-arrow-right"></i></span></a>
+                            <a href="">Baca Selengkapnya <span><i class="bi bi-arrow-right"></i></span></a>
                         </div>
                     </li>
                     <li class="card">
@@ -283,7 +293,7 @@
                             </div>
                         </div>
                         <div class="card-link-wrapper">
-                            <a href="" >Baca Selengkapnya <span><i class="bi bi-arrow-right"></i></span></a>
+                            <a href="">Baca Selengkapnya <span><i class="bi bi-arrow-right"></i></span></a>
                         </div>
                     </li>
                     <li class="card">
@@ -295,7 +305,7 @@
                             </div>
                         </div>
                         <div class="card-link-wrapper">
-                            <a href="" >Baca Selengkapnya <span><i class="bi bi-arrow-right"></i></span></a>
+                            <a href="">Baca Selengkapnya <span><i class="bi bi-arrow-right"></i></span></a>
                         </div>
                     </li>
                     <li class="card">
@@ -307,7 +317,7 @@
                             </div>
                         </div>
                         <div class="card-link-wrapper">
-                            <a href="" >Baca Selengkapnya <span><i class="bi bi-arrow-right"></i></span></a>
+                            <a href="">Baca Selengkapnya <span><i class="bi bi-arrow-right"></i></span></a>
                         </div>
                     </li>
                     {{-- <li class="card">
