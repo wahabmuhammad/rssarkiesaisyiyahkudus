@@ -36,7 +36,7 @@
         "@type": "Organization",
         "name": "Rumah Sakit Sarkies 'Aisyiyah Kudus",
         "url": "https://rssarkiesaisiyyahkudus.co.id",
-        "logo": "https://rssarkiesaisyiyahkudus.co.id/assets/img/Logo_RSSA.png",
+        "logo": "https://rssarkiesaisyiyahkudus.co.id/assets/img/Logo_RSSA.png"
         }
     </script>
 
