@@ -1,3 +1,5 @@
+@include('public.header')
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -43,82 +45,6 @@
 </head>
 
 <body>
-
-    <!-- ======= Top Bar ======= -->
-    <div id="topbar" class="d-flex align-items-center fixed-top">
-        <div class="container d-flex align-items-center justify-content-center justify-content-md-between">
-            <div class="align-items-center d-none d-md-flex">
-                <i class="contact-nav"></i>Hubungi Kami
-            </div>
-            <div class="d-flex align-items-center">
-                <i class="bi bi-whatsapp p-1"></i> 0858-1415-0000
-                <i class="bi bi-phone p-1"></i> Call us (0291) 4150501
-            </div>
-        </div>
-    </div>
-
-    <!-- ======= Header ======= -->
-    <header id="header" class="fixed-top">
-        <div class="container-fluid d-flex align-items-center">
-
-            <a href="index.html" class="logo me-auto"><img src="{{ asset('/assets/img/logo_sarkies.png') }}"
-                    alt=""></a>
-            <!-- Uncomment below if you prefer to use an image logo -->
-            <!-- <h1 class="logo me-auto"><a href="index.html">Medicio</a></h1> -->
-
-            <nav id="navbar" class="navbar order-last order-lg-0">
-                <ul>
-                    <li><a class="nav-link scrollto " href="#hero">Beranda</a></li>
-                    <li><a class="nav-link scrollto" href="#about">Rumah Sakit Kami</a></li>
-                    <li class="dropdown"><a href="#"><span>Center Of Excellence</span> <i
-                                class="bi bi-chevron-down"></i></a>
-                        <ul>
-                            <li><a href="#">Pain Center</a></li>
-                            <li><a href="#">Ortophedic Center</a></li>
-                            <li><a href="#">Klinik Kandungan dan Kebidanan</a></li>
-                        </ul>
-                    </li>
-                    <li class="dropdown"><a href="#"><span>Fasilitas dan Layanan</span> <i
-                                class="bi bi-chevron-down"></i></a>
-                        <ul>
-                            <li><a href="#">Diagnostic Center</a></li>
-                            <li><a href="#">Intensive Care</a></li>
-                            <li><a href="#">Rawat Inap</a></li>
-                            <li><a href="#">Rehabilitasi Medik & Fisioterapi</a></li>
-                            <li><a href="#">Farmasi</a></li>
-                            <li><a href="#">Emergency</a></li>
-                        </ul>
-                    </li>
-                    <li><a class="nav-link scrollto" href="#doctors">Cari Dokter</a></li>
-                    <li><a class="nav-link scrollto" href="#">Jadwal Dokter</a></li>
-                    {{-- <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
-                        <ul>
-                            <li><a href="#">Drop Down 1</a></li>
-                            <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i
-                                        class="bi bi-chevron-right"></i></a>
-                                <ul>
-                                    <li><a href="#">Deep Drop Down 1</a></li>
-                                    <li><a href="#">Deep Drop Down 2</a></li>
-                                    <li><a href="#">Deep Drop Down 3</a></li>
-                                    <li><a href="#">Deep Drop Down 4</a></li>
-                                    <li><a href="#">Deep Drop Down 5</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="#">Drop Down 2</a></li>
-                            <li><a href="#">Drop Down 3</a></li>
-                            <li><a href="#">Drop Down 4</a></li>
-                        </ul>
-                    </li>
-                    <li><a class="nav-link scrollto" href="#contact">Contact</a></li> --}}
-                </ul>
-                <i class="bi bi-list mobile-nav-toggle"></i>
-            </nav><!-- .navbar -->
-
-            <a href="#appointment" class="appointment-btn scrollto"><span class="d-none d-md-inline">Buat</span>
-                Janji Temu</a>
-
-        </div>
-    </header><!-- End Header -->
 
     <!-- ======= Hero Section ======= -->
     <section id="hero">
@@ -188,6 +114,164 @@
 
         </div>
     </section><!-- End Hero -->
+    
+    <!-- Chatbot Section -->
+    <div class="chatbot-container" style="position: fixed; bottom: 20px; right: 20px; z-index: 999;">
+        <!-- Tombol Chat -->
+        <button id="chatbotToggle" style="background-color: #007bff; color: white; padding: 12px 20px; border-radius: 50%; border: none; cursor: pointer;">
+            💬
+        </button>
+
+        <!-- Box Chat -->
+        <div id="chatbotBox" style="display: none; width: 300px; height: 400px; background: white; border: 1px solid #ccc; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.2); overflow: hidden;">
+            <div style="background: #007bff; color: white; padding: 10px; font-weight: bold;">
+                Chatbot RS Dummy
+            </div>
+            <div id="chatMessages" style="height: 300px; padding: 10px; overflow-y: auto; font-size: 14px;">
+                <div><b>Bot:</b> Halo! Ada yang bisa saya bantu?</div>
+            </div>
+            <div style="display: flex; border-top: 1px solid #ccc;">
+                <input type="text" id="chatInput" placeholder="Ketik pesan..." style="flex: 1; padding: 10px; border: none; outline: none;">
+                <button id="sendChat" style="background: #007bff; color: white; border: none; padding: 10px;">Kirim</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const toggleBtn = document.getElementById('chatbotToggle');
+        const chatBox = document.getElementById('chatbotBox');
+        const sendBtn = document.getElementById('sendChat');
+        const chatInput = document.getElementById('chatInput');
+        const chatMessages = document.getElementById('chatMessages');
+
+        toggleBtn.addEventListener('click', () => {
+            chatBox.style.display = chatBox.style.display === 'none' ? 'block' : 'none';
+        });
+
+        sendBtn.addEventListener('click', () => {
+            let message = chatInput.value.trim();
+            if(message){
+                // Tampilkan pesan user
+                chatMessages.innerHTML += `<div><b>Anda:</b> ${message}</div>`;
+
+                // Balasan dummy dari bot
+                setTimeout(() => {
+                    chatMessages.innerHTML += `<div><b>Bot:</b> Maaf, saya masih chatbot dummy 😄</div>`;
+                    chatMessages.scrollTop = chatMessages.scrollHeight;
+                }, 500);
+
+                chatInput.value = '';
+            }
+        });
+    </script>
+
+    <!-- Form Pencarian Dokter -->
+    <section class="search-doctor py-5" style="background-color: #ffffff;">
+        <div class="container">
+            <div class="search-box p-4 bg-white rounded shadow">
+                <div class="search-header bg-light p-2 px-3 rounded-top" style="margin:-1.5rem -1.5rem 1.5rem -1.5rem; background-color: #d0ebe7;">
+                    <h5 class="m-0 text-teal fw-bold">Cari Dokter</h5>
+                </div>
+                <form class="row g-3 align-items-end">
+                    <!-- Nama Dokter -->
+                    <div class="col-md-4">
+                        <label class="form-label fw-bold">Nama Dokter</label>
+                        <div class="input-group">
+                            <span class="input-group-text bg-white"><i class="fas fa-search text-muted"></i></span>
+                            <input type="text" class="form-control" placeholder="Nama Dokter">
+                        </div>
+                    </div>
+
+                    <!-- Spesialisasi -->
+                    <div class="col-md-4">
+                        <label class="form-label fw-bold">Spesialisasi</label>
+                        <div class="input-group">
+                            <span class="input-group-text bg-white"><i class="fas fa-search text-muted"></i></span>
+                            <input type="text" class="form-control" placeholder="Pilih Spesialisasi">
+                        </div>
+                    </div>
+
+                    <!-- Pilihan Hari -->
+                    <div class="col-md-4">
+                        <label class="form-label fw-bold">Pilihan Hari</label>
+                        <div class="input-group">
+                            <span class="input-group-text bg-white"><i class="fas fa-calendar-alt text-muted"></i></span>
+                            <input type="date" class="form-control">
+                        </div>
+                    </div>
+
+                    <!-- Tombol -->
+                    <div class="col-12 d-flex gap-2 justify-content-end mt-3">
+                        <button type="reset" class="btn btn-outline-secondary">Reset</button>
+                        <button type="submit" class="btn btn-teal text-white">Cari Dokter</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Custom Styles -->
+    <style>
+        .btn-teal {
+            background-color: #1E88E5;
+            border: none;
+        }
+        .btn-teal:hover {
+            background-color: #226b68;
+        }
+    </style>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- ======= About Us Section ======= -->
+    <section id="about" class="about-us py-5" style="background-color: #FFFFFF;">
+        <div class="container" data-aos="fade-up">
+            <div class="row align-items-center">
+                
+                <!-- Gambar Rumah Sakit (Kiri) -->
+                <div class="col-lg-6 mb-4 mb-lg-0" data-aos="fade-right">
+                    <img src="{{ asset('assets/img/about-content.jpg') }}" 
+                        alt="Ilustrasi Rumah Sakit" 
+                        class="img-fluid rounded shadow-sm">
+                </div>
+
+                <!-- Teks Detail (Kanan) -->
+                <div class="col-lg-6" data-aos="fade-left">
+                    <h2 class="fw-bold mb-3">Rumah Sakit Sarkies 'Aisyiyah Kudus</h2>
+                    <p class="text-muted">
+                        Sebagai bagian dari RS Pondok Indah Group, kami menghadirkan layanan kesehatan unggulan
+                        dengan teknologi termutakhir & sistem akreditasi tingkat internasional.
+                    </p>
+
+                    <h5 class="mt-4 fw-semibold">Visi</h5>
+                    <p class="text-muted">
+                        Menjadi rumah sakit pilihan dengan layanan bermutu tinggi, aman, dan inovatif.
+                    </p>
+
+                    <h5 class="mt-4 fw-semibold">Misi</h5>
+                    <ul class="list-unstyled text-muted">
+                        <li class="mb-2">
+                            <i class="bi bi-check-circle-fill text-primary me-2"></i>
+                            Pelayanan terpadu & fokus pada pasien.
+                        </li>
+                        <li class="mb-2">
+                            <i class="bi bi-check-circle-fill text-primary me-2"></i>
+                            Pengembangan profesional berkelanjutan dalam tim.
+                        </li>
+                        <li>
+                            <i class="bi bi-check-circle-fill text-primary me-2"></i>
+                            Integritas, etika, inovasi, dan pembelajaran berkelanjutan.
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End About Us Section -->
+
+
 
     <main id="main">
 
@@ -195,7 +279,7 @@
         {{-- <div class="container">
             <div font-family="Lato" font-size="44px" font-weight="900" color="rgb(42, 37, 54)" id="custom-text"
                 class="sc-36578ce2-0 hNejpO">
-                <h2 class="heading-section"><strong>Center of Excellence</strong></h2>
+                <h2 class="fw-bold mb-3">Center of Excellence</h2>
             </div>
             <div class="slider-title flex max-sm:flex-col max-sm:gap-3 sm:justify-between sm:items-center mt-3">
                 <div font-family="Lato" font-size="20px" font-weight="400" color="rgb(106, 109, 129)"
@@ -223,17 +307,26 @@
             <span>
                 <ul class="cards">
                     <li class="card">
+                        <!-- Gambar di atas -->
+                        <img src="{{ asset('assets/img/coe/pain-center.jpg') }}" alt="Pain Centre" class="card-img-top">
+
+                        <!-- Konten card -->
                         <div>
                             <h3 class="card-title">Pain Centre</h3>
                             <div class="card-content">
                                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
                             </div>
                         </div>
+
+                        <!-- Link -->
                         <div class="card-link-wrapper">
-                            <a href="">Baca Selengkapnya <span><i class="bi bi-arrow-right"></i></span></a>
+                            <a href="{{ route('pain-center') }}" class="text-info fw-bold">
+                                Baca Selengkapnya →
+                            </a>
                         </div>
                     </li>
                     <li class="card">
+                        <img src="{{ asset('assets/img/coe/orthopedic-center.jpg') }}" alt="Orthopedic Centre" class="card-img-top">
                         <div>
                             <h3 class="card-title">Orthopedic Centre</h3>
                             <div class="card-content">
@@ -242,19 +335,20 @@
                             </div>
                         </div>
                         <div class="card-link-wrapper">
-                            <a href="">Baca Selengkapnya <span><i class="bi bi-arrow-right"></i></span></a>
+                            <a href="{{ route('orthopedic-center') }}" class="text-info">Baca Selengkapnya →</a>
                         </div>
                     </li>
                     <li class="card">
+                        <img src="{{ asset('assets/img/coe/klinik-kandungan.png') }}" alt="Klinik Kandungan dan Kebidanan" class="card-img-top">
                         <div>
-                            <h3 class="card-title">Obstetri and Gynekologi Centre</h3>
+                            <h3 class="card-title">Klinik Kandungan dan Kebidanan</h3>
                             <div class="card-content">
                                 <p>Phasellus ultrices lorem vel bibendum ultricies. In hendrerit nulla a ante dapibus
                                     pulvinar eu eget quam.</p>
                             </div>
                         </div>
                         <div class="card-link-wrapper">
-                            <a href="">Baca Selengkapnya <span><i class="bi bi-arrow-right"></i></span></a>
+                            <a href="{{ route('klinik-kandungan') }}" class="text-info">Baca Selengkapnya →</a>
                         </div>
                     </li>
                     <li class="card">
@@ -374,6 +468,145 @@
         </div>
         {{-- End Center Of Excellent --}}
 
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Fasilitas & Layanan</title>
+            <script src="https://cdn.tailwindcss.com"></script>
+            <script src="https://unpkg.com/alpinejs" defer></script>
+        </head>
+        <body class="bg-gray-50 text-gray-800">
+
+        <div class="container mx-auto py-8 px-4">
+            <h1 class="text-3xl font-bold mb-4">Fasilitas dan Layanan</h1>
+            <p class="mb-8 text-gray-600">
+                Menyediakan pelayanan kesehatan terdepan yang terintegrasi dengan dukungan tenaga medis profesional, 
+                adopsi teknologi medis terkini, serta sistem informasi digital yang lebih efisien.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Left: Accordion -->
+                <div class="space-y-4" x-data>
+                    @php
+                        $fasilitas = [
+                            [
+                                'title' => 'Diagnostic Center',
+                                'desc' => 'Layanan endoskopi, laboratorium, dan radiologi dengan peralatan modern.',
+                                'img'  => asset('images/diagnostic.jpg')
+                            ],
+                            [
+                                'title' => 'Intensive Care',
+                                'desc' => 'Perawatan intensif dengan monitoring 24 jam untuk pasien kritis.',
+                                'img'  => asset('images/intensive.jpg')
+                            ],
+                            [
+                                'title' => 'Rawat Inap',
+                                'desc' => 'Kamar rawat inap yang nyaman dan fasilitas lengkap untuk pasien.',
+                                'img'  => asset('images/rawat-inap.jpg')
+                            ],
+                            [
+                                'title' => 'Rehabilitasi Medik & Fisioterapi',
+                                'desc' => 'Program pemulihan fisik pasca cedera atau operasi.',
+                                'img'  => asset('images/rehab.jpg')
+                            ],
+                            [
+                                'title' => 'Farmasi',
+                                'desc' => 'Layanan obat dengan resep dokter dan konsultasi farmasi.',
+                                'img'  => asset('images/farmasi.jpg')
+                            ],
+                            [
+                                'title' => 'Emergency',
+                                'desc' => 'Layanan gawat darurat 24 jam dengan respon cepat.',
+                                'img'  => asset('images/emergency.jpg')
+                            ],
+                        ];
+                    @endphp
+
+                    @foreach($fasilitas as $item)
+                    <div x-data="{ open: false }" class="border rounded-lg overflow-hidden">
+                        <button @click="open = !open; $dispatch('change-image', '{{ $item['img'] }}')" 
+                                class="w-full flex justify-between items-center px-4 py-3 bg-gray-100 hover:bg-gray-200">
+                            <span class="font-semibold">{{ $item['title'] }}</span>
+                            <svg x-show="!open" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                            </svg>
+                            <svg x-show="open" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7" />
+                            </svg>
+                        </button>
+                        <div x-show="open" x-collapse class="px-4 py-3 bg-white">
+                            <p>{{ $item['desc'] }}</p>
+                        </div>
+                    </div>
+                    @endforeach
+                </div>
+
+                <!-- Right: Image -->
+                <div x-data="{ image: '{{ $fasilitas[0]['img'] }}' }" 
+                    @change-image.window="image = $event.detail" 
+                    class="flex items-start justify-center">
+                    <img :src="image" alt="Fasilitas Image" class="rounded-lg shadow-lg max-w-full">
+                </div>
+            </div>
+        </div>
+
+        </body>
+        </html>
+
+        <!-- START: Carousel Berita & Artikel -->
+        <section class="py-5 bg-light">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+            <h2 class="fw-bold">Berita dan Artikel Kesehatan</h2>
+            <a href="#" class="text-primary fw-bold">Lihat Semua →</a>
+            </div>
+
+            <div id="newsCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                @php
+                $articles = [
+                    ['title'=>'Waspadai Serangan Jantung!','date'=>'28 Juli 2025','excerpt'=>'Serangan jantung bisa datang tiba-tiba…','img'=>asset('assets/img/news/jantung.jpg'),'url'=>'#'],
+                    ['title'=>'Apakah Ambeien Bisa Sembuh?','date'=>'28 Juli 2025','excerpt'=>'Ambeien merupakan kondisi…','img'=>asset('assets/img/news/ambeien.jpg'),'url'=>'#'],
+                    ['title'=>'ISK pada Ibu Hamil Bisa Sembuh?','date'=>'8 Agustus 2025','excerpt'=>'ISK pada ibu hamil bisa diatasi…','img'=>asset('assets/img/news/isk.jpg'),'url'=>'#'],
+                    ['title'=>'Tips Pola Hidup Sehat Cegah Diabetes','date'=>'1 Agustus 2025','excerpt'=>'Diabetes dapat dicegah dengan…','img'=>asset('assets/img/news/diabetes.jpg'),'url'=>'#'],
+                ];
+                $chunks = array_chunk($articles, 3);
+                @endphp
+
+                @foreach($chunks as $i => $chunk)
+                <div class="carousel-item {{ $i==0?'active':'' }}">
+                <div class="row">
+                    @foreach($chunk as $article)
+                    <div class="col-md-4 mb-3">
+                    <div class="card h-100 shadow-sm border-0">
+                        <img src="{{ $article['img'] }}" class="card-img-top" alt="{{ $article['title'] }}">
+                        <div class="card-body">
+                        <h5 class="card-title">{{ $article['title'] }}</h5>
+                        <p class="card-text text-muted"><small>{{ $article['date'] }}</small></p>
+                        <p class="card-text">{{ $article['excerpt'] }}</p>
+                        <a href="{{ $article['url'] }}" class="text-primary fw-bold">Lihat Detail →</a>
+                        </div>
+                    </div>
+                    </div>
+                    @endforeach
+                </div>
+                </div>
+                @endforeach
+            </div>
+
+            <button class="carousel-control-prev" type="button" data-bs-target="#newsCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#newsCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
+            </div>
+        </div>
+        </section>
+        <!-- END: Carousel Berita & Artikel -->
+
+
+
         <!-- ======= Featured Services Section ======= -->
         <section id="featured-services" class="featured-services">
             <div class="container" data-aos="fade-up">
@@ -420,78 +653,25 @@
             </div>
         </section><!-- End Featured Services Section -->
 
-        <!-- ======= Cta Section ======= -->
-        <section id="cta" class="cta">
-            <div class="container" data-aos="zoom-in">
-
-                <div class="text-center">
-                    <h3>In an emergency? Need help now?</h3>
-                    <p> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-                        mollit anim id est laborum.</p>
-                    <a class="cta-btn scrollto" href="#appointment">Make an Make an Appointment</a>
-                </div>
-
-            </div>
-        </section><!-- End Cta Section -->
-
-        <!-- ======= About Us Section ======= -->
-        <section id="about" class="about">
-            <div class="container" data-aos="fade-up">
-
-                <div class="section-title">
-                    <h2>About Us</h2>
-                    <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit
-                        sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias
-                        ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
-                </div>
-
-                <div class="row">
-                    <div class="col-lg-6" data-aos="fade-right">
-                        <img src="assets/img/about.jpg" class="img-fluid" alt="">
-                    </div>
-                    <div class="col-lg-6 pt-4 pt-lg-0 content" data-aos="fade-left">
-                        <h3>Voluptatem dignissimos provident quasi corporis voluptates sit assumenda.</h3>
-                        <p class="fst-italic">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                            labore et dolore
-                            magna aliqua.
-                        </p>
-                        <ul>
-                            <li><i class="bi bi-check-circle"></i> Ullamco laboris nisi ut aliquip ex ea commodo
-                                consequat.</li>
-                            <li><i class="bi bi-check-circle"></i> Duis aute irure dolor in reprehenderit in voluptate
-                                velit.</li>
-                            <li><i class="bi bi-check-circle"></i> Ullamco laboris nisi ut aliquip ex ea commodo
-                                consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda
-                                mastiro dolore eu fugiat nulla pariatur.</li>
-                        </ul>
-                        <p>
-                            Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-                            reprehenderit in voluptate
-                            velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                            proident, sunt in
-                            culpa qui officia deserunt mollit anim id est laborum
-                        </p>
-                    </div>
-                </div>
-
-            </div>
-        </section><!-- End About Us Section -->
 
         <!-- ======= Counts Section ======= -->
         <section id="counts" class="counts">
             <div class="container" data-aos="fade-up">
 
+                <div class="section-title">
+                    <h2>Profil</h2>
+                    <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit
+                        sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias
+                        ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+                </div>
                 <div class="row no-gutters">
-
                     <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch">
                         <div class="count-box">
                             <i class="fas fa-user-md"></i>
                             <span data-purecounter-start="0" data-purecounter-end="85" data-purecounter-duration="1"
                                 class="purecounter"></span>
 
-                            <p><strong>Doctors</strong> consequuntur quae qui deca rode</p>
+                            <p><strong>Dokter</strong> consequuntur quae qui deca rode</p>
                             <a href="#">Find out more &raquo;</a>
                         </div>
                     </div>
@@ -501,7 +681,7 @@
                             <i class="far fa-hospital"></i>
                             <span data-purecounter-start="0" data-purecounter-end="26" data-purecounter-duration="1"
                                 class="purecounter"></span>
-                            <p><strong>Departments</strong> adipisci atque cum quia aut numquam delectus</p>
+                            <p><strong>Fasilitas</strong> adipisci atque cum quia aut numquam delectus</p>
                             <a href="#">Find out more &raquo;</a>
                         </div>
                     </div>
@@ -511,7 +691,7 @@
                             <i class="fas fa-flask"></i>
                             <span data-purecounter-start="0" data-purecounter-end="14" data-purecounter-duration="1"
                                 class="purecounter"></span>
-                            <p><strong>Research Lab</strong> aut commodi quaerat. Aliquam ratione</p>
+                            <p><strong>Kamar</strong> aut commodi quaerat. Aliquam ratione</p>
                             <a href="#">Find out more &raquo;</a>
                         </div>
                     </div>
@@ -521,7 +701,7 @@
                             <i class="fas fa-award"></i>
                             <span data-purecounter-start="0" data-purecounter-end="150" data-purecounter-duration="1"
                                 class="purecounter"></span>
-                            <p><strong>Awards</strong> rerum asperiores dolor molestiae doloribu</p>
+                            <p><strong>Penghargaan</strong> rerum asperiores dolor molestiae doloribu</p>
                             <a href="#">Find out more &raquo;</a>
                         </div>
                     </div>
@@ -531,346 +711,204 @@
             </div>
         </section><!-- End Counts Section -->
 
-        <!-- ======= Features Section ======= -->
-        <section id="features" class="features">
-            <div class="container" data-aos="fade-up">
 
-                <div class="row">
-                    <div class="col-lg-6 order-2 order-lg-1" data-aos="fade-right">
-                        <div class="icon-box mt-5 mt-lg-0">
-                            <i class="bx bx-receipt"></i>
-                            <h4>Est labore ad</h4>
-                            <p>Consequuntur sunt aut quasi enim aliquam quae harum pariatur laboris nisi ut aliquip</p>
-                        </div>
-                        <div class="icon-box mt-5">
-                            <i class="bx bx-cube-alt"></i>
-                            <h4>Harum esse qui</h4>
-                            <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt</p>
-                        </div>
-                        <div class="icon-box mt-5">
-                            <i class="bx bx-images"></i>
-                            <h4>Aut occaecati</h4>
-                            <p>Aut suscipit aut cum nemo deleniti aut omnis. Doloribus ut maiores omnis facere</p>
-                        </div>
-                        <div class="icon-box mt-5">
-                            <i class="bx bx-shield"></i>
-                            <h4>Beatae veritatis</h4>
-                            <p>Expedita veritatis consequuntur nihil tempore laudantium vitae denat pacta</p>
-                        </div>
-                    </div>
-                    <div class="image col-lg-6 order-1 order-lg-2"
-                        style='background-image: url("assets/img/features.jpg");' data-aos="zoom-in"></div>
-                </div>
-
-            </div>
-        </section><!-- End Features Section -->
-
-        <!-- ======= Services Section ======= -->
-        <section id="services" class="services services">
+        <!-- ======= Fasilitas Rawat Inap Section ======= -->
+        <section id="fasilitas" class="services services">
             <div class="container" data-aos="fade-up">
 
                 <div class="section-title">
-                    <h2>Services</h2>
-                    <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit
-                        sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias
-                        ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+                    <h2>Fasilitas Rawat Inap</h2>
+                    <p>Kami menyediakan fasilitas rawat inap dengan kenyamanan dan kelengkapan terbaik bagi pasien dan keluarga.</p>
                 </div>
 
                 <div class="row">
-                    <div class="col-lg-4 col-md-6 icon-box" data-aos="zoom-in" data-aos-delay="100">
-                        <div class="icon"><i class="fas fa-heartbeat"></i></div>
-                        <h4 class="title"><a href="">Lorem Ipsum</a></h4>
-                        <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias
-                            excepturi sint occaecati cupiditate non provident</p>
+                    <!-- VIP A -->
+                    <div class="col-lg-4 col-md-6 mb-4" data-aos="zoom-in" data-aos-delay="100">
+                        <div class="card h-100 shadow-sm border-0">
+                            <img src="{{ asset('assets/img/kamar-vipa.jpg') }}" class="card-img-top" alt="Kamar VIP A">
+                            <div class="card-body">
+                                <h4 class="fw-bold">VIP A</h4>
+                                <ul class="list-unstyled mt-3">
+                                    <li><i class="fas fa-check-circle text-success me-2"></i>1 Tempat Tidur Elektrik</li>
+                                    <li><i class="fas fa-check-circle text-success me-2"></i>Meja Set Kabinet & Sofa Penunggu</li>
+                                    <li><i class="fas fa-check-circle text-success me-2"></i>Kamar Mandi + Water Heater</li>
+                                    <li><i class="fas fa-check-circle text-success me-2"></i>AC</li>
+                                    <li><i class="fas fa-check-circle text-success me-2"></i>TV 32"</li>
+                                    <li><i class="fas fa-check-circle text-success me-2"></i>Kulkas</li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-lg-4 col-md-6 icon-box" data-aos="zoom-in" data-aos-delay="200">
-                        <div class="icon"><i class="fas fa-pills"></i></div>
-                        <h4 class="title"><a href="">Dolor Sitema</a></h4>
-                        <p class="description">Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                            ex ea commodo consequat tarad limino ata</p>
+
+                    <!-- VIP B -->
+                    <div class="col-lg-4 col-md-6 mb-4" data-aos="zoom-in" data-aos-delay="150">
+                        <div class="card h-100 shadow-sm border-0">
+                            <img src="{{ asset('assets/img/kamar-vipb.jpg') }}" class="card-img-top" alt="Kamar VIP B">
+                            <div class="card-body">
+                                <h4 class="fw-bold">VIP B</h4>
+                                <ul class="list-unstyled mt-3">
+                                    <li><i class="fas fa-check-circle text-success me-2"></i>1 Tempat Tidur Elektrik</li>
+                                    <li><i class="fas fa-check-circle text-success me-2"></i>Meja Set Kabinet</li>
+                                    <li><i class="fas fa-check-circle text-success me-2"></i>Kamar Mandi + Water Heater</li>
+                                    <li><i class="fas fa-check-circle text-success me-2"></i>AC</li>
+                                    <li><i class="fas fa-check-circle text-success me-2"></i>TV 29"</li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-lg-4 col-md-6 icon-box" data-aos="zoom-in" data-aos-delay="300">
-                        <div class="icon"><i class="fas fa-hospital-user"></i></div>
-                        <h4 class="title"><a href="">Sed ut perspiciatis</a></h4>
-                        <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
-                            dolore eu fugiat nulla pariatur</p>
+
+                    <!-- Kelas 1 -->
+                    <div class="col-lg-4 col-md-6 mb-4" data-aos="zoom-in" data-aos-delay="200">
+                        <div class="card h-100 shadow-sm border-0">
+                            <img src="{{ asset('assets/img/kamar-kelas1.jpg') }}" class="card-img-top" alt="Kamar Kelas 1">
+                            <div class="card-body">
+                                <h4 class="fw-bold">Kelas 1</h4>
+                                <ul class="list-unstyled mt-3">
+                                    <li><i class="fas fa-check-circle text-success me-2"></i>2 Tempat Tidur Manual</li>
+                                    <li><i class="fas fa-check-circle text-success me-2"></i>Kamar Mandi</li>
+                                    <li><i class="fas fa-check-circle text-success me-2"></i>AC</li>
+                                    <li><i class="fas fa-check-circle text-success me-2"></i>TV</li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-lg-4 col-md-6 icon-box" data-aos="zoom-in" data-aos-delay="100">
-                        <div class="icon"><i class="fas fa-dna"></i></div>
-                        <h4 class="title"><a href="">Magni Dolores</a></h4>
-                        <p class="description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
-                            officia deserunt mollit anim id est laborum</p>
+
+                    <!-- Kelas 2 -->
+                    <div class="col-lg-4 col-md-6 mb-4" data-aos="zoom-in" data-aos-delay="250">
+                        <div class="card h-100 shadow-sm border-0">
+                            <img src="{{ asset('assets/img/kamar-kelas2.jpg') }}" class="card-img-top" alt="Kamar Kelas 2">
+                            <div class="card-body">
+                                <h4 class="fw-bold">Kelas 2</h4>
+                                <ul class="list-unstyled mt-3">
+                                    <li><i class="fas fa-check-circle text-success me-2"></i>3 Tempat Tidur Manual</li>
+                                    <li><i class="fas fa-check-circle text-success me-2"></i>Kamar Mandi</li>
+                                    <li><i class="fas fa-check-circle text-success me-2"></i>Kipas Angin</li>
+                                    <li><i class="fas fa-check-circle text-success me-2"></i>TV</li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-lg-4 col-md-6 icon-box" data-aos="zoom-in" data-aos-delay="200">
-                        <div class="icon"><i class="fas fa-wheelchair"></i></div>
-                        <h4 class="title"><a href="">Nemo Enim</a></h4>
-                        <p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui
-                            blanditiis praesentium voluptatum deleniti atque</p>
+
+                    <!-- Kelas 3 -->
+                    <div class="col-lg-4 col-md-6 mb-4" data-aos="zoom-in" data-aos-delay="300">
+                        <div class="card h-100 shadow-sm border-0">
+                            <img src="{{ asset('assets/img/kamar-kelas3.jpg') }}" class="card-img-top" alt="Kamar Kelas 3">
+                            <div class="card-body">
+                                <h4 class="fw-bold">Kelas 3</h4>
+                                <ul class="list-unstyled mt-3">
+                                    <li><i class="fas fa-check-circle text-success me-2"></i>4 Tempat Tidur Manual</li>
+                                    <li><i class="fas fa-check-circle text-success me-2"></i>Kamar Mandi</li>
+                                    <li><i class="fas fa-check-circle text-success me-2"></i>Kipas Angin</li>
+                                    <li><i class="fas fa-check-circle text-success me-2"></i>TV</li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-lg-4 col-md-6 icon-box" data-aos="zoom-in" data-aos-delay="300">
-                        <div class="icon"><i class="fas fa-notes-medical"></i></div>
-                        <h4 class="title"><a href="">Eiusmod Tempor</a></h4>
-                        <p class="description">Et harum quidem rerum facilis est et expedita distinctio. Nam libero
-                            tempore, cum soluta nobis est eligendi</p>
+
+                    <!-- ICU -->
+                    <div class="col-lg-4 col-md-6 mb-4" data-aos="zoom-in" data-aos-delay="350">
+                        <div class="card h-100 shadow-sm border-0">
+                            <img src="{{ asset('assets/img/kamar-icu.jpg') }}" class="card-img-top" alt="Kamar ICU">
+                            <div class="card-body">
+                                <h4 class="fw-bold">ICU</h4>
+                                <ul class="list-unstyled mt-3">
+                                    <li><i class="fas fa-check-circle text-success me-2"></i>Tempat Tidur Elektrik</li>
+                                    <li><i class="fas fa-check-circle text-success me-2"></i>Monitor Pasien</li>
+                                    <li><i class="fas fa-check-circle text-success me-2"></i>Ventilator</li>
+                                    <li><i class="fas fa-check-circle text-success me-2"></i>AC</li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
             </div>
-        </section><!-- End Services Section -->
+        </section>
+        <!-- End Fasilitas Rawat Inap Section -->
 
-        <!-- ======= Appointment Section ======= -->
-        <section id="appointment" class="appointment section-bg">
+
+
+        <!-- ======= Layanan Pengaduan Section ======= -->
+        <section id="pengaduan" class="section-bg py-5">
             <div class="container" data-aos="fade-up">
 
-                <div class="section-title">
-                    <h2>Make an Appointment</h2>
-                    <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit
-                        sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias
-                        ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+                <div class="section-title text-center mb-5">
+                    <h2 class="fw-bold">Layanan Pengaduan</h2>
+                    <p class="text-muted">Kami menghargai setiap masukan Anda untuk menjadi lebih baik.</p>
                 </div>
 
-                <form action="forms/appointment.php" method="post" role="form" class="php-email-form"
-                    data-aos="fade-up" data-aos-delay="100">
-                    <div class="row">
-                        <div class="col-md-4 form-group">
-                            <input type="text" name="name" class="form-control" id="name"
-                                placeholder="Your Name" required>
-                        </div>
-                        <div class="col-md-4 form-group mt-3 mt-md-0">
-                            <input type="email" class="form-control" name="email" id="email"
-                                placeholder="Your Email" required>
-                        </div>
-                        <div class="col-md-4 form-group mt-3 mt-md-0">
-                            <input type="tel" class="form-control" name="phone" id="phone"
-                                placeholder="Your Phone" required>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-4 form-group mt-3">
-                            <input type="datetime" name="date" class="form-control datepicker" id="date"
-                                placeholder="Appointment Date" required>
-                        </div>
-                        <div class="col-md-4 form-group mt-3">
-                            <select name="department" id="department" class="form-select">
-                                <option value="">Select Department</option>
-                                <option value="Department 1">Department 1</option>
-                                <option value="Department 2">Department 2</option>
-                                <option value="Department 3">Department 3</option>
-                            </select>
-                        </div>
-                        <div class="col-md-4 form-group mt-3">
-                            <select name="doctor" id="doctor" class="form-select">
-                                <option value="">Select Doctor</option>
-                                <option value="Doctor 1">Doctor 1</option>
-                                <option value="Doctor 2">Doctor 2</option>
-                                <option value="Doctor 3">Doctor 3</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <div class="form-group mt-3">
-                        <textarea class="form-control" name="message" rows="5" placeholder="Message (Optional)"></textarea>
-                    </div>
-                    <div class="my-3">
-                        <div class="loading">Loading</div>
-                        <div class="error-message"></div>
-                        <div class="sent-message">Your appointment request has been sent successfully. Thank you!</div>
-                    </div>
-                    <div class="text-center"><button type="submit">Make an Appointment</button></div>
-                </form>
-
-            </div>
-        </section><!-- End Appointment Section -->
-
-        <!-- ======= Departments Section ======= -->
-        <section id="departments" class="departments">
-            <div class="container" data-aos="fade-up">
-
-                <div class="section-title">
-                    <h2>Departments</h2>
-                    <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit
-                        sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias
-                        ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
-                </div>
-
-                <div class="row" data-aos="fade-up" data-aos-delay="100">
-                    <div class="col-lg-4 mb-5 mb-lg-0">
-                        <ul class="nav nav-tabs flex-column">
-                            <li class="nav-item">
-                                <a class="nav-link active show" data-bs-toggle="tab" data-bs-target="#tab-1">
-                                    <h4>Cardiology</h4>
-                                    <p>Quis excepturi porro totam sint earum quo nulla perspiciatis eius.</p>
-                                </a>
-                            </li>
-                            <li class="nav-item mt-2">
-                                <a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-2">
-                                    <h4>Neurology</h4>
-                                    <p>Voluptas vel esse repudiandae quo excepturi.</p>
-                                </a>
-                            </li>
-                            <li class="nav-item mt-2">
-                                <a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-3">
-                                    <h4>Hepatology</h4>
-                                    <p>Velit veniam ipsa sit nihil blanditiis mollitia natus.</p>
-                                </a>
-                            </li>
-                            <li class="nav-item mt-2">
-                                <a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-4">
-                                    <h4>Pediatrics</h4>
-                                    <p>Ratione hic sapiente nostrum doloremque illum nulla praesentium id</p>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="col-lg-8">
-                        <div class="tab-content">
-                            <div class="tab-pane active show" id="tab-1">
-                                <h3>Cardiology</h3>
-                                <p class="fst-italic">Qui laudantium consequatur laborum sit qui ad sapiente dila parde
-                                    sonata raqer a videna mareta paulona marka</p>
-                                <img src="assets/img/departments-1.jpg" alt="" class="img-fluid">
-                                <p>Et nobis maiores eius. Voluptatibus ut enim blanditiis atque harum sint. Laborum eos
-                                    ipsum ipsa odit magni. Incidunt hic ut molestiae aut qui. Est repellat minima
-                                    eveniet eius et quis magni nihil. Consequatur dolorem quaerat quos qui similique
-                                    accusamus nostrum rem vero</p>
+                <div class="row g-4">
+                    <!-- Form Keluhan -->
+                    <div class="col-lg-6">
+                        <div class="card shadow-sm border-0 h-100">
+                            <div class="card-body p-4">
+                                <h5 class="fw-bold">Sampaikan Saran & Keluhan Anda</h5>
+                                <p class="text-muted mb-4">
+                                    Kepuasan Anda adalah prioritas kami. Silakan sampaikan masukan, saran, atau keluhan Anda melalui formulir di bawah ini.
+                                </p>
+                                <form action="forms/pengaduan.php" method="post" class="php-email-form">
+                                    <div class="mb-3">
+                                        <label for="nama" class="form-label">Nama Lengkap</label>
+                                        <input type="text" name="nama" id="nama" class="form-control" placeholder="Nama Anda" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="telepon" class="form-label">Nomor Telepon</label>
+                                        <input type="tel" name="telepon" id="telepon" class="form-control" placeholder="Contoh: 081234567890" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="pesan" class="form-label">Keluhan / Saran</label>
+                                        <textarea name="pesan" id="pesan" rows="4" class="form-control" placeholder="Tulis keluhan atau saran Anda di sini..." required></textarea>
+                                    </div>
+                                    <button type="submit" class="btn btn-dark w-100">Kirim Pengaduan</button>
+                                </form>
                             </div>
-                            <div class="tab-pane" id="tab-2">
-                                <h3>Neurology</h3>
-                                <p class="fst-italic">Qui laudantium consequatur laborum sit qui ad sapiente dila parde
-                                    sonata raqer a videna mareta paulona marka</p>
-                                <img src="assets/img/departments-2.jpg" alt="" class="img-fluid">
-                                <p>Et nobis maiores eius. Voluptatibus ut enim blanditiis atque harum sint. Laborum eos
-                                    ipsum ipsa odit magni. Incidunt hic ut molestiae aut qui. Est repellat minima
-                                    eveniet eius et quis magni nihil. Consequatur dolorem quaerat quos qui similique
-                                    accusamus nostrum rem vero</p>
-                            </div>
-                            <div class="tab-pane" id="tab-3">
-                                <h3>Hepatology</h3>
-                                <p class="fst-italic">Qui laudantium consequatur laborum sit qui ad sapiente dila parde
-                                    sonata raqer a videna mareta paulona marka</p>
-                                <img src="assets/img/departments-3.jpg" alt="" class="img-fluid">
-                                <p>Et nobis maiores eius. Voluptatibus ut enim blanditiis atque harum sint. Laborum eos
-                                    ipsum ipsa odit magni. Incidunt hic ut molestiae aut qui. Est repellat minima
-                                    eveniet eius et quis magni nihil. Consequatur dolorem quaerat quos qui similique
-                                    accusamus nostrum rem vero</p>
-                            </div>
-                            <div class="tab-pane" id="tab-4">
-                                <h3>Pediatrics</h3>
-                                <p class="fst-italic">Qui laudantium consequatur laborum sit qui ad sapiente dila parde
-                                    sonata raqer a videna mareta paulona marka</p>
-                                <img src="assets/img/departments-4.jpg" alt="" class="img-fluid">
-                                <p>Et nobis maiores eius. Voluptatibus ut enim blanditiis atque harum sint. Laborum eos
-                                    ipsum ipsa odit magni. Incidunt hic ut molestiae aut qui. Est repellat minima
-                                    eveniet eius et quis magni nihil. Consequatur dolorem quaerat quos qui similique
-                                    accusamus nostrum rem vero</p>
+                        </div>
+                    </div>
+
+                    <!-- Kontak Langsung -->
+                    <div class="col-lg-6">
+                        <div class="card shadow-sm border-0 h-100">
+                            <div class="card-body p-4">
+                                <h5 class="fw-bold">Atau Hubungi Kami Langsung</h5>
+                                <p class="text-muted mb-4">
+                                    Anda juga bisa menghubungi kami melalui kanal-kanal berikut untuk respons lebih cepat.
+                                </p>
+
+                                <div class="d-flex align-items-start mb-4">
+                                    <i class="bi bi-telephone-fill text-success fs-3 me-3"></i>
+                                    <div>
+                                        <strong>Hubungi Kami (Telepon)</strong>
+                                        <p class="mb-0">Sampaikan langsung keluhan Anda melalui telepon ke bagian Humas kami.</p>
+                                        <a href="tel:02914150501" class="text-success fw-bold">(0291) 4150501</a>
+                                    </div>
+                                </div>
+
+                                <div class="d-flex align-items-start mb-4">
+                                    <i class="bi bi-envelope-fill text-primary fs-3 me-3"></i>
+                                    <div>
+                                        <strong>Kirim Email</strong>
+                                        <p class="mb-0">Jelaskan keluhan Anda secara rinci dan kirimkan ke alamat email kami.</p>
+                                        <a href="mailto:𝑟𝑠𝑠𝑎𝑟𝑘𝑖𝑒𝑠.𝑘𝑢@𝑔𝑚𝑎𝑖𝑙.𝑐𝑜𝑚" class="fw-bold">𝑟𝑠𝑠𝑎𝑟𝑘𝑖𝑒𝑠.𝑘𝑢@𝑔𝑚𝑎𝑖𝑙.𝑐𝑜𝑚</a>
+                                    </div>
+                                </div>
+
+                                <div class="d-flex align-items-start">
+                                    <i class="bi bi-geo-alt-fill text-danger fs-3 me-3"></i>
+                                    <div>
+                                        <strong>Datang Langsung</strong>
+                                        <p class="mb-0">Anda juga dapat mengunjungi bagian Humas & Pemasaran kami di rumah sakit untuk menyampaikan masukan secara langsung.</p>
+                                    </div>
+                                </div>
+
                             </div>
                         </div>
                     </div>
                 </div>
 
             </div>
-        </section><!-- End Departments Section -->
+        </section>
+        <!-- End Layanan Pengaduan Section -->
 
-        <!-- ======= Testimonials Section ======= -->
-        <section id="testimonials" class="testimonials">
-            <div class="container" data-aos="fade-up">
-
-                <div class="section-title">
-                    <h2>Testimonials</h2>
-                    <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit
-                        sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias
-                        ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
-                </div>
-
-                <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
-                    <div class="swiper-wrapper">
-
-                        <div class="swiper-slide">
-                            <div class="testimonial-item">
-                                <p>
-                                    <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                                    Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit
-                                    rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam,
-                                    risus at semper.
-                                    <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                                </p>
-                                <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img"
-                                    alt="">
-                                <h3>Saul Goodman</h3>
-                                <h4>Ceo &amp; Founder</h4>
-                            </div>
-                        </div><!-- End testimonial item -->
-
-                        <div class="swiper-slide">
-                            <div class="testimonial-item">
-                                <p>
-                                    <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                                    Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid
-                                    cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet
-                                    legam anim culpa.
-                                    <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                                </p>
-                                <img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img"
-                                    alt="">
-                                <h3>Sara Wilsson</h3>
-                                <h4>Designer</h4>
-                            </div>
-                        </div><!-- End testimonial item -->
-
-                        <div class="swiper-slide">
-                            <div class="testimonial-item">
-                                <p>
-                                    <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                                    Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem
-                                    veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint
-                                    minim.
-                                    <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                                </p>
-                                <img src="assets/img/testimonials/testimonials-3.jpg" class="testimonial-img"
-                                    alt="">
-                                <h3>Jena Karlis</h3>
-                                <h4>Store Owner</h4>
-                            </div>
-                        </div><!-- End testimonial item -->
-
-                        <div class="swiper-slide">
-                            <div class="testimonial-item">
-                                <p>
-                                    <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                                    Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim
-                                    fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem
-                                    dolore labore illum veniam.
-                                    <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                                </p>
-                                <img src="assets/img/testimonials/testimonials-4.jpg" class="testimonial-img"
-                                    alt="">
-                                <h3>Matt Brandon</h3>
-                                <h4>Freelancer</h4>
-                            </div>
-                        </div><!-- End testimonial item -->
-
-                        <div class="swiper-slide">
-                            <div class="testimonial-item">
-                                <p>
-                                    <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                                    Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster
-                                    veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam
-                                    culpa fore nisi cillum quid.
-                                    <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                                </p>
-                                <img src="assets/img/testimonials/testimonials-5.jpg" class="testimonial-img"
-                                    alt="">
-                                <h3>John Larson</h3>
-                                <h4>Entrepreneur</h4>
-                            </div>
-                        </div><!-- End testimonial item -->
-
-                    </div>
-                    <div class="swiper-pagination"></div>
-                </div>
-
-            </div>
-        </section><!-- End Testimonials Section -->
 
         <!-- ======= Doctors Section ======= -->
         <section id="doctors" class="doctors section-bg">
@@ -962,49 +1000,6 @@
             </div>
         </section><!-- End Doctors Section -->
 
-        <!-- ======= Gallery Section ======= -->
-        <section id="gallery" class="gallery">
-            <div class="container" data-aos="fade-up">
-
-                <div class="section-title">
-                    <h2>Gallery</h2>
-                    <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit
-                        sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias
-                        ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
-                </div>
-
-                <div class="gallery-slider swiper">
-                    <div class="swiper-wrapper align-items-center">
-                        <div class="swiper-slide"><a class="gallery-lightbox"
-                                href="assets/img/gallery/gallery-1.jpg"><img src="assets/img/gallery/gallery-1.jpg"
-                                    class="img-fluid" alt=""></a></div>
-                        <div class="swiper-slide"><a class="gallery-lightbox"
-                                href="assets/img/gallery/gallery-2.jpg"><img src="assets/img/gallery/gallery-2.jpg"
-                                    class="img-fluid" alt=""></a></div>
-                        <div class="swiper-slide"><a class="gallery-lightbox"
-                                href="assets/img/gallery/gallery-3.jpg"><img src="assets/img/gallery/gallery-3.jpg"
-                                    class="img-fluid" alt=""></a></div>
-                        <div class="swiper-slide"><a class="gallery-lightbox"
-                                href="assets/img/gallery/gallery-4.jpg"><img src="assets/img/gallery/gallery-4.jpg"
-                                    class="img-fluid" alt=""></a></div>
-                        <div class="swiper-slide"><a class="gallery-lightbox"
-                                href="assets/img/gallery/gallery-5.jpg"><img src="assets/img/gallery/gallery-5.jpg"
-                                    class="img-fluid" alt=""></a></div>
-                        <div class="swiper-slide"><a class="gallery-lightbox"
-                                href="assets/img/gallery/gallery-6.jpg"><img src="assets/img/gallery/gallery-6.jpg"
-                                    class="img-fluid" alt=""></a></div>
-                        <div class="swiper-slide"><a class="gallery-lightbox"
-                                href="assets/img/gallery/gallery-7.jpg"><img src="assets/img/gallery/gallery-7.jpg"
-                                    class="img-fluid" alt=""></a></div>
-                        <div class="swiper-slide"><a class="gallery-lightbox"
-                                href="assets/img/gallery/gallery-8.jpg"><img src="assets/img/gallery/gallery-8.jpg"
-                                    class="img-fluid" alt=""></a></div>
-                    </div>
-                    <div class="swiper-pagination"></div>
-                </div>
-
-            </div>
-        </section><!-- End Gallery Section -->
 
         <!-- ======= Pricing Section ======= -->
         @include('public.pricing')
