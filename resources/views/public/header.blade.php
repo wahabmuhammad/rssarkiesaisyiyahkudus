@@ -50,10 +50,10 @@
         </div>
 
         <!-- Kanan -->
-        <div class="d-flex align-items-center">
-            <i class="bi bi-instagram me-1"></i> <span>@rssarkiesaisyiyahkudus</span>
-            <i class="bi bi-whatsapp p-1 ms-3"></i> 0858-1415-0000
-            <i class="bi bi-phone p-1 ms-3"></i> Call us (0291) 4150501
+        <div class="d-flex align-items-center" style="color:#fff">
+        <i class="bi bi-instagram me-1"></i> <a href="https://instagram.com/rssarkiesaisyiyahkudus" style="color:#fff">@rssarkiesaisyiyahkudus</a>
+        <i class="bi bi-whatsapp p-1 ms-3"></i> <a href="https://wa.me/6285814150000" style="color:#fff">0858-1415-0000</a>
+        <i class="bi bi-telephone p-1 ms-3"></i> <a href="tel:+622914150501" style="color:#fff">(0291) 4150501</a>
         </div>
     </div>
 </div>
@@ -91,15 +91,20 @@
                         <li><a href="{{ route('emergency') }}">Emergency</a></li>
                     </ul>
                 </li>
-                <li><a class="nav-link scrollto text-dark fw-bold" href="#doctors">Cari Dokter</a></li>
-                <li><a class="nav-link scrollto text-dark fw-bold" href="#">Karir</a></li>
-                <li><a class="nav-link scrollto text-dark fw-bold" href="#">Jadwal Dokter</a></li>
+                <li class="dropdown">
+                    <a href="#" class="text-dark fw-bold"><span>Dokter</span> <i class="bi bi-chevron-down"></i></a>
+                    <ul>
+                        <li><a href="#doctors">Cari Dokter</a></li>
+                        <li><a href="{{ route('jadwal-dokter') }}">Jadwal Dokter</a></li>
+                    </ul>
+                </li>
+                <li><a class="text-dark fw-bold" href="{{ route('karir') }}">Karir</a></li>
             </ul>
         </nav>
 
         <!-- Tombol -->
-        <a href="#pengaduan" class="btn fw-bold" style="background-color: #1E88E5; color: white; border-radius: 5px; padding: 8px 16px; white-space: nowrap;">
-            Layanan Pengaduan
+        <a href="{{ route('auth-modal') }}" class="btn fw-bold" style="background-color: #1E88E5; color: white; border-radius: 5px; padding: 8px 16px; white-space: nowrap;">
+            Masuk / Daftar
         </a>
     </div>
 </header>

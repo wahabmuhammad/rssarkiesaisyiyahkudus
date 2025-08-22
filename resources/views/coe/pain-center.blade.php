@@ -2,7 +2,7 @@
 
 @include('public.header')
 
-<main id="main" style="margin-top:120px">
+<main id="main" style="margin-top:60px">
     <!-- Hero Section -->
     <section class="hero text-center text-white d-flex align-items-center justify-content-center"
         style="background: url('{{ asset('images/pain-center.jpg') }}') center/cover no-repeat;

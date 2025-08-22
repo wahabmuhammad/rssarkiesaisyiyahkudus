@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\IndexController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,49 +16,40 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [App\Http\Controllers\indexController::class, 'index'])->name('home');
 
-Route::get('/contact', function () {
-    return view('public.contact');
-});
+Route::get('/contact', [App\Http\Controllers\indexController::class, 'contact'])->name('contact'); 
 
-Route::get('/pain-center', function () {
-    return view('coe.pain-center');
-})->name('pain-center');
+Route::get('/cari-dokter', [App\Http\Controllers\indexController::class, 'cari-dokter'])->name('cari-dokter');
 
-Route::get('/orthopedic-center', function () {
-    return view('coe.orthopedic-center');
-})->name('orthopedic-center');
+Route::get('/karir', [App\Http\Controllers\indexController::class, 'karir'])->name('karir');
 
-Route::get('/klinik-kandungan', function () {
-    return view('coe.klinik-kandungan');
-})->name('klinik-kandungan');
+Route::get('/jadwal-dokter', [App\Http\Controllers\indexController::class, 'jadwalDokter'])->name('jadwal-dokter');
 
-// Diagnostic Center
-Route::get('/diagnostic-center', function () {
-    return view('fasilitas.diagnostic-center');
-})->name('diagnostic-center');
+Route::get('/pain-center', [App\Http\Controllers\indexController::class, 'painCenter'])->name('pain-center');
 
-// Intensive Care
-Route::get('/intensive-care', function () {
-    return view('fasilitas.intensive-care');
-})->name('intensive-care');
+Route::get('/orthopedic-center', [App\Http\Controllers\indexController::class, 'orthopedicCenter'])->name('orthopedic-center');
 
-// Rawat Inap
-Route::get('/rawat-inap', function () {
-    return view('fasilitas.rawat-inap');
-})->name('rawat-inap');
+Route::get('/klinik-kandungan', [App\Http\Controllers\indexController::class, 'klinikKandungan'])->name('klinik-kandungan');
 
-// Rehabilitasi Medik & Fisioterapi
-Route::get('/rehabilitasi', function () {
-    return view('fasilitas.rehabilitasi');
-})->name('rehabilitasi');
+Route::get('/diagnostic-center', [App\Http\Controllers\indexController::class, 'diagnosticCenter'])->name('diagnostic-center');
 
-// Farmasi
-Route::get('/farmasi', function () {
-    return view('fasilitas.farmasi');
-})->name('farmasi');
+Route::get('/intensive-care', [App\Http\Controllers\indexController::class, 'intensiveCare'])->name('intensive-care');
 
-// Emergency
-Route::get('/emergency', function () {
-    return view('fasilitas.emergency');
-})->name('emergency');
+Route::get('/rawat-inap', [App\Http\Controllers\indexController::class, 'rawatInap'])->name('rawat-inap');
 
+Route::get('/rehabilitasi', [App\Http\Controllers\indexController::class, 'rehabilitasi'])->name('rehabilitasi');
+
+Route::get('/farmasi', [App\Http\Controllers\indexController::class, 'farmasi'])->name('farmasi');
+
+Route::get('/emergency', [App\Http\Controllers\indexController::class, 'emergency'])->name('emergency');
+
+Route::get('/fasilitas', [App\Http\Controllers\indexController::class, 'fasilitas'])->name('fasilitas');
+
+Route::get('/kamar', [App\Http\Controllers\indexController::class, 'kamar'])->name('kamar');
+
+Route::get('/auth-modal', [App\Http\Controllers\indexController::class, 'authModal'])->name('auth-modal');
+
+Route::post('/login',    [IndexController::class, 'authLogin'])->name('login');
+Route::post('/register', [IndexController::class, 'authRegister'])->name('register');
+Route::post('/logout',   [IndexController::class, 'logout'])->name('logout');
+
+Route::view('/register', 'auth.register')->name('register.page'); // halaman form register (GET)

@@ -1,8 +1,16 @@
 @include('public.header')
 
-<main id="main" style="margin-top: 120px;">
+<main id="main" style="margin-top: 60px;">
     <section class="inner-page">
         <div class="container">
+            <!-- Breadcrumb -->
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb bg-transparent p-0 mb-3">
+                    <li class="breadcrumb-item"><a href="{{ url('/') }}">Beranda</a></li>
+                    <li class="breadcrumb-item"><a href="{{ url('/') }}">Center of Excellence</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Klinik Kandungan dan Kebidanan</li>
+                </ol>
+            </nav>
             <h1 class="mb-4">Klinik Kandungan dan Kebidanan</h1>
             <p>
                 Klinik Kandungan dan Kebidanan kami memberikan pelayanan kesehatan ibu dan anak
