@@ -118,7 +118,7 @@ h6 {
 # Top Bar
 --------------------------------------------------------------*/
 #topbar {
-  background: #3ABEF9;
+  background: linear-gradient(to right, #1E88E5, #3DBDFB);
   color: #fff;
   height: 40px;
   font-size: 16px;
@@ -177,11 +177,11 @@ h6 {
 }
 
 /**
-* Appointment Button
+* Pengaduan Button
 */
-.appointment-btn {
+.pengaduan-btn {
   margin-left: 25px;
-  background: #3ABEF9;
+  background: #1E88E5;
   color: #fff;
   border-radius: 4px;
   padding: 8px 25px;
@@ -191,13 +191,13 @@ h6 {
   display: inline-block;
 }
 
-.appointment-btn:hover {
+.pengaduan-btn:hover {
   background: #3ABEF9;
   color: #fff;
 }
 
 @media (max-width: 768px) {
-  .appointment-btn {
+  .pengaduan-btn {
     margin: 0 15px 0 0;
     padding: 6px 15px;
   }
@@ -232,11 +232,11 @@ h6 {
   justify-content: space-between;
   padding: 10px 0 10px 30px;
   font-family: "Roboto", sans-serif;
-  font-size: 13px;
+  font-size: 15px;
   color: #626262;
   white-space: nowrap;
   transition: 0.3s;
-  text-transform: uppercase;
+  text-transform: mixedcase;
   font-weight: 500;
 }
 
@@ -1727,7 +1727,7 @@ section {
 }
 
 .contact .php-email-form button[type=submit] {
-  background: #3fbbc0;
+  background: #1E88E5;
   border: 0;
   padding: 10px 30px;
   color: #fff;
