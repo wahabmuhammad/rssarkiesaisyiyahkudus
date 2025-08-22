@@ -1,4 +1,4 @@
-<section id="promo" class="promo-section py-5">
+<section id="promo" class="promo-section py-5 bg-white">
   <div class="container" data-aos="fade-up">
 
     <!-- Judul & Deskripsi -->
@@ -19,11 +19,10 @@
           <img src="promo1.jpg" class="card-img-top" alt="Promo Merdeka 17%">
           <div class="card-body">
             <h5 class="card-title fw-bold">Promo Merdeka 17% - Spesial Hari Kemerdekaan</h5>
-            <p class="text-success small mb-2">RS Pondok Indah - Pondok Indah, +2 lokasi</p>
             <p class="card-text small text-muted">
               Promo paket Medical Check Up di Jakarta dan Tangerang. Diskon 17% untuk semua paket MCU.
             </p>
-            <a href="#" class="btn btn-outline-success btn-sm mt-2">Lihat Detail</a>
+            <a href="{{ $article['url'] }}" style="color: #1E88E5; class="fw-semibold">Lihat Detail</a>
           </div>
         </div>
       </div>
@@ -34,11 +33,10 @@
           <img src="promo2.jpg" class="card-img-top" alt="Private Parenting Class">
           <div class="card-body">
             <h5 class="card-title fw-bold">Private Parenting Class - Puri Indah</h5>
-            <p class="text-success small mb-2">RS Pondok Indah - Puri Indah</p>
             <p class="card-text small text-muted">
               Kelas Newborn Care untuk melatih merawat bayi baru lahir, dari memandikan, menggendong, hingga menyusui.
             </p>
-            <a href="#" class="btn btn-outline-success btn-sm mt-2">Lihat Detail</a>
+            <a href="{{ $article['url'] }}" style="color: #1E88E5; class="fw-semibold">Lihat Detail</a>
           </div>
         </div>
       </div>
@@ -49,11 +47,10 @@
           <img src="promo3.jpg" class="card-img-top" alt="Program Bayi Tabung">
           <div class="card-body">
             <h5 class="card-title fw-bold">Program Bayi Tabung Cicilan 0%</h5>
-            <p class="text-success small mb-2">RS Pondok Indah IVF Centre</p>
             <p class="card-text small text-muted">
               Program bayi tabung (IVF) dengan cicilan 0% hingga 6 bulan menggunakan kartu kredit BCA.
             </p>
-            <a href="#" class="btn btn-outline-success btn-sm mt-2">Lihat Detail</a>
+            <a href="{{ $article['url'] }}" style="color: #1E88E5; class="fw-semibold">Lihat Detail</a>
           </div>
         </div>
       </div>
