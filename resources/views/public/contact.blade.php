@@ -4,7 +4,7 @@
     <div class="container py-5">
         <div class="section-title text-center mb-5">
             <h2>Hubungi Kami</h2>
-            <p class="text-muted">Kami menghargai setiap masukan Anda untuk menjadi lebih baik.</p>
+            <p class="text-muted">Kami menghargai setiap masukan Anda untuk menjadikan Rumah Sakit Sarkies 'Aisyiyah Kudus lebih baik.</p>
         </div>
 
         <!-- Row Konten -->
@@ -54,7 +54,7 @@
                     </div>
                     <div>
                         <h6 class="fw-bold mb-1">Whatsapp</h6>
-                        <p class="mb-0">082-123-234-345</p>
+                        <p class="mb-0">0858-1415-0000</p>
                     </div>
                 </div>
 
