@@ -117,10 +117,10 @@
         <!-- Box Chat -->
         <div id="chatbotBox" style="display: none; width: 300px; height: 400px; background: white; border: 1px solid #ccc; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.2); overflow: hidden;">
             <div style="background: #007bff; color: white; padding: 10px; font-weight: bold;">
-                Chatbot RS Dummy
+                Chatbot RS Sarkies 'Aisyiyah Kudus
             </div>
             <div id="chatMessages" style="height: 300px; padding: 10px; overflow-y: auto; font-size: 14px;">
-                <div><b>Bot:</b> Halo! Ada yang bisa saya bantu?</div>
+                <div><b>Bot:</b> Assalamualaikum! Selamat datang di RS Sarkies 'Aisyiyah Kudus. Ada yang bisa saya bantu?</div>
             </div>
             <div style="display: flex; border-top: 1px solid #ccc;">
                 <input type="text" id="chatInput" placeholder="Ketik pesan..." style="flex: 1; padding: 10px; border: none; outline: none;">
