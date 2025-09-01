@@ -1,6 +1,6 @@
 @include('public.header')
 
-<main id="main" style="margin-top: 60px;">
+<main id="main">
     <section class="inner-page">
         <div class="container">
             <!-- Breadcrumb -->

@@ -2,14 +2,14 @@
 
 @include('public.header')
 
-<main id="main" style="margin-top:60px">
+<main id="main">
     <!-- Hero Section -->
     <section class="hero text-center text-white d-flex align-items-center justify-content-center"
         style="background: url('{{ asset('images/pain-center.jpg') }}') center/cover no-repeat;
                min-height: 300px;
                text-shadow: 1px 1px 5px rgba(0,0,0,0.6);">
         <div>
-            <h2 class="display-5 fw-bold">Pain Center</h2>
+            <h2 class="display-5 fw-bold">Pain Clinic</h2>
             <p class="lead">Layanan khusus untuk mengatasi nyeri dengan teknologi modern.</p>
         </div>
     </section>

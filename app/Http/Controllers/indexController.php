@@ -78,4 +78,19 @@ class indexController extends Controller
         return view('auth.auth-modal');
     }
 
+    public function vipA()
+    {
+        return view('ranap.vip-a');
+    }
+
+    public function awards()
+    {
+        return view('public.awards');
+    }
+
+    public function asuransi()
+    {
+        return view('public.asuransi');
+    }
+
 }

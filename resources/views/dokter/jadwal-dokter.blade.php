@@ -1,7 +1,7 @@
 <!-- resources/views/jadwal-dokter.blade.php -->
 @include('public.header')
 
-<section class="py-5" style="background-color: #ffffff; margin-top: 60px;">
+<section class="py-5" style="background-color: #ffffff;">
     <div class="container">
         <!-- Breadcrumb -->
         <nav aria-label="breadcrumb">

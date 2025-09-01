@@ -53,3 +53,9 @@ Route::post('/register', [IndexController::class, 'authRegister'])->name('regist
 Route::post('/logout',   [IndexController::class, 'logout'])->name('logout');
 
 Route::view('/register', 'auth.register')->name('register.page'); // halaman form register (GET)
+
+Route::view('vip-a', 'ranap.vip-a')->name('vip-a');
+
+Route::view('awards', 'public.awards')->name('awards');
+
+Route::view('asuransi', 'public.asuransi')->name('asuransi');
