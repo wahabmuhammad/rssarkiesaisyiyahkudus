@@ -249,10 +249,10 @@
         <h6 id="coe-title" class="mb-0">Center Of Excellence</h6>
       </div>
       <ul class="list-group list-group-flush">
-        <li class="list-group-item px-0"><a class="d-block py-2" href="{{ route('pain-center') }}" data-bs-dismiss="offcanvas">Pain Clinic</a></li>
-        <li class="list-group-item px-0"><a class="d-block py-2" href="{{ route('pain-center') }}" data-bs-dismiss="offcanvas">MCU</a></li>
-        <li class="list-group-item px-0"><a class="d-block py-2" href="{{ route('pain-center') }}" data-bs-dismiss="offcanvas">Vaksin</a></li>
-        <li class="list-group-item px-0"><a class="d-block py-2" href="{{ route('klinik-kandungan') }}" data-bs-dismiss="offcanvas">Klinik Kandungan & Kebidanan</a></li>
+        <li class="list-group-item px-0"><a class="d-block py-2" href="{{ route('pain-center') }}">Pain Clinic</a></li>
+        <li class="list-group-item px-0"><a class="d-block py-2" href="{{ route('pain-center') }}">MCU</a></li>
+        <li class="list-group-item px-0"><a class="d-block py-2" href="{{ route('pain-center') }}">Vaksin</a></li>
+        <li class="list-group-item px-0"><a class="d-block py-2" href="{{ route('klinik-kandungan') }}">Klinik Kandungan & Kebidanan</a></li>
       </ul>
     </div>
 
@@ -265,12 +265,12 @@
         <h6 id="fasilitas-title" class="mb-0">Fasilitas dan Layanan</h6>
       </div>
       <ul class="list-group list-group-flush">
-        <li class="list-group-item px-0"><a class="d-block py-2" href="{{ route('diagnostic-center') }}" data-bs-dismiss="offcanvas">Diagnostic Center</a></li>
-        <li class="list-group-item px-0"><a class="d-block py-2" href="{{ route('intensive-care') }}" data-bs-dismiss="offcanvas">Intensive Care</a></li>
-        <li class="list-group-item px-0"><a class="d-block py-2" href="{{ route('rehabilitasi') }}" data-bs-dismiss="offcanvas">Rehabilitasi Medik & Fisioterapi</a></li>
-        <li class="list-group-item px-0"><a class="d-block py-2" href="{{ route('farmasi') }}" data-bs-dismiss="offcanvas">Farmasi</a></li>
-        <li class="list-group-item px-0"><a class="d-block py-2" href="{{ route('emergency') }}" data-bs-dismiss="offcanvas">Emergency</a></li>
-        <li class="list-group-item px-0"><a class="d-block py-2" href="{{ route('asuransi') }}" data-bs-dismiss="offcanvas">Perusahaan Asuransi Mitra</a></li>
+        <li class="list-group-item px-0"><a class="d-block py-2" href="{{ route('diagnostic-center') }}">Diagnostic Center</a></li>
+        <li class="list-group-item px-0"><a class="d-block py-2" href="{{ route('intensive-care') }}">Intensive Care</a></li>
+        <li class="list-group-item px-0"><a class="d-block py-2" href="{{ route('rehabilitasi') }}">Rehabilitasi Medik & Fisioterapi</a></li>
+        <li class="list-group-item px-0"><a class="d-block py-2" href="{{ route('farmasi') }}">Farmasi</a></li>
+        <li class="list-group-item px-0"><a class="d-block py-2" href="{{ route('emergency') }}">Emergency</a></li>
+        <li class="list-group-item px-0"><a class="d-block py-2" href="{{ route('asuransi') }}">Perusahaan Asuransi Mitra</a></li>
       </ul>
     </div>
 
@@ -283,12 +283,12 @@
         <h6 id="rawat-title" class="mb-0">Fasilitas Rawat Inap</h6>
       </div>
       <ul class="list-group list-group-flush">
-        <li class="list-group-item px-0"><a class="d-block py-2" href="{{ route('vip-a') }}" data-bs-dismiss="offcanvas">VIP A</a></li>
-        <li class="list-group-item px-0"><a class="d-block py-2" href="{{ route('vip-a') }}" data-bs-dismiss="offcanvas">VIP B</a></li>
-        <li class="list-group-item px-0"><a class="d-block py-2" href="{{ route('vip-a') }}" data-bs-dismiss="offcanvas">Kelas 1</a></li>
-        <li class="list-group-item px-0"><a class="d-block py-2" href="{{ route('vip-a') }}" data-bs-dismiss="offcanvas">Kelas 2</a></li>
-        <li class="list-group-item px-0"><a class="d-block py-2" href="{{ route('vip-a') }}" data-bs-dismiss="offcanvas">Kelas 3</a></li>
-        <li class="list-group-item px-0"><a class="d-block py-2" href="{{ route('vip-a') }}" data-bs-dismiss="offcanvas">ICU</a></li>
+        <li class="list-group-item px-0"><a class="d-block py-2" href="{{ route('vip-a') }}">VIP A</a></li>
+        <li class="list-group-item px-0"><a class="d-block py-2" href="{{ route('vip-a') }}">VIP B</a></li>
+        <li class="list-group-item px-0"><a class="d-block py-2" href="{{ route('vip-a') }}">Kelas 1</a></li>
+        <li class="list-group-item px-0"><a class="d-block py-2" href="{{ route('vip-a') }}">Kelas 2</a></li>
+        <li class="list-group-item px-0"><a class="d-block py-2" href="{{ route('vip-a') }}">Kelas 3</a></li>
+        <li class="list-group-item px-0"><a class="d-block py-2" href="{{ route('vip-a') }}">ICU</a></li>
       </ul>
     </div>
 
