@@ -59,3 +59,6 @@ Route::view('vip-a', 'ranap.vip-a')->name('vip-a');
 Route::view('awards', 'public.awards')->name('awards');
 
 Route::view('asuransi', 'public.asuransi')->name('asuransi');
+
+// Route Backrend
+// Route:post('/login', [])
