@@ -24,7 +24,7 @@
     @php
       $updatedAt = \Carbon\Carbon::now('Asia/Jakarta')->format('d-m-Y H:i:s');
       $rooms = [
-        ['name'=>'VIP A','slug'=>'vvip','total'=>19,'available'=>4],
+        ['name'=>'VIP A','slug'=>'vip-A','total'=>19,'available'=>4],
         ['name'=>'VIP B','slug'=>'vip','total'=>20,'available'=>4],
         ['name'=>'Kelas I','slug'=>'kelas-1','total'=>66,'available'=>1],
         ['name'=>'Kelas II','slug'=>'kelas-2','total'=>80,'available'=>12],

@@ -68,7 +68,7 @@
 
               {{-- ===== Pane LOGIN ===== --}}
               <div id="pane-login">
-                <form method="POST" action="{{ route('login') }}" class="needs-validation" novalidate>
+                <form method="POST" action="{{ route('login.perform') }}" class="needs-validation" novalidate>
                   @csrf
                   <div class="mb-3">
                     <label class="form-label">Email</label>
@@ -87,7 +87,8 @@
                 </form>
               </div>
 
-              <!-- {{-- ===== Pane REGISTER (disembunyikan awal) ===== --}}
+              {{-- ===== Pane REGISTER (disembunyikan awal) ===== --}}
+              {{--
               <div id="pane-register" class="d-none">
                 <form method="POST" action="{{ route('register') }}" class="needs-validation" novalidate>
                   @csrf
@@ -110,7 +111,8 @@
                     Sudah punya akun? <a href="#" id="toLogin">Masuk</a>
                   </p>
                 </form>
-              </div> -->
+              </div> 
+              --}}
 
             </div>
           </div>

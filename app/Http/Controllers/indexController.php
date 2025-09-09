@@ -93,4 +93,9 @@ class indexController extends Controller
         return view('public.asuransi');
     }
 
+    public function dashboard()
+    {
+        return view('admin.dashboard');
+    }
+
 }
