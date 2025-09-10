@@ -1,42 +1,48 @@
 {{-- resources/views/coe/pain-center.blade.php --}}
 
-@include('public.header')
+<x-layouts.app :title="'Pain Clinic'">
+  <x-layouts.detail
+    title="Pain Clinic"
+    subtitle="Layanan khusus untuk mengatasi nyeri dengan teknologi modern."
+    hero="{{ asset('images/pain-center.jpg') }}"
 
-<main id="main" style="margin-top:60px">
-    <!-- Hero Section -->
-    <section class="hero text-center text-white d-flex align-items-center justify-content-center"
-        style="background: url('{{ asset('images/pain-center.jpg') }}') center/cover no-repeat;
-               min-height: 300px;
-               text-shadow: 1px 1px 5px rgba(0,0,0,0.6);">
-        <div>
-            <h2 class="display-5 fw-bold">Pain Center</h2>
-            <p class="lead">Layanan khusus untuk mengatasi nyeri dengan teknologi modern.</p>
-        </div>
-    </section>
+    aboutTitle="Tentang Pain Center"
+    :about="<<<'HTML'
+      <p>
+        Pain Center berfokus pada diagnosis, pengobatan, dan manajemen nyeri secara menyeluruh—
+        mulai dari nyeri akut hingga kronis—dengan pendekatan multidisiplin.
+      </p>
+    HTML"
 
-    <!-- Content Section -->
-    <section class="py-5">
-        <div class="container">
-            <h3 class="fw-bold">Tentang Pain Center</h3>
-            <p>
-                Pain Center adalah unit pelayanan yang berfokus pada diagnosis, pengobatan, 
-                dan manajemen nyeri secara menyeluruh, mulai dari nyeri akut hingga kronis.
-            </p>
+    :facilities="[
+      'Konsultasi & penilaian nyeri komprehensif',
+      'Intervensi berbasis panduan gambar: nerve block, epidural, radiofrequency ablation (RFA)',
+      'Terapi modalitas: TENS & fisioterapi',
+      'Farmakoterapi & titrasi obat nyeri',
+      'Edukasi manajemen nyeri & home program',
+      'Klinik rujukan internal lintas poli',
+    ]"
 
-            <h4 class="fw-bold mt-4">Layanan yang Tersedia</h4>
-            <ul>
-                <li>Terapi nyeri punggung</li>
-                <li>Pengobatan migrain</li>
-                <li>Terapi nyeri sendi</li>
-                <li>Rehabilitasi pasca operasi</li>
-            </ul>
+    :spec="[
+      ['Jenis Layanan','Intervensi nyeri, TENS/fisioterapi, farmakoterapi, edukasi'],
+      ['Jam Layanan','Senin–Sabtu 08.00–20.00'],
+      ['Lokasi','Gedung A, Lantai 2'],
+      ['Reservasi','WhatsApp 0858-1415-0000 atau Call Center (0291) 4150501'],
+      ['Rujukan','Rawat jalan & rujukan internal poli'],
+    ]"
 
-            <h4 class="fw-bold mt-4">Dokter Spesialis</h4>
-            <p>
-                Kami didukung oleh tim dokter spesialis anestesi, neurologi, dan fisioterapi berpengalaman.
-            </p>
-        </div>
-    </section>
-</main>
+    :gallery="[
+      ['src'=>asset('images/pain-center-1.jpg'),'alt'=>'Pain Clinic - Ruang Tindakan'],
+      ['src'=>asset('images/pain-center-2.jpg'),'alt'=>'Pain Clinic - Area Konsultasi'],
+      ['src'=>asset('images/pain-center-3.jpg'),'alt'=>'Pain Clinic - Fisioterapi/TENS'],
+    ]"
 
-@include('public.footer')
+    :supporting="[
+      'Screening awal & penjadwalan intervensi oleh perawat nyeri',
+      'Kolaborasi dokter anestesi, neurologi, dan rehabilitasi medik',
+      'Pemantauan berkala dan penyesuaian rencana terapi',
+    ]"
+  >
+    </div>
+  </x-layouts.detail>
+</x-layouts.app>

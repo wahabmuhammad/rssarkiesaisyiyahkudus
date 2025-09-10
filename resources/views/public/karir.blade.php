@@ -1,7 +1,7 @@
 <!-- resources/views/karir.blade.php -->
 @include('public.header')
 
-<section class="career py-5" style="background-color: #fff; margin-top: 60px;">
+<section class="career py-5" style="background-color: #fff;">
     <div class="container">
         <!-- Breadcrumb -->
         <nav aria-label="breadcrumb">

@@ -1,6 +1,6 @@
 @include('public.header')
 
-<section id="poliklinik" class="py-5 bg-white" style="margin-top:60px;">
+<section id="poliklinik" class="py-5 bg-white">
   <div class="container">
     <!-- Breadcrumb -->
     <nav aria-label="breadcrumb">
@@ -31,21 +31,31 @@
           ['name'=>'Poli Mata','slug'=>'mata','icon'=>'fa-eye','desc'=>'Pemeriksaan & terapi mata.'],
           ['name'=>'Poli Kandungan','slug'=>'kandungan','icon'=>'fa-person-pregnant','desc'=>'Obstetri & ginekologi.'],
           ['name'=>'Poli Anak','slug'=>'anak','icon'=>'fa-baby','desc'=>'Kesehatan anak & imunisasi.'],
-          ['name'=>'Poli KIA','slug'=>'kia','icon'=>'fa-hand-holding-heart','desc'=>'Kesehatan Ibu & Anak.'],
+          ['name'=>'Poli KIA','slug'=>'kia','icon'=>'fa-children','desc'=>'Kesehatan Ibu & Anak.'],
           ['name'=>'Poli Jiwa / Psikiatri','slug'=>'psikiatri','icon'=>'fa-face-smile','desc'=>'Konsultasi kesehatan jiwa.'],
           ['name'=>'Laboratorium','slug'=>'laboratorium','icon'=>'fa-flask','desc'=>'Pemeriksaan laboratorium.'],
+          ['name'=>'Radiologi','slug'=>'radiologi','icon'=>'fa-radiation','desc'=>'Pemeriksaan radiologi & imaging.'],
+          ['name'=>'USG 4D','slug'=>'usg-4d','icon'=>'fa-wave-square','desc'=>'Pemeriksaan USG 4 dimensi.'],
+          ['name'=>'Apotek','slug'=>'apotek','icon'=>'fa-pills','desc'=>'Pelayanan obat & konsultasi farmasi.'],
+          ['name'=>'Ruang Bersalin','slug'=>'ruang-bersalin','icon'=>'fa-baby-carriage','desc'=>'Fasilitas persalinan & perawatan ibu bayi.'],
+          ['name'=>'Kamar Operasi','slug'=>'kamar-operasi','icon'=>'fa-syringe','desc'=>'Fasilitas operasi & tindakan bedah.'],
+          ['name'=>'ICU / ICCU','slug'=>'icu-iccu','icon'=>'fa-heart-pulse','desc'=>'Perawatan intensif & kardiovaskular.'],
+          ['name'=>'Ruang Perawatan Inap','slug'=>'rawat-inap','icon'=>'fa-bed','desc'=>'Kamar perawatan inap pasien.'],
+          ['name'=>'Ambulans 24 Jam','slug'=>'ambulans','icon'=>'fa-truck-medical','desc'=>'Layanan ambulans darurat 24 jam.'],
+          ['name'=>'IGD','slug'=>'igd','icon'=>'fa-hospital','desc'=>'Pelayanan medis darurat 24 jam.'],
+          ['name'=>'Convention Hall','slug'=>'hall','icon'=>'fa-building','desc'=>'Tersedia convention hall atau auditorium.'],
+          ['name'=>'Vaksin','slug'=>'hall','icon'=>'fa-virus','desc'=>'Tersedia berbagai macam vaksin.'],
         ];
       @endphp
 
-      @foreach ($poli as $item)
+      @foreach ($poli as $i => $item)
         <div class="col">
           <article class="poli-card h-100 position-relative">
             <div class="d-flex align-items-center gap-3 mb-3">
-              <i class="fa-solid {{ $item['icon'] }} poli-icon"></i>
+              <i class="fa-solid {{ $item['icon'] }} poli-icon" aria-hidden="true"></i>
               <h5 class="mb-0 fw-bold">{{ $item['name'] }}</h5>
             </div>
             <p class="text-muted small mb-4">{{ $item['desc'] }}</p>
-            <a href="{{ url('/poli/'.$item['slug']) }}" class="stretched-link poli-link">Lihat detail</a>
           </article>
         </div>
       @endforeach
@@ -55,11 +65,19 @@
 
 @include('public.footer')
 
-#poliklinik .poli-card{
-    position: relative;
+{{-- CSS khusus komponen + muat Font Awesome dari sini --}}
+<style>
+  /* muat FA6 Free langsung di halaman ini */
+  @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css');
+
+  /* antimenset: beberapa tema menimpa font <i>, paksa ke FA6 */
+  i.fa-solid{ font-family:"Font Awesome 6 Free" !important; font-weight:900 !important; font-style:normal !important; }
+  i.fa-solid::before{ display:inline-block; }
+
+  #poliklinik .poli-card{
     padding: 24px 20px;
     border-radius: 16px;
-    background: linear-gradient(180deg, #f1f7ff 0%, #f7fbff 100%);
+    background: linear-gradient(180deg,#f1f7ff 0%,#f7fbff 100%);
     border: 1px solid #e7f0ff;
     box-shadow: 0 6px 20px rgba(31,93,215,.06);
     transition: transform .2s ease, box-shadow .2s ease;
@@ -68,19 +86,7 @@
     transform: translateY(-4px);
     box-shadow: 0 12px 28px rgba(31,93,215,.12);
   }
-  #poliklinik .poli-step{
-    position: absolute;
-    top: -14px; left: 16px;
-    width: 44px; height: 44px;
-    border-radius: 999px;
-    background: #3b82f6;
-    color: #fff;
-    font-weight: 700; font-size: 14px;
-    display: flex; align-items: center; justify-content: center;
-    box-shadow: 0 10px 18px rgba(59,130,246,.35);
-  }
-  #poliklinik .poli-icon{ font-size: 32px; color: #0ea5e9; }
-  #poliklinik .poli-link{ font-weight: 600; text-decoration: none; }
-  #poliklinik .poli-link:hover{ text-decoration: underline; }
-
-
+  #poliklinik .poli-icon{ font-size: 32px; color:#0ea5e9; }
+  #poliklinik .poli-link{ font-weight:600; text-decoration:none; }
+  #poliklinik .poli-link:hover{ text-decoration:underline; }
+</style>

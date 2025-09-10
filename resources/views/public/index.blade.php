@@ -106,6 +106,8 @@
 
         </div>
     </section><!-- End Hero -->
+
+    @include('public.popup-dokter')
     
     <!-- Chatbot Section -->
     <div class="chatbot-container" style="position: fixed; bottom: 20px; right: 20px; z-index: 999;">
@@ -270,72 +272,198 @@
 
         {{-- Center of Excellence --}}
         <section class="section-bg py-5">
-            <div class="container">
-                <!-- Header -->
-                <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap">
-                    <div>
-                        <h2 class="fw-bold" style="color: #2A2536;">Center of Excellence</h2>
-                        <p class="text-muted mb-0">Telusuri lebih lanjut berbagai informasi seputar layanan kami, di sini.</p>
-                    </div>
-                    <a href="#" class="fw-semibold" style="color: #1E88E5; text-decoration: none;">
-                        Lihat Semua Center of Excellence →
+        <div class="container">
+            <!-- Header -->
+            <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap">
+            <div>
+                <h2 class="fw-bold" style="color: #2A2536;">Center of Excellence</h2>
+                <p class="text-muted mb-0">Telusuri lebih lanjut berbagai informasi seputar layanan kami, di sini.</p>
+            </div>
+            {{-- (Dihilangkan sesuai permintaan) <a ...>Lihat Semua Center of Excellence →</a> --}}
+            </div>
+
+            <!-- Cards: dibuat horizontal scroll, isi card TIDAK diubah -->
+            <div class="row g-4 flex-nowrap overflow-auto" id="coeTrack">
+            <!-- Card 1 -->
+            <div class="col-md-4">
+                <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
+                <img src="{{ asset('assets/img/coe/pain-center.jpg') }}" class="card-img-top" alt="Pain Centre">
+                <div class="card-body">
+                    <h5 class="fw-bold">Skin & Aesthetic Clinic</h5>
+                    <p class="text-muted small mb-3">
+                    Klinik dan jadwal dokter spesialis perawatan estetika kulit dan wajah terdekat di Jakarta & Tangerang. Periksa kondisi kesehatan...
+                    </p>
+                    <a href="{{ route('pain-center') }}" class="fw-semibold" style="color: #1E88E5; text-decoration: none;">
+                    Baca Selengkapnya
                     </a>
                 </div>
-
-                <!-- Cards -->
-                <div class="row g-4">
-                    <!-- Card 1 -->
-                    <div class="col-md-4">
-                        <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
-                            <img src="{{ asset('assets/img/coe/pain-center.jpg') }}" class="card-img-top" alt="Pain Centre">
-                            <div class="card-body">
-                                <h5 class="fw-bold">Skin & Aesthetic Clinic</h5>
-                                <p class="text-muted small mb-3">
-                                    Klinik dan jadwal dokter spesialis perawatan estetika kulit dan wajah terdekat di Jakarta & Tangerang. Periksa kondisi kesehatan...
-                                </p>
-                                <a href="{{ route('pain-center') }}" class="fw-semibold" style="color: #1E88E5; text-decoration: none;">
-                                    Baca Selengkapnya
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Card 2 -->
-                    <div class="col-md-4">
-                        <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
-                            <img src="{{ asset('assets/img/coe/orthopedic-center.jpg') }}" class="card-img-top" alt="Orthopedic Centre">
-                            <div class="card-body">
-                                <h5 class="fw-bold">Orthopedic Centre</h5>
-                                <p class="text-muted small mb-3">
-                                    Klinik dan jadwal dokter spesialis tulang ortopedi terdekat di Jakarta & Tangerang. Dilengkapi MRI 3 Tesla Skyra...
-                                </p>
-                                <a href="{{ route('orthopedic-center') }}" class="fw-semibold" style="color: #1E88E5; text-decoration: none;">
-                                    Baca Selengkapnya
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Card 3 -->
-                    <div class="col-md-4">
-                        <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
-                            <img src="{{ asset('assets/img/coe/klinik-kandungan.png') }}" class="card-img-top" alt="Klinik Kebidanan & Kandungan">
-                            <div class="card-body">
-                                <h5 class="fw-bold">Klinik Kebidanan & Kandungan</h5>
-                                <p class="text-muted small mb-3">
-                                    Klinik dan jadwal dokter kandungan (Obgyn) terdekat di Jakarta & Tangerang. Periksa kondisi kesehatan Anda dan booking online...
-                                </p>
-                                <a href="{{ route('klinik-kandungan') }}" class="fw-semibold" style="color: #1E88E5; text-decoration: none;">
-                                    Baca Selengkapnya
-                                </a>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
+
+            <!-- Card 2 -->
+            <div class="col-md-4">
+                <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
+                <img src="{{ asset('assets/img/coe/orthopedic-center.jpg') }}" class="card-img-top" alt="Orthopedic Centre">
+                <div class="card-body">
+                    <h5 class="fw-bold">Orthopedic Centre</h5>
+                    <p class="text-muted small mb-3">
+                    Klinik dan jadwal dokter spesialis tulang ortopedi terdekat di Jakarta & Tangerang. Dilengkapi MRI 3 Tesla Skyra...
+                    </p>
+                    <a href="{{ route('orthopedic-center') }}" class="fw-semibold" style="color: #1E88E5; text-decoration: none;">
+                    Baca Selengkapnya
+                    </a>
+                </div>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="col-md-4">
+                <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
+                <img src="{{ asset('assets/img/coe/klinik-kandungan.png') }}" class="card-img-top" alt="Klinik Kebidanan & Kandungan">
+                <div class="card-body">
+                    <h5 class="fw-bold">Klinik Kebidanan & Kandungan</h5>
+                    <p class="text-muted small mb-3">
+                    Klinik dan jadwal dokter kandungan (Obgyn) terdekat di Jakarta & Tangerang. Periksa kondisi kesehatan Anda dan booking online...
+                    </p>
+                    <a href="{{ route('klinik-kandungan') }}" class="fw-semibold" style="color: #1E88E5; text-decoration: none;">
+                    Baca Selengkapnya
+                    </a>
+                </div>
+                </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="col-md-4">
+                <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
+                <img src="{{ asset('assets/img/coe/pain-center.jpg') }}" class="card-img-top" alt="Pain Centre">
+                <div class="card-body">
+                    <h5 class="fw-bold">Skin & Aesthetic Clinic</h5>
+                    <p class="text-muted small mb-3">
+                    Klinik dan jadwal dokter spesialis perawatan estetika kulit dan wajah terdekat di Jakarta & Tangerang. Periksa kondisi kesehatan...
+                    </p>
+                    <a href="{{ route('pain-center') }}" class="fw-semibold" style="color: #1E88E5; text-decoration: none;">
+                    Baca Selengkapnya
+                    </a>
+                </div>
+                </div>
+            </div>
+
+            <!-- Card 5 -->
+            <div class="col-md-4">
+                <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
+                <img src="{{ asset('assets/img/coe/orthopedic-center.jpg') }}" class="card-img-top" alt="Orthopedic Centre">
+                <div class="card-body">
+                    <h5 class="fw-bold">Orthopedic Centre</h5>
+                    <p class="text-muted small mb-3">
+                    Klinik dan jadwal dokter spesialis tulang ortopedi terdekat di Jakarta & Tangerang. Dilengkapi MRI 3 Tesla Skyra...
+                    </p>
+                    <a href="{{ route('orthopedic-center') }}" class="fw-semibold" style="color: #1E88E5; text-decoration: none;">
+                    Baca Selengkapnya
+                    </a>
+                </div>
+                </div>
+            </div>
+
+            <!-- Card 6 -->
+            <div class="col-md-4">
+                <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
+                <img src="{{ asset('assets/img/coe/klinik-kandungan.png') }}" class="card-img-top" alt="Klinik Kebidanan & Kandungan">
+                <div class="card-body">
+                    <h5 class="fw-bold">Klinik Kebidanan & Kandungan</h5>
+                    <p class="text-muted small mb-3">
+                    Klinik dan jadwal dokter kandungan (Obgyn) terdekat di Jakarta & Tangerang. Periksa kondisi kesehatan Anda dan booking online...
+                    </p>
+                    <a href="{{ route('klinik-kandungan') }}" class="fw-semibold" style="color: #1E88E5; text-decoration: none;">
+                    Baca Selengkapnya
+                    </a>
+                </div>
+                </div>
+            </div>
+
+            </div>
+
+            <!-- NAV PANAH (bawah kiri) -->
+            <div class="coe-nav d-flex align-items-center gap-3 mt-3">
+            <button class="coe-btn" id="coePrev" type="button" aria-label="Sebelumnya">
+                <i class="bi bi-arrow-left"></i>
+            </button>
+            <button class="coe-btn" id="coeNext" type="button" aria-label="Berikutnya">
+                <i class="bi bi-arrow-right"></i>
+            </button>
+            </div>
+        </div>
+
+        <!-- Styles khusus panah & track -->
+        <style>
+            /* Track horizontal: rapat, snap per kolom, sembunyikan scrollbar di iOS */
+            #coeTrack{
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+            padding-bottom: 8px; /* beri ruang untuk nav */
+            -ms-overflow-style: none;     /* IE/Edge */
+            scrollbar-width: none;
+            }
+
+            #coeTrack::-webkit-scrollbar {  /* Chrome/Safari */
+                display: none;
+                height: 0;
+            }
+            /* Setiap kolom snap ke kiri saat berhenti scroll */
+            #coeTrack > [class*="col-"]{ scroll-snap-align: start; flex: 0 0 auto; }
+
+            /* Tombol panah: lingkaran outline seperti contoh */
+            .coe-btn{
+            width:56px; height:56px; border-radius:50%;
+            border:2px solid #e8e8e8; background:#fff;
+            display:inline-flex; align-items:center; justify-content:center;
+            transition: box-shadow .2s ease, transform .1s ease, border-color .2s ease;
+            }
+            .coe-btn i{ font-size:22px; line-height:1; }
+            .coe-btn:hover{ border-color:#dcdcdc; box-shadow:0 2px 8px rgba(0,0,0,.06); }
+            .coe-btn:active{ transform: scale(.98); }
+            .coe-btn:disabled{ opacity:.4; pointer-events:none; }
+        </style>
+
+        <!-- Script navigasi geser -->
+        <script>
+        (function(){
+            const list = document.getElementById('coeTrack');
+            const prev = document.getElementById('coePrev');
+            const next = document.getElementById('coeNext');
+            if(!list || !prev || !next) return;
+
+            function stepSize(){
+            // lebar satu kolom (sudah termasuk padding/gutter)
+            const col = list.querySelector('[class*="col-"]');
+            if (col) return Math.round(col.getBoundingClientRect().width);
+            return Math.round(list.clientWidth * 0.8);
+            }
+
+            function updateBtns(){
+            const max = list.scrollWidth - list.clientWidth - 1; // toleransi
+            prev.disabled = list.scrollLeft <= 0;
+            next.disabled = list.scrollLeft >= max;
+            }
+
+            prev.addEventListener('click', () => {
+            list.scrollBy({left: -stepSize(), behavior:'smooth'});
+            });
+            next.addEventListener('click', () => {
+            list.scrollBy({left:  stepSize(), behavior:'smooth'});
+            });
+
+            list.addEventListener('scroll', updateBtns, {passive:true});
+            window.addEventListener('resize', updateBtns);
+            updateBtns();
+        })();
+        </script>
         </section>
         {{-- End Center of Excellence --}}
 
+
+        <!-- ======= Pricing Section ======= -->
+        @include('public.pricing')
+        <!-- End Pricing Section -->
 
         <head>
         <meta charset="UTF-8">
@@ -407,63 +535,114 @@
         </body>
         </html>
 
-        <!-- START: Carousel Berita & Artikel -->
+        <!-- START: Berita & Artikel (horizontal slider + panah) -->
         <section class="section-bg">
-        <div class="container mt-5">
+        <div class="container mt-5" data-aos="fade-up">
             <!-- Header -->
-                <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap">
-                    <div>
-                        <h2 class="fw-bold" style="color: #2A2536;">Berita dan Artikel Kesehatan</h2>
-                        <p class="text-muted mb-0">Informasi terkini dan tips kesehatan terpercaya untuk Anda dan keluarga.</p>
-                    </div>
-                    <a href="#" class="fw-semibold" style="color: #1E88E5; text-decoration: none;">
-                        Lihat Semua Berita dan Artikel Kesehatan →
-                    </a>
-                </div>
-
-            <div id="newsCarousel" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner">
-                @php
-                $articles = [
-                    ['title'=>'Waspadai Serangan Jantung!','date'=>'28 Juli 2025','excerpt'=>'Serangan jantung bisa datang tiba-tiba…','img'=>asset('assets/img/news/jantung.jpg'),'url'=>'#'],
-                    ['title'=>'Apakah Ambeien Bisa Sembuh?','date'=>'28 Juli 2025','excerpt'=>'Ambeien merupakan kondisi…','img'=>asset('assets/img/news/ambeien.jpg'),'url'=>'#'],
-                    ['title'=>'ISK pada Ibu Hamil Bisa Sembuh?','date'=>'8 Agustus 2025','excerpt'=>'ISK pada ibu hamil bisa diatasi…','img'=>asset('assets/img/news/isk.jpg'),'url'=>'#'],
-                    ['title'=>'Tips Pola Hidup Sehat Cegah Diabetes','date'=>'1 Agustus 2025','excerpt'=>'Diabetes dapat dicegah dengan…','img'=>asset('assets/img/news/diabetes.jpg'),'url'=>'#'],
-                ];
-                $chunks = array_chunk($articles, 3);
-                @endphp
-
-                @foreach($chunks as $i => $chunk)
-                <div class="carousel-item {{ $i==0?'active':'' }}">
-                <div class="row">
-                    @foreach($chunk as $article)
-                    <div class="col-md-4 mb-3">
-                    <div class="card h-100 shadow-sm border-0">
-                        <img src="{{ $article['img'] }}" class="card-img-top" alt="{{ $article['title'] }}">
-                        <div class="card-body">
-                        <h5 class="card-title">{{ $article['title'] }}</h5>
-                        <p class="card-text text-muted"><small>{{ $article['date'] }}</small></p>
-                        <p class="card-text">{{ $article['excerpt'] }}</p>
-                        <a href="{{ $article['url'] }}" style="color: #1E88E5; class="fw-semibold">Lihat Detail</a>
-                        </div>
-                    </div>
-                    </div>
-                    @endforeach
-                </div>
-                </div>
-                @endforeach
+            <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap">
+            <div>
+                <h2 class="fw-bold" style="color:#2A2536;">Berita dan Artikel Kesehatan</h2>
+                <p class="text-muted mb-0">Informasi terkini dan tips kesehatan terpercaya untuk Anda dan keluarga.</p>
+            </div>
+            <a href="#" class="fw-semibold" style="color:#1E88E5; text-decoration:none;">
+                Lihat Semua Berita dan Artikel Kesehatan →
+            </a>
             </div>
 
-            <button class="carousel-control-prev" type="button" data-bs-target="#newsCarousel" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon"></span>
+            @php
+            $articles = [
+                ['title'=>'Waspadai Serangan Jantung!','date'=>'28 Juli 2025','excerpt'=>'Serangan jantung bisa datang tiba-tiba…','img'=>asset('assets/img/news/jantung.jpg'),'url'=>'#'],
+                ['title'=>'Apakah Ambeien Bisa Sembuh?','date'=>'28 Juli 2025','excerpt'=>'Ambeien merupakan kondisi…','img'=>asset('assets/img/news/ambeien.jpg'),'url'=>'#'],
+                ['title'=>'ISK pada Ibu Hamil Bisa Sembuh?','date'=>'8 Agustus 2025','excerpt'=>'ISK pada ibu hamil bisa diatasi…','img'=>asset('assets/img/news/isk.jpg'),'url'=>'#'],
+                ['title'=>'Tips Pola Hidup Sehat Cegah Diabetes','date'=>'1 Agustus 2025','excerpt'=>'Diabetes dapat dicegah dengan…','img'=>asset('assets/img/news/diabetes.jpg'),'url'=>'#'],
+            ];
+            @endphp
+
+            <!-- Track horizontal -->
+            <div class="row g-4 flex-nowrap overflow-auto" id="newsTrack" role="region" aria-label="Daftar Berita & Artikel">
+            @foreach($articles as $article)
+                <div class="col-lg-4 col-md-6">
+                <div class="card h-100 shadow-sm border-0">
+                    <img src="{{ $article['img'] }}" class="card-img-top" alt="{{ $article['title'] }}">
+                    <div class="card-body">
+                    <h5 class="card-title fw-bold">{{ $article['title'] }}</h5>
+                    <p class="card-text text-muted mb-1"><small>{{ $article['date'] }}</small></p>
+                    <p class="card-text small text-muted">{{ $article['excerpt'] }}</p>
+                    <a href="{{ $article['url'] }}" class="fw-semibold" style="color:#1E88E5; text-decoration:none;">Lihat Detail</a>
+                    </div>
+                </div>
+                </div>
+            @endforeach
+            {{-- tambahkan artikel lain bila perlu, otomatis ikut slider --}}
+            </div>
+
+            <!-- Panah navigasi -->
+            <div class="news-nav d-flex align-items-center gap-3 mt-3">
+            <button class="news-btn" id="newsPrev" type="button" aria-label="Sebelumnya">
+                <i class="bi bi-arrow-left"></i>
             </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#newsCarousel" data-bs-slide="next">
-                <span class="carousel-control-next-icon"></span>
+            <button class="news-btn" id="newsNext" type="button" aria-label="Berikutnya">
+                <i class="bi bi-arrow-right"></i>
             </button>
             </div>
         </div>
+
+        <!-- Styles khusus -->
+        <style>
+            /* Track horizontal + hide scrollbar */
+            #newsTrack{
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+            padding-bottom: 8px;
+            -ms-overflow-style: none;   /* IE/Edge */
+            scrollbar-width: none;      /* Firefox  */
+            }
+            #newsTrack::-webkit-scrollbar{ display:none; height:0; } /* Chrome/Safari */
+            #newsTrack > [class*="col-"]{ flex:0 0 auto; scroll-snap-align:start; }
+
+            /* Samakan proporsi gambar agar rapi */
+            #newsTrack .card-img-top{ aspect-ratio:16/9; object-fit:cover; }
+
+            /* Tombol panah lingkaran */
+            .news-btn{
+            width:56px; height:56px; border-radius:50%;
+            border:2px solid #e8e8e8; background:#fff;
+            display:inline-flex; align-items:center; justify-content:center;
+            transition: box-shadow .2s ease, transform .1s ease, border-color .2s ease;
+            }
+            .news-btn i{ font-size:22px; line-height:1; }
+            .news-btn:hover{ border-color:#dcdcdc; box-shadow:0 2px 8px rgba(0,0,0,.06); }
+            .news-btn:active{ transform:scale(.98); }
+            .news-btn:disabled{ opacity:.4; pointer-events:none; }
+        </style>
+
+        <!-- Script panah -->
+        <script>
+            (function(){
+            const track = document.getElementById('newsTrack');
+            const prev  = document.getElementById('newsPrev');
+            const next  = document.getElementById('newsNext');
+            if(!track || !prev || !next) return;
+
+            function stepSize(){
+                const col = track.querySelector('[class*="col-"]');
+                return col ? Math.round(col.getBoundingClientRect().width) : Math.round(track.clientWidth * 0.8);
+            }
+            function updateBtns(){
+                const max = track.scrollWidth - track.clientWidth - 1;
+                prev.disabled = track.scrollLeft <= 0;
+                next.disabled = track.scrollLeft >= max;
+            }
+
+            prev.addEventListener('click', ()=> track.scrollBy({ left: -stepSize(), behavior:'smooth' }));
+            next.addEventListener('click', ()=> track.scrollBy({ left:  stepSize(), behavior:'smooth' }));
+            track.addEventListener('scroll', updateBtns, { passive:true });
+            window.addEventListener('resize', updateBtns);
+            updateBtns();
+            })();
+        </script>
         </section>
-        <!-- END: Carousel Berita & Artikel -->
+        <!-- END: Berita & Artikel -->
 
 
         <!-- ======= Counts Section ======= -->
@@ -514,7 +693,7 @@
                             <span data-purecounter-start="0" data-purecounter-end="150" data-purecounter-duration="1"
                                 class="purecounter"></span>
                             <p><strong>Penghargaan</strong> rerum asperiores dolor molestiae doloribu</p>
-                            <a href="#">Find out more &raquo;</a>
+                            <a href="{{ route('awards') }}">Find out more &raquo;</a>
                         </div>
                     </div>
 
@@ -523,120 +702,6 @@
             </div>
         </section><!-- End Counts Section -->
 
-
-        <!-- ======= Fasilitas Rawat Inap Section ======= -->
-        <section id="fasilitas" class="services services" style="background-color: #ffffff;">
-            <div class="container" data-aos="fade-up">
-
-                <div class="section-title">
-                    <h2>Fasilitas Rawat Inap</h2>
-                    <p>Kami menyediakan fasilitas rawat inap dengan kenyamanan dan kelengkapan terbaik bagi pasien dan keluarga.</p>
-                </div>
-
-                <div class="row">
-                    <!-- VIP A -->
-                    <div class="col-lg-4 col-md-6 mb-4" data-aos="zoom-in" data-aos-delay="100">
-                        <div class="card h-100 shadow-sm border-0">
-                            <img src="{{ asset('assets/img/kamar-vipa.jpg') }}" class="card-img-top" alt="Kamar VIP A">
-                            <div class="card-body">
-                                <h4 class="fw-bold">VIP A</h4>
-                                <ul class="list-unstyled mt-3">
-                                    <li><i class="fas fa-check-circle text-blue me-2"></i>1 Tempat Tidur Elektrik</li>
-                                    <li><i class="fas fa-check-circle text-blue me-2"></i>Meja Set Kabinet & Sofa Penunggu</li>
-                                    <li><i class="fas fa-check-circle text-blue me-2"></i>Kamar Mandi + Water Heater</li>
-                                    <li><i class="fas fa-check-circle text-blue me-2"></i>AC</li>
-                                    <li><i class="fas fa-check-circle text-blue me-2"></i>TV 32"</li>
-                                    <li><i class="fas fa-check-circle text-blue me-2"></i>Kulkas</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- VIP B -->
-                    <div class="col-lg-4 col-md-6 mb-4" data-aos="zoom-in" data-aos-delay="150">
-                        <div class="card h-100 shadow-sm border-0">
-                            <img src="{{ asset('assets/img/kamar-vipb.jpg') }}" class="card-img-top" alt="Kamar VIP B">
-                            <div class="card-body">
-                                <h4 class="fw-bold">VIP B</h4>
-                                <ul class="list-unstyled mt-3">
-                                    <li><i class="fas fa-check-circle text-blue me-2"></i>1 Tempat Tidur Elektrik</li>
-                                    <li><i class="fas fa-check-circle text-blue me-2"></i>Meja Set Kabinet</li>
-                                    <li><i class="fas fa-check-circle text-blue me-2"></i>Kamar Mandi + Water Heater</li>
-                                    <li><i class="fas fa-check-circle text-blue me-2"></i>AC</li>
-                                    <li><i class="fas fa-check-circle text-blue me-2"></i>TV 29"</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Kelas 1 -->
-                    <div class="col-lg-4 col-md-6 mb-4" data-aos="zoom-in" data-aos-delay="200">
-                        <div class="card h-100 shadow-sm border-0">
-                            <img src="{{ asset('assets/img/kamar-kelas1.jpg') }}" class="card-img-top" alt="Kamar Kelas 1">
-                            <div class="card-body">
-                                <h4 class="fw-bold">Kelas 1</h4>
-                                <ul class="list-unstyled mt-3">
-                                    <li><i class="fas fa-check-circle text-blue me-2"></i>2 Tempat Tidur Manual</li>
-                                    <li><i class="fas fa-check-circle text-blue me-2"></i>Kamar Mandi</li>
-                                    <li><i class="fas fa-check-circle text-blue me-2"></i>AC</li>
-                                    <li><i class="fas fa-check-circle text-blue me-2"></i>TV</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Kelas 2 -->
-                    <div class="col-lg-4 col-md-6 mb-4" data-aos="zoom-in" data-aos-delay="250">
-                        <div class="card h-100 shadow-sm border-0">
-                            <img src="{{ asset('assets/img/kamar-kelas2.jpg') }}" class="card-img-top" alt="Kamar Kelas 2">
-                            <div class="card-body">
-                                <h4 class="fw-bold">Kelas 2</h4>
-                                <ul class="list-unstyled mt-3">
-                                    <li><i class="fas fa-check-circle text-blue me-2"></i>3 Tempat Tidur Manual</li>
-                                    <li><i class="fas fa-check-circle text-blue me-2"></i>Kamar Mandi</li>
-                                    <li><i class="fas fa-check-circle text-blue me-2"></i>Kipas Angin</li>
-                                    <li><i class="fas fa-check-circle text-blue me-2"></i>TV</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Kelas 3 -->
-                    <div class="col-lg-4 col-md-6 mb-4" data-aos="zoom-in" data-aos-delay="300">
-                        <div class="card h-100 shadow-sm border-0">
-                            <img src="{{ asset('assets/img/kamar-kelas3.jpg') }}" class="card-img-top" alt="Kamar Kelas 3">
-                            <div class="card-body">
-                                <h4 class="fw-bold">Kelas 3</h4>
-                                <ul class="list-unstyled mt-3">
-                                    <li><i class="fas fa-check-circle text-blue me-2"></i>4 Tempat Tidur Manual</li>
-                                    <li><i class="fas fa-check-circle text-blue me-2"></i>Kamar Mandi</li>
-                                    <li><i class="fas fa-check-circle text-blue me-2"></i>Kipas Angin</li>
-                                    <li><i class="fas fa-check-circle text-blue me-2"></i>TV</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- ICU -->
-                    <div class="col-lg-4 col-md-6 mb-4" data-aos="zoom-in" data-aos-delay="350">
-                        <div class="card h-100 shadow-sm border-0">
-                            <img src="{{ asset('assets/img/kamar-icu.jpg') }}" class="card-img-top" alt="Kamar ICU">
-                            <div class="card-body">
-                                <h4 class="fw-bold">ICU</h4>
-                                <ul class="list-unstyled mt-3">
-                                    <li><i class="fas fa-check-circle text-blue me-2"></i>Tempat Tidur Elektrik</li>
-                                    <li><i class="fas fa-check-circle text-blue me-2"></i>Monitor Pasien</li>
-                                    <li><i class="fas fa-check-circle text-blue me-2"></i>Ventilator</li>
-                                    <li><i class="fas fa-check-circle text-blue me-2"></i>AC</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-        <!-- End Fasilitas Rawat Inap Section -->
 
 
         <!-- ======= Doctors Section ======= -->
@@ -713,12 +778,6 @@
         </section>
         <!-- End Doctors Section -->
 
-
-
-        <!-- ======= Pricing Section ======= -->
-        @include('public.pricing')
-        <!-- End Pricing Section -->
-
         <!-- ======= Frequently Asked Questioins Section ======= -->
         @include('public.faq')
         <!-- End Frequently Asked Questioins Section -->
@@ -726,6 +785,149 @@
         <!--Contact Section-->
         @include('public.contact')
         <!--End Contact Section-->
+
+        <!-- ======= App Promo: Reservasi Online ======= -->
+        <section id="mobile-app" class="section-bg">
+        <div class="container position-relative">
+            <div class="row align-items-center g-5">
+            <!-- LEFT -->
+            <div class="col-lg-7">
+                <div class="eyebrow d-inline-flex align-items-center mb-3">
+                <i class="bi bi-phone me-2"></i> RSPI Mobile
+                </div>
+
+                <h2 class="display-5 fw-bold lh-1 mb-3">
+                Akses Pelayanan Kami<br class="d-none d-xl-block"> Dari Ponsel Anda
+                </h2>
+
+                <!-- deskripsi normal (bukan feature-list) -->
+                <p class="list-unstyled mb-4">
+                <strong>RSPI Mobile</strong> memudahkan <strong>reservasi dokter secara online</strong>—lebih cepat tanpa antre.
+                Pilih rumah sakit/poli/dokter, tentukan jadwal, dapatkan <strong>e-ticket/QR</strong>, lalu datang sesuai waktu yang Anda pilih.
+                </p>
+
+                <ul class="feature-list list-unstyled mb-4">
+                <li class="feature">
+                    <span class="feature-icon"><i class="bi bi-calendar-check"></i></span>
+                    <span>Reservasi kapan saja, dari mana saja</span>
+                </li>
+                <li class="feature">
+                    <span class="feature-icon"><i class="bi bi-clipboard2-check"></i></span>
+                    <span>Pilih RS, poli, dan dokter sesuai kebutuhan</span>
+                </li>
+                <li class="feature">
+                    <span class="feature-icon"><i class="bi bi-qr-code"></i></span>
+                    <span>E-ticket/QR untuk pendaftaran cepat di lokasi</span>
+                </li>
+                </ul>
+
+                <div class="d-flex flex-wrap align-items-center gap-3">
+                <a href="https://play.google.com/store/apps/details?id=com.er.rs_sarkieskudus" target="_blank" rel="noopener" aria-label="Unduh di Google Play">
+                    <img src="{{ asset('assets/img/badges/google-play-badge.png') }}" alt="Get it on Google Play" class="store-badge" loading="lazy">
+                </a>
+                <a href="https://apps.apple.com/app/idYOUR_APP_ID" target="_blank" rel="noopener" aria-label="Unduh di App Store">
+                    <img src="{{ asset('assets/img/badges/app-store-badge.png') }}" alt="Download on the App Store" class="store-badge" loading="lazy">
+                </a>
+                </div>
+
+                <p class="text-muted small mt-3 mb-0">
+                Gratis • Resmi RSPI • Data Anda terlindungi
+                </p>
+            </div>
+
+            <!-- RIGHT -->
+            <div class="col-lg-5">
+                <div class="card steps-card border-0 shadow-sm">
+                <div class="card-body p-4 p-lg-5">
+                    <h5 class="fw-semibold mb-3">Reservasi Online dalam 3 Langkah</h5>
+                    <ol class="mb-4 ps-3">
+                    <li>Pilih RS/Poli/Dokter</li>
+                    <li>Tentukan tanggal & jam</li>
+                    <li>Terima e-ticket/QR dan datang sesuai jadwal</li>
+                    </ol>
+                    <div class="d-flex align-items-start gap-2 text-primary">
+                    <i class="bi bi-shield-check fs-5 lh-1"></i>
+                    <span>Terintegrasi dengan sistem pendaftaran rumah sakit</span>
+                    </div>
+                </div>
+                </div>
+            </div>
+            </div>
+        </div>
+
+        <!-- dekorasi halus -->
+        <span class="blob blob-1"></span>
+        <span class="blob blob-2 d-none d-md-block"></span>
+        </section>
+
+        <style>
+        /* ====== THEME: BIRU ====== */
+        :root{
+            --brand:#0d6efd;              /* biru utama */
+            --brand-ink:#0a58ca;          /* biru gelap */
+            --ink:#1d2733;
+            --muted:#6c7a86;
+            --chip-bg:rgba(13,110,253,.06);
+            --chip-br:rgba(13,110,253,.18);
+        }
+
+        .app-section{
+            background:
+            radial-gradient(900px 500px at 90% 10%, rgba(13,110,253,.07), transparent 60%),
+            linear-gradient(180deg, #f5f8ff 0%, #ffffff 30%);
+        }
+
+        .eyebrow{
+            font-weight:600; font-size:.95rem; color:var(--brand-ink);
+            padding:.35rem .75rem; border-radius:999px; background:rgba(13,110,253,.12);
+        }
+        .app-section h2{ color:var(--ink); }
+
+        /* ==== FEATURE CHIPS: diperkecil ==== */
+        .feature-list .feature{
+            display:flex; align-items:center; gap:.5rem;
+            background:var(--chip-bg);
+            border:1px solid var(--chip-br);
+            padding:.5rem .75rem;              /* ↓ lebih kecil */
+            border-radius:12px;                 /* ↓ sudut lebih kecil */
+            margin-bottom:.5rem;
+            font-size:.98rem;                   /* ↓ teks lebih kecil */
+            line-height:1.35;
+        }
+        .feature-icon{
+            width:32px; height:32px;           /* ↓ ikon lebih kecil */
+            border-radius:8px;
+            display:grid; place-items:center;
+            background:#fff; border:1px solid var(--chip-br);
+            color:var(--brand);
+        }
+        .feature-icon i{ font-size:1rem; }
+
+        /* Steps card accent: biru */
+        .steps-card{ border-radius:16px; position:relative; }
+        .steps-card::before{
+            content:""; position:absolute; left:0; top:0; bottom:0; width:6px;
+            border-top-left-radius:16px; border-bottom-left-radius:16px;
+            background:linear-gradient(180deg, var(--brand), #5fa8ff);
+        }
+
+        /* Store badges lebih compact */
+        .store-badge{ height:44px; width:auto; }
+        @media (max-width:576px){ .store-badge{ height:40px; } }
+
+        /* Decorative blobs (biru lembut) */
+        .blob{
+            position:absolute; pointer-events:none; z-index:0; filter:blur(10px);
+            opacity:.45; border-radius:50%;
+            background:radial-gradient(circle at 30% 30%, rgba(13,110,253,.18), rgba(13,110,253,0));
+        }
+        .blob-1{ width:320px; height:320px; right:-80px; top:-60px; }
+        .blob-2{ width:260px; height:260px; left:-80px; bottom:-60px; }
+
+        .py-lg-6{ padding-top:4.5rem!important; padding-bottom:4.5rem!important; }
+        </style>
+
+
 
     </main>
     <!-- End #main -->
@@ -745,6 +947,7 @@
 
     <!-- Template Main JS File -->
     <script src="{{ asset('assets/js/main.js') }}"></script>
+
 
 </body>
 

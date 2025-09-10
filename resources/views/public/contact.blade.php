@@ -53,8 +53,18 @@
                         <i class="bx bxl-whatsapp"></i>
                     </div>
                     <div>
-                        <h6 class="fw-bold mb-1">Whatsapp</h6>
-                        <p class="mb-0">0858-1415-0000</p>
+                        <h6 class="fw-bold mb-1">Whatsapp Pendaftaran</h6>
+                        <p class="mb-0">082-123-234-345</p>
+                    </div>
+                </div>
+
+                <div class="mb-4 d-flex align-items-start">
+                    <div class="icon-circle me-3">
+                        <i class="bx bxl-whatsapp"></i>
+                    </div>
+                    <div>
+                        <h6 class="fw-bold mb-1">Whatsapp Pengaduan</h6>
+                        <p class="mb-0">082-123-234-345</p>
                     </div>
                 </div>
 
