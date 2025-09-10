@@ -55,52 +55,25 @@
             <div class="carousel-inner" role="listbox">
 
                 <!-- Slide 1 -->
-                <div class="carousel-item active" width="1440" height="500"
-                    style="background-image: url({{ asset('assets/img/rssarkies/wasd.jpg') }})">
-                    {{-- <div class="container">
-                        <h2>Welcome to <span>Medicio</span></h2>
-                        <p>Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut
-                            aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque
-                            accusamus repellendus deleniti vel.</p>
-                        <a href="#about" class="btn-get-started scrollto">Read More</a>
-                    </div> --}}
+                <div class="carousel-item active"
+                    style="background-image:url({{ asset('assets/img/rssarkies/wasd.jpg') }})">
                 </div>
 
                 <!-- Slide 2 -->
-                <div class="carousel-item" width="1440" height="500"
-                    style="background-image: url({{ asset('assets/img/rssarkies/dr_ari.jpeg') }})">
-                    {{-- <div class="container">
-                        <h2>Lorem Ipsum Dolor</h2>
-                        <p>Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut
-                            aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque
-                            accusamus repellendus deleniti vel.</p>
-                        <a href="#about" class="btn-get-started scrollto">Read More</a>
-                    </div> --}}
+                <div class="carousel-item"
+                    style="background-image:url({{ asset('assets/img/rssarkies/dr_ari.jpeg') }})">
                 </div>
 
                 <!-- Slide 3 -->
-                <div class="carousel-item" width="1440" height="500"
-                    style="background-image: url({{ asset('assets/img/rssarkies/IMG_5548.jpg') }})">
-                    {{-- <div class="container">
-                        <h2>Sequi ea ut et est quaerat</h2>
-                        <p>Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut
-                            aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque
-                            accusamus repellendus deleniti vel.</p>
-                        <a href="#about" class="btn-get-started scrollto">Read More</a>
-                    </div> --}}
+                <div class="carousel-item"
+                    style="background-image:url({{ asset('assets/img/rssarkies/IMG_5548.jpg') }})">
                 </div>
 
                 <!-- Slide 4 -->
-                <div class="carousel-item" width="1440" height="500"
-                    style="background-image: url({{ asset('assets/img/rssarkies/berlima.jpg') }})">
-                    {{-- <div class="container">
-                        <h2>Sequi ea ut et est quaerat</h2>
-                        <p>Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut
-                            aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque
-                            accusamus repellendus deleniti vel.</p>
-                        <a href="#about" class="btn-get-started scrollto">Read More</a>
-                    </div> --}}
+                <div class="carousel-item"
+                    style="background-image:url({{ asset('assets/img/rssarkies/berlima.jpg') }})">
                 </div>
+
 
             </div>
 
@@ -283,7 +256,7 @@
             </div>
 
             <!-- Cards: dibuat horizontal scroll, isi card TIDAK diubah -->
-            <div class="row g-4 flex-nowrap overflow-auto" id="coeTrack">
+            <div class="row g-4 flex-nowrap overflow-auto mx-0 px-2" id="coeTrack">
             <!-- Card 1 -->
             <div class="col-md-4">
                 <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
@@ -559,7 +532,7 @@
             @endphp
 
             <!-- Track horizontal -->
-            <div class="row g-4 flex-nowrap overflow-auto" id="newsTrack" role="region" aria-label="Daftar Berita & Artikel">
+            <div class="row g-4 flex-nowrap overflow-auto mx-0 px-2" id="newsTrack" role="region" aria-label="Daftar Berita & Artikel">
             @foreach($articles as $article)
                 <div class="col-lg-4 col-md-6">
                 <div class="card h-100 shadow-sm border-0">
