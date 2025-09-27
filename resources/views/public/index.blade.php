@@ -194,48 +194,64 @@
 
     <!-- ======= About Us Section ======= -->
     <section id="about" class="about-us py-5" style="background-color: #FFFFFF;">
-        <div class="container" data-aos="fade-up">
-            <div class="row align-items-center">
-                
-                <!-- Gambar Rumah Sakit (Kiri) -->
-                <div class="col-lg-6 mb-4 mb-lg-0" data-aos="fade-right">
-                    <img src="{{ asset('assets/img/about-content.jpg') }}" 
-                        alt="Ilustrasi Rumah Sakit" 
-                        class="img-fluid rounded shadow-sm">
-                </div>
+    <div class="container" data-aos="fade-up">
 
-                <!-- Teks Detail (Kanan) -->
-                <div class="col-lg-6" data-aos="fade-left">
-                    <h2 class="fw-bold mb-3">Rumah Sakit Sarkies 'Aisyiyah Kudus</h2>
-                    <p class="text-muted">
-                        Sebagai bagian dari RS Pondok Indah Group, kami menghadirkan layanan kesehatan unggulan
-                        dengan teknologi termutakhir & sistem akreditasi tingkat internasional.
-                    </p>
-
-                    <h5 class="mt-4 fw-semibold">Visi</h5>
-                    <p class="text-muted">
-                        Menjadi rumah sakit pilihan dengan layanan bermutu tinggi, aman, dan inovatif.
-                    </p>
-
-                    <h5 class="mt-4 fw-semibold">Misi</h5>
-                    <ul class="list-unstyled text-muted">
-                        <li class="mb-2">
-                            <i class="bi bi-check-circle-fill text-primary me-2"></i>
-                            Pelayanan terpadu & fokus pada pasien.
-                        </li>
-                        <li class="mb-2">
-                            <i class="bi bi-check-circle-fill text-primary me-2"></i>
-                            Pengembangan profesional berkelanjutan dalam tim.
-                        </li>
-                        <li>
-                            <i class="bi bi-check-circle-fill text-primary me-2"></i>
-                            Integritas, etika, inovasi, dan pembelajaran berkelanjutan.
-                        </li>
-                    </ul>
-
-                </div>
-            </div>
+        <!-- Header: Judul & Deskripsi (center) -->
+        <div class="row justify-content-center text-center">
+        <div class="col-lg-10 col-xl-9">
+            <h2 class="fw-bold mb-3 text-dark">Rumah Sakit Sarkies 'Aisyiyah Kudus</h2>
+            <p class="text-muted mb-0">
+            Rumah Sakit Sarkies 'Aisyiyah Kudus merupakan pusat kesehatan modern dan
+            Rumah Sakit swasta terbesar di area Kudus. Berlokasi di kawasan Purwosari di
+            Jl. Mas Sirin No. 79 Kudus. Dengan tenaga medis yang berpengalaman dan
+            fasilitas yang lengkap, kami siap memberikan pelayanan 24 jam.
+            </p>
         </div>
+        </div>
+
+        <!-- Content: 2 kolom -->
+        <div class="row align-items-start g-4 mt-4">
+        <!-- Gambar kiri -->
+        <div class="col-lg-6" data-aos="fade-right">
+            <img src="{{ asset('assets/img/rssarkies/wasd.jpg') }}"
+                class="img-fluid rounded-3 shadow-lg" alt="Gedung Rumah Sakit">
+        </div>
+
+        <!-- Visi, Misi, Motto kanan -->
+        <div class="col-lg-6" data-aos="fade-left">
+            <!-- Visi -->
+            <h5 class="mt-2 fw-semibold text-primary">Visi</h5>
+            <p class="text-muted mb-3">
+            Terwujudnya Rumah Sakit Pilihan Masyarakat dengan Layanan Profesional, Modern,
+            dan Berbasis Nilai ke-Islam-an dan ke Muhammadiyah-an.
+            </p>
+
+            <!-- Misi -->
+            <h5 class="fw-semibold text-primary">Misi</h5>
+            <ul class="list-unstyled text-muted mb-3">
+            <li class="mission-item d-flex align-items-center gap-3 mb-2">
+                <i class="bi bi-check-circle-fill text-primary fs-4 flex-shrink-0"></i>
+                <span>Mengembangkan layanan prima yang fokus pada kebutuhan pasien dengan
+                didukung teknologi tepat guna sesuai standar pelayanan.</span>
+            </li>
+            <li class="mission-item d-flex align-items-center gap-3 mb-2">
+                <i class="bi bi-check-circle-fill text-primary fs-4 flex-shrink-0"></i>
+                <span>Membangun Sumber Daya Insani yang terampil, profesional, dan kompeten
+                berdasar nilai budaya Islami dengan berorientasi pada pelayanan konsumen.</span>
+            </li>
+            <li class="mission-item d-flex align-items-center gap-3">
+                <i class="bi bi-check-circle-fill text-primary fs-4 flex-shrink-0"></i>
+                <span>Mewujudkan layanan yang premium, modern, syariah dengan memperhatikan
+                kesejahteraan seluruh shareholder dan stakeholder.</span>
+            </li>
+            </ul>
+
+            <!-- Motto -->
+            <h5 class="fw-semibold text-primary">Motto</h5>
+            <p class="text-muted mb-0">The Ultimate Islamic Healthcare</p>
+        </div>
+        </div>
+    </div>
     </section>
     <!-- End About Us Section -->
 
@@ -245,14 +261,14 @@
 
         {{-- Center of Excellence --}}
         <section class="section-bg py-5">
-        <div class="container">
+        <div class="container" data-aos="fade-up">
             <!-- Header -->
             <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap">
             <div>
                 <h2 class="fw-bold" style="color: #2A2536;">Center of Excellence</h2>
                 <p class="text-muted mb-0">Telusuri lebih lanjut berbagai informasi seputar layanan kami, di sini.</p>
             </div>
-            {{-- (Dihilangkan sesuai permintaan) <a ...>Lihat Semua Center of Excellence →</a> --}}
+            <a ...>Lihat Semua Center of Excellence →</a>
             </div>
 
             <!-- Cards: dibuat horizontal scroll, isi card TIDAK diubah -->
@@ -438,75 +454,180 @@
         @include('public.pricing')
         <!-- End Pricing Section -->
 
-        <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Fasilitas & Layanan</title>
-        <script src="https://cdn.tailwindcss.com"></script>
-        <script src="https://unpkg.com/alpinejs" defer></script>
-        </head>
-        <body class="bg-gray-50 text-gray-800">
+        {{-- ============ FASILITAS & LAYANAN (Bootstrap, mobile: gambar → panah → card) ============ --}}
+        @php
+        $placeholder = asset('assets/img/placeholder-800x520.png');
 
-        <section class="section-bg py-5">
-        <div class="container mx-auto py-8 px-4">
-            <h1 class="text-3xl font-bold mb-4">Fasilitas dan Layanan</h1>
-            <p class="mb-8 text-gray-600">
-            Menyediakan pelayanan kesehatan terdepan yang terintegrasi dengan dukungan tenaga medis profesional,
-            adopsi teknologi medis terkini, serta sistem informasi digital yang lebih efisien.
-            </p>
+        if (!function_exists('ph_boot')){
+            function ph_boot($relOrUrl, $fallback){
+            if (\Illuminate\Support\Str::startsWith($relOrUrl, ['http://','https://'])) return $relOrUrl;
+            $full = public_path($relOrUrl);
+            return file_exists($full) ? asset($relOrUrl) : $fallback;
+            }
+        }
 
-            @php
-            $fasilitas = [
-                ['title' => 'Diagnostic Center', 'desc' => 'Layanan endoskopi, laboratorium, dan radiologi dengan peralatan modern.', 'img' => asset('images/diagnostic.jpg')],
-                ['title' => 'Intensive Care', 'desc' => 'Perawatan intensif dengan monitoring 24 jam untuk pasien kritis.', 'img' => asset('images/intensive.jpg')],
-                ['title' => 'Rawat Inap', 'desc' => 'Kamar rawat inap yang nyaman dan fasilitas lengkap untuk pasien.', 'img' => asset('images/rawat-inap.jpg')],
-                ['title' => 'Rehabilitasi Medik & Fisioterapi', 'desc' => 'Program pemulihan fisik pasca cedera atau operasi.', 'img' => asset('images/rehab.jpg')],
-                ['title' => 'Farmasi', 'desc' => 'Layanan obat dengan resep dokter dan konsultasi farmasi.', 'img' => asset('images/farmasi.jpg')],
-                ['title' => 'Emergency', 'desc' => 'Layanan gawat darurat 24 jam dengan respon cepat.', 'img' => asset('images/emergency.jpg')],
-            ];
-            @endphp
+        $fasilitas = [
+            ['title'=>'Diagnostic Center','desc'=>'Layanan endoskopi, laboratorium, dan radiologi dengan peralatan modern.','img'=>ph_boot('images/diagnostic.jpg', $placeholder)],
+            ['title'=>'Healthy Corner','desc'=>'Fitness zone, wellness studio, convention hall, coffee & bakery, snack corner, dan care mart.','img'=>ph_boot('images/intensive.jpg', $placeholder)],
+            ['title'=>'Intensive Care','desc'=>'Perawatan intensif dengan monitoring 24 jam untuk pasien kritis.','img'=>ph_boot('images/intensive.jpg', $placeholder)],
+            ['title'=>'Rehabilitasi Medik & Fisioterapi','desc'=>'Program pemulihan fisik pasca cedera/operasi oleh tenaga profesional.','img'=>ph_boot('images/rehab.jpg', $placeholder)],
+            ['title'=>'Farmasi','desc'=>'Layanan obat, tebus resep, serta konsultasi farmasi.','img'=>ph_boot('images/farmasi.jpg', $placeholder)],
+            ['title'=>'Emergency','desc'=>'Layanan gawat darurat 24 jam dengan respon cepat.','img'=>ph_boot('images/emergency.jpg', $placeholder)],
+        ];
+        @endphp
 
-            <!-- Parent state: hanya satu panel terbuka -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8"
-                x-data="{ active: 0, image: '{{ $fasilitas[0]['img'] }}' }">
+        <style>
+        .cards-track{
+            overflow-x:auto; overflow-y:visible; gap:1rem; padding:0;
+            scroll-snap-type:x mandatory; -ms-overflow-style:none; scrollbar-width:none; overscroll-behavior-x:contain;
+        }
+        .cards-track::-webkit-scrollbar{display:none;height:0}
 
-            <!-- Left: Accordion -->
-            <div class="space-y-4">
-                @foreach($fasilitas as $i => $item)
-                <div class="border rounded-lg overflow-hidden">
-                    <button
-                    @click="active = (active === {{ $i }}) ? null : {{ $i }}; image='{{ $item['img'] }}'"
-                    class="w-full flex justify-between items-center px-4 py-3 bg-gray-100 hover:bg-gray-200">
-                    <span class="font-semibold">{{ $item['title'] }}</span>
+        .card-item{min-width:260px; scroll-snap-align:start; transition:background-color .2s,color .2s,border-color .2s; border:1px solid #e5e7eb; box-shadow:none}
+        .card-item:hover{box-shadow:none}
+        .card-item.card-active{background:#2563eb; color:#fff; border-color:#2563eb}
+        .card-item.card-active h6{color:#fff!important}
+        .card-item.card-active p{color:#eef2ff!important}
 
-                    <!-- icons -->
-                    <svg x-show="active !== {{ $i }}" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none"
-                        viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                    </svg>
-                    <svg x-show="active === {{ $i }}" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none"
-                        viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7" />
-                    </svg>
-                    </button>
+        .img-wrap{border-radius:1rem; overflow:hidden; background:#fff}
+        .img-cover{object-fit:cover; width:100%; height:100%; max-height:420px}
+        @media (max-width: 991.98px){ .img-cover{max-height:340px} }
 
-                    <div x-show="active === {{ $i }}" x-collapse class="px-4 py-3 bg-white">
-                    <p>{{ $item['desc'] }}</p>
-                    </div>
+        .line-2{-webkit-line-clamp:2; display:-webkit-box; -webkit-box-orient:vertical; overflow:hidden}
+        .line-3{-webkit-line-clamp:3; display:-webkit-box; -webkit-box-orient:vertical; overflow:hidden}
+
+        .btn-round{width:2.25rem; height:2.25rem; border-radius:999px}
+        </style>
+
+        <section class="py-5">
+        <div class="container" data-aos="fade-up">
+            <div class="row g-4 align-items-stretch">
+            {{-- DESKTOP IMAGE (hidden on mobile) --}}
+            <div class="col-lg-6 d-none d-lg-flex">
+                <div class="img-wrap flex-fill position-relative">
+                <img id="fac-img-d" src="{{ $fasilitas[0]['img'] }}" alt="{{ $fasilitas[0]['title'] }}" class="img-cover"
+                    onerror="this.onerror=null;this.src='{{ $placeholder }}';">
+                <div class="position-absolute bottom-0 start-0 p-3 d-flex gap-2">
+                    <span class="badge text-bg-light fw-semibold">Fasilitas</span>
+                    <span id="fac-chip-d" class="badge text-bg-light fw-semibold">{{ $fasilitas[0]['title'] }}</span>
                 </div>
-                @endforeach
+                </div>
             </div>
 
-            <!-- Right: Image -->
-            <div class="flex items-start justify-center">
-                <img :src="image" alt="Fasilitas Image" class="rounded-lg shadow-lg max-w-full">
+            {{-- RIGHT: Title + (MOBILE IMAGE) → Arrows → Cards --}}
+            <div class="col-lg-6 d-flex flex-column">
+                <div>
+                <h2 class="fw-bold display-6 mb-2">Fasilitas dan Layanan</h2>
+                <p class="text-body-secondary mb-0">
+                    Menyediakan pelayanan kesehatan terdepan yang terintegrasi dengan dukungan tenaga medis profesional,
+                    adopsi teknologi medis terkini, serta sistem informasi digital yang lebih efisien.
+                </p>
+                </div>
+
+                {{-- MOBILE IMAGE (gambar dulu) --}}
+                <div class="d-lg-none mt-3">
+                <div class="img-wrap position-relative">
+                    <img id="fac-img-m" src="{{ $fasilitas[0]['img'] }}" alt="{{ $fasilitas[0]['title'] }}" class="img-cover"
+                        onerror="this.onerror=null;this.src='{{ $placeholder }}';">
+                    <div class="position-absolute bottom-0 start-0 p-2 d-flex gap-2">
+                    <span class="badge text-bg-light fw-semibold">Fasilitas</span>
+                    <span id="fac-chip-m" class="badge text-bg-light fw-semibold">{{ $fasilitas[0]['title'] }}</span>
+                    </div>
+                </div>
+                </div>
+
+                {{-- Panah setelah gambar --}}
+                <div class="d-flex justify-content-end mt-3 mb-2 gap-2">
+                <button type="button" class="btn btn-light shadow-sm btn-round" id="facPrev" aria-label="Sebelumnya">
+                    <i class="bi bi-chevron-left"></i>
+                </button>
+                <button type="button" class="btn btn-light shadow-sm btn-round" id="facNext" aria-label="Berikutnya">
+                    <i class="bi bi-chevron-right"></i>
+                </button>
+                </div>
+
+                {{-- Cards --}}
+                <div class="position-relative">
+                <div id="cardsTrack" class="d-flex cards-track">
+                    @foreach($fasilitas as $i => $it)
+                    <button
+                        type="button"
+                        class="card card-item rounded-4 p-3 text-start @if($i===0) card-active @endif"
+                        data-img="{{ $it['img'] }}"
+                        data-title="{{ $it['title'] }}"
+                        data-desc="{{ $it['desc'] }}"
+                    >
+                        <h6 class="fw-semibold mb-1 line-2">{{ $it['title'] }}</h6>
+                        <p class="small text-body-secondary mb-0 line-3">{{ $it['desc'] }}</p>
+                    </button>
+                    @endforeach
+                </div>
+                </div>
             </div>
             </div>
         </div>
         </section>
 
-        </body>
-        </html>
+        <script>
+        (function(){
+        const track = document.getElementById('cardsTrack');
+        const cards = Array.from(track.querySelectorAll('.card-item'));
+        const imgD  = document.getElementById('fac-img-d');
+        const chipD = document.getElementById('fac-chip-d');
+        const imgM  = document.getElementById('fac-img-m');
+        const chipM = document.getElementById('fac-chip-m');
+
+        // Disable manual scrolling (arrows only)
+        track.addEventListener('wheel', (e)=>{ e.preventDefault(); }, {passive:false});
+        let touching=false;
+        track.addEventListener('touchstart', ()=> touching=true, {passive:true});
+        track.addEventListener('touchmove',  (e)=>{ if(touching){ e.preventDefault(); } }, {passive:false});
+        track.addEventListener('touchend',   ()=> touching=false, {passive:true});
+
+        function updateImages(title, src){
+            if (imgD){ imgD.src = src; imgD.alt = title; }
+            if (chipD){ chipD.textContent = title; }
+            if (imgM){ imgM.src = src; imgM.alt = title; }
+            if (chipM){ chipM.textContent = title; }
+        }
+
+        function setActive(card){
+            cards.forEach(c => c.classList.remove('card-active'));
+            card.classList.add('card-active');
+
+            const title = card.dataset.title;
+            const src   = card.dataset.img;
+
+            updateImages(title, src);
+            centerCard(card);
+        }
+
+        // Center selected card in the track viewport
+        function centerCard(card){
+            const style   = window.getComputedStyle(track);
+            const padLeft = parseInt(style.paddingLeft || 0, 10);
+            const padRight= parseInt(style.paddingRight || 0, 10);
+            const viewport = track.clientWidth - padLeft - padRight;
+            const target   = card.offsetLeft - padLeft - (viewport - card.offsetWidth)/2;
+
+            const maxScroll = track.scrollWidth - track.clientWidth;
+            track.scrollTo({ left: Math.max(0, Math.min(target, maxScroll)), behavior: 'smooth' });
+        }
+
+        cards.forEach(c => c.addEventListener('click', () => setActive(c)));
+
+        // Arrows scroll by one card width
+        const step = () => (cards[0]?.offsetWidth || 280) + 16;
+        document.getElementById('facPrev').addEventListener('click', () => {
+            track.scrollBy({ left: -step(), behavior: 'smooth' });
+        });
+        document.getElementById('facNext').addEventListener('click', () => {
+            track.scrollBy({ left:  step(), behavior: 'smooth' });
+        });
+        })();
+        </script>
+        {{-- ========================= /FASILITAS & LAYANAN ========================= --}}
+
 
         <!-- START: Berita & Artikel (horizontal slider + panah) -->
         <section class="section-bg">
@@ -516,10 +637,6 @@
             <div>
                 <h2 class="fw-bold" style="color:#2A2536;">Berita dan Artikel Kesehatan</h2>
                 <p class="text-muted mb-0">Informasi terkini dan tips kesehatan terpercaya untuk Anda dan keluarga.</p>
-            </div>
-            <a href="#" class="fw-semibold" style="color:#1E88E5; text-decoration:none;">
-                Lihat Semua Berita dan Artikel Kesehatan →
-            </a>
             </div>
 
             @php
@@ -541,7 +658,7 @@
                     <h5 class="card-title fw-bold">{{ $article['title'] }}</h5>
                     <p class="card-text text-muted mb-1"><small>{{ $article['date'] }}</small></p>
                     <p class="card-text small text-muted">{{ $article['excerpt'] }}</p>
-                    <a href="{{ $article['url'] }}" class="fw-semibold" style="color:#1E88E5; text-decoration:none;">Lihat Detail</a>
+                    <a href="{{ $article['url'] }}" class="fw-semibold" style="color:#1E88E5; text-decoration:none;">Baca Selengkapnya</a>
                     </div>
                 </div>
                 </div>
@@ -624,29 +741,17 @@
 
                 <div class="section-title">
                     <h2>Profil</h2>
-                    <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit
-                        sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias
-                        ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+                    <p>Rumah Sakit Sarkies ‘Aisyiyah Kudus menghadirkan layanan kesehatan profesional dengan fasilitas modern dan terpercaya.</p>
                 </div>
                 <div class="row no-gutters">
-                    <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch">
-                        <div class="count-box">
-                            <i class="fas fa-user-md"></i>
-                            <span data-purecounter-start="0" data-purecounter-end="85" data-purecounter-duration="1"
-                                class="purecounter"></span>
-
-                            <p><strong>Dokter</strong> consequuntur quae qui deca rode</p>
-                            <a href="{{ route('jadwal-dokter') }}">Find out more &raquo;</a>
-                        </div>
-                    </div>
 
                     <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch">
                         <div class="count-box">
                             <i class="far fa-hospital"></i>
                             <span data-purecounter-start="0" data-purecounter-end="26" data-purecounter-duration="1"
                                 class="purecounter"></span>
-                            <p><strong>Fasilitas</strong> adipisci atque cum quia aut numquam delectus</p>
-                            <a href="{{ route('fasilitas') }}">Find out more &raquo;</a>
+                            <p><strong>Fasilitas</strong> Menyediakan fasilitas pelayanan kesehatan yang lengkap dan terintegrasi untuk menunjang kebutuhan pasien dan keluarga.</p>
+                            <a href="{{ route('fasilitas') }}">Lihat Detail &raquo;</a>
                         </div>
                     </div>
 
@@ -655,8 +760,8 @@
                             <i class="fas fa-bed"></i>
                             <span data-purecounter-start="0" data-purecounter-end="14" data-purecounter-duration="1"
                                 class="purecounter"></span>
-                            <p><strong>Kamar</strong> aut commodi quaerat. Aliquam ratione</p>
-                            <a href="{{ route('kamar') }}">Find out more &raquo;</a>
+                            <p><strong>Kamar</strong> Pilihan kamar rawat inap yang nyaman dan representatif dengan berbagai kelas sesuai kebutuhan.</p>
+                            <a href="{{ route('kamar') }}">Lihat Detail &raquo;</a>
                         </div>
                     </div>
 
@@ -665,8 +770,19 @@
                             <i class="fas fa-award"></i>
                             <span data-purecounter-start="0" data-purecounter-end="150" data-purecounter-duration="1"
                                 class="purecounter"></span>
-                            <p><strong>Penghargaan</strong> rerum asperiores dolor molestiae doloribu</p>
-                            <a href="{{ route('awards') }}">Find out more &raquo;</a>
+                            <p><strong>Penghargaan</strong> Berbagai penghargaan telah diraih sebagai bentuk pengakuan atas mutu pelayanan serta komitmen terhadap keselamatan pasien.</p>
+                            <a href="{{ route('awards') }}">Lihat Detail &raquo;</a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch">
+                        <div class="count-box">
+                            <i class="fas fa-award"></i>
+                            <span data-purecounter-start="0" data-purecounter-end="85" data-purecounter-duration="1"
+                                class="purecounter"></span>
+
+                            <p><strong>Asuransi Mitra</strong> Bekerja sama dengan puluhan perusahaan asuransi rekanan demi mempermudah akses pelayanan kesehatan bagi masyarakat.</p>
+                            <a href="{{ route('asuransi') }}">Lihat Detail &raquo;</a>
                         </div>
                     </div>
 
@@ -682,10 +798,8 @@
             <div class="container" data-aos="fade-up">
 
                 <div class="section-title">
-                    <h2>Dokter</h2>
-                    <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit
-                        sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias
-                        ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+                    <h2>Dokter Favorit</h2>
+                    <p>Tenaga medis profesional dan berpengalaman yang siap memberikan pelayanan kesehatan terbaik bagi pasien.</p>
                 </div>
 
                 <div class="row">
@@ -760,13 +874,13 @@
         <!--End Contact Section-->
 
         <!-- ======= App Promo: Reservasi Online ======= -->
-        <section id="mobile-app" class="section-bg">
+        <section id="mobile-app" class="mobile-app section-bg">
         <div class="container position-relative">
             <div class="row align-items-center g-5">
             <!-- LEFT -->
             <div class="col-lg-7">
                 <div class="eyebrow d-inline-flex align-items-center mb-3">
-                <i class="bi bi-phone me-2"></i> RSPI Mobile
+                <i class="bi bi-phone me-2"></i> RS Sarkies Mobile
                 </div>
 
                 <h2 class="display-5 fw-bold lh-1 mb-3">
@@ -775,7 +889,7 @@
 
                 <!-- deskripsi normal (bukan feature-list) -->
                 <p class="list-unstyled mb-4">
-                <strong>RSPI Mobile</strong> memudahkan <strong>reservasi dokter secara online</strong>—lebih cepat tanpa antre.
+                <strong>RS Sarkies Mobile</strong> memudahkan <strong>reservasi dokter secara online</strong>—lebih cepat tanpa antre.
                 Pilih rumah sakit/poli/dokter, tentukan jadwal, dapatkan <strong>e-ticket/QR</strong>, lalu datang sesuai waktu yang Anda pilih.
                 </p>
 
@@ -804,7 +918,7 @@
                 </div>
 
                 <p class="text-muted small mt-3 mb-0">
-                Gratis • Resmi RSPI • Data Anda terlindungi
+                Gratis • Resmi RS Sarkies • Data Anda terlindungi
                 </p>
             </div>
 
