@@ -1,4 +1,3 @@
-{{-- resources/views/public/footer.blade.php --}}
 <footer id="footer" class="footer-compact">
   <!-- ATAS: abu-abu muda -->
   <div class="footer-top">
@@ -26,31 +25,35 @@
           </div>
         </div>
 
-        <!-- KANAN: Newsletter + Kontak + Sosmed -->
+        <!-- KANAN: Newsletter + Sosmed + Kontak -->
         <div class="col-lg-5">
           <div class="footer-newsletter d-flex flex-column">
-            <h4 class="nl-title mb-2">Dapatkan panduan kesehatan mingguan dari para ahli kami</h4>
+            <h4 class="nl-title">Dapatkan panduan kesehatan mingguan dari para ahli kami</h4>
 
-            <!-- JANGAN pakai d-flex di sini -->
-            <form action="#" method="post" class="newsletter-form mt-2" novalidate>
+            <form action="#" method="post" class="newsletter-form mt-1 mb-2" novalidate>
               <input type="email" name="email" class="form-control newsletter-input"
-                     placeholder="masukkan email anda" aria-label="Email">
+                    placeholder="masukkan email anda" aria-label="Email">
               <button type="submit" class="btn newsletter-btn">Kirim</button>
             </form>
 
-            <div class="mt-4">
-              <h5 class="mb-3">Tetap Terhubung Dengan Kami</h5>
-              <p class="mb-1"><strong>Pendaftaran:</strong> +62 858-1415-0000</p>
-              <p class="mb-1"><strong>Pengaduan:</strong> +62 858-1415-0000</p>
-              <p class="mb-1"><strong>Call Center:</strong> (0291) 4150501</p>
-              <p class="mb-3"><strong>Email:</strong> rssarkies.ku@gmail.com</p>
+            <div class="contact-block mt-3">
+              <h5 class="mb-2">Tetap Terhubung Dengan Kami</h5>
 
-              <div class="social-links">
+              <!-- SOSMED dipindah ke atas -->
+              <div class="social-links mb-3">
                 <a href="#" aria-label="Twitter/X"><i class="bi bi-twitter-x"></i></a>
                 <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
                 <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
                 <a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
               </div>
+
+              <!-- KONTAK di bawah sosmed -->
+              <ul class="contact-list list-unstyled mb-0">
+                <li class="mb-1"><strong>Pendaftaran:</strong> +62 858-1415-0000</li>
+                <li class="mb-1"><strong>Pengaduan:</strong> +62 858-1415-0000</li>
+                <li class="mb-1"><strong>Call Center:</strong> (0291) 4150501</li>
+                <li class="mb-0"><strong>Email:</strong> rssarkies.ku@gmail.com</li>
+              </ul>
             </div>
           </div>
         </div>
@@ -72,8 +75,7 @@
 <style>
   /* ===== Warna & spacing umum ===== */
   #footer.footer-compact{color:#111;}
-  #footer .footer-top{background:#F3F4F6; padding:36px 0 26px;}
-  #footer .footer-bottom{background:#E2E8F0;}
+  #footer .footer-top{background:#F3F4F6; padding:28px 0 20px;} /* dipadatkan */
 
   /* Logo */
   #footer .footer-logo{max-width:250px; width:100%; height:auto; display:block;}
@@ -86,36 +88,45 @@
   #footer .link-row:hover{background:#EEF1F0;}
   #footer .link-row .bi{font-size:1.05rem;}
 
-  /* ===== Newsletter: input & tombol selalu horizontal (mobile juga) ===== */
+  /* ===== Newsletter: diperkecil ===== */
   #footer{
-    --nl-h: 44px;        /* tinggi input & tombol (ubah sesukamu) */
-    --nl-gap: 12px;      /* jarak input-tombol */
-    --nl-pad-x: 18px;    /* padding kiri/kanan input */
-    --nl-btn-pad-x: 20px;/* padding kiri/kanan tombol */
-    --nl-font: .95rem;   /* ukuran font */
+    --nl-h: 36px;        /* tinggi input & tombol LEBIH KECIL */
+    --nl-gap: 8px;       /* jarak input-tombol lebih rapat */
+    --nl-pad-x: 14px;    /* padding kiri/kanan input */
+    --nl-btn-pad-x: 16px;/* padding kiri/kanan tombol */
+    --nl-font: .9rem;    /* font lebih kecil */
   }
 
-  /* Grid: input = minmax(0,1fr) agar bisa melebar penuh; tombol = auto */
+  /* judul newsletter diperkecil & dirapatkan */
+  #footer .nl-title{
+    font-size:1rem; line-height:1.35; font-weight:600; margin:0 0 .25rem 0;
+  }
+
+  /* Grid: input = minmax(0,1fr); tombol = auto. Lebarnya dibatasi agar tidak terlalu panjang */
   #footer .newsletter-form{
     display:grid !important;
     grid-template-columns: minmax(0,1fr) auto !important;
     gap: var(--nl-gap) !important;
     align-items:center !important;
     width:100% !important;
+    max-width:520px;               /* BATASI lebar form */
     background:transparent !important;
     border:0 !important;
     padding:0 !important;
     border-radius:0 !important;
     box-shadow:none !important;
   }
+  @media (min-width:1200px){
+    #footer .newsletter-form{ max-width:480px; } /* sedikit lebih pendek di layar lebar */
+  }
 
   #footer .newsletter-input{
-    width:100% !important;          /* penuhi kolom grid */
-    max-width:none !important;      /* pastikan tidak dibatasi rule lama */
-    min-width:0 !important;         /* WAJIB supaya bisa shrink di grid */
+    width:100% !important;
+    max-width:none !important;
+    min-width:0 !important;        /* supaya bisa shrink di grid */
     background:#fff !important; color:#111 !important;
     height:var(--nl-h) !important; padding:0 var(--nl-pad-x) !important;
-    border:0 !important; outline:0 !important; box-shadow:none !important;
+    border:1px solid #E5E7EB !important; outline:0 !important; box-shadow:none !important;
     border-radius:999px !important; appearance:none;
     font-size:var(--nl-font) !important;
   }
@@ -130,12 +141,13 @@
   #footer .newsletter-btn:hover{background:#1565C0 !important;}
   #footer .newsletter-btn:active{background:#0D47A1 !important;}
 
-  /* Tidak ada stacking di mobile – tetap 1fr | auto */
+  /* tetap horizontal juga di mobile (1fr | auto) */
   @media (max-width:576px){
     #footer .newsletter-form{ grid-template-columns: minmax(0,1fr) auto !important; }
   }
 
-  /* ===== Sosmed ===== */
+  /* ===== Kontak & Sosmed: dirapatkan ===== */
+  #footer .contact-block h5{font-size:1.05rem;}
   #footer .social-links{display:flex; gap:10px; margin-top:6px;}
   #footer .social-links a{display:inline-flex; align-items:center; justify-content:center; width:36px; height:36px; border-radius:10px; background:#F1F3F5; color:#111; font-size:18px; border:1px solid #E5E7EA; text-decoration:none; transition:transform .15s ease, background .15s ease;}
   #footer .social-links a:hover{background:#E7EAEE; transform:translateY(-2px);}
