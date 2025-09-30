@@ -199,6 +199,25 @@ Route::prefix('admin')->name('admin.')->group(function () {
         return view('admin.hero.form', ['mode'=>'edit','slide'=>$slide]);
     })->name('hero.edit');
     
+    // ==== PROMO (tanpa controller) ====
+        // list
+        Route::view('/promos', 'admin.promos.index')->name('promos.index');
+
+        // create
+        Route::view('/promos/create', 'admin.promos.form', ['mode' => 'create'])
+            ->name('promos.create');
+
+        // edit (dummy data supaya halaman tampil)
+        Route::get('/promos/{id}/edit', function ($id) {
+            $promo = [
+                'id'        => $id,
+                'title'     => 'Promo Diskon Medical Check Up 20%',
+                'banner'    => asset('assets/img/sample/promo.jpg'), // ganti sesuai asetmu
+                'desc_html' => '<p>Nikmati diskon 20% untuk paket MCU selama bulan ini. Berlaku hingga 30 September.</p>',
+            ];
+            return view('admin.promos.form', ['mode' => 'edit', 'promo' => $promo]);
+        })->name('promos.edit');
+
     // ===== Center of Excellence / Layanan =====
     Route::view('/centers', 'admin.centers.index')->name('centers.index');             // LIST
     Route::view('/centers/create', 'admin.centers.form', ['mode' => 'create'])

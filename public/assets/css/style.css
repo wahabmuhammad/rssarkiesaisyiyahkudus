@@ -698,7 +698,7 @@ h6 {
 # Sections General
 --------------------------------------------------------------*/
 section {
-  padding: 60px 0;
+  padding: 24px 0;
   overflow: hidden;
 }
 
@@ -715,8 +715,8 @@ section {
   font-size: 32px;
   font-weight: bold;
   text-transform: mixedcase;
-  margin-bottom: 20px;
-  padding-bottom: 20px;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
   position: relative;
 }
 
@@ -872,7 +872,7 @@ section {
   background: #3fbbc0;
   color: #fff;
   background-size: cover;
-  padding: 60px 0;
+  padding: 24px 0;
 }
 
 .cta h3 {
@@ -930,7 +930,7 @@ section {
 # Counts
 --------------------------------------------------------------*/
 .counts {
-  padding-bottom: 30px;
+  padding-bottom: 60px;
 }
 
 .counts .count-box {
@@ -973,7 +973,7 @@ section {
 }
 
 .counts .count-box a:hover {
-  color: #3fbbc0;
+  color: #1E88E5;
 }
 
 /*--------------------------------------------------------------
@@ -1996,3 +1996,28 @@ html, body { max-width: 100%; overflow-x: hidden; }
 
 /* Semua gambar patuh viewport */
 img { max-width: 100%; height: auto; }
+
+/* Samakan tampilan active item sidebar COE di semua halaman */
+.coe-left .list-group-item {
+  border: 0;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.coe-left .list-group-item:last-child {
+  border-bottom: 0;
+}
+
+/* Kunci styling untuk item aktif agar tidak pakai border biru Bootstrap */
+.coe-left .list-group-item-action.active {
+  background: #E9F2FF;
+  color: #1E88E5;
+  font-weight: 700;
+
+  /* netralkan border aktif bootstrap */
+  --bs-list-group-active-border-color: #f1f5f9;
+  border: 0 !important;
+  border-bottom: 1px solid #f1f5f9 !important;
+}
+
+
+

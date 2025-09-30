@@ -61,6 +61,13 @@
       <i class="bi bi-aspect-ratio"></i> Hero/Banner & Popup Dokter
     </a>
 
+    {{--Promo--}}
+    <a class="nav-link ps-4 {{ request()->routeIs('admin.promos.*') ? 'active' : '' }}"
+      href="{{ $r('admin.promos.index') }}">
+      <i class="bi bi-megaphone"></i> Promo
+    </a>
+
+
     {{-- b. Halaman Statis --}}
     <a class="nav-link ps-4 {{ request()->routeIs('admin.carier.*') ? 'active' : '' }}"
        href="{{ $r('admin.carier.index') }}">

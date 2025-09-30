@@ -1,8 +1,8 @@
 <!-- ======= Contact Section ======= -->
 <section id="contact" class="contact" style="background-color: #fff;">
 
-    <div class="container py-5">
-        <div class="section-title text-center mb-5">
+    <div class="container">
+        <div class="section-title text-center">
             <h2>Hubungi Kami</h2>
             <p class="text-muted">Kami menghargai setiap masukan Anda untuk menjadi lebih baik.</p>
         </div>
@@ -54,7 +54,7 @@
                     </div>
                     <div>
                         <h6 class="fw-bold mb-1">Whatsapp Pendaftaran</h6>
-                        <p class="mb-0">082-123-234-345</p>
+                        <p class="mb-0">085-814-150-000</p>
                     </div>
                 </div>
 
@@ -64,7 +64,7 @@
                     </div>
                     <div>
                         <h6 class="fw-bold mb-1">Whatsapp Pengaduan</h6>
-                        <p class="mb-0">082-123-234-345</p>
+                        <p class="mb-0">082-140-651-288</p>
                     </div>
                 </div>
 
@@ -74,6 +74,7 @@
                     <a href="#" class="social-icon"><i class="bi bi-facebook"></i></a>
                     <a href="#" class="social-icon"><i class="bi bi-twitter"></i></a>
                     <a href="#" class="social-icon"><i class="bi bi-instagram"></i></a>
+                    <a href="#" class="social-icon"><i class="bi bi-youtube"></i></a>
                 </div>
             </div>
 

@@ -1,4 +1,4 @@
-@include('public.header')
+@include('public.header') 
 
 <section id="poliklinik" class="py-5 bg-white">
   <div class="container">
@@ -19,32 +19,43 @@
     <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-4">
       @php
         $poli = [
-          ['name'=>'Poli MCU','slug'=>'mcu','icon'=>'fa-stethoscope','desc'=>'Medical check-up & skrining kesehatan.'],
-          ['name'=>'Poli Jantung','slug'=>'jantung','icon'=>'fa-heart-pulse','desc'=>'Konsultasi dan pemeriksaan kardiologi.'],
+          // --- Sesuai gambar Layanan Rawat Jalan ---
+          ['name'=>'Poliklinik Umum','slug'=>'umum','icon'=>'fa-stethoscope','desc'=>'Pelayanan kesehatan umum & konsultasi dasar.'],
+          ['name'=>'Poliklinik Penyakit Dalam','slug'=>'penyakit-dalam','icon'=>'fa-user-doctor','desc'=>'Konsultasi penyakit dalam.'],
+          ['name'=>'Poliklinik Saraf','slug'=>'saraf','icon'=>'fa-brain','desc'=>'Neurologi & konsultasi saraf.'],
+          ['name'=>'Poliklinik Kejiwaan','slug'=>'kejiwaan','icon'=>'fa-face-smile','desc'=>'Konsultasi kesehatan jiwa/psikiatri.'],
+          ['name'=>'Poliklinik Gigi','slug'=>'gigi','icon'=>'fa-tooth','desc'=>'Perawatan gigi & mulut.'],
+          ['name'=>'Poliklinik Kesehatan Fisik & Rehabilitasi','slug'=>'rehabilitasi','icon'=>'fa-dumbbell','desc'=>'Rehabilitasi medik & pemulihan fungsi.'], // BARU
+          ['name'=>'Poliklinik Vaksin','slug'=>'vaksin','icon'=>'fa-virus','desc'=>'Vaksinasi & imunisasi.'], // perbaiki slug
+
+          ['name'=>'Poliklinik Jantung','slug'=>'jantung','icon'=>'fa-heart-pulse','desc'=>'Konsultasi dan pemeriksaan kardiologi.'],
+          ['name'=>'Poliklinik Anak','slug'=>'anak','icon'=>'fa-baby','desc'=>'Kesehatan anak & imunisasi.'],
+          ['name'=>'Poliklinik Orthopedi','slug'=>'orthopedi','icon'=>'fa-bone','desc'=>'Tulang & sendi.'],
+          ['name'=>'Poliklinik THT','slug'=>'tht','icon'=>'fa-ear-listen','desc'=>'Telinga, hidung, tenggorokan.'],
+          ['name'=>'Poliklinik Paru','slug'=>'paru','icon'=>'fa-lungs','desc'=>'Kesehatan paru & pernapasan.'], // BARU
+          ['name'=>'Poliklinik Tumbuh Kembang Anak','slug'=>'tumbuh-kembang-anak','icon'=>'fa-children','desc'=>'Pemantauan tumbuh kembang anak.'], // BARU
+
+          ['name'=>'Poliklinik OBGYN','slug'=>'obgyn','icon'=>'fa-person-pregnant','desc'=>'Obstetri & ginekologi.'],
+          ['name'=>'Poliklinik Mata','slug'=>'mata','icon'=>'fa-eye','desc'=>'Pemeriksaan & terapi mata.'],
+          ['name'=>'Poliklinik Pain Clinic','slug'=>'pain-clinic','icon'=>'fa-bolt','desc'=>'Manajemen nyeri terpadu.'], // BARU
+          ['name'=>'Fisioterapi','slug'=>'fisioterapi','icon'=>'fa-person-running','desc'=>'Terapi gerak & modalitas fisioterapi.'], // BARU
+          ['name'=>'Medical Check Up (MCU)','slug'=>'mcu','icon'=>'fa-notes-medical','desc'=>'Paket pemeriksaan kesehatan menyeluruh.'], // rename
+          ['name'=>'Poliklinik Bedah','slug'=>'bedah','icon'=>'fa-scissors','desc'=>'Konsultasi bedah umum.'],
+
+          // --- Item fasilitas lain (di luar gambar) tetap ada bila diperlukan ---
           ['name'=>'Poli Tindakan','slug'=>'tindakan','icon'=>'fa-briefcase-medical','desc'=>'Tindakan minor & perawatan.'],
-          ['name'=>'Poli Gigi','slug'=>'gigi','icon'=>'fa-tooth','desc'=>'Perawatan gigi & mulut.'],
-          ['name'=>'Poli Penyakit Dalam','slug'=>'penyakit-dalam','icon'=>'fa-user-doctor','desc'=>'Konsultasi penyakit dalam.'],
-          ['name'=>'Poli THT','slug'=>'tht','icon'=>'fa-ear-listen','desc'=>'Telinga, Hidung, Tenggorokan.'],
-          ['name'=>'Poli Bedah','slug'=>'bedah','icon'=>'fa-scissors','desc'=>'Konsultasi bedah umum.'],
-          ['name'=>'Poli Saraf','slug'=>'saraf','icon'=>'fa-brain','desc'=>'Neurologi & konsultasi saraf.'],
-          ['name'=>'Poli Orthopedi','slug'=>'orthopedi','icon'=>'fa-bone','desc'=>'Tulang & sendi.'],
-          ['name'=>'Poli Mata','slug'=>'mata','icon'=>'fa-eye','desc'=>'Pemeriksaan & terapi mata.'],
-          ['name'=>'Poli Kandungan','slug'=>'kandungan','icon'=>'fa-person-pregnant','desc'=>'Obstetri & ginekologi.'],
-          ['name'=>'Poli Anak','slug'=>'anak','icon'=>'fa-baby','desc'=>'Kesehatan anak & imunisasi.'],
           ['name'=>'Poli KIA','slug'=>'kia','icon'=>'fa-children','desc'=>'Kesehatan Ibu & Anak.'],
-          ['name'=>'Poli Jiwa / Psikiatri','slug'=>'psikiatri','icon'=>'fa-face-smile','desc'=>'Konsultasi kesehatan jiwa.'],
           ['name'=>'Laboratorium','slug'=>'laboratorium','icon'=>'fa-flask','desc'=>'Pemeriksaan laboratorium.'],
           ['name'=>'Radiologi','slug'=>'radiologi','icon'=>'fa-radiation','desc'=>'Pemeriksaan radiologi & imaging.'],
           ['name'=>'USG 4D','slug'=>'usg-4d','icon'=>'fa-wave-square','desc'=>'Pemeriksaan USG 4 dimensi.'],
           ['name'=>'Apotek','slug'=>'apotek','icon'=>'fa-pills','desc'=>'Pelayanan obat & konsultasi farmasi.'],
-          ['name'=>'Ruang Bersalin','slug'=>'ruang-bersalin','icon'=>'fa-baby-carriage','desc'=>'Fasilitas persalinan & perawatan ibu bayi.'],
+          ['name'=>'Ruang Bersalin','slug'=>'ruang-bersalin','icon'=>'fa-baby-carriage','desc'=>'Fasilitas persalinan & perawatan ibu-bayi.'],
           ['name'=>'Kamar Operasi','slug'=>'kamar-operasi','icon'=>'fa-syringe','desc'=>'Fasilitas operasi & tindakan bedah.'],
           ['name'=>'ICU / ICCU','slug'=>'icu-iccu','icon'=>'fa-heart-pulse','desc'=>'Perawatan intensif & kardiovaskular.'],
           ['name'=>'Ruang Perawatan Inap','slug'=>'rawat-inap','icon'=>'fa-bed','desc'=>'Kamar perawatan inap pasien.'],
           ['name'=>'Ambulans 24 Jam','slug'=>'ambulans','icon'=>'fa-truck-medical','desc'=>'Layanan ambulans darurat 24 jam.'],
           ['name'=>'IGD','slug'=>'igd','icon'=>'fa-hospital','desc'=>'Pelayanan medis darurat 24 jam.'],
-          ['name'=>'Convention Hall','slug'=>'hall','icon'=>'fa-building','desc'=>'Tersedia convention hall atau auditorium.'],
-          ['name'=>'Vaksin','slug'=>'hall','icon'=>'fa-virus','desc'=>'Tersedia berbagai macam vaksin.'],
+          ['name'=>'Convention Hall','slug'=>'hall','icon'=>'fa-building','desc'=>'Convention hall / auditorium.'],
         ];
       @endphp
 
@@ -65,12 +76,8 @@
 
 @include('public.footer')
 
-{{-- CSS khusus komponen + muat Font Awesome dari sini --}}
 <style>
-  /* muat FA6 Free langsung di halaman ini */
   @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css');
-
-  /* antimenset: beberapa tema menimpa font <i>, paksa ke FA6 */
   i.fa-solid{ font-family:"Font Awesome 6 Free" !important; font-weight:900 !important; font-style:normal !important; }
   i.fa-solid::before{ display:inline-block; }
 
@@ -87,6 +94,4 @@
     box-shadow: 0 12px 28px rgba(31,93,215,.12);
   }
   #poliklinik .poli-icon{ font-size: 32px; color:#0ea5e9; }
-  #poliklinik .poli-link{ font-weight:600; text-decoration:none; }
-  #poliklinik .poli-link:hover{ text-decoration:underline; }
 </style>
