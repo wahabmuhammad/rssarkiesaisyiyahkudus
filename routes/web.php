@@ -300,4 +300,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
     // Pengaturan
     Route::view('/settings/general', 'admin.settings.index')->name('settings.index');
 
+    //route untuk login 
+    // Route::post('/login', [IndexController::class, 'authLogin'])->name('login');
+
 });
