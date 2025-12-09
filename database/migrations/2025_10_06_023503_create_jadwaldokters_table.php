@@ -13,11 +13,11 @@ return new class extends Migration
     {
         Schema::create('jadwaldokter_m', function (Blueprint $table) {
             $table->id();
-            $table->integer(pegawai_fk);
-            $table->integer(hari);
-            $table->time(jam_mulai);
-            $table->time(jam_selesai);
-            $table->integer(ruangan_fk);
+            $table->integer('pegawai_fk');
+            $table->integer('hari');
+            $table->time('jam_mulai');
+            $table->time('jam_selesai');
+            $table->integer('ruangan_fk');
             $table->timestamps();
         });
     }
