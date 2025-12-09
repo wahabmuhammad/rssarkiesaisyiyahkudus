@@ -267,9 +267,6 @@
             <div>
                 <h2 class="fw-bold" style="color: #2A2536;">Center of Excellence</h2>
                 <p class="text-muted mb-0">Telusuri lebih lanjut berbagai informasi seputar layanan kami, di sini.</p>
-            </div>
-            <a ...>Lihat Semua Center of Excellence →</a>
-            </div>
 
             <!-- Cards: dibuat horizontal scroll, isi card TIDAK diubah -->
             <div class="row g-4 flex-nowrap overflow-auto mx-0 px-2" id="coeTrack">
