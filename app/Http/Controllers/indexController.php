@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use GuzzleHttp\Psr7\Request;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 use Spatie\Sitemap\Sitemap;
 use Spatie\Sitemap\Tags\Url;
 
@@ -13,63 +16,78 @@ class indexController extends Controller
         return view('public.index');
     }
 
-    public function contact(){
+    public function contact()
+    {
         return view('public.contact');
     }
 
-    public function cariDokter(){
+    public function cariDokter()
+    {
         return view('public.cari-dokter');
     }
 
-    public function karir(){
+    public function karir()
+    {
         return view('public.karir');
     }
 
-    public function jadwalDokter(){
+    public function jadwalDokter()
+    {
         return view('dokter.jadwal-dokter');
     }
 
-    public function painCenter(){
+    public function painCenter()
+    {
         return view('coe.pain-center');
     }
 
-    public function orthopedicCenter(){
+    public function orthopedicCenter()
+    {
         return view('coe.orthopedic-center');
     }
 
-    public function klinikKandungan(){
+    public function klinikKandungan()
+    {
         return view('coe.klinik-kandungan');
     }
 
-    public function diagnosticCenter(){
+    public function diagnosticCenter()
+    {
         return view('fasilitas.diagnostic-center');
     }
 
-    public function intensiveCare(){
+    public function intensiveCare()
+    {
         return view('fasilitas.intensive-care');
     }
 
-    public function rawatInap(){
+    public function rawatInap()
+    {
         return view('fasilitas.rawat-inap');
     }
 
-    public function rehabilitasi(){
+    public function rehabilitasi()
+    {
         return view('fasilitas.rehabilitasi');
     }
 
-    public function farmasi(){
+    public function farmasi()
+    {
         return view('fasilitas.farmasi');
     }
 
-    public function emergency(){
+    public function emergency()
+    {
         return view('fasilitas.emergency');
     }
 
-    public function fasilitas(){
+    public function fasilitas()
+    {
         return view('public.fasilitas');
     }
 
-    public function kamar(){
+    public function kamar()
+    {
         return view('public.kamar');
     }
 
@@ -171,4 +189,60 @@ class indexController extends Controller
         ]);
     }
 
+    //PRESENSI METTING
+    public function presensiMetting()
+    {
+        return view('public.presensi-meeting');
+    }
+
+    public function getMeetingSuggestions(Request $request)
+    {
+        $keyword = $request->input('keyword');
+
+        $meetings = DB::table('meeting_t')
+            ->where('statusenabled', '=', 'true')
+            ->limit(5)
+            ->get();
+
+        return response()->json($meetings);
+    }
+
+    //submit presensi metting
+    public function submitPresensiMeeting(Request $request)
+    {
+        $request->validate([
+            'tanggal' => 'required|date',
+            'meeting_fk' => 'required|string',
+            'nama_lengkap' => 'required|string',
+            'jabatan' => 'required|string',
+            'nip' => 'required|string',
+            'tanda_tangan' => 'required'
+        ]);
+
+        // ambil base64 tanda tangan
+        $signature = $request->tanda_tangan;
+        $signature = str_replace('data:image/png;base64,', '', $signature);
+        $signature = base64_decode($signature);
+
+        // nama file tanda tangan
+        $fileName = 'ttd_' . Str::uuid() . '.png';
+
+        // simpan ke storage/app/public/ttd
+        Storage::disk('public')->put('ttd/' . $fileName, $signature);
+
+        // simpan ke database (contoh)
+        DB::table('presensi_meeting_t')->insert([
+            'meeting_fk' => $request->meeting_fk,
+            'namalengkap' => $request->nama_lengkap,
+            'jabatan' => $request->jabatan,
+            'tanggal' => $request->tanggal,
+            'nip' => $request->nip,
+            'ttd' => $fileName,
+            'created_at' => now()
+        ]);
+
+        return response()->json([
+            'message' => 'Data berhasil disimpan'
+        ]);
+    }
 }
