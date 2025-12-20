@@ -98,4 +98,77 @@ class indexController extends Controller
         return view('admin.dashboard');
     }
 
+    public function getJadwalDokter()
+    {
+        // ===== TANGGAL (locale id bila tersedia, fallback manual jika tidak) =====
+        try {
+            // isoFormat membutuhkan ext-intl, jika ada gunakan ini (nama hari & bulan ID)
+            $tanggalSekarang = Carbon::now('Asia/Jakarta')
+                ->locale('id')
+                ->isoFormat('dddd, D MMMM YYYY'); // e.g. "Jumat, 12 Desember 2025"
+        } catch (\Throwable $e) {
+            // fallback manual tanpa intl
+            $now = Carbon::now('Asia/Jakarta');
+            $months = [
+                1=>'Januari',2=>'Februari',3=>'Maret',4=>'April',5=>'Mei',6=>'Juni',
+                7=>'Juli',8=>'Agustus',9=>'September',10=>'Oktober',11=>'November',12=>'Desember'
+            ];
+            $hariMap = [
+                'Monday'=>'Senin','Tuesday'=>'Selasa','Wednesday'=>'Rabu','Thursday'=>'Kamis',
+                'Friday'=>'Jumat','Saturday'=>'Sabtu','Sunday'=>'Minggu'
+            ];
+            $bulan = $months[(int)$now->format('n')];
+            $hariId = $hariMap[$now->format('l')] ?? $now->format('l');
+            $tanggalSekarang = $hariId . ', ' . $now->format('d') . ' ' . $bulan . ' ' . $now->format('Y');
+        }
+
+        // ===== AMBIL DATA JADWAL =====
+        $query = JadwalDokter::with(['pegawai', 'ruangan'])
+            ->orderBy('ruangan_fk')
+            ->orderBy('hari')
+            ->orderBy('jam_mulai');
+
+        // jika ada kolom statusenabled, filter yang aktif
+        if (Schema::hasColumn((new JadwalDokter)->getTable(), 'statusenabled')) {
+            $query->where('statusenabled', 1);
+        }
+
+        $jadwals = $query->get();
+
+        // ===== GROUPING per nama ruangan (fallback 'Umum') =====
+        $grouped = [];
+        foreach ($jadwals as $j) {
+            $namaRuangan = $j->ruangan->namaruangan ?? 'Umum';
+            $namaDokter = $j->pegawai->namapegawai ?? 'Dokter';
+
+            $jamMulai = $j->jam_mulai ?? '';
+            $jamSelesai = $j->jam_selesai ?? '';
+            $jamText = trim($jamMulai . ($jamMulai && $jamSelesai ? ' - ' : '') . $jamSelesai);
+            if ($jamText === '') {
+                $jamText = '—';
+            }
+
+            $grouped[$namaRuangan][] = [
+                'nama' => $namaDokter,
+                'jam' => $jamText,
+                // tambahkan field lain jika dibutuhkan: 'hari'=>$j->hari, 'id'=>$j->id, dsb.
+            ];
+        }
+
+        // Membentuk array yang view harapkan: tiap item punya 'spesialis' (header) dan 'dokter' (list)
+        $viewJadwal = [];
+        foreach ($grouped as $ruangan => $dokters) {
+            $viewJadwal[] = [
+                'spesialis' => $ruangan,
+                'dokter' => $dokters,
+            ];
+        }
+
+        // RETURN VIEW (tanggal selalu dikirim, jadi akan tampil walau jadwal kosong)
+        return view('dokter.jadwal-dokter', [
+            'jadwal' => $viewJadwal,
+            'tanggal' => $tanggalSekarang,
+        ]);
+    }
+
 }
