@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\IndexController;
+use App\Http\Controllers\indexController as ControllersIndexController;
 use Illuminate\Http\Request;
 
 /*
@@ -304,3 +305,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
     // Route::post('/login', [IndexController::class, 'authLogin'])->name('login');
 
 });
+// ===== Presensi Meeting =====
+Route::get('/presensi-meeting', [IndexController::class, 'presensiMetting'])->name('presensiMeeting');
+Route::get('/meeting/search', [IndexController::class, 'getMeetingSuggestions']);
+Route::post('/presensi-meeting/submit', [IndexController::class, 'submitPresensiMeeting'])->name('presensiMeeting.submit');
