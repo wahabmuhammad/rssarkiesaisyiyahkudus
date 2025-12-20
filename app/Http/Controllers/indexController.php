@@ -98,7 +98,7 @@ class indexController extends Controller
 
     public function vipA()
     {
-        return view('ranap.vip-a');
+        return view('ranap.vip-A');
     }
 
     public function awards()
