@@ -306,6 +306,6 @@ Route::prefix('admin')->name('admin.')->group(function () {
 
 });
 // ===== Presensi Meeting =====
-Route::get('/presensi-meeting', [IndexController::class, 'presensiMetting'])->name('presensiMeeting');
-Route::get('/meeting/search', [IndexController::class, 'getMeetingSuggestions']);
-Route::post('/presensi-meeting/submit', [IndexController::class, 'submitPresensiMeeting'])->name('presensiMeeting.submit');
+Route::get('/presensi-meeting', [indexController::class, 'presensiMetting'])->name('presensiMeeting');
+Route::get('/meeting/search', [indexController::class, 'getMeetingSuggestions']);
+Route::post('/presensi-meeting/submit', [indexController::class, 'submitPresensiMeeting'])->name('presensiMeeting.submit');
