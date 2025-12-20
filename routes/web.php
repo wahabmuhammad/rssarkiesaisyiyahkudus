@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\IndexController;
+use App\Http\Controllers\indexController;
 use App\Http\Controllers\indexController as ControllersIndexController;
 use Illuminate\Http\Request;
 
