@@ -260,7 +260,7 @@
     <main id="main">
 
         {{-- Center of Excellence --}}
-        <section class="section-bg py-5">
+        <section id="coe" class="section-bg py-5">
         <div class="container" data-aos="fade-up">
             <!-- Header -->
             <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap">
@@ -627,7 +627,7 @@
 
 
         <!-- START: Berita & Artikel (horizontal slider + panah) -->
-        <section class="section-bg">
+        <section id="berita" class="section-bg">
         <div class="container mt-5" data-aos="fade-up">
             <!-- Header -->
             <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap">

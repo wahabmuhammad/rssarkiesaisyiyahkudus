@@ -15,12 +15,11 @@
 
             <!-- 6 submenu (2 kolom) -->
             <div class="link-grid">
-              <a href="{{ url('/popup-dokter') }}" class="link-row">Cari Dokter <i class="bi bi-arrow-right"></i></a>
-              <a href="{{ url('/tentang-kami') }}" class="link-row">Rumah Sakit Kami <i class="bi bi-arrow-right"></i></a>
-              <a href="{{ url('/paket') }}" class="link-row">Center of Excellence <i class="bi bi-arrow-right"></i></a>
-              <a href="{{ url('/panduan') }}" class="link-row">Promo dan Paket <i class="bi bi-arrow-right"></i></a>
-              <a href="{{ url('/rumah-sakit-kami') }}" class="link-row">Berita dan Artikel <i class="bi bi-arrow-right"></i></a>
-              <a href="{{ url('/artikel') }}" class="link-row">Karir <i class="bi bi-arrow-right"></i></a>
+              <a href="{{ url('/') }}#about" class="link-row">Rumah Sakit Kami <i class="bi bi-arrow-right"></i></a>
+              <a href="{{ url('/') }}#coe" class="link-row">Center of Excellence <i class="bi bi-arrow-right"></i></a>
+              <a href="{{ url('/') }}#promo" class="link-row">Promo dan Paket <i class="bi bi-arrow-right"></i></a>
+              <a href="{{ url('/') }}#berita" class="link-row">Berita dan Artikel <i class="bi bi-arrow-right"></i></a>
+              <a href="{{ url('/karir') }}" class="link-row">Karir <i class="bi bi-arrow-right"></i></a>
             </div>
           </div>
         </div>
@@ -43,18 +42,46 @@
 
               <!-- SOSMED: berada di tengah tepat di bawah judul -->
               <div class="social-links mb-3">
-                <a href="#" aria-label="Twitter/X"><i class="bi bi-twitter-x"></i></a>
-                <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
-                <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
-                <a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+                <a href="https://twitter.com/rssarkies" target="_blank" aria-label="Twitter/X">
+                  <i class="bi bi-twitter-x"></i>
+                </a>
+                <a href="https://www.facebook.com/pages/Rumah%2520Sakit%2520Sarkies%2520%25E2%2580%2598Aisyiyah%2520Kudus/404477239406145/#" target="_blank" aria-label="Facebook">
+                  <i class="bi bi-facebook"></i>
+                </a>
+                <a href="https://www.instagram.com/rssarkiesaisyiyahkudus" target="_blank" aria-label="Instagram">
+                  <i class="bi bi-instagram"></i>
+                </a>
+                <a href="https://youtube.com/@rssarkiesaisyiyahkudus.?si=LMgapnZdU44elDEi" target="_blank" aria-label="YouTube">
+                  <i class="bi bi-youtube"></i>
+                </a>
               </div>
+
 
               <!-- KONTAK -->
               <ul class="contact-list list-unstyled mb-0">
-                <li class="mb-1"><strong>Pendaftaran:</strong> 082-140-651-288</li>
-                <li class="mb-1"><strong>Pengaduan:</strong> 085-814-150-000</li>
-                <li class="mb-1"><strong>Call Center:</strong> (0291) 4150501</li>
-                <li class="mb-0"><strong>Email:</strong> rssarkies.ku@gmail.com</li>
+                <li class="mb-1">
+                <strong>Pengaduan:</strong>
+                <a href="https://wa.me/6282140651288" target="_blank" class="text-decoration-none">
+                  0821-4065-1288
+                </a>
+              </li>
+              <li class="mb-1">
+                <strong>Pendaftaran:</strong>
+                <a href="https://wa.me/6285814150000" target="_blank" class="text-decoration-none">
+                  0858-1415-0000
+                </a>
+              </li>
+
+                <li class="mb-1">
+                  <strong>Call Center:</strong>
+                  <a href="tel:+622914150501" target="_blank" class="text-decoration-none">(0291) 4150501</a>
+                </li>
+
+                <li class="mb-0">
+                  <strong>Email:</strong>
+                  <a href="mailto:rssarkies.ku@gmail.com" target="_blank" class="text-decoration-none">rssarkies.ku@gmail.com</a>
+                </li>
+
               </ul>
             </div>
           </div>

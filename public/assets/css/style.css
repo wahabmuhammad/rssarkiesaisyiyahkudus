@@ -15,7 +15,7 @@ body {
 }
 
 a {
-  color: #3ABEF9;
+  color: #444444;
   text-decoration: none;
 }
 
@@ -1832,7 +1832,7 @@ section {
 }
 
 #footer .footer-top .social-links a:hover {
-  background: #65c9cd;
+  background: #777777;
   text-decoration: none;
 }
 

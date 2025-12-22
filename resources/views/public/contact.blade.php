@@ -17,7 +17,7 @@
                     Kami siap mendengar setiap masukan Anda. Sampaikan keluhan, saran, atau pertanyaan melalui cara berikut.
                 </p>
 
-                <!-- Info Kontak -->
+                <!-- Alamat -->
                 <div class="mb-4 d-flex align-items-center">
                     <div class="icon-circle me-3">
                         <i class="bx bx-map"></i>
@@ -28,55 +28,86 @@
                     </div>
                 </div>
 
+                <!-- Email -->
                 <div class="mb-4 d-flex align-items-start">
                     <div class="icon-circle me-3">
                         <i class="bx bx-envelope"></i>
                     </div>
                     <div>
                         <h6 class="fw-bold mb-1">Email</h6>
-                        <p class="mb-0">rssarkies.ku@gmail.com</p>
+                        <a href="mailto:rssarkies.ku@gmail.com" class="text-decoration-none text-dark">
+                            rssarkies.ku@gmail.com
+                        </a>
                     </div>
                 </div>
 
+                <!-- Telepon -->
                 <div class="mb-4 d-flex align-items-start">
                     <div class="icon-circle me-3">
                         <i class="bx bx-phone-call"></i>
                     </div>
                     <div>
                         <h6 class="fw-bold mb-1">Telepon</h6>
-                        <p class="mb-0">(0291) 4150501</p>
+                        <a href="tel:+622914150501" class="text-decoration-none text-dark">
+                            (0291) 4150501
+                        </a>
                     </div>
                 </div>
 
+                <!-- WhatsApp Pendaftaran -->
                 <div class="mb-4 d-flex align-items-start">
                     <div class="icon-circle me-3">
                         <i class="bx bxl-whatsapp"></i>
                     </div>
                     <div>
                         <h6 class="fw-bold mb-1">Whatsapp Pendaftaran</h6>
-                        <p class="mb-0">085-814-150-000</p>
+                        <a href="https://wa.me/6285814150000" target="_blank" rel="noopener"
+                        class="text-decoration-none text-dark">
+                            0858-1415-0000
+                        </a>
                     </div>
                 </div>
 
+                <!-- WhatsApp Pengaduan -->
                 <div class="mb-4 d-flex align-items-start">
                     <div class="icon-circle me-3">
                         <i class="bx bxl-whatsapp"></i>
                     </div>
                     <div>
                         <h6 class="fw-bold mb-1">Whatsapp Pengaduan</h6>
-                        <p class="mb-0">082-140-651-288</p>
+                        <a href="https://wa.me/6282140651288" target="_blank" rel="noopener"
+                        class="text-decoration-none text-dark">
+                            0821-4065-1288
+                        </a>
                     </div>
                 </div>
 
                 <!-- Sosial Media -->
                 <div>
                     <h6 class="fw-bold mb-2">Follow sosial media kami</h6>
-                    <a href="#" class="social-icon"><i class="bi bi-facebook"></i></a>
-                    <a href="#" class="social-icon"><i class="bi bi-twitter"></i></a>
-                    <a href="#" class="social-icon"><i class="bi bi-instagram"></i></a>
-                    <a href="#" class="social-icon"><i class="bi bi-youtube"></i></a>
+
+                    <a href="https://www.facebook.com/pages/Rumah%2520Sakit%2520Sarkies%2520%25E2%2580%2598Aisyiyah%2520Kudus/404477239406145/#"
+                    target="_blank" rel="noopener" class="social-icon">
+                        <i class="bi bi-facebook"></i>
+                    </a>
+
+                    <a href="https://twitter.com/rssarkies"
+                    target="_blank" rel="noopener" class="social-icon">
+                        <i class="bi bi-twitter-x"></i>
+                    </a>
+
+                    <a href="https://www.instagram.com/rssarkiesaisyiyahkudus"
+                    target="_blank" rel="noopener" class="social-icon">
+                        <i class="bi bi-instagram"></i>
+                    </a>
+
+                    <a href="https://youtube.com/@rssarkiesaisyiyahkudus.?si=LMgapnZdU44elDEi"
+                    target="_blank" rel="noopener" class="social-icon">
+                        <i class="bi bi-youtube"></i>
+                    </a>
                 </div>
             </div>
+
 
             <!-- Kolom Kanan -->
             <div class="col-lg-6 p-4">
