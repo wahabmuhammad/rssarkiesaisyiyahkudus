@@ -41,9 +41,14 @@ class indexController extends Controller
         return view('coe.pain-center');
     }
 
-    public function orthopedicCenter()
+    public function mcu()
     {
-        return view('coe.orthopedic-center');
+        return view('coe.mcu');
+    }
+
+    public function vaksin()
+    {
+        return view('coe.vaksin');
     }
 
     public function klinikKandungan()

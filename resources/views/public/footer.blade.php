@@ -60,21 +60,26 @@
               <!-- KONTAK -->
               <ul class="contact-list list-unstyled mb-0">
                 <li class="mb-1">
-                <strong>Pengaduan:</strong>
+                <strong>Whatsapp Pengaduan:</strong>
                 <a href="https://wa.me/6282140651288" target="_blank" class="text-decoration-none">
                   0821-4065-1288
                 </a>
               </li>
               <li class="mb-1">
-                <strong>Pendaftaran:</strong>
+                <strong>Whatsapp Pendaftaran:</strong>
                 <a href="https://wa.me/6285814150000" target="_blank" class="text-decoration-none">
                   0858-1415-0000
                 </a>
               </li>
 
                 <li class="mb-1">
-                  <strong>Call Center:</strong>
+                  <strong>Telepon IGD:</strong>
                   <a href="tel:+622914150501" target="_blank" class="text-decoration-none">(0291) 4150501</a>
+                </li>
+
+                <li class="mb-1">
+                  <strong>Telepon Pendaftaran:</strong>
+                  <a href="tel:+622914150500" target="_blank" class="text-decoration-none">(0291) 4150501</a>
                 </li>
 
                 <li class="mb-0">

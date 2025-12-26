@@ -82,7 +82,7 @@
 
     @include('public.popup-dokter')
     
-    <!-- Chatbot Section -->
+    {{-- Chatbot Section
     <div class="chatbot-container" style="position: fixed; bottom: 20px; right: 20px; z-index: 999;">
         <!-- Tombol Chat -->
         <button id="chatbotToggle" style="background-color: #007bff; color: white; padding: 12px 20px; border-radius: 50%; border: none; cursor: pointer;">
@@ -118,10 +118,8 @@
         sendBtn.addEventListener('click', () => {
             let message = chatInput.value.trim();
             if(message){
-                // Tampilkan pesan user
                 chatMessages.innerHTML += `<div><b>Anda:</b> ${message}</div>`;
 
-                // Balasan dummy dari bot
                 setTimeout(() => {
                     chatMessages.innerHTML += `<div><b>Bot:</b> Maaf, saya masih chatbot dummy 😄</div>`;
                     chatMessages.scrollTop = chatMessages.scrollHeight;
@@ -131,6 +129,8 @@
             }
         });
     </script>
+    --}}
+
 
     <!-- Form Pencarian Dokter -->
     <section class="search-doctor py-5" style="background-color: #ffffff;">
@@ -260,115 +260,54 @@
     <main id="main">
 
         {{-- Center of Excellence --}}
-        <section id="coe" class="section-bg py-5">
+        <section id="coe" class="coe-section py-5 bg-white">
         <div class="container" data-aos="fade-up">
-            <!-- Header -->
-            <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap">
-            <div>
-                <h2 class="fw-bold" style="color: #2A2536;">Center of Excellence</h2>
-                <p class="text-muted mb-0">Telusuri lebih lanjut berbagai informasi seputar layanan kami, di sini.</p>
 
-            <!-- Cards: dibuat horizontal scroll, isi card TIDAK diubah -->
-            <div class="row g-4 flex-nowrap overflow-auto mx-0 px-2" id="coeTrack">
-            <!-- Card 1 -->
-            <div class="col-md-4">
-                <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
-                <img src="{{ asset('assets/img/coe/pain-center.jpg') }}" class="card-img-top" alt="Pain Centre">
-                <div class="card-body">
-                    <h5 class="fw-bold">Skin & Aesthetic Clinic</h5>
-                    <p class="text-muted small mb-3">
-                    Klinik dan jadwal dokter spesialis perawatan estetika kulit dan wajah terdekat di Jakarta & Tangerang. Periksa kondisi kesehatan...
-                    </p>
-                    <a href="{{ route('pain-center') }}" class="fw-semibold" style="color: #1E88E5; text-decoration: none;">
-                    Baca Selengkapnya
+            <!-- Judul -->
+            <div class="mb-4">
+            <h2 class="fw-bold mb-1" style="color:#2A2536;">Center of Excellence</h2>
+            <p class="text-muted mb-0">
+                Telusuri lebih lanjut berbagai informasi seputar layanan kami, di sini.
+            </p>
+            </div>
+
+            {{-- DATA DARI DATABASE --}}
+            @php
+            $coes = [
+                [
+                'title' => 'Klinik Kebidanan & Kandungan',
+                'desc'  => 'Klinik dan jadwal dokter kandungan (Obgyn).',
+                'img'   => asset('assets/img/coe/klinik-kandungan.png'),
+                'href'  => route('klinik-kandungan'),
+                ],
+                [
+                'title' => 'Vaksin',
+                'desc'  => 'Klinik dan jadwal dokter spesialis perawatan estetika kulit dan wajah.',
+                'img'   => asset('assets/img/coe/pain-center.jpg'),
+                'href'  => route('pain-center'),
+                ],
+            ];
+            @endphp
+
+            <!-- TRACK CARD (SAMA SEPERTI PROMO) -->
+            <div class="row g-4 flex-nowrap overflow-auto" id="coeTrack" role="region" aria-label="Daftar COE">
+            @foreach ($coes as $coe)
+                <div class="col-lg-4 col-md-6 col-10">
+                <div class="card h-100 border-0 shadow-sm">
+                    <img src="{{ $coe['img'] }}" class="card-img-top" alt="{{ $coe['title'] }}">
+                    <div class="card-body">
+                    <h5 class="fw-bold">{{ $coe['title'] }}</h5>
+                    <p class="text-muted small mb-3">{{ $coe['desc'] }}</p>
+                    <a href="{{ $coe['href'] }}" class="fw-semibold link-primary text-decoration-none">
+                        Baca Selengkapnya
                     </a>
+                    </div>
                 </div>
                 </div>
+            @endforeach
             </div>
 
-            <!-- Card 2 -->
-            <div class="col-md-4">
-                <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
-                <img src="{{ asset('assets/img/coe/orthopedic-center.jpg') }}" class="card-img-top" alt="Orthopedic Centre">
-                <div class="card-body">
-                    <h5 class="fw-bold">Orthopedic Centre</h5>
-                    <p class="text-muted small mb-3">
-                    Klinik dan jadwal dokter spesialis tulang ortopedi terdekat di Jakarta & Tangerang. Dilengkapi MRI 3 Tesla Skyra...
-                    </p>
-                    <a href="{{ route('orthopedic-center') }}" class="fw-semibold" style="color: #1E88E5; text-decoration: none;">
-                    Baca Selengkapnya
-                    </a>
-                </div>
-                </div>
-            </div>
-
-            <!-- Card 3 -->
-            <div class="col-md-4">
-                <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
-                <img src="{{ asset('assets/img/coe/klinik-kandungan.png') }}" class="card-img-top" alt="Klinik Kebidanan & Kandungan">
-                <div class="card-body">
-                    <h5 class="fw-bold">Klinik Kebidanan & Kandungan</h5>
-                    <p class="text-muted small mb-3">
-                    Klinik dan jadwal dokter kandungan (Obgyn) terdekat di Jakarta & Tangerang. Periksa kondisi kesehatan Anda dan booking online...
-                    </p>
-                    <a href="{{ route('klinik-kandungan') }}" class="fw-semibold" style="color: #1E88E5; text-decoration: none;">
-                    Baca Selengkapnya
-                    </a>
-                </div>
-                </div>
-            </div>
-
-            <!-- Card 4 -->
-            <div class="col-md-4">
-                <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
-                <img src="{{ asset('assets/img/coe/pain-center.jpg') }}" class="card-img-top" alt="Pain Centre">
-                <div class="card-body">
-                    <h5 class="fw-bold">Skin & Aesthetic Clinic</h5>
-                    <p class="text-muted small mb-3">
-                    Klinik dan jadwal dokter spesialis perawatan estetika kulit dan wajah terdekat di Jakarta & Tangerang. Periksa kondisi kesehatan...
-                    </p>
-                    <a href="{{ route('pain-center') }}" class="fw-semibold" style="color: #1E88E5; text-decoration: none;">
-                    Baca Selengkapnya
-                    </a>
-                </div>
-                </div>
-            </div>
-
-            <!-- Card 5 -->
-            <div class="col-md-4">
-                <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
-                <img src="{{ asset('assets/img/coe/orthopedic-center.jpg') }}" class="card-img-top" alt="Orthopedic Centre">
-                <div class="card-body">
-                    <h5 class="fw-bold">Orthopedic Centre</h5>
-                    <p class="text-muted small mb-3">
-                    Klinik dan jadwal dokter spesialis tulang ortopedi terdekat di Jakarta & Tangerang. Dilengkapi MRI 3 Tesla Skyra...
-                    </p>
-                    <a href="{{ route('orthopedic-center') }}" class="fw-semibold" style="color: #1E88E5; text-decoration: none;">
-                    Baca Selengkapnya
-                    </a>
-                </div>
-                </div>
-            </div>
-
-            <!-- Card 6 -->
-            <div class="col-md-4">
-                <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
-                <img src="{{ asset('assets/img/coe/klinik-kandungan.png') }}" class="card-img-top" alt="Klinik Kebidanan & Kandungan">
-                <div class="card-body">
-                    <h5 class="fw-bold">Klinik Kebidanan & Kandungan</h5>
-                    <p class="text-muted small mb-3">
-                    Klinik dan jadwal dokter kandungan (Obgyn) terdekat di Jakarta & Tangerang. Periksa kondisi kesehatan Anda dan booking online...
-                    </p>
-                    <a href="{{ route('klinik-kandungan') }}" class="fw-semibold" style="color: #1E88E5; text-decoration: none;">
-                    Baca Selengkapnya
-                    </a>
-                </div>
-                </div>
-            </div>
-
-            </div>
-
-            <!-- NAV PANAH (bawah kiri) -->
+            <!-- PANAH NAV -->
             <div class="coe-nav d-flex align-items-center gap-3 mt-3">
             <button class="coe-btn" id="coePrev" type="button" aria-label="Sebelumnya">
                 <i class="bi bi-arrow-left"></i>
@@ -377,74 +316,90 @@
                 <i class="bi bi-arrow-right"></i>
             </button>
             </div>
-        </div>
 
-        <!-- Styles khusus panah & track -->
+        </div>
+        </section>
+
         <style>
-            /* Track horizontal: rapat, snap per kolom, sembunyikan scrollbar di iOS */
-            #coeTrack{
+        /* TRACK */
+        #coeTrack{
             scroll-snap-type: x mandatory;
             -webkit-overflow-scrolling: touch;
-            padding-bottom: 8px; /* beri ruang untuk nav */
-            -ms-overflow-style: none;     /* IE/Edge */
+            padding-bottom: 8px;
+            -ms-overflow-style: none;
             scrollbar-width: none;
-            }
+        }
+        #coeTrack::-webkit-scrollbar{
+            display: none;
+            height: 0;
+        }
+        #coeTrack > [class*="col-"]{
+            flex: 0 0 auto;
+            scroll-snap-align: start;
+        }
 
-            #coeTrack::-webkit-scrollbar {  /* Chrome/Safari */
-                display: none;
-                height: 0;
-            }
-            /* Setiap kolom snap ke kiri saat berhenti scroll */
-            #coeTrack > [class*="col-"]{ scroll-snap-align: start; flex: 0 0 auto; }
+        /* GAMBAR RAPI 16:9 (PENTING!) */
+        .coe-section .card-img-top{
+            aspect-ratio: 16 / 9;
+            object-fit: cover;
+        }
 
-            /* Tombol panah: lingkaran outline seperti contoh */
-            .coe-btn{
-            width:56px; height:56px; border-radius:50%;
-            border:2px solid #e8e8e8; background:#fff;
-            display:inline-flex; align-items:center; justify-content:center;
-            transition: box-shadow .2s ease, transform .1s ease, border-color .2s ease;
-            }
-            .coe-btn i{ font-size:22px; line-height:1; }
-            .coe-btn:hover{ border-color:#dcdcdc; box-shadow:0 2px 8px rgba(0,0,0,.06); }
-            .coe-btn:active{ transform: scale(.98); }
-            .coe-btn:disabled{ opacity:.4; pointer-events:none; }
+        /* PANAH */
+        .coe-btn{
+            width:56px;
+            height:56px;
+            border-radius:50%;
+            border:2px solid #e8e8e8;
+            background:#fff;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            transition:.2s;
+        }
+        .coe-btn i{ font-size:22px; }
+        .coe-btn:hover{
+            box-shadow:0 2px 8px rgba(0,0,0,.06);
+        }
+        .coe-btn:disabled{
+            opacity:.4;
+            pointer-events:none;
+        }
         </style>
 
-        <!-- Script navigasi geser -->
         <script>
         (function(){
-            const list = document.getElementById('coeTrack');
-            const prev = document.getElementById('coePrev');
-            const next = document.getElementById('coeNext');
-            if(!list || !prev || !next) return;
+        const track = document.getElementById('coeTrack');
+        const prev  = document.getElementById('coePrev');
+        const next  = document.getElementById('coeNext');
 
-            function stepSize(){
-            // lebar satu kolom (sudah termasuk padding/gutter)
-            const col = list.querySelector('[class*="col-"]');
-            if (col) return Math.round(col.getBoundingClientRect().width);
-            return Math.round(list.clientWidth * 0.8);
-            }
+        if(!track || !prev || !next) return;
 
-            function updateBtns(){
-            const max = list.scrollWidth - list.clientWidth - 1; // toleransi
-            prev.disabled = list.scrollLeft <= 0;
-            next.disabled = list.scrollLeft >= max;
-            }
+        function stepSize(){
+            const col = track.querySelector('[class*="col-"]');
+            return col
+            ? Math.round(col.getBoundingClientRect().width)
+            : Math.round(track.clientWidth * 0.8);
+        }
 
-            prev.addEventListener('click', () => {
-            list.scrollBy({left: -stepSize(), behavior:'smooth'});
-            });
-            next.addEventListener('click', () => {
-            list.scrollBy({left:  stepSize(), behavior:'smooth'});
-            });
+        function updateBtns(){
+            const max = track.scrollWidth - track.clientWidth - 1;
+            prev.disabled = track.scrollLeft <= 0;
+            next.disabled = track.scrollLeft >= max;
+        }
 
-            list.addEventListener('scroll', updateBtns, {passive:true});
-            window.addEventListener('resize', updateBtns);
-            updateBtns();
+        prev.addEventListener('click', ()=> {
+            track.scrollBy({ left: -stepSize(), behavior: 'smooth' });
+        });
+        next.addEventListener('click', ()=> {
+            track.scrollBy({ left: stepSize(), behavior: 'smooth' });
+        });
+
+        track.addEventListener('scroll', updateBtns, { passive: true });
+        window.addEventListener('resize', updateBtns);
+        updateBtns();
         })();
         </script>
-        </section>
-        {{-- End Center of Excellence --}}
+
 
 
         <!-- ======= Pricing Section ======= -->
@@ -575,11 +530,12 @@
         const chipM = document.getElementById('fac-chip-m');
 
         // Disable manual scrolling (arrows only)
-        track.addEventListener('wheel', (e)=>{ e.preventDefault(); }, {passive:false});
+        /*track.addEventListener('wheel', (e)=>{ e.preventDefault(); }, {passive:false});
         let touching=false;
         track.addEventListener('touchstart', ()=> touching=true, {passive:true});
         track.addEventListener('touchmove',  (e)=>{ if(touching){ e.preventDefault(); } }, {passive:false});
         track.addEventListener('touchend',   ()=> touching=false, {passive:true});
+        */
 
         function updateImages(title, src){
             if (imgD){ imgD.src = src; imgD.alt = title; }

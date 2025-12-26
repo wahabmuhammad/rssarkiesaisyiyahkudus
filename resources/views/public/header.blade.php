@@ -109,8 +109,8 @@
           </a>
           <ul class="dropdown-menu" aria-labelledby="ddCoE">
             <li><a class="dropdown-item" href="{{ route('pain-center') }}">Pain Clinic</a></li>
-            <li><a class="dropdown-item" href="{{ route('pain-center') }}">MCU</a></li>
-            <li><a class="dropdown-item" href="{{ route('pain-center') }}">Vaksin</a></li>
+            <li><a class="dropdown-item" href="{{ route('mcu') }}">MCU</a></li>
+            <li><a class="dropdown-item" href="{{ route('vaksin') }}">Vaksin</a></li>
             <li><a class="dropdown-item" href="{{ route('klinik-kandungan') }}">Klinik Kandungan dan Kebidanan</a></li>
           </ul>
         </li>
@@ -203,8 +203,8 @@
       </div>
       <ul class="list-group list-group-flush">
         <li class="list-group-item px-0"><a class="d-block py-2" href="{{ route('pain-center') }}">Pain Clinic</a></li>
-        <li class="list-group-item px-0"><a class="d-block py-2" href="{{ route('pain-center') }}">MCU</a></li>
-        <li class="list-group-item px-0"><a class="d-block py-2" href="{{ route('pain-center') }}">Vaksin</a></li>
+        <li class="list-group-item px-0"><a class="d-block py-2" href="{{ route('mcu') }}">MCU</a></li>
+        <li class="list-group-item px-0"><a class="d-block py-2" href="{{ route('vaksin') }}">Vaksin</a></li>
         <li class="list-group-item px-0"><a class="d-block py-2" href="{{ route('klinik-kandungan') }}">Klinik Kandungan & Kebidanan</a></li>
       </ul>
     </div>
@@ -279,4 +279,31 @@
   });
 })();
 </script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const panels = document.querySelectorAll('#offcanvasNav .menu-panel');
+
+  // buka submenu
+  document.querySelectorAll('[data-menu-target]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const targetId = btn.getAttribute('data-menu-target');
+
+      panels.forEach(p => p.classList.remove('active'));
+      document.getElementById(targetId)?.classList.add('active');
+    });
+  });
+
+  // tombol back
+  document.querySelectorAll('[data-menu-back]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const backId = btn.getAttribute('data-menu-back');
+
+      panels.forEach(p => p.classList.remove('active'));
+      document.getElementById(backId)?.classList.add('active');
+    });
+  });
+});
+</script>
+
 
