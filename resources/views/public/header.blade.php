@@ -121,7 +121,7 @@
           </a>
           <ul class="dropdown-menu" aria-labelledby="ddFasilitas">
             <li><a class="dropdown-item" href="{{ route('diagnostic-center') }}">Diagnostic Center</a></li>
-            <li><a class="dropdown-item" href="{{ route('diagnostic-center') }}">Healthy Corner</a></li>
+            <li><a class="dropdown-item" href="{{ route('healthy-corner') }}">Healthy Corner</a></li>
             <li><a class="dropdown-item" href="{{ route('intensive-care') }}">Intensive Care</a></li>
             <li><a class="dropdown-item" href="{{ route('rehabilitasi') }}">Rehabilitasi Medik & Fisioterapi</a></li>
             <li><a class="dropdown-item" href="{{ route('farmasi') }}">Farmasi</a></li>
@@ -217,6 +217,7 @@
       </div>
       <ul class="list-group list-group-flush">
         <li class="list-group-item px-0"><a class="d-block py-2" href="{{ route('diagnostic-center') }}">Diagnostic Center</a></li>
+        <li class="list-group-item px-0"><a class="d-block py-2" href="{{ route('healthy-corner') }}">Healthy Corner</a></li>
         <li class="list-group-item px-0"><a class="d-block py-2" href="{{ route('intensive-care') }}">Intensive Care</a></li>
         <li class="list-group-item px-0"><a class="d-block py-2" href="{{ route('rehabilitasi') }}">Rehabilitasi Medik & Fisioterapi</a></li>
         <li class="list-group-item px-0"><a class="d-block py-2" href="{{ route('farmasi') }}">Farmasi</a></li>

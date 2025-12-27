@@ -66,6 +66,11 @@ class indexController extends Controller
         return view('fasilitas.intensive-care');
     }
 
+    public function healthyCorner()
+    {
+        return view('fasilitas.healthy-corner');
+    }
+
     public function rawatInap()
     {
         return view('fasilitas.rawat-inap');

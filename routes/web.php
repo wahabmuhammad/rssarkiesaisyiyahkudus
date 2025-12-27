@@ -36,6 +36,8 @@ Route::get('/klinik-kandungan', [App\Http\Controllers\indexController::class, 'k
 
 Route::get('/diagnostic-center', [App\Http\Controllers\indexController::class, 'diagnosticCenter'])->name('diagnostic-center');
 
+Route::get('healthy-corner', [App\Http\Controllers\indexController::class, 'healthyCorner'])->name('healthy-corner');
+
 Route::get('/intensive-care', [App\Http\Controllers\indexController::class, 'intensiveCare'])->name('intensive-care');
 
 Route::get('/rawat-inap', [App\Http\Controllers\indexController::class, 'rawatInap'])->name('rawat-inap');

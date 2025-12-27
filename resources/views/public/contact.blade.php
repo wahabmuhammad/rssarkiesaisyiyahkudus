@@ -41,15 +41,28 @@
                     </div>
                 </div>
 
-                <!-- Telepon -->
+                <!-- Telepon IGD -->
                 <div class="mb-4 d-flex align-items-start">
                     <div class="icon-circle me-3">
                         <i class="bx bx-phone-call"></i>
                     </div>
                     <div>
-                        <h6 class="fw-bold mb-1">Telepon</h6>
+                        <h6 class="fw-bold mb-1">Telepon IGD</h6>
                         <a href="tel:+622914150501" class="text-decoration-none text-dark">
                             (0291) 4150501
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Telepon Pendaftaran -->
+                <div class="mb-4 d-flex align-items-start">
+                    <div class="icon-circle me-3">
+                        <i class="bx bx-phone"></i>
+                    </div>
+                    <div>
+                        <h6 class="fw-bold mb-1">Telepon Pendaftaran</h6>
+                        <a href="tel:+62914150500" class="text-decoration-none text-dark">
+                            (0291) 4150500
                         </a>
                     </div>
                 </div>

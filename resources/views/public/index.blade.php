@@ -275,16 +275,28 @@
             @php
             $coes = [
                 [
-                'title' => 'Klinik Kebidanan & Kandungan',
-                'desc'  => 'Klinik dan jadwal dokter kandungan (Obgyn).',
-                'img'   => asset('assets/img/coe/klinik-kandungan.png'),
-                'href'  => route('klinik-kandungan'),
+                'title' => 'Pain Clinic',
+                'desc'  => 'Klinik dan jadwal dokter spesialis perawatan estetika kulit dan wajah.',
+                'img'   => asset('assets/img/coe/pain-center.jpg'),
+                'href'  => route('pain-center'),
+                ],
+                [
+                'title' => 'Medical Check Up (MCU)',
+                'desc'  => 'Klinik dan jadwal dokter spesialis perawatan estetika kulit dan wajah.',
+                'img'   => asset('assets/img/coe/mcu.jpg'),
+                'href'  => route('mcu'),
                 ],
                 [
                 'title' => 'Vaksin',
                 'desc'  => 'Klinik dan jadwal dokter spesialis perawatan estetika kulit dan wajah.',
                 'img'   => asset('assets/img/coe/pain-center.jpg'),
                 'href'  => route('pain-center'),
+                ],
+                [
+                'title' => 'Klinik Kebidanan & Kandungan',
+                'desc'  => 'Klinik dan jadwal dokter kandungan (Obgyn).',
+                'img'   => asset('assets/img/coe/klinik-kandungan.png'),
+                'href'  => route('klinik-kandungan'),
                 ],
             ];
             @endphp
@@ -604,7 +616,7 @@
             <!-- Track horizontal -->
             <div class="row g-4 flex-nowrap overflow-auto mx-0 px-2" id="newsTrack" role="region" aria-label="Daftar Berita & Artikel">
             @foreach($articles as $article)
-                <div class="col-lg-4 col-md-6">
+                <div class="col-lg-4 col-md-6 col-10">
                 <div class="card h-100 shadow-sm border-0">
                     <img src="{{ $article['img'] }}" class="card-img-top" alt="{{ $article['title'] }}">
                     <div class="card-body">
