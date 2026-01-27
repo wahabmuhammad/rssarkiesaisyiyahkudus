@@ -10,7 +10,7 @@
         body {
             margin: 0;
             font-family: Arial, Helvetica, sans-serif;
-            background: #0BA6DF;
+            background: whitesmoke;
         }
 
         .wrapper {
@@ -158,7 +158,7 @@
             <label>NIP <span>*</span></label>
             <input type="text" id="nip" required />
 
-            <label>TANDA TANGAN <span>*</span></label>
+            <label>TANDA TANGAN (Opsional)</label>
             <div class="signature-box">
                 <button type="button" class="clear-btn" onclick="clearSignature()">✕</button>
                 <canvas id="signature"></canvas>
