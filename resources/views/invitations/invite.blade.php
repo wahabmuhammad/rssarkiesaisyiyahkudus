@@ -402,7 +402,7 @@
 
                             <!-- Logo RS Aisyiyah -->
                             <div class="text-center">
-                                <img src="{{ asset('assets/img/Logo_RSA.png') }}" alt="RS Aisyiyah"
+                                <img src="{{ asset('assets/img/logo_RSA.png') }}" alt="RS Aisyiyah"
                                     style="height:150px;">
                                 {{-- <p class="m-0 fw-bold">RS Aisyiyah</p> --}}
                             </div>
