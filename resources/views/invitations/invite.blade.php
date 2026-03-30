@@ -1,1240 +1,1612 @@
-<html lang="en">
+<!DOCTYPE html>
+<html lang="id">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="google" content="notranslate">
-    <title>Silaturahmi Syawalan RS Sarkies 'Aisyiyah Group Kudus</title>
-    <meta property="og:image" content="{{ asset('assets/img/Logo_Holding_RSA_Group.png') }}">
-    <!-- cdn jquery -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <!-- boostrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-    <link rel="icon" href="{{ asset('assets/img/Logo_RSSA.png') }}">
-
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pacifico&amp;display=swap">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Undangan Halal Bihalal & Syawalan — Holding RS Aisyiyah Group Kudus</title>
     <link
-        href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;family=Great+Vibes&amp;family=Lato:wght@400;700&amp;family=Dancing+Script&amp;=Caveat:wght@500&amp;display=swap"
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Cinzel:wght@400;600;700&family=Nunito:wght@300;400;600;700&display=swap"
         rel="stylesheet">
+    <link rel="icon" type="image/png" href="{{ asset('assets/img/Logo_RSSA.png') }}" sizes="32x32">
     <style>
+        :root {
+            --biru: #84B7ED;
+            --biru-muda: #B3D1F5;
+            --biru-terang: #D6E9FB;
+            --biru-gelap: #3A78C9;
+            --biru-tua: #1A3F6E;
+            --biru-tua2: #0D2444;
+            --emas: #C9A84C;
+            --emas-muda: #E2C778;
+            --emas-terang: #F0DFA0;
+            --putih: #FFFFFF;
+            --krem: #F8FBFF;
+            --abu: #6B7E9A;
+            --teks: #0D2444;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box
+        }
+
+        html {
+            scroll-behavior: smooth
+        }
+
         body {
-            /* max-width: 375px; Lebar ponsel */
-            margin: 0 auto;
-            /* Tengah layar */
-            font-family: 'Roboto', sans-serif;
+            font-family: "Nunito", sans-serif;
+            background: #84B7ED;
+            color: var(--teks);
+            overflow-x: hidden
+        }
+
+        ::-webkit-scrollbar {
+            width: 4px
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--biru)
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--biru);
+            border-radius: 2px
+        }
+
+        /* ============================
+   1. COVER
+============================ */
+        #cover {
+            min-height: 100vh;
+            background: linear-gradient(160deg, var(--biru) 0%, #102d5a 50%, #0a1e3a 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 36px 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        #cover::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image:
+                radial-gradient(ellipse 80% 50% at 50% 0%, rgba(132, 183, 237, 0.18) 0%, transparent 70%),
+                radial-gradient(ellipse 50% 40% at 20% 80%, rgba(201, 168, 76, 0.10) 0%, transparent 60%),
+                radial-gradient(ellipse 50% 40% at 80% 80%, rgba(132, 183, 237, 0.10) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        #cover::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image:
+                repeating-linear-gradient(0deg, transparent, transparent 59px, rgba(132, 183, 237, 0.04) 59px, rgba(132, 183, 237, 0.04) 60px),
+                repeating-linear-gradient(90deg, transparent, transparent 59px, rgba(132, 183, 237, 0.04) 59px, rgba(132, 183, 237, 0.04) 60px);
+            pointer-events: none;
+        }
+
+        .cover-inner {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 440px;
+            width: 100%;
+        }
+
+        /* 3 logos */
+        .logos-row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 14px;
+            margin-bottom: 28px;
+        }
+
+        .logo-wrap {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .logo-circle {
+            border-radius: 50%;
+            border: 1.5px solid rgba(132, 183, 237, 0.4);
+            background: rgba(255, 255, 255, 0.06);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            transition: all 0.3s;
+            box-shadow: 0 0 20px rgba(132, 183, 237, 0.15);
+        }
+
+        .logo-circle:hover {
+            border-color: var(--biru);
+            box-shadow: 0 0 30px rgba(132, 183, 237, 0.4);
+            transform: scale(1.06);
+        }
+
+        .logo-circle img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            padding: 6px;
+        }
+
+        .logo-circle.sm {
+            width: 64px;
+            height: 64px;
+        }
+
+        .logo-circle.lg {
+            width: 82px;
+            height: 82px;
+            border-color: rgba(201, 168, 76, 0.6);
+            box-shadow: 0 0 30px rgba(201, 168, 76, 0.25);
+        }
+
+        .logo-circle.lg:hover {
+            border-color: var(--emas-muda);
+            box-shadow: 0 0 40px rgba(201, 168, 76, 0.45);
+        }
+
+        .logo-name {
+            font-size: 8px;
+            color: rgba(255, 255, 255, 0.45);
+            letter-spacing: 1.5px;
+            font-weight: 700;
+            text-transform: uppercase;
+            max-width: 72px;
+            text-align: center;
+            line-height: 1.3
+        }
+
+        .logo-sep {
+            width: 1px;
+            height: 50px;
+            background: linear-gradient(to bottom, transparent, rgba(132, 183, 237, 0.35), transparent);
+            flex-shrink: 0;
+        }
+
+        .ornament-row {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            justify-content: center;
+            margin-bottom: 16px;
+        }
+
+        .ornament-row::before,
+        .ornament-row::after {
+            content: '';
+            flex: 1;
+            max-width: 55px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(132, 183, 237, 0.6), transparent);
+        }
+
+        .ornament-row span {
+            color: var(--biru-muda);
+            font-size: 13px;
+        }
+
+        .arabic-cover {
+            font-family: "Cormorant Garamond", serif;
+            font-size: 19px;
+            color: var(--biru-terang);
+            letter-spacing: 5px;
             line-height: 1.6;
+            margin-bottom: 12px;
+            opacity: 0;
+            animation: fadeUp 1s ease 0.3s forwards;
         }
 
-        h1 {
-            font-family: 'Great Vibes', cursive;
+        .cover-tag {
+            font-size: 10px;
+            color: rgba(255, 255, 255, 0.45);
+            letter-spacing: 4px;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+            opacity: 0;
+            animation: fadeUp 1s ease 0.5s forwards;
         }
 
-        h2 {
-            font-family: 'Dancing Script', cursive;
+        .cover-title {
+            font-family: "Cinzel", serif;
+            font-size: clamp(26px, 7vw, 38px);
+            color: var(--putih);
+            font-weight: 700;
+            line-height: 1.15;
+            letter-spacing: 2px;
+            text-shadow: 0 2px 20px rgba(0, 0, 0, 0.4);
+            opacity: 0;
+            animation: fadeUp 1s ease 0.7s forwards;
         }
 
-        p {
-            font-family: 'Caveat', cursive;
+        .cover-sub {
+            font-family: "Cormorant Garamond", serif;
+            font-style: italic;
+            font-size: 16px;
+            color: var(--biru-muda);
+            letter-spacing: 4px;
+            margin-top: 6px;
+            opacity: 0;
+            animation: fadeUp 1s ease 0.9s forwards;
         }
 
-        audio {
+        .cover-tahun {
+            display: inline-block;
+            margin: 12px auto 0;
+            padding: 5px 18px;
+            border: 1px solid rgba(132, 183, 237, 0.35);
+            border-radius: 50px;
+            font-size: 11px;
+            color: var(--biru-muda);
+            letter-spacing: 4px;
+            font-weight: 700;
+            opacity: 0;
+            animation: fadeUp 1s ease 1.1s forwards;
+        }
+
+        .kepada-box {
+            margin-top: 24px;
+            padding: 16px 20px;
+            background: rgba(132, 183, 237, 0.07);
+            border: 1px solid rgba(132, 183, 237, 0.2);
+            border-radius: 8px;
+            opacity: 0;
+            animation: fadeUp 1s ease 1.3s forwards;
+        }
+
+        .kepada-label {
+            font-size: 10px;
+            color: rgba(255, 255, 255, 0.4);
+            letter-spacing: 3px;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+
+        .kepada-nama {
+            font-family: "Cormorant Garamond", serif;
+            font-size: 20px;
+            color: var(--putih);
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        .kepada-sub {
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.4);
+            margin-top: 3px;
+        }
+
+        .btn-buka {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 24px;
+            padding: 14px 32px;
+            background: linear-gradient(135deg, var(--biru-gelap), var(--biru), var(--biru-muda));
+            color: var(--biru-tua2);
+            font-family: "Cinzel", serif;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            border-radius: 50px;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 8px 30px rgba(132, 183, 237, 0.4);
+            transition: all 0.3s;
+            opacity: 0;
+            animation: fadeUp 1s ease 1.5s forwards;
+            text-decoration: none;
+        }
+
+        .btn-buka:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 14px 40px rgba(132, 183, 237, 0.55);
+        }
+
+        /* particles */
+        .particle {
+            position: absolute;
+            border-radius: 50%;
+            pointer-events: none;
+            opacity: 0;
+            animation: floatP linear infinite;
+        }
+
+        @keyframes floatP {
+            0% {
+                opacity: 0;
+                transform: translateY(0)
+            }
+
+            10% {
+                opacity: .8
+            }
+
+            90% {
+                opacity: .2
+            }
+
+            100% {
+                opacity: 0;
+                transform: translateY(-110px) translateX(15px)
+            }
+        }
+
+        /* ============================
+   SECTION BASE
+============================ */
+        section {
+            padding: 56px 22px;
+            position: relative;
+        }
+
+        .section-inner {
+            max-width: 520px;
+            margin: 0 auto;
+        }
+
+        .sec-label {
+            font-size: 10px;
+            color: var(--biru);
+            letter-spacing: 4px;
+            font-weight: 700;
+            text-transform: uppercase;
+            text-align: center;
+            margin-bottom: 5px;
+        }
+
+        .sec-title {
+            font-family: "Cinzel", serif;
+            font-size: clamp(20px, 5vw, 26px);
+            color: var(--biru-tua);
+            text-align: center;
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin-bottom: 18px;
+        }
+
+        .sec-title.white {
+            color: var(--putih);
+        }
+
+        .divider {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            justify-content: center;
+            margin-bottom: 22px;
+        }
+
+        .divider::before,
+        .divider::after {
+            content: '';
+            flex: 1;
+            max-width: 70px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--biru), transparent);
+        }
+
+        .divider span {
+            color: var(--biru);
+            font-size: 13px;
+        }
+
+        .divider.gold::before,
+        .divider.gold::after {
+            background: linear-gradient(90deg, transparent, var(--emas), transparent);
+        }
+
+        .divider.gold span {
+            color: var(--emas-muda);
+        }
+
+        /* ============================
+   2. HALAMAN INTI
+============================ */
+        #inti {
+            background: var(--krem);
+            padding-top: 64px;
+        }
+
+        .inti-logo-center {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 22px;
+        }
+
+        .logo-big-inti {
+            width: 96px;
+            height: 96px;
+            border-radius: 50%;
+            border: 2px solid rgba(201, 168, 76, 0.5);
+            background: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            box-shadow: 0 8px 30px rgba(132, 183, 237, 0.25), 0 0 0 6px rgba(132, 183, 237, 0.08);
+        }
+
+        .logo-big-inti img {
+            width: 90%;
+            height: 90%;
+            object-fit: contain;
+            padding: 4px;
+        }
+
+        .inti-arabic {
+            font-family: "Cormorant Garamond", serif;
+            font-size: clamp(20px, 5vw, 26px);
+            color: var(--biru-tua);
+            letter-spacing: 5px;
+            text-align: center;
+            margin-bottom: 8px;
+        }
+
+        .inti-main-title {
+            font-family: "Cinzel", serif;
+            font-size: clamp(22px, 6vw, 32px);
+            color: var(--biru-tua);
+            font-weight: 700;
+            text-align: center;
+            letter-spacing: 2px;
+            line-height: 1.2;
+            margin-bottom: 6px;
+        }
+
+        .inti-sub {
+            font-family: "Cormorant Garamond", serif;
+            font-style: italic;
+            font-size: 16px;
+            color: var(--biru-gelap);
+            letter-spacing: 4px;
+            text-align: center;
+            margin-bottom: 16px;
+        }
+
+        .date-chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 24px;
+            background: linear-gradient(135deg, var(--biru-tua2), var(--biru-tua));
+            border-radius: 50px;
+            font-family: "Cinzel", serif;
+            font-size: 13px;
+            color: var(--biru-terang);
+            letter-spacing: 2px;
+            font-weight: 600;
+            box-shadow: 0 6px 20px rgba(13, 36, 68, 0.25);
+        }
+
+        /* ============================
+   3. SAMBUTAN
+============================ */
+        #sambutan {
+            background: linear-gradient(160deg, var(--biru-tua2) 0%, #0f2d58 60%, #0a1e3a 100%);
+            padding: 56px 22px;
+        }
+
+        #sambutan::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: radial-gradient(ellipse 70% 60% at 50% 50%, rgba(132, 183, 237, 0.07) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .sambutan-logo {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .logo-sambutan {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            border: 2px solid rgba(201, 168, 76, 0.4);
+            background: rgba(255, 255, 255, 0.06);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            box-shadow: 0 0 30px rgba(201, 168, 76, 0.2);
+        }
+
+        .logo-sambutan img {
+            width: 90%;
+            height: 90%;
+            object-fit: contain;
+            padding: 4px;
+        }
+
+        .sambutan-text {
+            font-family: "Cormorant Garamond", serif;
+            font-size: clamp(15px, 4vw, 18px);
+            color: rgba(255, 255, 255, 0.85);
+            line-height: 1.95;
+            text-align: center;
+            font-style: italic;
+            margin-bottom: 24px;
+            padding: 0 6px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .sambutan-text em {
+            color: var(--biru-muda);
+            font-style: normal;
+            font-weight: 600;
+        }
+
+        /* Foto direksi group */
+        .direksi-photo-wrap {
+            position: relative;
+            z-index: 1;
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1.5px solid rgba(132, 183, 237, 0.25);
+            box-shadow: 0 16px 50px rgba(0, 0, 0, 0.4);
+        }
+
+        .direksi-photo-wrap img {
+            width: 100%;
+            display: block;
+            object-fit: cover;
+        }
+
+        .direksi-caption {
+            background: linear-gradient(to top, rgba(13, 36, 68, 0.95) 0%, rgba(13, 36, 68, 0.7) 60%, transparent 100%);
+            padding: 24px 16px 18px;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            margin-top: -4px;
+        }
+
+        .direksi-caption-title {
+            font-family: "Cinzel", serif;
+            font-size: 13px;
+            color: var(--biru-muda);
+            letter-spacing: 3px;
+            margin-bottom: 4px;
+        }
+
+        .direksi-caption-sub {
+            font-size: 11px;
+            color: rgba(255, 255, 255, 0.45);
+            letter-spacing: 1.5px;
+        }
+
+        /* ============================
+   4. WAKTU TEMPAT + COUNTDOWN
+============================ */
+        #waktu {
+            background: var(--krem);
+            padding: 56px 22px;
+        }
+
+        .waktu-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-bottom: 22px;
+        }
+
+        .waktu-card {
+            background: #fff;
+            border: 1px solid rgba(132, 183, 237, 0.3);
+            border-radius: 10px;
+            padding: 18px 12px;
+            text-align: center;
+            box-shadow: 0 4px 16px rgba(132, 183, 237, 0.1);
+            transition: all 0.3s;
+        }
+
+        .waktu-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 24px rgba(132, 183, 237, 0.2);
+            border-color: var(--biru);
+        }
+
+        .waktu-icon {
+            font-size: 26px;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .waktu-label {
+            font-size: 9px;
+            color: var(--abu);
+            letter-spacing: 3px;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+
+        .waktu-val {
+            font-family: "Cinzel", serif;
+            font-size: clamp(13px, 3.5vw, 16px);
+            color: var(--biru-tua);
+            font-weight: 600;
+            line-height: 1.3;
+        }
+
+        .waktu-detail {
+            font-size: 11px;
+            color: var(--abu);
+            margin-top: 4px;
+        }
+
+        .countdown-section {
+            background: linear-gradient(135deg, var(--biru-tua2), var(--biru-tua));
+            border-radius: 14px;
+            padding: 24px 14px;
+            box-shadow: 0 12px 40px rgba(13, 36, 68, 0.3);
+        }
+
+        .cd-label {
+            font-size: 10px;
+            color: rgba(255, 255, 255, 0.45);
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 16px;
+        }
+
+        .cd-boxes {
+            display: flex;
+            gap: 8px;
+            justify-content: center;
+            align-items: flex-start;
+        }
+
+        .cd-unit-box {
+            flex: 1;
+            max-width: 72px;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(132, 183, 237, 0.2);
+            border-radius: 10px;
+            padding: 14px 6px 10px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cd-unit-box::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--biru-muda), transparent);
+        }
+
+        .cd-n {
+            font-family: "Cinzel", serif;
+            font-size: clamp(22px, 6vw, 30px);
+            color: var(--biru-terang);
+            font-weight: 700;
+            display: block;
+            line-height: 1;
+        }
+
+        .cd-u {
+            font-size: 9px;
+            color: rgba(255, 255, 255, 0.4);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-top: 5px;
+            display: block;
+        }
+
+        .cd-sep {
+            font-family: "Cinzel", serif;
+            font-size: 26px;
+            color: var(--biru);
+            line-height: 1;
+            align-self: flex-start;
+            margin-top: 12px;
+        }
+
+        /* ============================
+   5. RUNDOWN
+============================ */
+        #rundown {
+            background: #fff;
+            padding: 56px 22px;
+        }
+
+        .rundown-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+
+        .rundown-item {
+            display: flex;
+            gap: 12px;
+            align-items: flex-start;
+            padding: 15px 0;
+            border-bottom: 1px solid rgba(132, 183, 237, 0.15);
+        }
+
+        .rundown-item:last-child {
+            border-bottom: none;
+        }
+
+        .rundown-time {
+            font-family: "Cinzel", serif;
+            font-size: 12px;
+            color: var(--biru-gelap);
+            font-weight: 700;
+            letter-spacing: 1px;
+            white-space: nowrap;
+            min-width: 65px;
+            padding-top: 2px;
+        }
+
+        .rundown-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--biru);
+            flex-shrink: 0;
+            margin-top: 4px;
+            position: relative;
+            box-shadow: 0 0 8px rgba(132, 183, 237, 0.6);
+        }
+
+        .rundown-dot::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 100%;
+            transform: translateX(-50%);
+            width: 1px;
+            height: calc(100% + 28px);
+            background: linear-gradient(to bottom, var(--biru), transparent);
+        }
+
+        .rundown-item:last-child .rundown-dot::after {
             display: none;
         }
 
-        #container {
-            height: 180px;
-            width: 180px;
-            background: rgba(255, 255, 255, 0.8);
-            border-radius: 24px;
-            position: relative;
-            box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.15);
-            transition: 0.5s linear;
+        .rundown-kegiatan {
+            flex: 1;
         }
 
-        #disc {
-            margin-left: 60px;
-            margin-right: 20px;
-            margin-top: 8px;
+        .rundown-nama {
+            font-family: "Cormorant Garamond", serif;
+            font-size: clamp(14px, 4vw, 17px);
+            color: var(--biru-tua);
+            font-weight: 600;
+            line-height: 1.3;
+            margin-bottom: 2px;
+        }
+
+        .rundown-desc {
+            font-size: 12px;
+            color: var(--abu);
+            line-height: 1.5;
+        }
+
+        .rundown-badge {
+            padding: 2px 10px;
+            border-radius: 50px;
+            font-size: 9px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            background: rgba(132, 183, 237, 0.12);
+            color: var(--biru-gelap);
+            display: inline-block;
+            margin-top: 3px;
+        }
+
+        /* ============================
+   6. GEDUNG
+============================ */
+        #gedung {
+            padding: 0;
+            position: relative;
+            overflow: hidden;
+            background: #000;
+        }
+
+        .gedung-img-wrap {
+            position: relative;
+        }
+
+        .gedung-img-wrap img {
+            width: 100%;
+            display: block;
+            object-fit: cover;
+            max-height: 320px;
+            filter: brightness(0.85);
+        }
+
+        .gedung-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 30px 22px 22px;
+            background: linear-gradient(to top, rgba(13, 36, 68, 0.95) 0%, transparent 100%);
+        }
+
+        .gedung-name {
+            font-family: "Cinzel", serif;
+            font-size: clamp(16px, 4.5vw, 22px);
+            color: var(--putih);
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+
+        .gedung-sub {
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.55);
+            margin-top: 4px;
+            letter-spacing: 1px;
+        }
+
+        /* ============================
+   7. MAPS
+============================ */
+        #maps {
+            background: var(--krem);
+            padding: 56px 22px;
+        }
+
+        .maps-frame {
+            width: 100%;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 2px solid rgba(132, 183, 237, 0.3);
+            box-shadow: 0 10px 40px rgba(132, 183, 237, 0.15);
+            aspect-ratio: 4/3;
+        }
+
+        .maps-frame iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            display: block;
+        }
+
+        .maps-address {
+            margin-top: 16px;
+            padding: 14px 16px;
+            background: #fff;
+            border-radius: 10px;
+            border-left: 3px solid var(--biru);
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            box-shadow: 0 4px 16px rgba(132, 183, 237, 0.12);
+        }
+
+        .maps-address-icon {
+            font-size: 20px;
+            flex-shrink: 0;
+            margin-top: 1px;
+        }
+
+        .maps-address-name {
+            font-family: "Cormorant Garamond", serif;
+            font-size: 17px;
+            color: var(--biru-tua);
+            font-weight: 600;
+            margin-bottom: 2px;
+        }
+
+        .maps-address-detail {
+            font-size: 12px;
+            color: var(--abu);
+            line-height: 1.6;
+        }
+
+        .btn-maps-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 14px;
+            padding: 12px 22px;
+            background: linear-gradient(135deg, var(--biru-tua2), var(--biru-tua));
+            color: var(--biru-terang);
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            border-radius: 50px;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            font-family: "Nunito", sans-serif;
+            transition: all 0.3s;
+            width: 100%;
+        }
+
+        .btn-maps-link:hover {
+            background: linear-gradient(135deg, var(--biru-tua), var(--biru-gelap));
+            transform: translateY(-2px);
+        }
+
+        /* ============================
+   8. TERIMA KASIH
+============================ */
+        #terima {
+            background: linear-gradient(160deg, var(--biru-tua2) 0%, #0f2d58 60%, #0a1e3a 100%);
+            padding: 60px 22px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        #terima::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 320px;
+            height: 320px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(132, 183, 237, 0.1) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .terima-arabic {
+            font-family: "Cormorant Garamond", serif;
+            font-size: clamp(22px, 6vw, 30px);
+            color: var(--biru-muda);
+            letter-spacing: 5px;
+            margin-bottom: 12px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .terima-title {
+            font-family: "Cinzel", serif;
+            font-size: clamp(18px, 5vw, 24px);
+            color: var(--putih);
+            font-weight: 700;
+            letter-spacing: 2px;
+            margin-bottom: 14px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .terima-text {
+            font-family: "Cormorant Garamond", serif;
+            font-size: clamp(15px, 4vw, 18px);
+            color: rgba(255, 255, 255, 0.78);
+            line-height: 1.9;
+            font-style: italic;
+            max-width: 370px;
+            margin: 0 auto 24px;
+            position: relative;
+            z-index: 1;
+            padding: 0 6px;
+        }
+
+        .ttd-box {
+            display: inline-block;
+            padding: 18px 28px;
+            background: rgba(132, 183, 237, 0.08);
+            border: 1px solid rgba(132, 183, 237, 0.25);
+            border-radius: 10px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .ttd-logo {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            border: 1px solid rgba(201, 168, 76, 0.4);
+            background: rgba(255, 255, 255, 0.05);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            margin: 0 auto 10px;
+        }
+
+        .ttd-logo img {
+            width: 90%;
+            height: 90%;
+            object-fit: contain;
+            padding: 3px;
+        }
+
+        .ttd-dari {
+            font-size: 10px;
+            color: rgba(255, 255, 255, 0.35);
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+
+        .ttd-nama {
+            font-family: "Cinzel", serif;
+            font-size: clamp(13px, 4vw, 17px);
+            color: var(--biru-terang);
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .minal {
+            margin-top: 22px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .minal-text {
+            font-family: "Cormorant Garamond", serif;
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.45);
+            letter-spacing: 4px;
+            font-style: italic;
+        }
+
+        .minal-sub {
+            font-size: 11px;
+            color: rgba(255, 255, 255, 0.25);
+            margin-top: 5px;
+            letter-spacing: 2px;
+        }
+
+        /* ============================
+   9. FOOTER
+============================ */
+        #footer {
+            background: #050f1e;
+            padding: 32px 22px;
+            text-align: center;
+            border-top: 1px solid rgba(132, 183, 237, 0.1);
+        }
+
+        .footer-logos {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
             margin-bottom: 20px;
         }
 
-        #card {
-            margin-top: 25px;
-            margin-left: 25px;
-            height: 50px;
-            width: 50px;
-            opacity: 0.5;
-        }
-
-        .scroll-icon {
-            position: fixed;
-            bottom: 50px;
-            left: 50%;
-            transform: translateX(-50%);
-            cursor: pointer;
-            opacity: 1;
-            transition: opacity 0.3s ease-in-out, bottom 0.3s ease-in-out;
-        }
-
-        .scroll-icon.hidden {
-            opacity: 0;
-        }
-
-        .swipe-text {
-            position: absolute;
-            bottom: 15px;
-            left: 60%;
-            transform: translate(-50%, -50%);
-            font-size: 14px;
-            opacity: 0;
-            animation: moveUpDown 2s infinite;
-        }
-
-
-        @keyframes moveUpDown {
-
-            0%,
-            100% {
-                transform: translate(-50%, -50%) translateY(-10px);
-                opacity: 0;
-            }
-
-            50% {
-                transform: translate(-50%, -50%) translateY(10px);
-                opacity: 1;
-            }
-        }
-
-
-        /* The actual timeline (the vertical ruler) */
-        .timeline {
-            position: relative;
-            /* max-width: 1200px; */
-            margin: 0 auto;
-        }
-
-        /* The actual timeline (the vertical ruler) */
-        .timeline::after {
-            content: '';
-            position: absolute;
-            width: 6px;
-            background-color: white;
-            top: 0;
-            bottom: 0;
-            left: 50%;
-            margin-left: -3px;
-        }
-
-        /* Container around content */
-        .container-timeline {
-            padding: 10px 40px;
-            position: relative;
-            background-color: inherit;
-            width: 50%;
-        }
-
-        /* The circles on the timeline */
-        .container-timeline::after {
-            content: '';
-            position: absolute;
-            width: 25px;
-            height: 25px;
-            right: -17px;
-            background-color: white;
-            border: 4px solid #FF9F55;
-            top: 15px;
+        .footer-logo-sm {
+            width: 44px;
+            height: 44px;
             border-radius: 50%;
-            z-index: 1;
-        }
-
-        /* Place the container to the left */
-        .left {
-            left: 0;
-        }
-
-        /* Place the container to the right */
-        .right {
-            left: 50%;
-        }
-
-        /* Add arrows to the left container (pointing right) */
-        .left::before {
-            content: " ";
-            height: 0;
-            position: absolute;
-            top: 22px;
-            width: 0;
-            z-index: 1;
-            right: 30px;
-            border: medium solid white;
-            border-width: 10px 0 10px 10px;
-            border-color: transparent transparent transparent white;
-        }
-
-        /* Add arrows to the right container (pointing left) */
-        .right::before {
-            content: " ";
-            height: 0;
-            position: absolute;
-            top: 22px;
-            width: 0;
-            z-index: 1;
-            left: 30px;
-            border: medium solid white;
-            border-width: 10px 10px 10px 0;
-            border-color: transparent white transparent transparent;
-        }
-
-        /* Fix the circle for containers on the right side */
-        .right::after {
-            left: -16px;
-        }
-
-        /* The actual content */
-        .content {
-            padding: 20px 30px;
-            background-color: white;
-            position: relative;
-            border-radius: 6px;
-        }
-
-        /* Media queries - Responsive timeline on screens less than 600px wide */
-        @media screen and (max-width: 600px) {
-
-            /* Place the timelime to the left */
-            .timeline::after {
-                left: 31px;
-            }
-
-            /* Full-width containers */
-            .container-timeline {
-                width: 100%;
-                padding-left: 70px;
-                padding-right: 25px;
-            }
-
-            /* Make sure that all arrows are pointing leftwards */
-            .container-timeline::before {
-                left: 60px;
-                border: medium solid white;
-                border-width: 10px 10px 10px 0;
-                border-color: transparent white transparent transparent;
-            }
-
-            /* Make sure all circles are at the same spot */
-            .left::after,
-            .right::after {
-                left: 15px;
-            }
-
-            /* Make all right containers behave like the left ones */
-            .right {
-                left: 0%;
-            }
-        }
-    </style>
-
-
-    <style>
-        .full-screen {
-            /* background-color: lightblue; */
-            height: 100vh;
-        }
-
-        .phone-screen {
-            background-color: rgb(255, 255, 255);
-            height: 100vh;
-            /* overflow-y: auto; */
-            /* position: relative; */
-        }
-
-        .custom-background {
-            /* background-image: url('{{ asset('assets/img/rssarkies/Royal_building_UMKU.png') }}'); */
-            /* Ganti dengan URL gambar */
-            background-color: #44ACFF;
-            background-size: cover;
-            background-position: center;
-            height: 900px;
-            /* Menentukan tinggi elemen */
-        }
-
-
-        @media (max-width: 768px) {
-            .full-screen {
-                display: none;
-            }
-        }
-
-        .icon-bar {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(132, 183, 237, 0.15);
             display: flex;
-            justify-content: space-around;
-            /* Untuk meratakan ikon */
-            padding: 10px;
-            border-radius: 8px;
-            /* Sudut membulat */
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
         }
 
-        .icon {
-            text-align: center;
-            color: white;
-            /* Warna teks */
-            text-decoration: none;
-            /* Menghilangkan garis bawah pada tautan */
+        .footer-logo-sm img {
+            width: 90%;
+            height: 90%;
+            object-fit: contain;
+            padding: 3px;
         }
 
-        .icon img {
-            width: 20px;
-            /* Ukuran ikon */
-            height: 20px;
-            /* Ukuran ikon */
+        .footer-divider {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            justify-content: center;
+            margin-bottom: 16px;
         }
 
-        .icon:hover {
-            opacity: 0.8;
-            /* Efek hover */
+        .footer-divider::before,
+        .footer-divider::after {
+            content: '';
+            flex: 1;
+            max-width: 50px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(132, 183, 237, 0.3), transparent);
+        }
+
+        .footer-divider span {
+            color: rgba(132, 183, 237, 0.4);
+            font-size: 11px;
+        }
+
+        .footer-panitia {
+            font-size: 11px;
+            color: rgba(255, 255, 255, 0.3);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+
+        .footer-org {
+            font-family: "Cinzel", serif;
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.5);
+            letter-spacing: 1px;
+            margin-bottom: 16px;
+        }
+
+        .footer-created {
+            font-size: 11px;
+            color: rgba(255, 255, 255, 0.2);
+            letter-spacing: 1.5px;
+        }
+
+        .footer-created span {
+            color: rgba(132, 183, 237, 0.45);
+            font-weight: 700;
+        }
+
+        .footer-copy {
+            font-size: 10px;
+            color: rgba(255, 255, 255, 0.1);
+            margin-top: 6px;
+            letter-spacing: 1px;
+        }
+
+        /* ============================
+   REVEAL & ANIM
+============================ */
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(24px)
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0)
+            }
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(28px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+
+        .reveal.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media(max-width:380px) {
+            .waktu-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .logos-row {
+                gap: 10px;
+            }
+
+            .logo-circle.sm {
+                width: 56px;
+                height: 56px;
+            }
+
+            .logo-circle.lg {
+                width: 72px;
+                height: 72px;
+            }
         }
     </style>
-
-    <!-- google font -->
-    <link
-        href="https://fonts.googleapis.com/css2?family=Dancing+Script&amp;family=Euphoria+Script&amp;family=Marck+Script&amp;family=Princess+Sofia&amp;family=Rouge+Script&amp;family=Square+Peg&amp;display=swap"
-        rel="stylesheet">
-    <!-- font awesome -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-
-    <!-- CSS -->
-    <link rel="stylesheet" type="text/css"
-        href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css">
-
-    <!-- JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-
-    <link rel="stylesheet" href="{{ asset('assets/css/invitation.css') }}" type="text/css">
-    {{-- <link rel="stylesheet" href="https://akad.in/theme/akadin/tradition/1/css/style.css" type="text/css"> --}}
 </head>
 
-<body oncontextmenu="return false">
-    <div class="container-fluid">
-        <div class="row">
-            <!-- Sisi Kiri - Ukuran Penuh (Desktop Only) -->
-            <div class="col-md-8 full-screen d-none d-md-block">
-                <div class="fixed-top custom-background">
-                    <!-- HEADER LOGO -->
-                    <div class="text-center py-3">
-                        <div class="d-flex justify-content-around align-items-center flex-wrap">
+<audio id="bgMusic" loop>
+    <source src="{{ asset('assets/music/mars aisyiyah.mp3') }}" type="audio/mpeg">
+</audio>
 
-                            <!-- Logo RS Sarkies -->
-                            <div class="text-center">
-                                <img src="{{ asset('assets/img/Logo_RSSA 2.png') }}" alt="RS Sarkies"
-                                    style="height:150px;">
-                                {{-- <p class="m-0 fw-bold">RS Sarkies</p> --}}
-                            </div>
+<body>
 
-                            <!-- Logo RS Aisyiyah Group -->
-                            <div class="text-center">
-                                <img src="{{ asset('assets/img/Logo_Holding_RSA_Group.png') }}" alt="RS Aisyiyah Group"
-                                    style="height:70px;">
-                                {{-- <p class="m-0 fw-bold">RS Aisyiyah Group</p> --}}
-                            </div>
-
-                            <!-- Logo RS Aisyiyah -->
-                            <div class="text-center">
-                                <img src="{{ asset('assets/img/Logo_RSA.png') }}" alt="RS Aisyiyah"
-                                    style="height:150px;">
-                                {{-- <p class="m-0 fw-bold">RS Aisyiyah</p> --}}
-                            </div>
-
-                        </div>
+    <!-- 1. COVER -->
+    <section id="cover">
+        <div class="cover-inner">
+            <div class="logos-row">
+                <div class="logo-wrap">
+                    <div class="logo-circle sm">
+                        <img src="{{ asset('assets/img/Logo_RSSA 2.png') }}" alt="Logo RSSA">
                     </div>
-                    <h1></h1>
+                    <div class="logo-name">RS Sarkies Aisyiyah</div>
+                </div>
+                <div class="logo-sep"></div>
+                <div class="logo-wrap">
+                    <div class="logo-circle lg">
+                        <img src="{{ asset('assets/img/Logo_Holding_RSA_Group.png') }}"Logo Holding RSA Group">
+                    </div>
+                    <div class="logo-name" style="color:rgba(255,255,255,0.7)">Holding RSA Group</div>
+                </div>
+                <div class="logo-sep"></div>
+                <div class="logo-wrap">
+                    <div class="logo-circle sm">
+                        <img src="{{ asset('assets/img/logo_RSA.png') }}" alt="Logo RSA">
+                    </div>
+                    <div class="logo-name">RS Aisyiyah Kudus</div>
                 </div>
             </div>
 
-            <!-- Sisi Kanan - Ukuran Layar Smartphone -->
-            <div class="col-md-4 phone-screen p-0 m-0">
-
-
-                <div class="row fixed-bottom" style="display: none" id="icon-bar">
-
-                    <div class="col-md-4 ms-auto px-5" style="margin-bottom: 10px;">
-                        <div class="icon-bar text-center btn-color-2 border-color-1">
-                            <a href="#intro" class="icon">
-                                <i class="fa fa-envelope-open" aria-hidden="true"></i> <!-- Ikon buku terbuka -->
-                            </a>
-                            <a href="#ayat" class="icon">
-                                <i class="fa fa-user-circle" aria-hidden="true"></i> <!-- Ikon album -->
-                            </a>
-                            <a href="#akad-resepsi" class="icon">
-                                <i class="fa fa-calendar" aria-hidden="true"></i> <!-- Ikon waktu -->
-                            </a>
-                            <a href="#footer" class="icon">
-                                <i class="fa fa-book" aria-hidden="true"></i> <!-- Ikon buku tertutup -->
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-
-                <!-- start -->
-                <div class="card fixed-top custom-background mb-4">
-                    <!-- HEADER LOGO -->
-                    <div class="text-center py-0">
-                        <div class="d-flex justify-content-around align-items-center flex-wrap">
-
-                            <!-- Logo RS Sarkies -->
-                            <div class="text-center">
-                                <img src="{{ asset('assets/img/Logo_RSSA 2.png') }}" alt="RS Sarkies"
-                                    style="height:190px;">
-                                {{-- <p class="m-0 fw-bold">RS Sarkies</p> --}}
-                            </div>
-
-                            <!-- Logo RS Aisyiyah Group -->
-                            <div class="text-center">
-                                <img src="{{ asset('assets/img/Logo_Holding_RSA_Group.png') }}" alt="RS Aisyiyah Group"
-                                    style="height:70px;">
-                                {{-- <p class="m-0 fw-bold">RS Aisyiyah Group</p> --}}
-                            </div>
-
-                            <!-- Logo RS Aisyiyah -->
-                            <div class="text-center">
-                                <img src="{{ asset('assets/img/logo_RSA.png') }}" alt="RS Aisyiyah"
-                                    style="height:150px;">
-                                {{-- <p class="m-0 fw-bold">RS Aisyiyah</p> --}}
-                            </div>
-
-                        </div>
-                    </div>
-                    {{-- <h1></h1> --}}
-                </div>
-                <div id="card" class="card fixed-top" style="display: none">
-                    <audio id="sound" preload="auto">
-                        {{-- <source src="https://akad.in/storage/song/urlBagyan Sadewok" type="audio/mp3" preload="auto"> --}}
-                        <source src="{{ asset('assets/music/mars aisyiyah.mp3') }}" type="audio/mp3" preload="auto">
-                    </audio>
-                    <!-- <audio id="sound" src="thismoment.mp3" preload="auto" controls></audio> -->
-                    <img id="disc"
-                        src="https://i.pinimg.com/originals/76/33/63/763363a3be941b93610d58f8fb54e638.png"
-                        alt="" height="35" width="35">
-                </div>
-
-                <div class="fixed-top">
-                    <div class="output"></div>
-                </div>
-
-                <div class="fixed-top mt-5">
-                    <div class="text-center">
-                        <div class="" id="welcomeMessage" style="height:665px;">
-                            <div class="photo-frame" style="text-align: center;">
-                                <img class=""
-                                    style="margin-top: 55px; height: 212px; width: 132px; border-radius: 60px 60px 0px 0px; overflow: hidden;"
-                                    src="{{ asset('assets/img/Logo_Holding_RSA_Group.png') }}">
-                            </div>
-                            <h2 class="text-white" style="margin-top: 0px">
-                                Silaturahmi Syawalan
-                            </h2>
-                            <h1 class="text-color-1" style="font-size:37px">
-                                Keluarga Besar <br> RS 'Aisyiyah Group Kudus
-                            </h1>
-                            <h2 class="text-white" style="font-size:20px">
-                                Kepada Yth, Bapak/Ibu/Saudara/i
-                            </h2>
-                            <h2 class="text-color-1" style="font-size:25px">
-                                Muhammad Abdul Wahab
-                            </h2>
-                            <p class="text-white">Silakan klik tombol di bawah untuk membuka undangan Pernikahan.</p>
-                            <button id="bukaUndangan" class="btn btn-color-2 text-color-1">Buka Undangan</button>
-                            <script>
-                                document.getElementById("bukaUndangan").onclick = function() {
-                                    // Mendapatkan elemen dengan kelas 'fixed-top' dan 'custom-background'
-                                    const elements = document.getElementsByClassName('fixed-top custom-background');
-                                    const iconbar = document.getElementById('icon-bar');
-                                    iconbar.style.display = 'block';
-                                    // Menambahkan kelas 'col-md-8' pada setiap elemen yang ditemukan
-                                    elements.length = 1;
-                                    for (let i = 0; i < elements.length; i++) {
-                                        elements[i].classList.add('col-md-8');
-                                        elements[i].style.zIndex = '-1';
-                                    }
-                                };
-                            </script>
-                        </div>
-                    </div>
-                </div>
-
-                <div id="intro" class="p-3 text-center m-0">
-                    <div id="image-pernikahan" class="photo-frame" style="text-align: center;display:none">
-                        <img class=""
-                            style="margin-top: 55px; height: 212px; width: 132px; border-radius: 60px 60px 0px 0px; overflow: hidden;"
-                            src="{{ asset('assets/img/Logo_Holding_RSA_Group.png') }}">
-                    </div>
-                    <h2 class="text-white" style="margin-top: 20px;display:none" id="title-pernikahan">
-                        Silaturahmi Syawalan
-                    </h2>
-                    <h1 class="text-color-1" style="font-size:45px;display:none" id="loversname">
-                        Keluarga Besar RS 'Aisyiyah Group Kudus
-                    </h1>
-                    <h2 class="text-white" style="font-size:30px;display:none" id="date-wedding-1">04 . 4 . 2026</h2>
-                </div>
-
-                <div style="display:none" id="content-of-main">
-                    <link rel="stylesheet"
-                        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-                    <div class="scroll-icon text-color-1" id="scrollIcon">
-                        <pre class="m-0 p-0 swipe-text">Swipe Up </pre>
-                        <i class="fa fa-chevron-down"></i>
-                        <i class="fa fa-chevron-down"></i>
-                        <i class="fa fa-chevron-down"></i>
-                    </div>
-                    <script>
-                        const scrollIcon = document.getElementById('scrollIcon');
-
-                        scrollIcon.addEventListener('click', () => {
-                            // Scroll smoothly to the next section
-                            window.scrollBy({
-                                top: window.innerHeight,
-                                behavior: 'smooth'
-                            });
-
-                            // Hide the scroll icon after clicking
-                            scrollIcon.style.display = 'none';
-                        });
-
-                        // Show the scroll icon when scrolling starts
-                        window.addEventListener('scroll', () => {
-                            if (window.scrollY > 100) {
-                                scrollIcon.style.display = 'none';
-                            } else {
-                                scrollIcon.style.display = 'block';
-                            }
-                        });
-                    </script>
-
-                    <div id="ayat" class="quote-1 p-3 text-center m-0" style="display:none;">
-
-                        <div id="ayat-container">
-                            <div class="">
-                                <img class="img-fluid" height="100px" width="100px" style="display:none"
-                                    id="dove" src="{{ asset('assets/img/Logo_Holding_RSA_Group.png') }}"
-                                    alt="">
-                            </div>
-                            <h2 id="tanda-1" class="fs-2 my-0 p-0" style="font-size:45px;">
-                                Sambutan
-                            </h2>
-                            <h1 id="tanda-2" class="my-0 p-0" style="font-size:30px;">
-                                Direksi dan BOD RS 'Aisyiyah Group Kudus
-                            </h1>
-                            <p id="tanda-3" style="font-size: 18px;">
-
-                                Alhamdulillah Bulan Suci Ramadhan telah berakhir. Dalam suasana yang damai ini , kami
-                                ingin mengundang Bapak/Ibu/Saudara(i) untuk hadir pada acara Halal Bihalal.
-                            </p>
-
-                            <div class="mx-3" style="margin-top: 50px;">
-                                <div class="row">
-                                    <div class="col-md-4  m-0 p-0">
-                                        <div class="card text-center shadow-lg bg-body-tertiary rounded"
-                                            id="profil-1-photo">
-                                            <a data-fancybox="gallery"
-                                                href="{{ asset('assets/img/direksi_dan_bod.png') }}">
-                                                <img id="foto-profil-1" class="card-img-top img-fluid p-3 pb-5"
-                                                    src="{{ asset('assets/img/direksi_dan_bod.png') }}"
-                                                    alt="...">
-                                            </a>
-                                        </div>
-                                    </div>
-
-                                    {{-- <div class="col-md-4">
-                                        <div class="card-body text-center m-0 p-0">
-                                            <h1 class="card-title text-color-1-dark" id="nickname-profil-1"
-                                                style="font-size: 40px;margin-top: 125px">Nurul</h1>
-                                            <h2 class="card-subtitle fw-bold text-color-2" id="fullname-profil-1"
-                                                style="font-size: 30px;margin-left: 0px">Nurul Aulia dewi</h2>
-                                            <div class="position-relative mb-3">
-                                                <hr id="hr-1"
-                                                    class="border border-secondary border-2 opacity-50 position-absolute top-0 start-50 translate-middle-x"
-                                                    width="50%">
-                                            </div>
-                                            <div class="mb-5 mt-0 p-0" id="family-profil-1">
-
-                                                <p class="m-0 p-0" style="font-size:14px;font-weight:bold">
-                                                    Putri
-                                                    Pertama</p>
-                                                <p class="m-0 p-0" style="font-size:18px">Bapak Siswanto<br> &amp;
-                                                    <br>Ibu Khalimah
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div> --}}
-
-                                    <!--<div class="col-md-4">-->
-
-                                    <!--</div>-->
-                                </div>
-
-
-
-                                <div class="row">
-                                    {{-- <div class="col-md-4">
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="card-body text-center">
-                                            <h1 class="card-title  text-color-1-dark" id="nickname-profil-2"
-                                                style="font-size: 40px;margin-top: 40px">Munir</h1>
-                                            <h2 class="card-subtitle fw-bold text-color-2" id="fullname-profil-2"
-                                                style="font-size: 30px;margin-left: 0px">Muhamad As'ad Munir Dzikri
-                                            </h2>
-                                            <div class="position-relative mb-3">
-                                                <hr id="hr-2"
-                                                    class="border border-secondary border-2 opacity-50 position-absolute top-0 start-50 translate-middle-x"
-                                                    width="50%">
-                                            </div>
-                                            <div class="mb-5 mt-0 p-0" id="family-profil-2">
-                                                <p class="m-0 p-0" style="font-size:14px;font-weight:bold">
-                                                    Putra Pertama</p>
-                                                <p class="m-0 p-0" style="font-size:18px">Bapak Rofii<br> &amp;
-                                                    <br>Ibu Sri Muayanah
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="card text-center mt-5 shadow-lg bg-body-tertiary rounded">
-                                            <a data-fancybox="gallery"
-                                                href="https://akad.in/storage/1absolut/male.jpg">
-                                                <img id="foto-profil-2" class="card-img-top img-fluid p-3 pb-5"
-                                                    src="https://akad.in/storage/1absolut/male.jpg" alt="... ">
-                                            </a>
-                                        </div>
-                                    </div> --}}
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <div id="date_time" class="text-center bg-light">
-                        <img id="ring" height="100" width="100" class="img-fluid mt-5"
-                            src="https://i.pinimg.com/originals/ea/0d/24/ea0d24db340d1ef7b6eeab58c2881984.png"
-                            alt="wedding ring">
-                        <h2 class="mb-4 text-color-1" id="waktu-tempat" style="font-size: 35px">Waktu &amp; Tempat
-                        </h2>
-                        <div id="card-time">
-                            <div class="card d-inline-flex background-card" style="width: 5rem;">
-                                <div class="card-body">
-                                    <div class="m-0 p-0" id="days-card">
-                                        <h5 id="days" class="card-title">0-43</h5>
-                                        <p class="card-title">Hari</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card d-inline-flex background-card" style="width: 5rem;">
-                                <div class="card-body">
-                                    <div class="m-0 p-0" id="hours-card">
-                                        <h5 id="hours" class="card-title">0-12</h5>
-                                        <p class="card-title">Jam</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card d-inline-flex background-card" style="width: 5rem;">
-                                <div class="card-body">
-                                    <div class="m-0 p-0" id="minutes-card">
-                                        <h5 id="minutes" class="card-title">0-19</h5>
-                                        <p class="card-title">Menit</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card d-inline-flex background-card" style="width: 5rem;">
-                                <div class="card-body">
-                                    <div class="m-0 p-0" id="seconds-card">
-                                        <h5 id="seconds" class="card-title">0-24</h5>
-                                        <p class="card-title">Detik</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        {{-- <div class="container pb-5" id="ayat-2">
-                            <div class="card-body mt-4 card background-card" style="border-radius: 20px;">
-                                <p style="font-size: 18px;" class="text-center">"Dan Di Antara Tanda-Tanda
-                                    (Kebesaran)-Nya Ialah Dia Menciptakan Pasangan-Pasangan Untukmu Dari Jenismu
-                                    Sendiri, Agar Kamu Cenderung Dan Merasa Tenteram Kepadanya, Dan Dia Menjadikan Di
-                                    Antaramu Rasa Kasih Dan Sayang. Sesungguhnya Pada Yang Demikian Itu Benar-Benar
-                                    Terdapat Tanda-Tanda (Kebesaran Allah) Bagi Kaum Yang Berpikir."</p>
-                                <h1 style="font-size: 20px;font-weight: bold" id="ayat-pasangan-1">-
-                                    Ar-Rum 21 -</h1>
-                            </div>
-                        </div> --}}
-                    </div>
-
-                    <link rel="preconnect" href="https://fonts.googleapis.com">
-                    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-                    <link
-                        href="https://fonts.googleapis.com/css2?family=Caveat:wght@500&amp;family=Great+Vibes&amp;display=swap"
-                        rel="stylesheet">
-                    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pacifico&amp;display=swap">
-
-
-                    <div id="akad-resepsi" class="">
-                        <div class="container text-center">
-                            <img id="envelope" class="mt-5" height="100" width="100"
-                                src="https://akad.in/storage/images/8920FR2ZQxEEcA4AYS7e1NBEHIrCRDimBBrkwDJq.png">
-                            <p id="event-description" class="text-white">Dengan segala kerendahan hati kami berharap
-                                kehadiran Bapak/Ibu/Saudara/i dalam acara Silaturahmi Syawalan yang kami selenggarakan
-                                pada :
-                            </p>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="lokasi pb-5" id="weddinglokasidetail1">
-                                        <div class="card d-inline-flex mt-5 background-card" style="width: 100%;">
-                                            <div class="card-body shadow-lg p-3 bg-body-tertiary rounded">
-                                                <h1 class="card-title fw-bold text-color-2" style="font-size: 40px">
-                                                    Lokasi Acara</h1>
-                                                <hr>
-                                                <div>
-                                                    <p style="font-size: 17px" class="m-0 p-0" id="day-wedding-1">
-                                                        Minggu</p>
-                                                    <h2 style="font-size: 25px" class="m-0 p-0"
-                                                        id="date-wedding-2-1"> 04 April 2026</h2>
-                                                    <p style="font-size: 17px" class="m-0 p-0">
-                                                        Pukul
-                                                        07:30
-                                                        WIB
-                                                        -
-                                                        11:00 WIB
-                                                    </p>
-                                                    <h2 class="text-color-2 fw-bold" style="font-size: 25px">
-                                                        Lokasi</h2>
-                                                    <h2 style="font-size: 25px" class="m-0 p-0">
-                                                        Bertempat di,</h2>
-                                                    <h2 style="font-size: 25px" class="m-0 p-0">
-                                                        Crystal Building UMKU</h2>
-                                                    <p style="font-size: 17px" class="m-0 p-0">
-                                                        Jl. Ganesha I, Purwosari, Kec. Kota Kudus, Kabupaten Kudus, Jawa
-                                                        Tengah 59316</p>
-                                                </div>
-                                                <a href="https://maps.app.goo.gl/GQEkZASEtM1XMyCv8" type="button"
-                                                    class="btn btn-color-2 my-5 text-color-1">
-                                                    <i class="fa fa-map" style="font-size:18px"></i>
-                                                    Lihat Lokasi
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="lokasi pb-5 text-center" id="rundown-acara">
-                                        <div class="card d-inline-flex mt-5 background-card" style="width: 100%;">
-                                            <div class="card-body shadow-lg p-3 bg-body-tertiary rounded">
-                                                <h1 class="card-title fw-bold text-color-2" style="font-size: 40px">
-                                                    Rundown Acara
-                                                </h1>
-                                                <hr>
-                                                <div class="container">
-                                                    <div class="row">
-                                                        <!-- Kolom Kiri -->
-                                                        <div class="col-md-6 col-12">
-                                                            <p><strong>07.30 - 08.00</strong> Registrasi Undangan</p>
-                                                            <p><strong>08.00 - 08.30</strong> Pra-Acara</p>
-                                                            <p><strong>08.30 - 08.40</strong> Pembukaan</p>
-                                                            <p><strong>08.40 - 08.45</strong> Pembacaan Ayat Suci
-                                                                Alqur’an</p>
-                                                            <p><strong>08.45 - 09.00</strong> Menyanyikan lagu-lagu :
-                                                            </p>
-                                                            <ul class="list-unstyled">
-                                                                <li>Indonesia Raya</li>
-                                                                <li>Sang Surya</li>
-                                                                <li>Mars ‘Aisyiyah</li>
-                                                            </ul>
-                                                            <p><strong>09.00 - 09.05</strong> Sambutan Direktur Holding
-                                                                RSA Group Kudus</p>
-                                                        </div>
-
-                                                        <!-- Kolom Kanan -->
-                                                        <div class="col-md-6 col-12">
-                                                            <p><strong>09.05 - 09.10</strong> Sambutan Ketua PDA
-                                                                Kabupaten Kudus</p>
-                                                            <p><strong>09.10 - 09.15</strong> Sambutan PDM Kabupaten
-                                                                Kudus</p>
-                                                            <p><strong>09.15 - 10.20</strong> Tausiyah & Doa <br> Ketua
-                                                                Umum Pimpinan Pusat ‘Aisyiyah <br> (Dr. apt. Salmah
-                                                                Orbayinah, M.Kes)</p>
-                                                            <p><strong>10.20 - 11.00</strong> Ramah Tamah & Penutup</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <a href="https://maps.app.goo.gl/GQEkZASEtM1XMyCv8" type="button"
-                                                    class="btn btn-color-2 my-5 text-color-1">
-                                                    <i class="fa fa-map" style="font-size:18px"></i>
-                                                    Lihat Lokasi
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-
-                                <div class="col-md-6" style="display: none">
-                                    <div class="lokasi pb-5 text-center" id="weddinglokasidetail3">
-                                        <div class="card d-inline-flex mt-5 background-card"
-                                            style="width: 100%;display: none;">
-                                            <div class="card-body shadow-lg p-3 bg-body-tertiary rounded">
-                                                <h1 class="card-title fw-bold text-color-2" style="font-size: 40px">
-                                                    Ngunduh Mantu</h1>
-                                                <hr>
-                                                <div>
-                                                    <p style="font-size: 17px" class="m-0 p-0" id="day-wedding-3">
-                                                        Minggu</p>
-                                                    <h2 style="font-size: 25px" class="m-0 p-0"
-                                                        id="date-wedding-2-3"> 8 Oktober 2023</h2>
-                                                    <p style="font-size: 17px" class="m-0 p-0">
-                                                        Pukul
-                                                        23:59
-                                                        WIB
-                                                        -
-                                                        Selesai
-                                                    </p>
-                                                    <h2 class="text-color-2 fw-bold" style="font-size: 25px">
-                                                        Lokasi</h2>
-                                                    <h2 style="font-size: 25px" class="m-0 p-0">
-                                                        Bertempat di,</h2>
-                                                    <h2 style="font-size: 25px" class="m-0 p-0">
-                                                        <p></p>
-                                                        <p style="font-size: 17px" class="m-0 p-0">
-                                                        </p>
-                                                    </h2>
-                                                </div>
-                                                <a href="" type="button"
-                                                    class="btn btn-color-2 my-5 text-color-1">
-                                                    <i class="fa fa-map" style="font-size:18px"></i>
-                                                    Lihat Lokasi
-                                                </a>
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-
-                    {{-- <div id="prewed" class="quote-1 p-3 text-center m-0">
-                        <div class="mb-5">
-                            <div class="">
-                                <img id="bucket" class="img-fluid" height="100px" width="100px"
-                                    style="display:none"
-                                    src="https://www.freepnglogos.com/uploads/flower-bouquet-png/bouquet-ywllow-flowers-png-transparent-images-download-5.png"
-                                    alt="">
-                            </div>
-                            <h2 id="momen" class="fs-2 my-0 p-0 text-color-1" style="display:none;">
-                                Momen
-                            </h2>
-                            <h1 id="bahagia-kami" class="my-0 p-0 text-color-1" style="display:none;font-size:45px;">
-                                Bahagia Kami
-                            </h1>
-                            <p id="pernyataan-prewed" class="text-white" style="display:none;font-size: 18px;">
-                                Kamu adalah sahabat dan kekasihku, dan<br>aku tidak tahu sisi mana darimu yang
-                                paling<br>aku
-                                kagumi. Aku menghargai setiap <br>perjalanan yg telah kita lalui dan aku
-                                siap<br>mengarungi
-                                cerita baru bersamamu
-                            </p>
-                        </div>
-                    </div> --}}
-
-
-
-
-
-                    {{-- <div class="m-0 p-0" id="ucapan-doa" style="display:none">
-                        <div class="container py-5">
-                            <div class="card background-card">
-                                <div class="card-body">
-
-                                    <div class="text-center">
-                                        <h2 id="ucapan-sesuatu" class="fs-2 my-0 p-0 text-color-2" style="">
-                                            Buku Tamu
-                                        </h2>
-                                        <h1 id="berikan-ucapan" class="my-2 p-0" style="font-size:30px;">
-                                            Berikan Ucapan &amp; Do'a restu
-                                        </h1>
-                                        <p class="my-0 p-0 text-color-2">3 Comments</p>
-                                    </div>
-
-                                    <div class="d-flex justify-content-center">
-                                        <div class="row text-center d-flex justify-content-center my-3">
-                                            <div class="col text-center">
-                                                <div class="opacity-100 bg-success text-light fw-bold rounded pt-2 m-0 p-0"
-                                                    style="width:5rem;height:5rem">
-                                                    <p class="m-0 p-0">0</p>
-                                                    <p class="m-0 p-0">Hadir</p>
-                                                </div>
-                                            </div>
-                                            <div class="col text-center">
-                                                <div class="opacity-100 bg-danger text-light fw-bold rounded pt-2 m-0 p-0"
-                                                    style="width:5rem;height:5rem">
-                                                    <p class="m-0 p-0">3</p>
-                                                    <p class="m-0 p-0">Tidak Hadir</p>
-                                                </div>
-                                            </div>
-                                            <div class="col text-center">
-                                                <div class="opacity-100 bg-warning text-light fw-bold rounded pt-2 m-0 p-0"
-                                                    style="width:5rem;height:5rem">
-                                                    <p class="m-0 p-0">0</p>
-                                                    <p class="m-0 p-0">Masih Ragu</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <form enctype="multipart/form-data" class="mx-5 mb-5 pb-5"
-                                        action="/confirmation-wedding" method="post">
-                                        <input type="hidden" name="_token"
-                                            value="peZFmutNRRIMdXItsZEKW7xZeZxAX6FPj8V6cESU">
-                                        <div class="mb-3">
-                                            <input type="text" class="form-control" id="id-couple"
-                                                name="id-couple" value="222777" hidden="">
-                                        </div>
-                                        <div class="mb-3">
-                                            <input type="text" class="form-control" id="guest" name="guest"
-                                                value="Yunita Dwi Herlistiana" hidden="">
-                                        </div>
-                                        <div class="mb-3">
-                                            <input type="text" class="form-control" id="guest-name"
-                                                name="guest-name" placeholder="Nama">
-                                        </div>
-                                        <div class="mb-3">
-                                            <div class="form-floating">
-                                                <textarea class="form-control" placeholder="Tinggalkan ucapan disini" id="floatingTextarea" name="ucapan-wedding"></textarea>
-                                                <label class="text-color-2" for="floatingTextarea">Ucapan</label>
-                                            </div>
-                                        </div>
-                                        <div class="mb-3">
-                                            <select class="form-select" aria-label="Default select example"
-                                                name="confirmation-attendance" id="confirmation-attendance">
-                                                <option value="0" selected="">Hadir</option>
-                                                <option value="1">Tidak Hadir</option>
-                                                <option value="2">Masih Ragu</option>
-                                            </select>
-                                        </div>
-                                        <button type="submit" class="btn btn-color-2 text-color-1">Kirim</button>
-                                    </form>
-
-                                    <h1>Ucapan</h1>
-                                    <ol class="list-group list-group-numbered"
-                                        style="height: 300px; overflow: scroll;margin-top:50px">
-                                        <li class="list-group-item d-flex justify-content-between align-items-start"
-                                            style="background-color: transparent">
-                                            <div class="ms-2 me-auto">
-                                                <div class="fw-bold">Ella smada</div>
-                                                Sakinah mawadah wa rahmah yaa aull. Maap banget gabisa hadirrr
-                                            </div>
-
-                                        </li>
-                                        <li class="list-group-item d-flex justify-content-between align-items-start"
-                                            style="background-color: transparent">
-                                            <div class="ms-2 me-auto">
-                                                <div class="fw-bold">Fiqi</div>
-                                                Samawa bolo,tak doakan langgeng trus,maaf e GK ISO Moro aku🙏🙏🏻
-                                            </div>
-
-                                        </li>
-                                        <li class="list-group-item d-flex justify-content-between align-items-start"
-                                            style="background-color: transparent">
-                                            <div class="ms-2 me-auto">
-                                                <div class="fw-bold">A'la Salatiga</div>
-                                                Selamet bos Munir,wes dadi halal ,mugo2 dadi keluarga ingkang sakinah
-                                                kelawan dasar roso mawaddah warohmah, langgeng dunyo akhirat e 🤲
-                                                Sepurane bos gak iso hadir 🙏
-                                            </div>
-
-                                        </li>
-                                    </ol>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div> --}}
-
-                    {{-- <div class="text-center m-0 p-0" id="gift">
-                        <h2 id="wedding-gift" style="display:none;font-size: 40px" class="pt-5 text-color-1">Gift
-                        </h2>
-
-                        <div class="container">
-                            <p class="text-color-1" id="thanks-you" style="font-size:14px;display:none">Terimakasih
-                                atas doa dan restu dari anda
-                                semua. Untuk kado cashless maupun fisik bisa dikirimkan di bawah ini</p>
-                            <hr>
-                            <div class="row">
-                                <div id="transfer-rekening" class="col-sm-6 text-color-1" style="display:none">
-                                    <h2 class="m-0 p-0" style="font-size: 30px">Transfer ke Rekening BRI
-                                    </h2>
-
-                                    <p class="m-0 p-0" style="font-size:20px">a.n Nurul Aulia Dewi</p>
-                                    <p class="m-0 p-0" style="font-size:20px">1314 0103 1654 501</p>
-                                    <button type="button" class="btn btn-color-2 mb-5 text-color-1"
-                                        onclick="myFunction('1314 0103 1654 501')">Copy No. Rekening</button>
-
-                                    <h2 class="m-0 p-0" style="font-size: 30px">Transfer ke Rekening
-                                        BRI</h2>
-
-                                    <p class="m-0 p-0" style="font-size:20px">a.n Muhamad As'ad Munir Dzikri</p>
-                                    <p class="m-0 p-0" style="font-size:20px">3738 0101 5652 503</p>
-                                    <button type="button" class="btn btn-color-2 mb-5 text-color-1"
-                                        onclick="myFunction('3738 0101 5652 503')">Copy No. Rekening</button>
-
-                                </div>
-                                <div id="kirim-kado" class="col-sm-6" style="display:none">
-                                    <h2 class="m-0 p-0 text-color-1" style="font-size: 30px">Kirim Kado Fisik Ke
-                                        Alamat</h2>
-
-                                    <p class="m-0 p-0 text-color-1" style="font-size:14px">Ds. Wonorejo (Kedung
-                                        Banteng) Rt 07 Rw 03 Kec. Karanganyar Kab. Demak</p>
-                                    <button type="button" class="btn btn-color-2 mb-5 text-color-1"
-                                        onclick="myFunction('Ds. Wonorejo (Kedung Banteng) Rt 07 Rw 03 Kec. Karanganyar Kab. Demak')">Copy
-                                        Alamat</button>
-                                </div>
-                            </div>
-                        </div>
-                        <script>
-                            function myFunction(text) {
-
-                                // Copy the text inside the text field
-                                navigator.clipboard.writeText(text);
-
-                                // Alert the copied text
-                                alert("Copied the text: " + text);
-                            }
-                        </script>
-                    </div> --}}
-
-                    <div class="m-0 p-0">
-                        <div class="text-center m-0 py-5" id="special-thanks">
-                            <h2 class="m-0 p-0 text-white" style="font-size: 20px;">Terimakasih</h2>
-                            <h1 class="text-color-1" style="font-size: 60px;">RS 'Aisyiyah Group Kudus</h1>
-                            <h2 class="m-0 p-0 text-white" style="font-size: 20px;">Keluarga Besar</h2>
-                            <p class="m-0 p-0 text-white" style="font-size: 15px;">RS 'Aisyiyah Kudus
-                            </p>
-                            <p class="m-0 p-0 text-white" style="font-size: 15px;">RS Sarkies 'Aisyiyah Kudus</p>
-                            <p class="m-0 p-0 fw-bold" style="font-size: 24px;">Wassalamu’alaikum Wr. Wb.</p>
-                        </div>
-                        <div id="footer" class="text-center d-flex justify-content-center pt-3 m-0">
-                            {{-- <div class="d-flex m-0 p-0 row">
-                                <div class="col-md-12 m-0 p-0">
-
-                                </div>
-                                <div class="col-md-12">
-                                    <a href="https://api.whatsapp.com/send?phone=6281232672016&amp;text=Saya%20mau%20pesan%20undangannya%20kak"
-                                        class="fa fa-whatsapp mx-2 text-color-1" aria-hidden="true"
-                                        style="text-decoration: none;"></a>
-                                    <a href="https://www.instagram.com/akaddotin" class="fa fa-instagram text-color-1"
-                                        aria-hidden="true" style="text-decoration: none;"></a>
-                                    <style>
-                                        .shopee-icon {
-                                            width: 300px;
-                                            height: 300px;
-                                            border-radius: 50%;
-                                            animation: blink 1s infinite;
-                                        }
-
-                                        @keyframes blink {
-
-                                            0%,
-                                            100% {
-                                                opacity: 1;
-                                            }
-
-                                            50% {
-                                                opacity: 0;
-                                            }
-                                        }
-                                    </style>
-                                    <a href="/our-shopee" class="shopee-icon" aria-hidden="true"
-                                        style="color: inherit; text-decoration: none;">
-
-                                        <img src="https://akad.in/storage/images/tLLnqpZshcVavozaB9MH136OTalLrPWAFNbJKSdN.png"
-                                            style="width: 50px; height: 50px;padding-bottom: 0px;margin:0">
-                                    </a>
-
-                                </div>
-                            </div> --}}
-                            <div class="d-flex m-0 p-0" style="height: 50px;">
-                                <div class="vr m-0 p-0"></div>
-                            </div>
-                            <div class="d-flex row m-0 p-0">
-                                <div class="col-md-12 m-0 p-0">
-
-                                </div>
-                                <p class="col-md-12 m-0 p-0 text-white">Created By
-                                    <br> <span class="text-color-1"> Marketing RS Sarkies 'Aisyiyah Kudus </span><br>
-                                    All Rights Reserved
-                                </p>
-                            </div>
-                            <div class="d-flex m-0 p-0 translate-middle-x" style="height: 50px;">
-                                <div class="vr m-0 p-0"></div>
-                            </div>
-                            <div class="d-flex row m-0 p-0">
-                                <div class="col-md-12 m-0 p-0">
-
-                                </div>
-                                <p class="col-md-12 m-0 p-0 text-white">Created By
-                                    <br> <span class="text-color-1"> IT RS Sarkies 'Aisyiyah Kudus </span><br>
-                                    All Rights Reserved
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-
-                <script>
-                    let list_feature_json = {
-                        "intro": 1,
-                        "profil-1": 1,
-                        "profil-2": 1,
-                        "timeline": 1,
-                        "photo-prewed": 0,
-                        "live-streaming": 0,
-                        "our-story": 0,
-                        "ucapan-doa": 1,
-                        "wedding-gift": 1
-                    };
-
-                    let list_feature_sequence = Object.keys(list_feature_json).filter(key => list_feature_json[key] == 1);
-
-                    // static file
-                    var flag = 0;
-                    const audio = $("#sound")[0];
-                    // call functions firstly
-                    // playAudioFirstly(0);
-
-                    function getMyWeddingDate(datetext) {
-                        let text = datetext;
-                        const myArray = text.split("-");
-                        var birthdateVal = myArray[1] + "/" + myArray[2] + "/" + myArray[0];
-                        console.log(birthdateVal);
-                        var mydate = new Date(birthdateVal);
-                        const options = {
-                            weekday: 'long',
-                            year: 'numeric',
-                            month: 'long',
-                            day: 'numeric'
-                        };
-                        var indonesiadate = mydate.toLocaleDateString('id', options);
-                        var arrDate = indonesiadate.split(',');
-                        return [mydate, indonesiadate, arrDate];
-                    }
-
-                    var x = setInterval(function() {
-                        var mydatestr = "Dec 12, 2022 00:00:00";
-                        // let text = 2026-02-15;
-
-                        const [solemnizationmydate, solemnizationindonesiadate, solemnizationarrDate] = getMyWeddingDate(
-                            "2026-04-04");
-                        $("#day-wedding-1").text(solemnizationarrDate[0]);
-                        $("#date-wedding-2-1").text(solemnizationarrDate[1]);
-
-                        const [mydate, indonesiadate, arrDate] = getMyWeddingDate("2026-04-04");
-                        $("#day-wedding-2").text(arrDate[0]);
-                        $("#date-wedding-2-2").text(arrDate[1]);
-
-                        const [ngunduhmydate, ngunduhindonesiadate, ngunduharrDate] = getMyWeddingDate(
-                            "2023-10-08");
-                        $("#day-wedding-3").text(ngunduharrDate[0]);
-                        $("#date-wedding-2-3").text(ngunduharrDate[1]);
-
-                        var countDownDate = mydate.getTime();
-                        var month = mydate.getMonth() + 1;
-                        $("#date-wedding-1").text(mydate.getDate() + " . " + month + " . " + mydate.getFullYear());
-                        var now = new Date().getTime();
-
-                        // Find the distance between now and the count down date
-                        var distance = countDownDate - now;
-
-                        // Time calculations for days, hours, minutes and seconds
-                        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-                        if (days < 10) days = "0" + days;
-                        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                        if (hours < 10) hours = "0" + hours;
-                        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-                        if (minutes < 10) minutes = "0" + minutes;
-                        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-                        if (seconds < 10) seconds = "0" + seconds;
-                        $("#days").text(days);
-                        $("#hours").text(hours);
-                        $("#minutes").text(minutes);
-                        $("#seconds").text(seconds);
-
-                    }, 6000);
-                </script>
-
-                <script src="https://akad.in/theme/akadin/tradition/main/js/script.js"></script>
-
-                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
-                    integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous">
-                </script>
-                <script>
-                    // Membuat fungsi untuk menyembunyikan dan menghapus elemen
-                    function hideAndRemoveElement() {
-                        var element = document.getElementById('contentend');
-                        if (element) {
-                            // Menghapus elemen dari DOM
-                            element.parentNode.removeChild(element);
-                        }
-                    }
-
-                    // Panggil fungsi untuk menyembunyikan dan menghapus elemen
-                    window.onload = function() {
-                        hideAndRemoveElement();
-                    };
-                </script>
-
-                <div id="contentend">
-                    <script>
-                        var host = 'akad.in';
-                        // Jika host bukan akad.in atau 127.0.0.1:8000 return akad.in
-                        if (host !== 'akad.in' && host !== '127.0.0.1:8000') {
-                            window.location.href = 'https://akad.in';
-                        }
-                    </script>
-                </div>
-
-                <script>
-                    function translatePage() {
-                        const elements = document.querySelectorAll(
-                            '#content *'); // Memilih semua elemen di dalam div dengan id 'content'
-                        const targetLanguage = 'en'; // Inggris
-
-                        elements.forEach(element => {
-                            const text = element.innerText;
-                            // Request ke Google Translate API untuk menerjemahkan teks
-                            fetch(
-                                    `https://translate.googleapis.com/translate_a/single?client=gtx&sl=id&tl=${targetLanguage}&dt=t&q=${encodeURI(text)}`
-                                )
-                                .then(response => response.json())
-                                .then(data => {
-                                    const translatedText = data[0][0][0]; // Mendapatkan teks terjemahan
-                                    element.innerText = translatedText;
-                                })
-                                .catch(error => {
-                                    console.error('Error:', error);
-                                });
-                        });
-                    }
-                    translatePage();
-                </script>
+            <div class="ornament-row" style="opacity:0;animation:fadeUp 1s ease 0.1s forwards"><span>✦</span></div>
+            <div class="arabic-cover">بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ</div>
+            <div class="cover-tag">Mengundang Kehadiran</div>
+            <div class="cover-title">HALAL BIHALAL<br>&amp; SYAWALAN</div>
+            <div class="cover-sub">Holding RS Aisyiyah Group Kudus</div>
+            <div class="cover-tahun">4 APRIL 2026 &nbsp;·&nbsp; KUDUS</div>
+
+            <div class="kepada-box">
+                <div class="kepada-label">Kepada Yang Terhormat</div>
+                <div class="kepada-nama">Muhammad Abdul Wahab</div>
+                <div class="kepada-sub">Keluarga Besar Holding RS Aisyiyah Group Kudus</div>
             </div>
 
-
+            <a class="btn-buka" href="#inti" id=btnBuka>
+                Buka Undangan &nbsp;↓
+            </a>
         </div>
-    </div>
+    </section>
 
+    <!-- 2. HALAMAN INTI -->
+    <section id="inti">
+        <div class="section-inner">
+            <div class="inti-logo-center reveal">
+                <div class="logo-big-inti">
+                    <img src="{{ asset('assets/img/Logo_Holding_RSA_Group.png') }}" alt="Holding RSA Group">
+                </div>
+            </div>
+            <div class="inti-arabic reveal">مِنَ الْعَائِدِيْنَ وَالْفَائِزِيْنَ</div>
+            <div class="divider reveal"><span>✦</span></div>
+            <div class="inti-main-title reveal">HALAL BIHALAL<br>&amp; SYAWALAN</div>
+            <div class="inti-sub reveal">Holding RS Aisyiyah Group Kudus</div>
+            <div class="reveal" style="text-align:center">
+                <div class="date-chip">📅 &nbsp; Sabtu, 4 April 2026</div>
+            </div>
+            <div class="divider reveal" style="margin-top:24px"><span>☽</span></div>
+            <p class="reveal"
+                style="text-align:center;font-family:'Cormorant Garamond',serif;font-size:clamp(15px,4vw,18px);color:var(--abu);line-height:1.95;font-style:italic;padding:0 8px">
+                Dengan penuh rasa syukur dan kebahagiaan, kami mengundang seluruh keluarga besar Holding RS Aisyiyah
+                Group Kudus untuk hadir bersama dalam acara yang penuh makna, kehangatan, dan keberkahan ini.
+            </p>
+        </div>
+    </section>
 
+    <!-- 3. SAMBUTAN & FOTO DIREKSI -->
+    <section id="sambutan">
+        <div class="section-inner">
+            <div class="sambutan-logo reveal">
+                <div class="logo-sambutan">
+                    <img src="{{ asset('assets/img/Logo_Holding_RSA_Group.png') }}" alt="Holding RSA Group">
+                </div>
+            </div>
+            <div class="divider gold reveal"><span>✦</span></div>
+            <div class="sec-title white reveal">Sambutan Jajaran Direksi</div>
 
+            <div class="sambutan-text reveal">
+                Assalamu'alaikum Warahmatullahi Wabarakatuh.<br><br>
+                Mewakili seluruh jajaran pimpinan <em>Holding RS Aisyiyah Group Kudus</em>, kami mengucapkan <em>Selamat
+                    Hari Raya Idul Fitri 1446 H</em> — Minal 'Aidin wal Faizin, mohon maaf lahir dan batin.<br><br>
+                Semoga momentum silaturahmi ini senantiasa mempererat kebersamaan kita sebagai satu keluarga besar yang
+                penuh kasih dan semangat dalam pelayanan.
+            </div>
+
+            <!-- Foto Direksi Group -->
+            <div class="direksi-photo-wrap reveal">
+                <img src="{{ asset('assets/img/direksi_dan_bod.png') }}"
+                    alt="Jajaran Direksi Holding RS Aisyiyah Group">
+            </div>
+            <div class="direksi-caption reveal">
+                <div class="direksi-caption-title">Jajaran Direksi</div>
+                <div class="direksi-caption-sub">Holding RS Aisyiyah Group Kudus</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. WAKTU & TEMPAT + COUNTDOWN -->
+    <section id="waktu">
+        <div class="section-inner">
+            <div class="sec-label reveal">Detail Acara</div>
+            <div class="sec-title reveal">Waktu &amp; Tempat</div>
+            <div class="divider reveal"><span>✦</span></div>
+
+            <div class="waktu-grid reveal">
+                <div class="waktu-card">
+                    <span class="waktu-icon">📅</span>
+                    <div class="waktu-label">Hari &amp; Tanggal</div>
+                    <div class="waktu-val">Sabtu<br>4 April 2026</div>
+                    <div class="waktu-detail">14 Syawal 1447 H</div>
+                </div>
+                <div class="waktu-card">
+                    <span class="waktu-icon">🕗</span>
+                    <div class="waktu-label">Waktu</div>
+                    <div class="waktu-val">08.00 — 12.00</div>
+                    <div class="waktu-detail">WIB · Mohon tepat waktu</div>
+                </div>
+                <div class="waktu-card">
+                    <span class="waktu-icon">🏛️</span>
+                    <div class="waktu-label">Gedung</div>
+                    <div class="waktu-val">Crystal Building<br>UMKU</div>
+                    <div class="waktu-detail">Universitas Muhammadiyah Kudus</div>
+                </div>
+                <div class="waktu-card">
+                    <span class="waktu-icon">📍</span>
+                    <div class="waktu-label">Alamat</div>
+                    <div class="waktu-val">Jl. Ganesha I<br>Kudus</div>
+                    <div class="waktu-detail">Jawa Tengah 59316</div>
+                </div>
+            </div>
+
+            <div class="countdown-section reveal">
+                <div class="cd-label">Menghitung Mundur Menuju Hari H</div>
+                <div class="cd-boxes">
+                    <div class="cd-unit-box"><span class="cd-n" id="cdH">00</span><span
+                            class="cd-u">Hari</span></div>
+                    <div class="cd-sep">:</div>
+                    <div class="cd-unit-box"><span class="cd-n" id="cdJ">00</span><span
+                            class="cd-u">Jam</span></div>
+                    <div class="cd-sep">:</div>
+                    <div class="cd-unit-box"><span class="cd-n" id="cdM">00</span><span
+                            class="cd-u">Menit</span></div>
+                    <div class="cd-sep">:</div>
+                    <div class="cd-unit-box"><span class="cd-n" id="cdD">00</span><span
+                            class="cd-u">Detik</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. RUNDOWN -->
+    <section id="rundown">
+        <div class="section-inner">
+            <div class="sec-label reveal">Susunan Acara</div>
+            <div class="sec-title reveal">Rundown Kegiatan</div>
+            <div class="divider reveal"><span>✦</span></div>
+
+            <div class="rundown-list">
+                <div class="rundown-item reveal">
+                    <div class="rundown-time">07.30</div>
+                    <div class="rundown-dot"></div>
+                    <div class="rundown-kegiatan">
+                        <div class="rundown-nama">Registrasi &amp; Penyambutan Tamu</div>
+                        <div class="rundown-desc">Pendaftaran kehadiran dan penyambutan oleh panitia</div>
+                        <span class="rundown-badge">Pra-Acara</span>
+                    </div>
+                </div>
+                <div class="rundown-item reveal">
+                    <div class="rundown-time">08.00</div>
+                    <div class="rundown-dot"></div>
+                    <div class="rundown-kegiatan">
+                        <div class="rundown-nama">Pembukaan</div>
+                        <div class="rundown-desc">MC, tilawah Al-Qur'an, dan lagu kebangsaan</div>
+                        <span class="rundown-badge">Seremonial</span>
+                    </div>
+                </div>
+                <div class="rundown-item reveal">
+                    <div class="rundown-time">08.30</div>
+                    <div class="rundown-dot"></div>
+                    <div class="rundown-kegiatan">
+                        <div class="rundown-nama">Sambutan Direktur Utama</div>
+                        <div class="rundown-desc">Ucapan Idul Fitri dan arahan dari Direktur Utama Holding RSA Group
+                        </div>
+                        <span class="rundown-badge">Sambutan</span>
+                    </div>
+                </div>
+                <div class="rundown-item reveal">
+                    <div class="rundown-time">09.00</div>
+                    <div class="rundown-dot"></div>
+                    <div class="rundown-kegiatan">
+                        <div class="rundown-nama">Tausiyah &amp; Ceramah Agama</div>
+                        <div class="rundown-desc">Hikmah Syawal: mempererat silaturahmi dan semangat baru</div>
+                        <span class="rundown-badge">Religi</span>
+                    </div>
+                </div>
+                <div class="rundown-item reveal">
+                    <div class="rundown-time">09.45</div>
+                    <div class="rundown-dot"></div>
+                    <div class="rundown-kegiatan">
+                        <div class="rundown-nama">Salam-salaman &amp; Halal Bihalal</div>
+                        <div class="rundown-desc">Saling bermaafan antar seluruh sivitas Holding RSA Group</div>
+                        <span class="rundown-badge">Inti</span>
+                    </div>
+                </div>
+                <div class="rundown-item reveal">
+                    <div class="rundown-time">10.15</div>
+                    <div class="rundown-dot"></div>
+                    <div class="rundown-kegiatan">
+                        <div class="rundown-nama">Hiburan &amp; Pentas Seni</div>
+                        <div class="rundown-desc">Penampilan seni budaya dari perwakilan unit RSA Group dan doorprize
+                        </div>
+                        <span class="rundown-badge">Hiburan</span>
+                    </div>
+                </div>
+                <div class="rundown-item reveal">
+                    <div class="rundown-time">11.15</div>
+                    <div class="rundown-dot"></div>
+                    <div class="rundown-kegiatan">
+                        <div class="rundown-nama">Ramah Tamah &amp; Makan Siang</div>
+                        <div class="rundown-desc">Menikmati hidangan bersama dan sesi foto</div>
+                        <span class="rundown-badge">Penutup</span>
+                    </div>
+                </div>
+                <div class="rundown-item reveal">
+                    <div class="rundown-time">12.00</div>
+                    <div class="rundown-dot"></div>
+                    <div class="rundown-kegiatan">
+                        <div class="rundown-nama">Penutupan &amp; Doa</div>
+                        <div class="rundown-desc">Doa penutup dan acara resmi berakhir</div>
+                        <span class="rundown-badge">Selesai</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. GEDUNG CRYSTAL BUILDING -->
+    <section id="gedung" style="padding:0;background:#000;">
+        <div class="gedung-img-wrap">
+            <img src="{{ asset('assets/img/Royal_building_UMKU.png') }}" alt="Crystal Building UMKU">
+            <div class="gedung-overlay">
+                <div class="gedung-name">Crystal Building UMKU</div>
+                <div class="gedung-sub">Universitas Muhammadiyah Kudus &nbsp;·&nbsp; Kudus, Jawa Tengah</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. MAPS -->
+    <section id="maps">
+        <div class="section-inner">
+            <div class="sec-label reveal">Lokasi Acara</div>
+            <div class="sec-title reveal">Temukan Kami di Sini</div>
+            <div class="divider reveal"><span>📍</span></div>
+
+            <div class="maps-frame reveal">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.371!2d110.834!3d-6.802!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e709ab7b3c33333%3A0x1234567890abcdef!2sCrystal%20Building%20UMKU!5e0!3m2!1sid!2sid!4v1680000000000!5m2!1sid!2sid"
+                    allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+
+            <div class="maps-address reveal">
+                <div class="maps-address-icon">🏛️</div>
+                <div>
+                    <div class="maps-address-name">Crystal Building UMKU</div>
+                    <div class="maps-address-detail">Universitas Muhammadiyah Kudus<br>Jl. Ganesha I No.1, Purwosari,
+                        Kec. Kota Kudus<br>Kabupaten Kudus, Jawa Tengah 59316</div>
+                </div>
+            </div>
+
+            <a class="btn-maps-link reveal" href="https://maps.app.goo.gl/2qbqu6xdzLYdo2YE6" target="_blank">
+                🗺️ &nbsp; Buka di Google Maps
+            </a>
+        </div>
+    </section>
+
+    <!-- 8. UCAPAN TERIMA KASIH -->
+    <section id="terima">
+        <div class="section-inner">
+            <div class="divider gold reveal"><span>✦</span></div>
+            <div class="terima-arabic reveal">تَقَبَّلَ اللهُ مِنَّا وَمِنْكُمْ</div>
+            <div class="terima-title reveal">Terima Kasih atas<br>Kehadiran Anda</div>
+            <div class="divider reveal"><span style="color:var(--biru-muda)">☽</span></div>
+            <div class="terima-text reveal">
+                Kehadiran Bapak/Ibu/Saudara/i adalah kehormatan terbesar bagi kami. Semoga silaturahmi yang terjalin
+                hari ini membawa keberkahan, mempererat persaudaraan, dan menjadi ladang pahala bagi kita semua dalam
+                naungan ridho Allah SWT.
+            </div>
+            <div class="ttd-box reveal">
+                <div class="ttd-logo">
+                    <img src="{{ asset('assets/img/Logo_Holding_RSA_Group.png') }}" alt="Holding RSA Group">
+                </div>
+                <div class="ttd-dari">Dengan penuh rasa hormat,</div>
+                <div class="ttd-nama">Keluarga Besar<br>Holding RS Aisyiyah Group Kudus</div>
+            </div>
+            <div class="minal reveal">
+                <div class="minal-text">Minal 'Aidin wal Faizin</div>
+                <div class="minal-sub">Mohon Maaf Lahir dan Batin · 1446 H</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 9. FOOTER -->
+    <footer id="footer">
+        <div class="footer-logos">
+            <div class="footer-logo-sm"><img src="{{ asset('assets/img/Logo_RSSA 2.png') }}" alt="RSSA"></div>
+            <div class="footer-logo-sm" style="width:52px;height:52px;border-color:rgba(201,168,76,0.25)"><img
+                    src="{{ asset('assets/img/Logo_Holding_RSA_Group.png') }}" alt="Holding"></div>
+            <div class="footer-logo-sm"><img src="{{ asset('assets/img/logo_RSA.png') }}" alt="RSA"></div>
+        </div>
+        <div class="footer-divider"><span>✦</span></div>
+        <div class="footer-panitia">Panitia Pelaksana</div>
+        <div class="footer-org">Halal Bihalal &amp; Syawalan Holding RSA Group 2026</div>
+        <div class="footer-divider" style="margin-bottom:12px"><span>·</span></div>
+        <div class="footer-created">Created with ❤️ by &nbsp;<span>IT RS Sarkies Aisyiyah Kudus</span></div>
+        <div class="footer-copy">&copy; 2026 Holding RS Aisyiyah Group Kudus · All Rights Reserved</div>
+    </footer>
+
+    <script>
+        const music = document.getElementById('bgMusic');
+        const btn = document.getElementById('btnBuka');
+
+        btn.addEventListener('click', () => {
+            music.volume = 0;
+            music.play();
+
+            let vol = 0;
+            const fade = setInterval(() => {
+                if (vol < 1) {
+                    vol += 0.05;
+                    music.volume = vol;
+                } else {
+                    clearInterval(fade);
+                }
+            }, 200);
+        });
+        /* COUNTDOWN */
+        const target = new Date('2026-04-04T08:00:00');
+
+        function tick() {
+            const now = new Date(),
+                diff = target - now;
+            if (diff <= 0) {
+                ['cdH', 'cdJ', 'cdM', 'cdD'].forEach(id => document.getElementById(id).textContent = '00');
+                return;
+            }
+            document.getElementById('cdH').textContent = String(Math.floor(diff / 86400000)).padStart(2, '0');
+            document.getElementById('cdJ').textContent = String(Math.floor((diff % 86400000) / 3600000)).padStart(2, '0');
+            document.getElementById('cdM').textContent = String(Math.floor((diff % 3600000) / 60000)).padStart(2, '0');
+            document.getElementById('cdD').textContent = String(Math.floor((diff % 60000) / 1000)).padStart(2, '0');
+        }
+        tick();
+        setInterval(tick, 1000);
+
+        /* REVEAL */
+        const obs = new IntersectionObserver((entries) => {
+            entries.forEach((e, i) => {
+                if (e.isIntersecting) {
+                    setTimeout(() => e.target.classList.add('show'), i * 65);
+                    obs.unobserve(e.target);
+                }
+            });
+        }, {
+            threshold: 0.08,
+            rootMargin: '0px 0px -20px 0px'
+        });
+        document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+        /* SMOOTH SCROLL */
+        document.querySelectorAll('a[href^="#"]').forEach(a => {
+            a.addEventListener('click', e => {
+                const t = document.querySelector(a.getAttribute('href'));
+                if (t) {
+                    e.preventDefault();
+                    t.scrollIntoView({
+                        behavior: 'smooth'
+                    })
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>
