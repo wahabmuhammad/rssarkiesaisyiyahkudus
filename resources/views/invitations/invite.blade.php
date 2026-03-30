@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Undangan Halal Bihalal & Syawalan — Holding RS Aisyiyah Group Kudus</title>
+    <title>Undangan Silaturahim Syawalan — Holding RS Aisyiyah Group Kudus</title>
     <link
         href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Cinzel:wght@400;600;700&family=Nunito:wght@300;400;600;700&display=swap"
         rel="stylesheet">
@@ -1337,7 +1337,7 @@
                     <span class="waktu-icon">📅</span>
                     <div class="waktu-label">Hari &amp; Tanggal</div>
                     <div class="waktu-val">Sabtu<br>4 April 2026</div>
-                    <div class="waktu-detail">15 Syawal 1447 H</div>
+                    <div class="waktu-detail">16 Syawal 1447 H</div>
                 </div>
                 <div class="waktu-card">
                     <span class="waktu-icon">🕗</span>
@@ -1560,7 +1560,7 @@
         </div>
         <div class="footer-divider"><span>✦</span></div>
         <div class="footer-panitia">Panitia Pelaksana</div>
-        <div class="footer-org">Halal Bihalal &amp; Syawalan Holding RSA Group 2026</div>
+        <div class="footer-org">Silaturahim Syawalan Holding RSA Group 2026</div>
         <div class="footer-divider" style="margin-bottom:12px"><span>·</span></div>
         <div class="footer-created">Created with ❤️ by &nbsp;<span>IT RS Sarkies Aisyiyah Kudus</span></div>
         <div class="footer-copy">&copy; 2026 Holding RS Aisyiyah Group Kudus · All Rights Reserved</div>
