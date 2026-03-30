@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="google" content="notranslate">
     <title>Silaturahmi Syawalan RS Sarkies 'Aisyiyah Group Kudus</title>
-    <meta property="og:image" content="https://akad.in/storage/images/gTCfsARsEaROpYq0qqLNGk4CM3o4hnP9QcSy6jt7.jpg">
+    <meta property="og:image" content="{{ asset('assets/img/Logo_Holding_RSA_Group.png') }}">
     <!-- cdn jquery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <!-- boostrap -->
