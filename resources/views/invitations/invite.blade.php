@@ -9,6 +9,7 @@
         href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Cinzel:wght@400;600;700&family=Nunito:wght@300;400;600;700&display=swap"
         rel="stylesheet">
     <link rel="icon" type="image/png" href="{{ asset('assets/img/Logo_RSSA.png') }}" sizes="32x32">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('assets/img/Logo_RSSA.png') }}">
     <style>
         :root {
             --biru: #84B7ED;
