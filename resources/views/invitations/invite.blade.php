@@ -831,7 +831,7 @@
             padding: 0;
             position: relative;
             overflow: hidden;
-            background: #000;
+            background: var(--putih);
         }
 
         .gedung-img-wrap {
@@ -852,20 +852,21 @@
             left: 0;
             right: 0;
             padding: 30px 22px 22px;
-            background: linear-gradient(to top, rgba(13, 36, 68, 0.95) 0%, transparent 100%);
+            background: linear-gradient(to top, var(--krem) 0%, transparent 100%);
         }
 
         .gedung-name {
             font-family: "Cinzel", serif;
             font-size: clamp(16px, 4.5vw, 22px);
-            color: var(--putih);
+            color: var(--biru-gelap);
             font-weight: 700;
             letter-spacing: 2px;
         }
 
         .gedung-sub {
             font-size: 12px;
-            color: rgba(255, 255, 255, 0.55);
+            /* color: rgba(255, 255, 255, 0.55); */
+            colo: var(--biru)
             margin-top: 4px;
             letter-spacing: 1px;
         }
@@ -1229,21 +1230,21 @@
         <div class="cover-inner">
             <div class="logos-row">
                 <div class="logo-wrap">
-                    <div class="logo-circle sm">
-                        <img src="{{ asset('assets/img/Logo_RSSA 2.png') }}" alt="Logo RSSA">
+                    <div class="logo-circle lg">
+                        <img src="{{ asset('assets/img/logo_sarkies.png') }}" alt="Logo RSSA">
                     </div>
                     <div class="logo-name">RS Sarkies Aisyiyah</div>
                 </div>
                 <div class="logo-sep"></div>
                 <div class="logo-wrap">
                     <div class="logo-circle lg">
-                        <img src="{{ asset('assets/img/Logo_Holding_RSA_Group.png') }}"Logo Holding RSA Group">
+                        <img src="{{ asset('assets/img/holding.png') }}" alt="Logo Holding RSA Group">
                     </div>
                     <div class="logo-name" style="color:rgba(255,255,255,0.7)">Holding RSA Group</div>
                 </div>
                 <div class="logo-sep"></div>
                 <div class="logo-wrap">
-                    <div class="logo-circle sm">
+                    <div class="logo-circle lg">
                         <img src="{{ asset('assets/img/logo_RSA.png') }}" alt="Logo RSA">
                     </div>
                     <div class="logo-name">RS Aisyiyah Kudus</div>
@@ -1253,7 +1254,7 @@
             <div class="ornament-row" style="opacity:0;animation:fadeUp 1s ease 0.1s forwards"><span>✦</span></div>
             <div class="arabic-cover">بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ</div>
             <div class="cover-tag">Mengundang Kehadiran</div>
-            <div class="cover-title">HALAL BIHALAL<br>&amp; SYAWALAN</div>
+            <div class="cover-title">Silaturahim<br>SYAWALAN</div>
             <div class="cover-sub">Holding RS Aisyiyah Group Kudus</div>
             <div class="cover-tahun">4 APRIL 2026 &nbsp;·&nbsp; KUDUS</div>
 
@@ -1274,12 +1275,12 @@
         <div class="section-inner">
             <div class="inti-logo-center reveal">
                 <div class="logo-big-inti">
-                    <img src="{{ asset('assets/img/Logo_Holding_RSA_Group.png') }}" alt="Holding RSA Group">
+                    <img src="{{ asset('assets/img/holding.png') }}" alt="Holding RSA Group">
                 </div>
             </div>
             <div class="inti-arabic reveal">مِنَ الْعَائِدِيْنَ وَالْفَائِزِيْنَ</div>
             <div class="divider reveal"><span>✦</span></div>
-            <div class="inti-main-title reveal">HALAL BIHALAL<br>&amp; SYAWALAN</div>
+            <div class="inti-main-title reveal">Silaturahim<br>SYAWALAN</div>
             <div class="inti-sub reveal">Holding RS Aisyiyah Group Kudus</div>
             <div class="reveal" style="text-align:center">
                 <div class="date-chip">📅 &nbsp; Sabtu, 4 April 2026</div>
@@ -1298,7 +1299,7 @@
         <div class="section-inner">
             <div class="sambutan-logo reveal">
                 <div class="logo-sambutan">
-                    <img src="{{ asset('assets/img/Logo_Holding_RSA_Group.png') }}" alt="Holding RSA Group">
+                    <img src="{{ asset('assets/img/holding.png') }}" alt="Holding RSA Group">
                 </div>
             </div>
             <div class="divider gold reveal"><span>✦</span></div>
@@ -1307,8 +1308,8 @@
             <div class="sambutan-text reveal">
                 Assalamu'alaikum Warahmatullahi Wabarakatuh.<br><br>
                 Mewakili seluruh jajaran pimpinan <em>Holding RS Aisyiyah Group Kudus</em>, kami mengucapkan <em>Selamat
-                    Hari Raya Idul Fitri 1446 H</em> — Minal 'Aidin wal Faizin, mohon maaf lahir dan batin.<br><br>
-                Semoga momentum silaturahmi ini senantiasa mempererat kebersamaan kita sebagai satu keluarga besar yang
+                    Hari Raya Idul Fitri 1447 H</em> — Minal 'Aidin wal Faizin, mohon maaf lahir dan batin.<br><br>
+                Semoga momentum silaturahim ini senantiasa mempererat kebersamaan kita sebagai satu keluarga besar yang
                 penuh kasih dan semangat dalam pelayanan.
             </div>
 
@@ -1336,12 +1337,12 @@
                     <span class="waktu-icon">📅</span>
                     <div class="waktu-label">Hari &amp; Tanggal</div>
                     <div class="waktu-val">Sabtu<br>4 April 2026</div>
-                    <div class="waktu-detail">14 Syawal 1447 H</div>
+                    <div class="waktu-detail">15 Syawal 1447 H</div>
                 </div>
                 <div class="waktu-card">
                     <span class="waktu-icon">🕗</span>
                     <div class="waktu-label">Waktu</div>
-                    <div class="waktu-val">08.00 — 12.00</div>
+                    <div class="waktu-val">08.00 — 11.00</div>
                     <div class="waktu-detail">WIB · Mohon tepat waktu</div>
                 </div>
                 <div class="waktu-card">
@@ -1386,77 +1387,97 @@
 
             <div class="rundown-list">
                 <div class="rundown-item reveal">
-                    <div class="rundown-time">07.30</div>
+                    <div class="rundown-time">07.30 - 08.00</div>
                     <div class="rundown-dot"></div>
                     <div class="rundown-kegiatan">
-                        <div class="rundown-nama">Registrasi &amp; Penyambutan Tamu</div>
-                        <div class="rundown-desc">Pendaftaran kehadiran dan penyambutan oleh panitia</div>
-                        <span class="rundown-badge">Pra-Acara</span>
+                        <div class="rundown-nama">Registrasi Undangan</div>
+                        {{-- <div class="rundown-desc">Pendaftaran kehadiran dan penyambutan oleh panitia</div>
+                        <span class="rundown-badge">Pra-Acara</span> --}}
                     </div>
                 </div>
                 <div class="rundown-item reveal">
-                    <div class="rundown-time">08.00</div>
+                    <div class="rundown-time">08.00 - 08.30</div>
+                    <div class="rundown-dot"></div>
+                    <div class="rundown-kegiatan">
+                        <div class="rundown-nama">Pra Acara</div>
+                        {{-- <div class="rundown-desc">MC, tilawah Al-Qur'an, dan lagu kebangsaan</div>
+                        <span class="rundown-badge">Seremonial</span> --}}
+                    </div>
+                </div>
+                <div class="rundown-item reveal">
+                    <div class="rundown-time">08.30 - 08.40</div>
                     <div class="rundown-dot"></div>
                     <div class="rundown-kegiatan">
                         <div class="rundown-nama">Pembukaan</div>
-                        <div class="rundown-desc">MC, tilawah Al-Qur'an, dan lagu kebangsaan</div>
-                        <span class="rundown-badge">Seremonial</span>
-                    </div>
-                </div>
-                <div class="rundown-item reveal">
-                    <div class="rundown-time">08.30</div>
-                    <div class="rundown-dot"></div>
-                    <div class="rundown-kegiatan">
-                        <div class="rundown-nama">Sambutan Direktur Utama</div>
-                        <div class="rundown-desc">Ucapan Idul Fitri dan arahan dari Direktur Utama Holding RSA Group
+                        {{-- <div class="rundown-desc">Ucapan Idul Fitri dan arahan dari Direktur Utama Holding RSA Group
                         </div>
-                        <span class="rundown-badge">Sambutan</span>
+                        <span class="rundown-badge">Sambutan</span> --}}
                     </div>
                 </div>
                 <div class="rundown-item reveal">
-                    <div class="rundown-time">09.00</div>
+                    <div class="rundown-time">08.40 - 08.45</div>
                     <div class="rundown-dot"></div>
                     <div class="rundown-kegiatan">
-                        <div class="rundown-nama">Tausiyah &amp; Ceramah Agama</div>
-                        <div class="rundown-desc">Hikmah Syawal: mempererat silaturahmi dan semangat baru</div>
-                        <span class="rundown-badge">Religi</span>
+                        <div class="rundown-nama">Pembacaan Ayat Suci Al-Quran</div>
+                        {{-- <div class="rundown-desc">Hikmah Syawal: mempererat silaturahmi dan semangat baru</div>
+                        <span class="rundown-badge">Religi</span> --}}
                     </div>
                 </div>
                 <div class="rundown-item reveal">
-                    <div class="rundown-time">09.45</div>
+                    <div class="rundown-time">08.45 - 09.00 </div>
                     <div class="rundown-dot"></div>
                     <div class="rundown-kegiatan">
-                        <div class="rundown-nama">Salam-salaman &amp; Halal Bihalal</div>
-                        <div class="rundown-desc">Saling bermaafan antar seluruh sivitas Holding RSA Group</div>
-                        <span class="rundown-badge">Inti</span>
+                        <div class="rundown-nama">Menyanyikan Lagu-lagu:</div>
+                        <div class="rundown-desc">1. Indonesia Raya <br>
+                        2. Sang Surya <br> 
+                        3. Mars 'Aisyiyah</div>
+                        {{-- <span class="rundown-badge">Inti</span> --}}
                     </div>
                 </div>
                 <div class="rundown-item reveal">
-                    <div class="rundown-time">10.15</div>
+                    <div class="rundown-time">09.00 - 09.05</div>
                     <div class="rundown-dot"></div>
                     <div class="rundown-kegiatan">
-                        <div class="rundown-nama">Hiburan &amp; Pentas Seni</div>
-                        <div class="rundown-desc">Penampilan seni budaya dari perwakilan unit RSA Group dan doorprize
+                        <div class="rundown-nama">Sambutan Direktur Holding RSA Group Kudus</div>
+                        <div class="rundown-badge">dr. Hilal Ariadi, M.Kes, FISQua
                         </div>
-                        <span class="rundown-badge">Hiburan</span>
+                        {{-- <span class="rundown-badge">Hiburan</span> --}}
                     </div>
                 </div>
                 <div class="rundown-item reveal">
-                    <div class="rundown-time">11.15</div>
+                    <div class="rundown-time">09.05 - 09.10</div>
                     <div class="rundown-dot"></div>
                     <div class="rundown-kegiatan">
-                        <div class="rundown-nama">Ramah Tamah &amp; Makan Siang</div>
-                        <div class="rundown-desc">Menikmati hidangan bersama dan sesi foto</div>
-                        <span class="rundown-badge">Penutup</span>
+                        <div class="rundown-nama">Sambutan Ketua PDA Kabupaten Kudus</div>
+                        <div class="rundown-badge">Eny Alifah Kurnia, S.Pd.,M.Pd.I</div>
+                        {{-- <span class="rundown-badge">Penutup</span> --}}
                     </div>
                 </div>
                 <div class="rundown-item reveal">
-                    <div class="rundown-time">12.00</div>
+                    <div class="rundown-time">09.10 - 09.15</div>
                     <div class="rundown-dot"></div>
                     <div class="rundown-kegiatan">
-                        <div class="rundown-nama">Penutupan &amp; Doa</div>
-                        <div class="rundown-desc">Doa penutup dan acara resmi berakhir</div>
-                        <span class="rundown-badge">Selesai</span>
+                        <div class="rundown-nama">Sambutan Ketua PDM Kabupaten Kudus</div>
+                        <div class="rundown-badge">KH. Noor Muslikhan, S.Sos</div>
+                        {{-- <span class="rundown-badge">Selesai</span> --}}
+                    </div>
+                </div>
+                <div class="rundown-item reveal">
+                    <div class="rundown-time">09.15 - 10.20</div>
+                    <div class="rundown-dot"></div>
+                    <div class="rundown-kegiatan">
+                        <div class="rundown-nama">Tausiyah & Doa</div>
+                        <div class="rundown-desc">Ketua Umum Pimpinan Pusat Aisyiyah</div>
+                        <span class="rundown-badge">(Dr. apt. Salmah Orbayinah,  M.Kes)</span>
+                    </div>
+                </div>
+                <div class="rundown-item reveal">
+                    <div class="rundown-time">10.20 - 11.00</div>
+                    <div class="rundown-dot"></div>
+                    <div class="rundown-kegiatan">
+                        <div class="rundown-nama">Ramah Tamah & Penutup</div>
+                        {{-- <div class="rundown-desc"></div>
+                        <span class="rundown-badge">(Dr. apt. Salmah Orbayinah,  M.Kes)</span> --}}
                     </div>
                 </div>
             </div>
@@ -1464,7 +1485,7 @@
     </section>
 
     <!-- 6. GEDUNG CRYSTAL BUILDING -->
-    <section id="gedung" style="padding:0;background:#000;">
+    <section id="gedung" style="padding:0;">
         <div class="gedung-img-wrap">
             <img src="{{ asset('assets/img/Royal_building_UMKU.png') }}" alt="Crystal Building UMKU">
             <div class="gedung-overlay">
@@ -1517,14 +1538,14 @@
             </div>
             <div class="ttd-box reveal">
                 <div class="ttd-logo">
-                    <img src="{{ asset('assets/img/Logo_Holding_RSA_Group.png') }}" alt="Holding RSA Group">
+                    <img src="{{ asset('assets/img/holding.png') }}" alt="Holding RSA Group">
                 </div>
                 <div class="ttd-dari">Dengan penuh rasa hormat,</div>
                 <div class="ttd-nama">Keluarga Besar<br>Holding RS Aisyiyah Group Kudus</div>
             </div>
             <div class="minal reveal">
                 <div class="minal-text">Minal 'Aidin wal Faizin</div>
-                <div class="minal-sub">Mohon Maaf Lahir dan Batin · 1446 H</div>
+                <div class="minal-sub">Mohon Maaf Lahir dan Batin · 1447 H</div>
             </div>
         </div>
     </section>
@@ -1532,10 +1553,10 @@
     <!-- 9. FOOTER -->
     <footer id="footer">
         <div class="footer-logos">
-            <div class="footer-logo-sm"><img src="{{ asset('assets/img/Logo_RSSA 2.png') }}" alt="RSSA"></div>
+            <div class="footer-logo-sm"><img src="{{ asset('assets/img/rssarkies/Logo RSSA white logo.png') }}" alt="RSSA"></div>
             <div class="footer-logo-sm" style="width:52px;height:52px;border-color:rgba(201,168,76,0.25)"><img
-                    src="{{ asset('assets/img/Logo_Holding_RSA_Group.png') }}" alt="Holding"></div>
-            <div class="footer-logo-sm"><img src="{{ asset('assets/img/logo_RSA.png') }}" alt="RSA"></div>
+                    src="{{ asset('assets/img/holding.png') }}" alt="Holding"></div>
+            <div class="footer-logo-sm"><img src="{{ asset('assets/img/rssarkies/Logo RSA white.png') }}" alt="RSA"></div>
         </div>
         <div class="footer-divider"><span>✦</span></div>
         <div class="footer-panitia">Panitia Pelaksana</div>
