@@ -866,8 +866,7 @@
         .gedung-sub {
             font-size: 12px;
             /* color: rgba(255, 255, 255, 0.55); */
-            colo: var(--biru)
-            margin-top: 4px;
+            colo: var(--biru) margin-top: 4px;
             letter-spacing: 1px;
         }
 
@@ -1172,6 +1171,64 @@
         }
 
         /* ============================
+   FORM KEHADIRAN
+============================ */
+        .rsvp-form {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .form-group label {
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--biru);
+            letter-spacing: 1px;
+        }
+
+        .form-group input,
+        .form-group select {
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid rgba(132, 183, 237, 0.4);
+            font-size: 13px;
+            font-family: "Nunito", sans-serif;
+            outline: none;
+            transition: 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            border-color: var(--biru);
+            box-shadow: 0 0 0 2px rgba(132, 183, 237, 0.2);
+        }
+
+        .btn-submit {
+            margin-top: 10px;
+            padding: 14px;
+            border-radius: 10px;
+            border: none;
+            font-weight: 700;
+            letter-spacing: 1px;
+            background: linear-gradient(135deg, var(--biru-tua2), var(--biru-gelap));
+            color: var(--biru-terang);
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .btn-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(13, 36, 68, 0.25);
+        }
+
+        /* ============================
    REVEAL & ANIM
 ============================ */
         @keyframes fadeUp {
@@ -1231,9 +1288,9 @@
             <div class="logos-row">
                 <div class="logo-wrap">
                     <div class="logo-circle lg">
-                        <img src="{{ asset('assets/img/logo_sarkies.png') }}" alt="Logo RSSA">
+                        <img src="{{ asset('assets/img/logo_RSA.png') }}" alt="Logo RSSA">
                     </div>
-                    <div class="logo-name">RS Sarkies Aisyiyah</div>
+                    <div class="logo-name">RS 'Aisyiyah Kudus</div>
                 </div>
                 <div class="logo-sep"></div>
                 <div class="logo-wrap">
@@ -1245,9 +1302,9 @@
                 <div class="logo-sep"></div>
                 <div class="logo-wrap">
                     <div class="logo-circle lg">
-                        <img src="{{ asset('assets/img/logo_RSA.png') }}" alt="Logo RSA">
+                        <img src="{{ asset('assets/img/logo_sarkies.png') }}" alt="Logo RSA">
                     </div>
-                    <div class="logo-name">RS Aisyiyah Kudus</div>
+                    <div class="logo-name">RS Sarkies 'Aisyiyah Kudus</div>
                 </div>
             </div>
 
@@ -1257,6 +1314,10 @@
             <div class="cover-title">Silaturahim<br>SYAWALAN</div>
             <div class="cover-sub">Holding RS Aisyiyah Group Kudus</div>
             <div class="cover-tahun">4 APRIL 2026 &nbsp;·&nbsp; KUDUS</div>
+            <div class="inti-sub reveal" style="margin-top: 12px">Tanggal Hari ini</div>
+            <div class="reveal" style="text-align:center; margin-top:12px">
+                <div class="date-chip" id="tglhariIni"></div>
+            </div>
 
             <div class="kepada-box">
                 <div class="kepada-label">Kepada Yang Terhormat</div>
@@ -1282,9 +1343,10 @@
             <div class="divider reveal"><span>✦</span></div>
             <div class="inti-main-title reveal">Silaturahim<br>SYAWALAN</div>
             <div class="inti-sub reveal">Holding RS Aisyiyah Group Kudus</div>
-            <div class="reveal" style="text-align:center">
-                <div class="date-chip">📅 &nbsp; Sabtu, 4 April 2026</div>
+            <div class="reveal" style="text-align:center;">
+                <div class="date-chip">📅 &nbsp; Sabtu, 4 April 2026 / 16 Syawal 1447 H</div>
             </div>
+
             <div class="divider reveal" style="margin-top:24px"><span>☽</span></div>
             <p class="reveal"
                 style="text-align:center;font-family:'Cormorant Garamond',serif;font-size:clamp(15px,4vw,18px);color:var(--abu);line-height:1.95;font-style:italic;padding:0 8px">
@@ -1429,8 +1491,8 @@
                     <div class="rundown-kegiatan">
                         <div class="rundown-nama">Menyanyikan Lagu-lagu:</div>
                         <div class="rundown-desc">1. Indonesia Raya <br>
-                        2. Sang Surya <br> 
-                        3. Mars 'Aisyiyah</div>
+                            2. Sang Surya <br>
+                            3. Mars 'Aisyiyah</div>
                         {{-- <span class="rundown-badge">Inti</span> --}}
                     </div>
                 </div>
@@ -1468,7 +1530,7 @@
                     <div class="rundown-kegiatan">
                         <div class="rundown-nama">Tausiyah & Doa</div>
                         <div class="rundown-desc">Ketua Umum Pimpinan Pusat Aisyiyah</div>
-                        <span class="rundown-badge">(Dr. apt. Salmah Orbayinah,  M.Kes)</span>
+                        <span class="rundown-badge">(Dr. apt. Salmah Orbayinah, M.Kes)</span>
                     </div>
                 </div>
                 <div class="rundown-item reveal">
@@ -1524,6 +1586,48 @@
         </div>
     </section>
 
+    {{-- Kehadiran --}}
+    <section id="kehadiran" style="background-color:var(--krem)">
+        <div class="section-inner">
+            <div class="sec-label reveal">Konfirmasi</div>
+            <div class="sec-title reveal">Kehadiran Anda</div>
+            <div class="divider reveal"><span>✦</span></div>
+
+            <form class="rsvp-form reveal" method="POST" action="/kehadiran">
+                <!-- kalau pakai Laravel -->
+                @csrf
+
+                <!-- Nama -->
+                <div class="form-group">
+                    <label>Nama</label>
+                    <input type="text" name="nama" required placeholder="Masukkan nama Anda">
+                </div>
+
+                <!-- Pilihan Kehadiran -->
+                <div class="form-group">
+                    <label>Kehadiran</label>
+                    <select name="status" id="statusKehadiran" required>
+                        <option value="">-- Pilih --</option>
+                        <option value="hadir">Hadir</option>
+                        <option value="tidak">Tidak Hadir</option>
+                        <option value="diwakilkan">Diwakilkan</option>
+                    </select>
+                </div>
+
+                <!-- Diwakilkan oleh -->
+                <div class="form-group" id="wakilGroup" style="display:none;">
+                    <label>Diwakilkan Oleh</label>
+                    <input type="text" name="diwakilkan_oleh" placeholder="Nama yang mewakili">
+                </div>
+
+                <!-- Submit -->
+                <button type="submit" class="btn-submit">
+                    Kirim Konfirmasi
+                </button>
+            </form>
+        </div>
+    </section>
+
     <!-- 8. UCAPAN TERIMA KASIH -->
     <section id="terima">
         <div class="section-inner">
@@ -1553,10 +1657,12 @@
     <!-- 9. FOOTER -->
     <footer id="footer">
         <div class="footer-logos">
-            <div class="footer-logo-sm"><img src="{{ asset('assets/img/rssarkies/Logo RSSA white logo.png') }}" alt="RSSA"></div>
+            <div class="footer-logo-sm"><img src="{{ asset('assets/img/rssarkies/Logo RSA white.png') }}"
+                    alt="RSA"></div>
             <div class="footer-logo-sm" style="width:52px;height:52px;border-color:rgba(201,168,76,0.25)"><img
                     src="{{ asset('assets/img/holding.png') }}" alt="Holding"></div>
-            <div class="footer-logo-sm"><img src="{{ asset('assets/img/rssarkies/Logo RSA white.png') }}" alt="RSA"></div>
+            <div class="footer-logo-sm"><img src="{{ asset('assets/img/rssarkies/Logo RSSA white logo.png') }}"
+                    alt="RSSA"></div>
         </div>
         <div class="footer-divider"><span>✦</span></div>
         <div class="footer-panitia">Panitia Pelaksana</div>
@@ -1584,6 +1690,22 @@
                 }
             }, 200);
         });
+
+        // Set tanggal hari ini
+        /* TANGGAL HARI INI */
+        const elHariIni = document.getElementById('tglhariIni');
+
+        const now = new Date();
+        const opsi = {
+            weekday: 'long',
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric'
+        };
+
+        const tglFormatted = now.toLocaleDateString('id-ID', opsi);
+
+        elHariIni.textContent = '📆 ' + tglFormatted;
         /* COUNTDOWN */
         const target = new Date('2026-04-04T08:00:00');
 
@@ -1627,6 +1749,17 @@
                     })
                 }
             });
+        });
+
+        const status = document.getElementById('statusKehadiran');
+        const wakilGroup = document.getElementById('wakilGroup');
+
+        status.addEventListener('change', function() {
+            if (this.value === 'diwakilkan') {
+                wakilGroup.style.display = 'flex';
+            } else {
+                wakilGroup.style.display = 'none';
+            }
         });
     </script>
 </body>
