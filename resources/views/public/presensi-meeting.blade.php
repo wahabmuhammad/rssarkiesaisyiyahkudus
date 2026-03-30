@@ -152,6 +152,9 @@
             <label>NAMA LENGKAP <span>*</span></label>
             <input type="text" id="namalengkap" required />
 
+            <label>INSTANSI <span>*</span></label>
+            <input type="text" id="instansi" required />
+
             <label>JABATAN <span>*</span></label>
             <input type="text" id="jabatan" required />
 
@@ -265,6 +268,7 @@
                 meeting_fk: $('#meeting_fk').val(),
                 nama_lengkap: $('#namalengkap').val(),
                 jabatan: $('#jabatan').val(),
+                instansi: $('#instansi').val(),
                 nip: $('#nip').val(),
                 tanda_tangan: signatureData,
                 _token: '{{ csrf_token() }}'

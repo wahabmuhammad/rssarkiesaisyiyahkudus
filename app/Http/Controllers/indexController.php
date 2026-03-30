@@ -142,8 +142,9 @@ class indexController extends Controller
             'meeting_fk' => 'required|string',
             'nama_lengkap' => 'required|string',
             'jabatan' => 'required|string',
+            'instansi' => 'required|string',
             'nip' => 'required|string',
-            'tanda_tangan' => 'required'
+            'tanda_tangan' => 'nullable'
         ]);
 
         // ambil base64 tanda tangan
@@ -161,6 +162,7 @@ class indexController extends Controller
         DB::table('presensi_meeting_t')->insert([
             'meeting_fk' => $request->meeting_fk,
             'namalengkap' => $request->nama_lengkap,
+            'instansi' => $request->instansi,
             'jabatan' => $request->jabatan,
             'tanggal' => $request->tanggal,
             'nip' => $request->nip,
