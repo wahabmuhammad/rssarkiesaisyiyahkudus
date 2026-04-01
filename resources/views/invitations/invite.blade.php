@@ -1333,7 +1333,7 @@
             <div class="cover-tag">Mengundang Kehadiran</div>
             <div class="cover-title">Silaturahim<br>SYAWALAN</div>
             <div class="cover-sub">Holding RS Aisyiyah Group Kudus</div>
-            <div class="cover-tahun">4 APRIL 2026 &nbsp;·&nbsp; KUDUS</div>
+            <div class="cover-tahun">Sabtu,4 APRIL 2026 &nbsp;·&nbsp; KUDUS</div>
             <div class="inti-sub reveal" style="margin-top: 12px">Tanggal Hari ini</div>
             <div class="reveal" style="text-align:center; margin-top:12px">
                 <div class="date-chip" id="tglhariIni"></div>

@@ -147,6 +147,7 @@ class indexController extends Controller
             'pda-kudus' => ['nama' => "Pimpinan Daerah 'Aisyiyah Kabupaten Kudus"],
             'majelis-kesehatan-pda-kudus' => ['nama' => "Majelis Kesehatan PDA Kabupaten Kudus"],
             'bph-rsa-group-kudus' => ['nama' => "Badan Pembina Harian RS 'Aisyiyah Group Kudus"],
+            'bph-aisyiyah-jepara' => ['nama' => "Badan Pembina Harian 'Aisyiyah Jepara"],
             'direktur-holding-rsa-group-kudus' => ['nama' => "Direktur Holding RS 'Aisyiyah Group Kudus"],
             'anggota-holding-rsa-group-kudus' => ['nama' => "Anggota Holding RS 'Aisyiyah Group Kudus"],
 
