@@ -1,138 +1,1280 @@
-.text-color-1{
-    color: #e4cfa8;
+:root {
+    --biru: #84B7ED;
+    --biru-muda: #B3D1F5;
+    --biru-terang: #D6E9FB;
+    --biru-gelap: #3A78C9;
+    --biru-tua: #1A3F6E;
+    --biru-tua2: #0D2444;
+    --emas: #C9A84C;
+    --emas-muda: #E2C778;
+    --emas-terang: #F0DFA0;
+    --putih: #FFFFFF;
+    --krem: #F8FBFF;
+    --abu: #6B7E9A;
+    --teks: #0D2444;
 }
 
-.border-color-1{
-    border: 5px solid #e4cfa8;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box
 }
 
-.text-color-1-dark{
-    color: rgb(243, 181, 24);
+html {
+    scroll-behavior: smooth
 }
 
-.text-color-2{
-    color: #631d04;
+body {
+    font-family: "Nunito", sans-serif;
+    background: #84B7ED;
+    color: var(--teks);
+    overflow-x: hidden
 }
 
-.btn-color-2{
-    background-color: #631d04;
+body.locked {
+    overflow: hidden;
+    height: 100vh;
 }
 
-.photo-frame{
-    /* background: url("https://akad.in/theme/akadin/tradition/1/images/photo-frame.png") no-repeat center center; */
-    background-repeat: no-repeat; /* Agar gambar tidak diulang */
-    background-position: center;  /* Agar gambar berada di tengah */
-    height: 300px;
+::-webkit-scrollbar {
+    width: 4px
 }
 
-.background-card{
-    background: url("https://akad.in/theme/akadin/tradition/1/images/background-card.png") no-repeat center center;
-    background-size: cover;
+::-webkit-scrollbar-track {
+    background: var(--biru)
 }
 
-/* 0 */
-.welcomeMessage {
-    background: url("https://akad.in/theme/akadin/tradition/1/images/background.png") no-repeat center center;
-    background-size: cover;
-    height: 665px;
+::-webkit-scrollbar-thumb {
+    background: var(--biru);
+    border-radius: 2px
 }
 
-/* 1 */
-#intro {
-    /* background: url("https://akad.in/theme/akadin/tradition/1/images/background2.png") no-repeat center center; */
-    /* background: url("/assets/img/rssarkies/Royal_building_UMKU.png") no-repeat center center; */
-    background-color: #44ACFF;
-    background-size: cover;
-    height: 665px;
+/* ============================
+   1. COVER
+============================ */
+#cover {
+    min-height: 100vh;
+    background: linear-gradient(160deg, var(--biru) 0%, #102d5a 50%, #0a1e3a 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 36px 20px;
+    position: relative;
+    overflow: hidden;
 }
 
-/* 2 */
-#ayat{
-    /* background: url("https://akad.in/theme/akadin/tradition/1/images/background.png") no-repeat center center; */
-    background-color: #3188F4;
-    background-size: cover;
-}        
-
-#ayat-container {
-    background: url("https://akad.in/theme/akadin/tradition/1/images/background-couple.png") no-repeat center center;
-    background-size: cover;
-    margin-top: 60px;
-    margin-bottom: 60px;
-    /* make rounded */
-    border-radius: 20px;
+#cover::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+        radial-gradient(ellipse 80% 50% at 50% 0%, rgba(132, 183, 237, 0.18) 0%, transparent 70%),
+        radial-gradient(ellipse 50% 40% at 20% 80%, rgba(201, 168, 76, 0.10) 0%, transparent 60%),
+        radial-gradient(ellipse 50% 40% at 80% 80%, rgba(132, 183, 237, 0.10) 0%, transparent 60%);
+    pointer-events: none;
 }
 
-/* 3 */
-#date_time {
-    /* background: url("https://akad.in/theme/akadin/tradition/1/images/background.png") no-repeat center center; */
-    background-color: #3188F4;
-    background-size: cover;
-    /* height: 1300px; */
+#cover::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+        repeating-linear-gradient(0deg, transparent, transparent 59px, rgba(132, 183, 237, 0.04) 59px, rgba(132, 183, 237, 0.04) 60px),
+        repeating-linear-gradient(90deg, transparent, transparent 59px, rgba(132, 183, 237, 0.04) 59px, rgba(132, 183, 237, 0.04) 60px);
+    pointer-events: none;
 }
 
-/* 4 */
-#akad-resepsi{
-    /* background: url("https://akad.in/theme/akadin/tradition/1/images/background.png") no-repeat center center; */
-    background-color: #3188F4;
-    background-size: cover;
-    /* height: 1300px; */
+.cover-inner {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    max-width: 440px;
+    width: 100%;
 }
 
-/* 5 */
-#prewed {
-    /* background: url("https://akad.in/theme/akadin/tradition/1/images/background.png") no-repeat center center; */
-    background-color: #3188F4;
-    background-size: cover;
-    /* height: 1300px; */
+/* 3 logos */
+.logos-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    margin-bottom: 28px;
 }
 
-/* 6 */
-#live-streaming {
-    /* background: url("https://akad.in/theme/akadin/tradition/1/images/background.png") no-repeat center center; */
-    background-color: #3188F4;
-    background-size: cover;
-    /* height: 1300px; */
+.logo-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
 }
 
-/* 7 */
-#our-story {
-    /* background: url("https://akad.in/theme/akadin/tradition/1/images/background.png") no-repeat center center; */
-    background-color: #3188F4;
-    background-size: cover;
-    /* height: 1300px; */
+.logo-circle {
+    border-radius: 50%;
+    border: 1.5px solid rgba(132, 183, 237, 0.4);
+    background: rgba(255, 255, 255, 0.06);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    transition: all 0.3s;
+    box-shadow: 0 0 20px rgba(132, 183, 237, 0.15);
 }
 
-/* 8 */
-#ucapan-doa {
-    /* background: url("https://akad.in/theme/akadin/tradition/1/images/background.png") no-repeat center center; */
-    background-color: #3188F4;
-    background-size: cover;
-    /* height: 1300px; */
+.logo-circle:hover {
+    border-color: var(--biru);
+    box-shadow: 0 0 30px rgba(132, 183, 237, 0.4);
+    transform: scale(1.06);
 }
 
-/* 9 */
-#gift {
-    /* background: url("https://akad.in/theme/akadin/tradition/1/images/background.png") no-repeat center center; */
-    background-color: #3188F4;
-    background-size: cover;
-    /* height: 1300px; */
+.logo-circle img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 6px;
 }
 
-/* 10 */
-#special-thanks {
-    /* background: url("https://akad.in/theme/akadin/tradition/1/images/background.png") no-repeat center center; */
-    background-color: #3188F4;
-    background-size: cover;
-    /* height: 1300px; */
+.logo-circle.sm {
+    width: 64px;
+    height: 64px;
 }
 
+.logo-circle.lg {
+    width: 82px;
+    height: 82px;
+    border-color: rgba(201, 168, 76, 0.6);
+    box-shadow: 0 0 30px rgba(201, 168, 76, 0.25);
+}
 
-/* 11 */
+.logo-circle.lg:hover {
+    border-color: var(--emas-muda);
+    box-shadow: 0 0 40px rgba(201, 168, 76, 0.45);
+}
+
+.logo-name {
+    font-size: 8px;
+    color: rgba(255, 255, 255, 0.45);
+    letter-spacing: 1.5px;
+    font-weight: 700;
+    text-transform: uppercase;
+    max-width: 72px;
+    text-align: center;
+    line-height: 1.3
+}
+
+.logo-sep {
+    width: 1px;
+    height: 50px;
+    background: linear-gradient(to bottom, transparent, rgba(132, 183, 237, 0.35), transparent);
+    flex-shrink: 0;
+}
+
+.ornament-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 16px;
+}
+
+.ornament-row::before,
+.ornament-row::after {
+    content: '';
+    flex: 1;
+    max-width: 55px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(132, 183, 237, 0.6), transparent);
+}
+
+.ornament-row span {
+    color: var(--biru-muda);
+    font-size: 13px;
+}
+
+.arabic-cover {
+    font-family: 'Amiri', 'Noto Naskh Arabic', serif;
+    direction: rtl;
+    unicode-bidi: isolate;
+    font-size: 19px;
+    color: var(--biru-terang);
+    letter-spacing: 5px;
+    line-height: 1.6;
+    margin-bottom: 12px;
+    opacity: 0;
+    animation: fadeUp 1s ease 0.3s forwards;
+}
+
+.cover-tag {
+    font-size: 10px;
+    color: rgba(255, 255, 255, 0.45);
+    letter-spacing: 4px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    opacity: 0;
+    animation: fadeUp 1s ease 0.5s forwards;
+}
+
+.cover-title {
+    font-family: "Cinzel", serif;
+    font-size: clamp(26px, 7vw, 38px);
+    color: var(--putih);
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: 2px;
+    text-shadow: 0 2px 20px rgba(0, 0, 0, 0.4);
+    opacity: 0;
+    animation: fadeUp 1s ease 0.7s forwards;
+}
+
+.cover-sub {
+    font-family: "Cormorant Garamond", serif;
+    font-style: italic;
+    font-size: 16px;
+    color: var(--biru-muda);
+    letter-spacing: 4px;
+    margin-top: 6px;
+    opacity: 0;
+    animation: fadeUp 1s ease 0.9s forwards;
+}
+
+.cover-tahun {
+    display: inline-block;
+    margin: 12px auto 0;
+    padding: 5px 18px;
+    border: 1px solid rgba(132, 183, 237, 0.35);
+    border-radius: 50px;
+    font-size: 11px;
+    color: var(--biru-muda);
+    letter-spacing: 4px;
+    font-weight: 700;
+    opacity: 0;
+    animation: fadeUp 1s ease 1.1s forwards;
+}
+
+.kepada-box {
+    margin-top: 24px;
+    padding: 16px 20px;
+    background: rgba(132, 183, 237, 0.07);
+    border: 1px solid rgba(132, 183, 237, 0.2);
+    border-radius: 8px;
+    opacity: 0;
+    animation: fadeUp 1s ease 1.3s forwards;
+}
+
+.kepada-label {
+    font-size: 10px;
+    color: rgba(255, 255, 255, 0.4);
+    letter-spacing: 3px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+}
+
+.kepada-nama {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 20px;
+    color: var(--putih);
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.kepada-sub {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.4);
+    margin-top: 3px;
+}
+
+.btn-buka {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 24px;
+    padding: 14px 32px;
+    background: linear-gradient(135deg, var(--biru-gelap), var(--biru), var(--biru-muda));
+    color: var(--biru-tua2);
+    font-family: "Cinzel", serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 8px 30px rgba(132, 183, 237, 0.4);
+    transition: all 0.3s;
+    opacity: 0;
+    animation: fadeUp 1s ease 1.5s forwards;
+    text-decoration: none;
+}
+
+.btn-buka:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 14px 40px rgba(132, 183, 237, 0.55);
+}
+
+/* particles */
+.particle {
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+    opacity: 0;
+    animation: floatP linear infinite;
+}
+
+@keyframes floatP {
+    0% {
+        opacity: 0;
+        transform: translateY(0)
+    }
+
+    10% {
+        opacity: .8
+    }
+
+    90% {
+        opacity: .2
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(-110px) translateX(15px)
+    }
+}
+
+/* ============================
+   SECTION BASE
+============================ */
+section {
+    padding: 56px 22px;
+    position: relative;
+}
+
+.section-inner {
+    max-width: 520px;
+    margin: 0 auto;
+}
+
+.sec-label {
+    font-size: 10px;
+    color: var(--biru);
+    letter-spacing: 4px;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.sec-title {
+    font-family: "Cinzel", serif;
+    font-size: clamp(20px, 5vw, 26px);
+    color: var(--biru-tua);
+    text-align: center;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 18px;
+}
+
+.sec-title.white {
+    color: var(--putih);
+}
+
+.divider {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 22px;
+}
+
+.divider::before,
+.divider::after {
+    content: '';
+    flex: 1;
+    max-width: 70px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--biru), transparent);
+}
+
+.divider span {
+    color: var(--biru);
+    font-size: 13px;
+}
+
+.divider.gold::before,
+.divider.gold::after {
+    background: linear-gradient(90deg, transparent, var(--emas), transparent);
+}
+
+.divider.gold span {
+    color: var(--emas-muda);
+}
+
+/* ============================
+   2. HALAMAN INTI
+============================ */
+#inti {
+    background: var(--krem);
+    padding-top: 64px;
+}
+
+.inti-logo-center {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 22px;
+}
+
+.logo-big-inti {
+    width: 96px;
+    height: 96px;
+    border-radius: 50%;
+    border: 2px solid rgba(201, 168, 76, 0.5);
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    box-shadow: 0 8px 30px rgba(132, 183, 237, 0.25), 0 0 0 6px rgba(132, 183, 237, 0.08);
+}
+
+.logo-big-inti img {
+    width: 90%;
+    height: 90%;
+    object-fit: contain;
+    padding: 4px;
+}
+
+.inti-arabic {
+    font-family: 'Amiri', 'Noto Naskh Arabic', serif;
+    direction: rtl;
+    unicode-bidi: isolate;
+    font-size: clamp(20px, 5vw, 26px);
+    color: var(--biru-tua);
+    letter-spacing: 5px;
+    text-align: center;
+    margin-bottom: 8px;
+}
+
+.inti-main-title {
+    font-family: "Cinzel", serif;
+    font-size: clamp(22px, 6vw, 32px);
+    color: var(--biru-tua);
+    font-weight: 700;
+    text-align: center;
+    letter-spacing: 2px;
+    line-height: 1.2;
+    margin-bottom: 6px;
+}
+
+.inti-sub {
+    font-family: "Cormorant Garamond", serif;
+    font-style: italic;
+    font-size: 16px;
+    color: var(--biru-gelap);
+    letter-spacing: 4px;
+    text-align: center;
+    margin-bottom: 16px;
+}
+
+.date-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 24px;
+    background: linear-gradient(135deg, var(--biru-tua2), var(--biru-tua));
+    border-radius: 50px;
+    font-family: "Cinzel", serif;
+    font-size: 13px;
+    color: var(--biru-terang);
+    letter-spacing: 2px;
+    font-weight: 600;
+    box-shadow: 0 6px 20px rgba(13, 36, 68, 0.25);
+}
+
+/* ============================
+   3. SAMBUTAN
+============================ */
+#sambutan {
+    background: linear-gradient(160deg, var(--biru-tua2) 0%, #0f2d58 60%, #0a1e3a 100%);
+    padding: 56px 22px;
+}
+
+#sambutan::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(ellipse 70% 60% at 50% 50%, rgba(132, 183, 237, 0.07) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.sambutan-logo {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.logo-sambutan {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    border: 2px solid rgba(201, 168, 76, 0.4);
+    background: rgba(255, 255, 255, 0.06);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    box-shadow: 0 0 30px rgba(201, 168, 76, 0.2);
+}
+
+.logo-sambutan img {
+    width: 90%;
+    height: 90%;
+    object-fit: contain;
+    padding: 4px;
+}
+
+.sambutan-text {
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(15px, 4vw, 18px);
+    color: rgba(255, 255, 255, 0.85);
+    line-height: 1.95;
+    text-align: center;
+    font-style: italic;
+    margin-bottom: 24px;
+    padding: 0 6px;
+    position: relative;
+    z-index: 1;
+}
+
+.sambutan-text em {
+    color: var(--biru-muda);
+    font-style: normal;
+    font-weight: 600;
+}
+
+/* Foto direksi group */
+.direksi-photo-wrap {
+    position: relative;
+    z-index: 1;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1.5px solid rgba(132, 183, 237, 0.25);
+    box-shadow: 0 16px 50px rgba(0, 0, 0, 0.4);
+}
+
+.direksi-photo-wrap img {
+    width: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+.direksi-caption {
+    background: linear-gradient(to top, rgba(13, 36, 68, 0.95) 0%, rgba(13, 36, 68, 0.7) 60%, transparent 100%);
+    padding: 24px 16px 18px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    margin-top: -4px;
+}
+
+.direksi-caption-title {
+    font-family: "Cinzel", serif;
+    font-size: 13px;
+    color: var(--biru-muda);
+    letter-spacing: 3px;
+    margin-bottom: 4px;
+}
+
+.direksi-caption-sub {
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.45);
+    letter-spacing: 1.5px;
+}
+
+/* ============================
+   4. WAKTU TEMPAT + COUNTDOWN
+============================ */
+#waktu {
+    background: var(--krem);
+    padding: 56px 22px;
+}
+
+.waktu-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 22px;
+}
+
+.waktu-card {
+    background: #fff;
+    border: 1px solid rgba(132, 183, 237, 0.3);
+    border-radius: 10px;
+    padding: 18px 12px;
+    text-align: center;
+    box-shadow: 0 4px 16px rgba(132, 183, 237, 0.1);
+    transition: all 0.3s;
+}
+
+.waktu-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(132, 183, 237, 0.2);
+    border-color: var(--biru);
+}
+
+.waktu-icon {
+    font-size: 26px;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.waktu-label {
+    font-size: 9px;
+    color: var(--abu);
+    letter-spacing: 3px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+}
+
+.waktu-val {
+    font-family: "Cinzel", serif;
+    font-size: clamp(13px, 3.5vw, 16px);
+    color: var(--biru-tua);
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+.waktu-detail {
+    font-size: 11px;
+    color: var(--abu);
+    margin-top: 4px;
+}
+
+.countdown-section {
+    background: linear-gradient(135deg, var(--biru-tua2), var(--biru-tua));
+    border-radius: 14px;
+    padding: 24px 14px;
+    box-shadow: 0 12px 40px rgba(13, 36, 68, 0.3);
+}
+
+.cd-label {
+    font-size: 10px;
+    color: rgba(255, 255, 255, 0.45);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 16px;
+}
+
+.cd-boxes {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.cd-unit-box {
+    flex: 1;
+    max-width: 72px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(132, 183, 237, 0.2);
+    border-radius: 10px;
+    padding: 14px 6px 10px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.cd-unit-box::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--biru-muda), transparent);
+}
+
+.cd-n {
+    font-family: "Cinzel", serif;
+    font-size: clamp(22px, 6vw, 30px);
+    color: var(--biru-terang);
+    font-weight: 700;
+    display: block;
+    line-height: 1;
+}
+
+.cd-u {
+    font-size: 9px;
+    color: rgba(255, 255, 255, 0.4);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-top: 5px;
+    display: block;
+}
+
+.cd-sep {
+    font-family: "Cinzel", serif;
+    font-size: 26px;
+    color: var(--biru);
+    line-height: 1;
+    align-self: flex-start;
+    margin-top: 12px;
+}
+
+/* ============================
+   5. RUNDOWN
+============================ */
+#rundown {
+    background: #fff;
+    padding: 56px 22px;
+}
+
+.rundown-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.rundown-item {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    padding: 15px 0;
+    border-bottom: 1px solid rgba(132, 183, 237, 0.15);
+}
+
+.rundown-item:last-child {
+    border-bottom: none;
+}
+
+.rundown-time {
+    font-family: "Cinzel", serif;
+    font-size: 12px;
+    color: var(--biru-gelap);
+    font-weight: 700;
+    letter-spacing: 1px;
+    white-space: nowrap;
+    min-width: 65px;
+    padding-top: 2px;
+}
+
+.rundown-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--biru);
+    flex-shrink: 0;
+    margin-top: 4px;
+    position: relative;
+    box-shadow: 0 0 8px rgba(132, 183, 237, 0.6);
+}
+
+.rundown-dot::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 100%;
+    transform: translateX(-50%);
+    width: 1px;
+    height: calc(100% + 28px);
+    background: linear-gradient(to bottom, var(--biru), transparent);
+}
+
+.rundown-item:last-child .rundown-dot::after {
+    display: none;
+}
+
+.rundown-kegiatan {
+    flex: 1;
+}
+
+.rundown-nama {
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(14px, 4vw, 17px);
+    color: var(--biru-tua);
+    font-weight: 600;
+    line-height: 1.3;
+    margin-bottom: 2px;
+}
+
+.rundown-desc {
+    font-size: 12px;
+    color: var(--abu);
+    line-height: 1.5;
+}
+
+.rundown-badge {
+    padding: 2px 10px;
+    border-radius: 50px;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    background: rgba(132, 183, 237, 0.12);
+    color: var(--biru-gelap);
+    display: inline-block;
+    margin-top: 3px;
+}
+
+/* ============================
+   6. GEDUNG
+============================ */
+#gedung {
+    padding: 0;
+    position: relative;
+    overflow: hidden;
+    background: var(--putih);
+}
+
+.gedung-img-wrap {
+    position: relative;
+}
+
+.gedung-img-wrap img {
+    width: 100%;
+    display: block;
+    object-fit: cover;
+    max-height: 320px;
+    filter: brightness(0.85);
+}
+
+.gedung-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 30px 22px 22px;
+    background: linear-gradient(to top, var(--krem) 0%, transparent 100%);
+}
+
+.gedung-name {
+    font-family: "Cinzel", serif;
+    font-size: clamp(16px, 4.5vw, 22px);
+    color: var(--biru-gelap);
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.gedung-sub {
+    font-size: 12px;
+    /* color: rgba(255, 255, 255, 0.55); */
+    colo: var(--biru) margin-top: 4px;
+    letter-spacing: 1px;
+}
+
+/* ============================
+   7. MAPS
+============================ */
+#maps {
+    background: var(--krem);
+    padding: 56px 22px;
+}
+
+.maps-frame {
+    width: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 2px solid rgba(132, 183, 237, 0.3);
+    box-shadow: 0 10px 40px rgba(132, 183, 237, 0.15);
+    aspect-ratio: 4/3;
+}
+
+.maps-frame iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: block;
+}
+
+.maps-address {
+    margin-top: 16px;
+    padding: 14px 16px;
+    background: #fff;
+    border-radius: 10px;
+    border-left: 3px solid var(--biru);
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    box-shadow: 0 4px 16px rgba(132, 183, 237, 0.12);
+}
+
+.maps-address-icon {
+    font-size: 20px;
+    flex-shrink: 0;
+    margin-top: 1px;
+}
+
+.maps-address-name {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 17px;
+    color: var(--biru-tua);
+    font-weight: 600;
+    margin-bottom: 2px;
+}
+
+.maps-address-detail {
+    font-size: 12px;
+    color: var(--abu);
+    line-height: 1.6;
+}
+
+.btn-maps-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 14px;
+    padding: 12px 22px;
+    background: linear-gradient(135deg, var(--biru-tua2), var(--biru-tua));
+    color: var(--biru-terang);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    border-radius: 50px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    font-family: "Nunito", sans-serif;
+    transition: all 0.3s;
+    width: 100%;
+}
+
+.btn-maps-link:hover {
+    background: linear-gradient(135deg, var(--biru-tua), var(--biru-gelap));
+    transform: translateY(-2px);
+}
+
+/* ============================
+   8. TERIMA KASIH
+============================ */
+#terima {
+    background: linear-gradient(160deg, var(--biru-tua2) 0%, #0f2d58 60%, #0a1e3a 100%);
+    padding: 60px 22px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+#terima::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 320px;
+    height: 320px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(132, 183, 237, 0.1) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.terima-arabic {
+    font-family: 'Amiri', 'Noto Naskh Arabic', serif;
+    direction: rtl;
+    unicode-bidi: isolate;
+    font-size: clamp(22px, 6vw, 30px);
+    color: var(--biru-muda);
+    letter-spacing: 5px;
+    margin-bottom: 12px;
+    position: relative;
+    z-index: 1;
+}
+
+.terima-title {
+    font-family: "Cinzel", serif;
+    font-size: clamp(18px, 5vw, 24px);
+    color: var(--putih);
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 14px;
+    position: relative;
+    z-index: 1;
+}
+
+.terima-text {
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(15px, 4vw, 18px);
+    color: rgba(255, 255, 255, 0.78);
+    line-height: 1.9;
+    font-style: italic;
+    max-width: 370px;
+    margin: 0 auto 24px;
+    position: relative;
+    z-index: 1;
+    padding: 0 6px;
+}
+
+.ttd-box {
+    display: inline-block;
+    padding: 18px 28px;
+    background: rgba(132, 183, 237, 0.08);
+    border: 1px solid rgba(132, 183, 237, 0.25);
+    border-radius: 10px;
+    position: relative;
+    z-index: 1;
+}
+
+.ttd-logo {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    border: 1px solid rgba(201, 168, 76, 0.4);
+    background: rgba(255, 255, 255, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    margin: 0 auto 10px;
+}
+
+.ttd-logo img {
+    width: 90%;
+    height: 90%;
+    object-fit: contain;
+    padding: 3px;
+}
+
+.ttd-dari {
+    font-size: 10px;
+    color: rgba(255, 255, 255, 0.35);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+}
+
+.ttd-nama {
+    font-family: "Cinzel", serif;
+    font-size: clamp(13px, 4vw, 17px);
+    color: var(--biru-terang);
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.minal {
+    margin-top: 22px;
+    position: relative;
+    z-index: 1;
+}
+
+.minal-text {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.45);
+    letter-spacing: 4px;
+    font-style: italic;
+}
+
+.minal-sub {
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.25);
+    margin-top: 5px;
+    letter-spacing: 2px;
+}
+
+/* ============================
+   9. FOOTER
+============================ */
 #footer {
-    /* background: url("https://akad.in/theme/akadin/tradition/1/images/background.png") no-repeat center center; */
-    background-color: #3188F4;
-    background-size: cover;
-    /* height: 1300px; */
+    background: #050f1e;
+    padding: 32px 22px;
+    text-align: center;
+    border-top: 1px solid rgba(132, 183, 237, 0.1);
 }
 
-/* copyright akad.in */
+.footer-logos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+.footer-logo-sm {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(132, 183, 237, 0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.footer-logo-sm img {
+    width: 90%;
+    height: 90%;
+    object-fit: contain;
+    padding: 3px;
+}
+
+.footer-divider {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 16px;
+}
+
+.footer-divider::before,
+.footer-divider::after {
+    content: '';
+    flex: 1;
+    max-width: 50px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(132, 183, 237, 0.3), transparent);
+}
+
+.footer-divider span {
+    color: rgba(132, 183, 237, 0.4);
+    font-size: 11px;
+}
+
+.footer-panitia {
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.3);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+}
+
+.footer-org {
+    font-family: "Cinzel", serif;
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.5);
+    letter-spacing: 1px;
+    margin-bottom: 16px;
+}
+
+.footer-created {
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.2);
+    letter-spacing: 1.5px;
+}
+
+.footer-created span {
+    color: rgba(132, 183, 237, 0.45);
+    font-weight: 700;
+}
+
+.footer-copy {
+    font-size: 10px;
+    color: rgba(255, 255, 255, 0.1);
+    margin-top: 6px;
+    letter-spacing: 1px;
+}
+
+/* ============================
+   FORM KEHADIRAN
+============================ */
+.rsvp-form {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.form-group label {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--biru);
+    letter-spacing: 1px;
+}
+
+.form-group input,
+.form-group select {
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid rgba(132, 183, 237, 0.4);
+    font-size: 13px;
+    font-family: "Nunito", sans-serif;
+    outline: none;
+    transition: 0.3s;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: var(--biru);
+    box-shadow: 0 0 0 2px rgba(132, 183, 237, 0.2);
+}
+
+.btn-submit {
+    margin-top: 10px;
+    padding: 14px;
+    border-radius: 10px;
+    border: none;
+    font-weight: 700;
+    letter-spacing: 1px;
+    background: linear-gradient(135deg, var(--biru-tua2), var(--biru-gelap));
+    color: var(--biru-terang);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-submit:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(13, 36, 68, 0.25);
+}
+
+/* ============================
+   REVEAL & ANIM
+============================ */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(24px)
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0)
+    }
+}
+
+.reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media(max-width:400px) {
+    #cover {
+        justify-content: flex-start;
+        /* dari center ke atas */
+        padding-top: 5px;
+        /* atur jarak dari atas */
+    }
+
+    .waktu-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .logos-row {
+        gap: 10px;
+    }
+
+    .logo-circle.sm {
+        width: 56px;
+        height: 56px;
+    }
+
+    .logo-circle.lg {
+        width: 72px;
+        height: 72px;
+    }
+}

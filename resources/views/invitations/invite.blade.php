@@ -4,12 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Undangan Silaturahim Syawalan — Holding RS Aisyiyah Group Kudus</title>
+    <title>Undangan Silaturahim Syawalan — Holding RS Aisyiyah Group Kudus {{ $data['nama'] }}</title>
     <link
         href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Cinzel:wght@400;600;700&family=Nunito:wght@300;400;600;700&display=swap"
         rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Amiri&family=Noto+Naskh+Arabic&display=swap" rel="stylesheet">
     <link rel="icon" type="image/png" href="{{ asset('assets/img/Logo_RSSA.png') }}" sizes="32x32">
     <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('assets/img/Logo_RSSA.png') }}">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <style>
         :root {
             --biru: #84B7ED;
@@ -42,6 +44,11 @@
             background: #84B7ED;
             color: var(--teks);
             overflow-x: hidden
+        }
+
+        body.locked {
+            overflow: hidden;
+            height: 100vh;
         }
 
         ::-webkit-scrollbar {
@@ -200,7 +207,9 @@
         }
 
         .arabic-cover {
-            font-family: "Cormorant Garamond", serif;
+            font-family: 'Amiri', 'Noto Naskh Arabic', serif;
+            direction: rtl;
+            unicode-bidi: isolate;
             font-size: 19px;
             color: var(--biru-terang);
             letter-spacing: 5px;
@@ -450,7 +459,9 @@
         }
 
         .inti-arabic {
-            font-family: "Cormorant Garamond", serif;
+            font-family: 'Amiri', 'Noto Naskh Arabic', serif;
+            direction: rtl;
+            unicode-bidi: isolate;
             font-size: clamp(20px, 5vw, 26px);
             color: var(--biru-tua);
             letter-spacing: 5px;
@@ -977,7 +988,9 @@
         }
 
         .terima-arabic {
-            font-family: "Cormorant Garamond", serif;
+            font-family: 'Amiri', 'Noto Naskh Arabic', serif;
+            direction: rtl;
+            unicode-bidi: isolate;
             font-size: clamp(22px, 6vw, 30px);
             color: var(--biru-muda);
             letter-spacing: 5px;
@@ -1254,7 +1267,14 @@
             transform: translateY(0);
         }
 
-        @media(max-width:380px) {
+        @media(max-width:400px) {
+            #cover {
+                justify-content: flex-start;
+                /* dari center ke atas */
+                padding-top: 5px;
+                /* atur jarak dari atas */
+            }
+
             .waktu-grid {
                 grid-template-columns: 1fr;
             }
@@ -1321,7 +1341,7 @@
 
             <div class="kepada-box">
                 <div class="kepada-label">Kepada Yang Terhormat</div>
-                <div class="kepada-nama">Muhammad Abdul Wahab</div>
+                <div class="kepada-nama">{{ $data['nama'] }}</div>
                 <div class="kepada-sub">Keluarga Besar Holding RS Aisyiyah Group Kudus</div>
             </div>
 
@@ -1593,20 +1613,16 @@
             <div class="sec-title reveal">Kehadiran Anda</div>
             <div class="divider reveal"><span>✦</span></div>
 
-            <form class="rsvp-form reveal" method="POST" action="/kehadiran">
-                <!-- kalau pakai Laravel -->
+            <form id="formKehadiran" class="rsvp-form reveal">
                 @csrf
 
-                <!-- Nama -->
-                <div class="form-group">
-                    <label>Nama</label>
-                    <input type="text" name="nama" required placeholder="Masukkan nama Anda">
-                </div>
+                <input type="hidden" name="slug" value="{{ $slug }}">
 
-                <!-- Pilihan Kehadiran -->
                 <div class="form-group">
+                    <label for="nama">Nama</label>
+                    <input type="text" name="nama" value="{{ $data['nama'] }}" readonly>
                     <label>Kehadiran</label>
-                    <select name="status" id="statusKehadiran" required>
+                    <select name="kehadiran" id="statusKehadiran" required>
                         <option value="">-- Pilih --</option>
                         <option value="hadir">Hadir</option>
                         <option value="tidak">Tidak Hadir</option>
@@ -1614,16 +1630,12 @@
                     </select>
                 </div>
 
-                <!-- Diwakilkan oleh -->
                 <div class="form-group" id="wakilGroup" style="display:none;">
                     <label>Diwakilkan Oleh</label>
-                    <input type="text" name="diwakilkan_oleh" placeholder="Nama yang mewakili">
+                    <input type="text" name="diwakilkan" placeholder="Nama yang mewakili">
                 </div>
 
-                <!-- Submit -->
-                <button type="submit" class="btn-submit">
-                    Kirim Konfirmasi
-                </button>
+                <button type="submit" class="btn-submit">Kirim Konfirmasi</button>
             </form>
         </div>
     </section>
@@ -1673,10 +1685,44 @@
     </footer>
 
     <script>
+        // const music = document.getElementById('bgMusic');
+        // const btn = document.getElementById('btnBuka');
+
+        // btn.addEventListener('click', () => {
+        //     music.volume = 0;
+        //     music.play();
+
+        //     let vol = 0;
+        //     const fade = setInterval(() => {
+        //         if (vol < 1) {
+        //             vol += 0.05;
+        //             music.volume = vol;
+        //         } else {
+        //             clearInterval(fade);
+        //         }
+        //     }, 200);
+        // });
+
         const music = document.getElementById('bgMusic');
         const btn = document.getElementById('btnBuka');
 
-        btn.addEventListener('click', () => {
+        const slug = "{{ $slug }}";
+        const key = `invitation_opened_${slug}`;
+
+        if (!localStorage.getItem(key)) {
+            document.body.classList.add('locked');
+        }
+
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+
+            // 🔓 buka scroll
+            // ✅ simpan status sudah dibuka
+            localStorage.setItem(key, 'true');
+
+            document.body.classList.remove('locked');
+
+            // 🎵 play music
             music.volume = 0;
             music.play();
 
@@ -1689,6 +1735,11 @@
                     clearInterval(fade);
                 }
             }, 200);
+
+            // 👉 scroll manual ke inti
+            document.getElementById('inti').scrollIntoView({
+                behavior: 'smooth'
+            });
         });
 
         // Set tanggal hari ini
@@ -1760,6 +1811,72 @@
             } else {
                 wakilGroup.style.display = 'none';
             }
+        });
+    </script>
+    <script>
+        const form = document.getElementById('formKehadiran');
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const formData = new FormData(form);
+            const slug = formData.get('slug');
+
+            if (formData.get('kehadiran') === 'diwakilkan' && !formData.get('diwakilkan')) {
+                Swal.fire({
+                    toast: true,
+                    position: 'top-end',
+                    icon: 'warning',
+                    title: 'Isi nama perwakilan dulu',
+                    showConfirmButton: false,
+                    timer: 2500
+                });
+                return;
+            }
+
+            fetch(`/invitation/${slug}/submit`, {
+                    method: 'POST',
+                    headers: {
+                        'X-CSRF-TOKEN': document.querySelector('input[name="_token"]').value
+                    },
+                    body: formData
+                })
+                .then(res => res.json())
+                .then(res => {
+                    if (res.status === 'success') {
+
+                        // ✅ Toast sukses
+                        Swal.fire({
+                            toast: true,
+                            position: 'top-end',
+                            icon: 'success',
+                            title: 'Konfirmasi berhasil dikirim',
+                            showConfirmButton: false,
+                            timer: 2500,
+                            timerProgressBar: true
+                        });
+
+                        form.reset();
+                        document.getElementById('wakilGroup').style.display = 'none';
+
+                    } else {
+                        throw res;
+                    }
+                })
+                .catch(err => {
+
+                    // ❌ Toast error
+                    Swal.fire({
+                        toast: true,
+                        position: 'top-end',
+                        icon: 'error',
+                        title: 'Gagal mengirim data',
+                        text: err.message ?? 'Terjadi kesalahan',
+                        showConfirmButton: false,
+                        timer: 3000
+                    });
+
+                });
         });
     </script>
 </body>

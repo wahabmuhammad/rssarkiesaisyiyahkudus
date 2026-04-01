@@ -133,7 +133,116 @@ class indexController extends Controller
 
         return response()->json($meetings);
     }
+    //invitation
+    public function invitation($slug)
+    {
+        // dd($nama);
+        $invitations = [
 
+            'Dr-Apt-Salmah-Orbayinah-M-Kes' => ['nama' => 'Dr. Apt. Salmah Orbayinah, M. Kes'],
+            'Dr-Enny-WinaryatiM-Pd' => ['nama' => 'Dr. Enny Winaryati M.Pd'],
+            'Din-Nurusyifa-S-KM-M-Kes' => ['nama' => 'Din Nurusyifa, S.KM., M.Kes'],
+
+            'pdm-kudus' => ['nama' => 'Pimpinan Daerah Muhammadiyah Kabupaten Kudus'],
+            'pda-kudus' => ['nama' => "Pimpinan Daerah 'Aisyiyah Kabupaten Kudus"],
+            'majelis-kesehatan-pda-kudus' => ['nama' => "Majelis Kesehatan PDA Kabupaten Kudus"],
+            'bph-rsa-group-kudus' => ['nama' => "Badan Pembina Harian RS 'Aisyiyah Group Kudus"],
+            'direktur-holding-rsa-group-kudus' => ['nama' => "Direktur Holding RS 'Aisyiyah Group Kudus"],
+            'anggota-holding-rsa-group-kudus' => ['nama' => "Anggota Holding RS 'Aisyiyah Group Kudus"],
+
+            'keluarga-besar-rs-aisyiyah' => ['nama' => "Direktur & Keluarga Besar RS 'Aisyiyah Kudus"],
+            'keluarga-besar-rs-sarkies' => ['nama' => "Direktur & Keluarga Besar RS Sarkies 'Aisyiyah Kudus"],
+
+            'pca-kota-1' => ['nama' => 'Ketua PCA Kota 1'],
+            'pca-kota-3' => ['nama' => 'Ketua PCA Kota 3'],
+            'pcm-kota-1' => ['nama' => 'Ketua PCM Kota 1'],
+            'pcm-kota-3' => ['nama' => 'Ketua PCM Kota 3'],
+
+            'pra-mlati-lor' => ['nama' => 'Ketua PRA Mlati Lor'],
+            'pra-mlatinorowito' => ['nama' => 'Ketua PRA Mlatinorowito'],
+            'pra-purwosari-1' => ['nama' => 'Ketua PRA Purwosari 1'],
+
+            'prm-mlati-lor' => ['nama' => 'Ketua PRM Mlati Lor'],
+            'prm-mlatinorowito' => ['nama' => 'Ketua PRM Mlatinorowito'],
+            'prm-purwosari-1' => ['nama' => 'Ketua PRM Purwosari 1'],
+
+            'imm-kab-kudus' => ['nama' => 'Ketua PC IMM Kabupaten Kudus'],
+            'ipm-kab-kudus' => ['nama' => 'Ketua PD IPM Kabupaten Kudus'],
+            'na-kab-kudus' => ['nama' => "Ketua PD Nasyiatul 'Aisyiyah Kabupaten Kudus"],
+            'pdpm-kab-kudus' => ['nama' => 'Ketua PD Pemuda Muhammadiyah Kabupaten Kudus'],
+            'hw-kab-kudus' => ['nama' => 'Ketua Kwarda Hizbul Wathan Kabupaten Kudus'],
+            'tpsm-kab-kudus' => ['nama' => 'Ketua TPSM Kabupaten Kudus'],
+
+            'panti-asuhan-yatim-aisyiyah' => ['nama' => "Kepala Panti Asuhan Yatim 'Aisyiyah Kudus"],
+            'wisma-lansia-aisyiyah-kudus' => ['nama' => "Kepala Wisma Lansia 'Aisyiyah Kudus"],
+
+            'bank-bukopin-syariah' => ['nama' => 'Pimpinan PT. Bank Bukopin Syariah'],
+
+            'babinsa' => ['nama' => 'Bapak Temu Babinsa'],
+            'bhabinkamtibmas' => ['nama' => 'Bapak Rozaq Bhabinkamtibmas'],
+            'babinsa-mlati' => ['nama' => 'Babinsa Mlatinorowito'],
+            'bhabinkamtibmas-mlati' => ['nama' => 'Babinkamtibmas Mlatinorowito'],
+
+            'lazismu-kab-kudus' => ['nama' => 'Ketua LAZISMU Kabupaten Kudus'],
+
+            'rektor-umku' => ['nama' => 'Rektor Universitas Muhammadiyah Kudus'],
+            'wakil-rektor-1-umku' => ['nama' => 'Wakil Rektor I Universitas Muhammadiyah Kudus'],
+            'wakil-rektor-2-umku' => ['nama' => 'Wakil Rektor II Universitas Muhammadiyah Kudus'],
+
+            'direktur-pku-mayong' => ['nama' => 'Direktur RS PKU Muhammadiyah Mayong'],
+            'direktur-pku-jepara' => ['nama' => "Direktur RS PKU 'Aisyiyah Jepara"],
+            'direktur-pku-pati' => ['nama' => 'Direktur RS PKU Muhammadiyah Fastabiq Sehat Pati'],
+            'direktur-pku-gubug' => ['nama' => 'Direktur RS PKU Muhammadiyah Gubug'],
+            'direktur-pku-pamotan' => ['nama' => 'Direktur RS PKU Muhammadiyah Pamotan'],
+            'direktur-pku-demak' => ['nama' => 'Direktur RS PKU Muhammadiyah Hj. Fatimah Sulhan Demak'],
+
+            'klinik-pratama-asyifa-wates' => ['nama' => 'Kepala Klinik Pratama Asy Syifa Wates Undaan'],
+            'klinik-pratama-asyifa-kudus' => ['nama' => 'Kepala Klinik Pratama Muhammadiyah Asy Syifa Kudus'],
+            'klinik-pratama-pasuruhan' => ['nama' => 'Kepala Klinik Pratama Muhammadiyah Pasuruhan Kudus'],
+            'klinik-pratama-getassrabi' => ['nama' => 'Kepala Klinik Pratama PKU Muhammadiyah Getassrabi'],
+
+            'kepala-dinkes-kab-kudus' => ['nama' => 'Kepala Dinas Kesehatan Kabupaten Kudus'],
+            'bpjs-kc-kudus' => ['nama' => 'Kepala BPJS Kesehatan KC Kudus'],
+            'pda-jepara' => ['nama' => "Ketua Pimpinan Daerah 'Aisyiyah Jepara"],
+            'dinas-kesehatan-kab-jepara' => ['nama' => 'Kepala Dinas Kesehatan Kabupaten Jepara'],
+
+        ];
+
+        if (!array_key_exists($slug, $invitations)) {
+            return abort(404, 'Undangan tidak ditemukan');
+        }
+
+        $data = $invitations[$slug];
+
+        return view('invitations.invite', compact('data', 'slug'));
+    }
+    public function submitInvitation(Request $request, $slug)
+    {
+        try {
+            $request->validate([
+                'nama' => 'required|string',
+                'kehadiran' => 'required|string',
+                'diwakilkan' => 'nullable|string'
+            ]);
+
+            DB::table('kehadiraninvitation_t')->insert([
+                'nama' => $request->nama,
+                'kehadiran' => $request->kehadiran,
+                'diwakilkan' => $request->kehadiran === 'diwakilkan' ? $request->diwakilkan : null,
+                'created_at' => now(),
+                'updated_at' => now(),
+            ]);
+
+            return response()->json([
+                'status' => 'success'
+            ]);
+        } catch (\Exception $e) {
+            return response()->json([
+                'status' => 'error',
+                'message' => $e->getMessage()
+            ], 500);
+        }
+    }
     //submit presensi metting
     public function submitPresensiMeeting(Request $request)
     {

@@ -18,7 +18,7 @@ use Illuminate\Http\Request;
 
 Route::get('/', [App\Http\Controllers\indexController::class, 'index'])->name('home');
 
-Route::get('/contact', [App\Http\Controllers\indexController::class, 'contact'])->name('contact'); 
+Route::get('/contact', [App\Http\Controllers\indexController::class, 'contact'])->name('contact');
 
 Route::get('/cari-dokter', [App\Http\Controllers\indexController::class, 'cari-dokter'])->name('cari-dokter');
 
@@ -94,7 +94,7 @@ Route::post('/logout', function (Request $request) {
 })->name('logout');
 
 // ========== Dashboard ==========
-Route::get('/admin', fn () => redirect()->route('admin.dashboard'));
+Route::get('/admin', fn() => redirect()->route('admin.dashboard'));
 Route::get('/admin/dashboard', function () {
     if (!session('dev_logged_in')) {
         return redirect()->route('auth.modal');
@@ -106,7 +106,7 @@ Route::get('/admin/dashboard', function () {
 Route::prefix('admin')->name('admin.')->group(function () {
     // Dashboard (pakai punyamu yang sudah jalan; kalau belum ada, aktifkan baris ini)
     Route::view('/dashboard', 'admin.dashboard')->name('dashboard');
-    Route::get('/', fn () => redirect()->route('admin.dashboard'));
+    Route::get('/', fn() => redirect()->route('admin.dashboard'));
 
     // ===== Dokter (pakai view baru) =====
     Route::view('/doctors', 'admin.doctors.index')->name('doctors.index');               // LIST
@@ -114,15 +114,26 @@ Route::prefix('admin')->name('admin.')->group(function () {
         ->name('doctors.create');                                                        // CREATE
     Route::get('/doctors/{id}/edit', function ($id) {                                    // EDIT (demo)
         $doctor = [
-            'id'=>$id,'nama'=>'dr. A. Setiawan','gelar'=>'Sp.PD','npa'=>'SIP-123456',
-            'spesialis'=>'Penyakit Dalam','subspesialis'=>'Geriatri',
-            'departemen'=>['Penyakit Dalam','Geriatri'],'pengalaman'=>12,
-            'bahasa'=>['Indonesia','Inggris'],'foto'=>'','bio'=>'',
-            'video'=>'','urutan'=>1,'status'=>'publish',
-            'slug'=>'dr-a-setiawan-sp-pd','meta_title'=>'dr. A. Setiawan, Sp.PD',
-            'meta_desc'=>'Profil singkat dr. A. Setiawan, Sp.PD','centers'=>['Diabetes Center']
+            'id' => $id,
+            'nama' => 'dr. A. Setiawan',
+            'gelar' => 'Sp.PD',
+            'npa' => 'SIP-123456',
+            'spesialis' => 'Penyakit Dalam',
+            'subspesialis' => 'Geriatri',
+            'departemen' => ['Penyakit Dalam', 'Geriatri'],
+            'pengalaman' => 12,
+            'bahasa' => ['Indonesia', 'Inggris'],
+            'foto' => '',
+            'bio' => '',
+            'video' => '',
+            'urutan' => 1,
+            'status' => 'publish',
+            'slug' => 'dr-a-setiawan-sp-pd',
+            'meta_title' => 'dr. A. Setiawan, Sp.PD',
+            'meta_desc' => 'Profil singkat dr. A. Setiawan, Sp.PD',
+            'centers' => ['Diabetes Center']
         ];
-        return view('admin.doctors.form', ['mode'=>'edit','doctor'=>$doctor]);
+        return view('admin.doctors.form', ['mode' => 'edit', 'doctor' => $doctor]);
     })->name('doctors.edit');
 
     // ===== Departemen / Poli =====
@@ -131,11 +142,16 @@ Route::prefix('admin')->name('admin.')->group(function () {
         ->name('departments.create');                                                            // CREATE
     Route::get('/departments/{id}/edit', function ($id) {                                        // EDIT (demo)
         $dept = [
-            'id'=>$id,'nama'=>'Poli Penyakit Dalam','ikon'=>'bi-heart-pulse',
-            'deskripsi'=>'Layanan penyakit dalam komprehensif.','gedung'=>'Gedung A',
-            'lantai'=>'Lantai 2','urutan'=>2,'status'=>'publish',
+            'id' => $id,
+            'nama' => 'Poli Penyakit Dalam',
+            'ikon' => 'bi-heart-pulse',
+            'deskripsi' => 'Layanan penyakit dalam komprehensif.',
+            'gedung' => 'Gedung A',
+            'lantai' => 'Lantai 2',
+            'urutan' => 2,
+            'status' => 'publish',
         ];
-        return view('admin.departments.form', ['mode'=>'edit','dept'=>$dept]);
+        return view('admin.departments.form', ['mode' => 'edit', 'dept' => $dept]);
     })->name('departments.edit');
 
 
@@ -162,13 +178,13 @@ Route::prefix('admin')->name('admin.')->group(function () {
             'title' => 'Tips Sehat Jelang Musim Hujan',
             'slug' => 'tips-sehat-musim-hujan',
             'category' => 'Kesehatan',
-            'tags' => ['tips','imun'],
+            'tags' => ['tips', 'imun'],
             'author' => 'Humas RS',
             'publish_at' => now()->addDays(2)->format('Y-m-d\TH:i'),
             'excerpt' => 'Beberapa langkah mudah untuk menjaga daya tahan tubuh…',
             'cover' => '',
             'content' => '<p>Konten artikel contoh…</p>',
-            'related' => [2,3],
+            'related' => [2, 3],
             'auto_related' => false,
             'pinned' => true,
             'featured' => true,
@@ -197,27 +213,27 @@ Route::prefix('admin')->name('admin.')->group(function () {
             'end_at'   => now()->endOfMonth()->format('Y-m-d'),
             'image' => 'https://picsum.photos/seed/hero1/800/360',
         ];
-        return view('admin.hero.form', ['mode'=>'edit','slide'=>$slide]);
+        return view('admin.hero.form', ['mode' => 'edit', 'slide' => $slide]);
     })->name('hero.edit');
-    
+
     // ==== PROMO (tanpa controller) ====
-        // list
-        Route::view('/promos', 'admin.promos.index')->name('promos.index');
+    // list
+    Route::view('/promos', 'admin.promos.index')->name('promos.index');
 
-        // create
-        Route::view('/promos/create', 'admin.promos.form', ['mode' => 'create'])
-            ->name('promos.create');
+    // create
+    Route::view('/promos/create', 'admin.promos.form', ['mode' => 'create'])
+        ->name('promos.create');
 
-        // edit (dummy data supaya halaman tampil)
-        Route::get('/promos/{id}/edit', function ($id) {
-            $promo = [
-                'id'        => $id,
-                'title'     => 'Promo Diskon Medical Check Up 20%',
-                'banner'    => asset('assets/img/sample/promo.jpg'), // ganti sesuai asetmu
-                'desc_html' => '<p>Nikmati diskon 20% untuk paket MCU selama bulan ini. Berlaku hingga 30 September.</p>',
-            ];
-            return view('admin.promos.form', ['mode' => 'edit', 'promo' => $promo]);
-        })->name('promos.edit');
+    // edit (dummy data supaya halaman tampil)
+    Route::get('/promos/{id}/edit', function ($id) {
+        $promo = [
+            'id'        => $id,
+            'title'     => 'Promo Diskon Medical Check Up 20%',
+            'banner'    => asset('assets/img/sample/promo.jpg'), // ganti sesuai asetmu
+            'desc_html' => '<p>Nikmati diskon 20% untuk paket MCU selama bulan ini. Berlaku hingga 30 September.</p>',
+        ];
+        return view('admin.promos.form', ['mode' => 'edit', 'promo' => $promo]);
+    })->name('promos.edit');
 
     // ===== Center of Excellence / Layanan =====
     Route::view('/centers', 'admin.centers.index')->name('centers.index');             // LIST
@@ -232,13 +248,13 @@ Route::prefix('admin')->name('admin.')->group(function () {
             'icon'      => 'bi-activity',                 // class Bootstrap Icon (opsional)
             'image'     => 'https://picsum.photos/seed/center/600/300', // opsional
             'desc'      => 'Klinik terpadu untuk manajemen diabetes.',
-            'doctor_ids'=> [1,3],
-            'departments'=> ['Penyakit Dalam'],
+            'doctor_ids' => [1, 3],
+            'departments' => ['Penyakit Dalam'],
             'cta_text'  => 'Buat Janji',
             'cta_link'  => '#',
             'order'     => 2,
         ];
-        return view('admin.centers.form', ['mode'=>'edit','center'=>$center]);
+        return view('admin.centers.form', ['mode' => 'edit', 'center' => $center]);
     })->name('centers.edit');
 
     // ===== Penghargaan & Akreditasi =====
@@ -254,9 +270,9 @@ Route::prefix('admin')->name('admin.')->group(function () {
             'logo'  => 'https://picsum.photos/seed/kars/160/100', // contoh
             'cert'  => 'https://example.com/kars-paripurna.pdf',
             'order' => 1,
-            'status'=> 'publish', // draft|publish
+            'status' => 'publish', // draft|publish
         ];
-        return view('admin.awards.form', ['mode'=>'edit', 'award'=>$award]);
+        return view('admin.awards.form', ['mode' => 'edit', 'award' => $award]);
     })->name('awards.edit');
 
     // ===== Mitra Asuransi =====
@@ -265,10 +281,16 @@ Route::prefix('admin')->name('admin.')->group(function () {
         ->name('insurers.create');                                                            // CREATE
     Route::get('/insurers/{id}/edit', function ($id) {                                        // EDIT (demo)
         $ins = [
-            'id'=>$id,'name'=>'BPJS Kesehatan','group'=>'BPJS','logo'=>'https://picsum.photos/seed/bpjs/200/120',
-            'url'=>'https://www.bpjs-kesehatan.go.id','contact'=>'1500400','status'=>'aktif','order'=>1,
+            'id' => $id,
+            'name' => 'BPJS Kesehatan',
+            'group' => 'BPJS',
+            'logo' => 'https://picsum.photos/seed/bpjs/200/120',
+            'url' => 'https://www.bpjs-kesehatan.go.id',
+            'contact' => '1500400',
+            'status' => 'aktif',
+            'order' => 1,
         ];
-        return view('admin.insurers.form', ['mode'=>'edit','insurer'=>$ins]);
+        return view('admin.insurers.form', ['mode' => 'edit', 'insurer' => $ins]);
     })->name('insurers.edit');
 
     // ===== FAQ =====
@@ -290,12 +312,15 @@ Route::prefix('admin')->name('admin.')->group(function () {
     Route::view('/carier/create', 'admin.carier.form', ['mode' => 'create'])->name('carier.create');
     Route::get('/carier/{id}/edit', function ($id) {
         $job = [
-            'id'=>$id,'title'=>'Perawat Umum','dept'=>'Perawat','status'=>'publish',
-            'deadline'=>now()->addDays(10)->format('Y-m-d'),
-            'desc_html'=>'<p>Memberikan pelayanan keperawatan…</p>',
-            'req_html'=>'<ul><li>D3 Keperawatan</li><li>STR aktif</li></ul>',
+            'id' => $id,
+            'title' => 'Perawat Umum',
+            'dept' => 'Perawat',
+            'status' => 'publish',
+            'deadline' => now()->addDays(10)->format('Y-m-d'),
+            'desc_html' => '<p>Memberikan pelayanan keperawatan…</p>',
+            'req_html' => '<ul><li>D3 Keperawatan</li><li>STR aktif</li></ul>',
         ];
-        return view('admin.carier.form', ['mode'=>'edit','job'=>$job]);
+        return view('admin.carier.form', ['mode' => 'edit', 'job' => $job]);
     })->name('carier.edit');
 
     // Pengaturan
@@ -310,6 +335,8 @@ Route::get('/presensi-meeting', [indexController::class, 'presensiMetting'])->na
 Route::get('/meeting/search', [indexController::class, 'getMeetingSuggestions']);
 Route::post('/presensi-meeting/submit', [indexController::class, 'submitPresensiMeeting'])->name('presensiMeeting.submit');
 
-Route::get('/invitations/invite', function () {
-    return view('invitations.invite');
-})->name('invitations.invite');
+Route::get('/invitation/{slug}', [indexController::class, 'invitation'])->name('invitation');
+Route::post('/invitation/{slug}/submit', [indexController::class, 'submitInvitation'])->name('invitation.submit');
+// Route::get('/invitations/invite', function () {
+//     return view('invitations.invite');
+// })->name('invitations.invite');
