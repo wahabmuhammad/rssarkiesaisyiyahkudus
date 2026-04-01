@@ -1389,7 +1389,8 @@
 
             <div class="sambutan-text reveal">
                 Assalamu'alaikum Warahmatullahi Wabarakatuh.<br><br>
-                Mewakili seluruh jajaran pimpinan <em>Holding RS 'Aisyiyah Group Kudus</em>, kami mengucapkan <em>Selamat
+                Mewakili seluruh jajaran pimpinan <em>Holding RS 'Aisyiyah Group Kudus</em>, kami mengucapkan
+                <em>Selamat
                     Hari Raya Idul Fitri 1447 H</em> — Minal 'Aidin wal Faizin, mohon maaf lahir dan batin.<br><br>
                 Semoga momentum silaturahim ini senantiasa mempererat kebersamaan kita sebagai satu keluarga besar yang
                 penuh kasih dan semangat dalam pelayanan.

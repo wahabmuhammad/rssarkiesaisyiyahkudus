@@ -206,7 +206,8 @@ class indexController extends Controller
             'bpjs-kc-kudus' => ['nama' => 'Kepala BPJS Kesehatan KC Kudus'],
             'pda-jepara' => ['nama' => "Ketua Pimpinan Daerah 'Aisyiyah Jepara"],
             'dinas-kesehatan-kab-jepara' => ['nama' => 'Kepala Dinas Kesehatan Kabupaten Jepara'],
-
+            'komite-medis-rsa-kudus' => ['nama' => "Ketua dan Anggota Komite Medis RS 'Aisyiyah Kudus"],
+            'komite-medis-rssa-kudus' => ['nama' => "Ketua dan Anggota Komite Medis RS Sarkies 'Aisyiyah Kudus"],
         ];
 
         if (!array_key_exists($slug, $invitations)) {
