@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Undangan Silaturahim Syawalan — Holding RS Aisyiyah Group Kudus ({{ $data['nama'] }}) </title>
+    <title>Undangan Silaturahim Syawalan — Holding RS 'Aisyiyah Group Kudus ({{ $data['nama'] }}) </title>
     <link
         href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Cinzel:wght@400;600;700&family=Nunito:wght@300;400;600;700&display=swap"
         rel="stylesheet">
@@ -1332,8 +1332,8 @@
             <div class="arabic-cover">بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ</div>
             <div class="cover-tag">Mengundang Kehadiran</div>
             <div class="cover-title">Silaturahim<br>SYAWALAN</div>
-            <div class="cover-sub">Holding RS Aisyiyah Group Kudus</div>
-            <div class="cover-tahun">Sabtu,4 APRIL 2026 &nbsp;·&nbsp; KUDUS</div>
+            <div class="cover-sub">Holding RS 'Aisyiyah Group Kudus</div>
+            <div class="cover-tahun">📆 Sabtu, 4 APRIL 2026 &nbsp;·&nbsp; KUDUS</div>
             <div class="inti-sub reveal" style="margin-top: 12px">Tanggal Hari ini</div>
             <div class="reveal" style="text-align:center; margin-top:12px">
                 <div class="date-chip" id="tglhariIni"></div>
@@ -1342,7 +1342,7 @@
             <div class="kepada-box">
                 <div class="kepada-label">Kepada Yang Terhormat</div>
                 <div class="kepada-nama">{{ $data['nama'] }}</div>
-                <div class="kepada-sub">Keluarga Besar Holding RS Aisyiyah Group Kudus</div>
+                <div class="kepada-sub">Keluarga Besar Holding RS 'Aisyiyah Group Kudus</div>
             </div>
 
             <a class="btn-buka" href="#inti" id=btnBuka>
@@ -1362,7 +1362,7 @@
             <div class="inti-arabic reveal">مِنَ الْعَائِدِيْنَ وَالْفَائِزِيْنَ</div>
             <div class="divider reveal"><span>✦</span></div>
             <div class="inti-main-title reveal">Silaturahim<br>SYAWALAN</div>
-            <div class="inti-sub reveal">Holding RS Aisyiyah Group Kudus</div>
+            <div class="inti-sub reveal">Holding RS 'Aisyiyah Group Kudus</div>
             <div class="reveal" style="text-align:center;">
                 <div class="date-chip">📅 &nbsp; Sabtu, 4 April 2026 / 16 Syawal 1447 H</div>
             </div>
@@ -1370,7 +1370,7 @@
             <div class="divider reveal" style="margin-top:24px"><span>☽</span></div>
             <p class="reveal"
                 style="text-align:center;font-family:'Cormorant Garamond',serif;font-size:clamp(15px,4vw,18px);color:var(--abu);line-height:1.95;font-style:italic;padding:0 8px">
-                Dengan penuh rasa syukur dan kebahagiaan, kami mengundang seluruh keluarga besar Holding RS Aisyiyah
+                Dengan penuh rasa syukur dan kebahagiaan, kami mengundang seluruh keluarga besar Holding RS 'Aisyiyah
                 Group Kudus untuk hadir bersama dalam acara yang penuh makna, kehangatan, dan keberkahan ini.
             </p>
         </div>
@@ -1389,7 +1389,7 @@
 
             <div class="sambutan-text reveal">
                 Assalamu'alaikum Warahmatullahi Wabarakatuh.<br><br>
-                Mewakili seluruh jajaran pimpinan <em>Holding RS Aisyiyah Group Kudus</em>, kami mengucapkan <em>Selamat
+                Mewakili seluruh jajaran pimpinan <em>Holding RS 'Aisyiyah Group Kudus</em>, kami mengucapkan <em>Selamat
                     Hari Raya Idul Fitri 1447 H</em> — Minal 'Aidin wal Faizin, mohon maaf lahir dan batin.<br><br>
                 Semoga momentum silaturahim ini senantiasa mempererat kebersamaan kita sebagai satu keluarga besar yang
                 penuh kasih dan semangat dalam pelayanan.
@@ -1402,7 +1402,7 @@
             </div>
             <div class="direksi-caption reveal">
                 <div class="direksi-caption-title">Jajaran Direksi</div>
-                <div class="direksi-caption-sub">Holding RS Aisyiyah Group Kudus</div>
+                <div class="direksi-caption-sub">Holding RS 'Aisyiyah Group Kudus</div>
             </div>
         </div>
     </section>
@@ -1549,7 +1549,7 @@
                     <div class="rundown-dot"></div>
                     <div class="rundown-kegiatan">
                         <div class="rundown-nama">Tausiyah & Doa</div>
-                        <div class="rundown-desc">Ketua Umum Pimpinan Pusat Aisyiyah</div>
+                        <div class="rundown-desc">Ketua Umum Pimpinan Pusat 'Aisyiyah</div>
                         <span class="rundown-badge">(Dr. apt. Salmah Orbayinah, M.Kes)</span>
                     </div>
                 </div>
@@ -1657,7 +1657,7 @@
                     <img src="{{ asset('assets/img/holding.png') }}" alt="Holding RSA Group">
                 </div>
                 <div class="ttd-dari">Dengan penuh rasa hormat,</div>
-                <div class="ttd-nama">Keluarga Besar<br>Holding RS Aisyiyah Group Kudus</div>
+                <div class="ttd-nama">Keluarga Besar<br>Holding RS 'Aisyiyah Group Kudus</div>
             </div>
             <div class="minal reveal">
                 <div class="minal-text">Minal 'Aidin wal Faizin</div>
@@ -1680,8 +1680,8 @@
         <div class="footer-panitia">Panitia Pelaksana</div>
         <div class="footer-org">Silaturahim Syawalan Holding RSA Group 2026</div>
         <div class="footer-divider" style="margin-bottom:12px"><span>·</span></div>
-        <div class="footer-created">Created with ❤️ by &nbsp;<span>IT RS Sarkies Aisyiyah Kudus</span></div>
-        <div class="footer-copy">&copy; 2026 Holding RS Aisyiyah Group Kudus · All Rights Reserved</div>
+        <div class="footer-created">Created with ❤️ by &nbsp;<span>IT RS Sarkies 'Aisyiyah Kudus</span></div>
+        <div class="footer-copy">&copy; 2026 Holding RS 'Aisyiyah Group Kudus · All Rights Reserved</div>
     </footer>
 
     <script>
@@ -1756,7 +1756,7 @@
 
         const tglFormatted = now.toLocaleDateString('id-ID', opsi);
 
-        elHariIni.textContent = '📆 ' + tglFormatted;
+        elHariIni.textContent = tglFormatted;
         /* COUNTDOWN */
         const target = new Date('2026-04-04T08:00:00');
 
