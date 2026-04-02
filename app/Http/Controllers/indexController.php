@@ -150,6 +150,7 @@ class indexController extends Controller
             'bph-aisyiyah-jepara' => ['nama' => "Badan Pembina Harian 'Aisyiyah Jepara"],
             'direktur-holding-rsa-group-kudus' => ['nama' => "Direktur Holding RS 'Aisyiyah Group Kudus"],
             'anggota-holding-rsa-group-kudus' => ['nama' => "Anggota Holding RS 'Aisyiyah Group Kudus"],
+            'subur-yuswanto' => ['nama' => 'Subur Yuswanto, S.Kp., FISQua'],
 
             'keluarga-besar-rs-aisyiyah' => ['nama' => "Direktur & Keluarga Besar RS 'Aisyiyah Kudus"],
             'keluarga-besar-rs-sarkies' => ['nama' => "Direktur & Keluarga Besar RS Sarkies 'Aisyiyah Kudus"],
