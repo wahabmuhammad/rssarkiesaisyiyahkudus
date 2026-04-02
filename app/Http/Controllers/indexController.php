@@ -208,6 +208,40 @@ class indexController extends Controller
             'dinas-kesehatan-kab-jepara' => ['nama' => 'Kepala Dinas Kesehatan Kabupaten Jepara'],
             'komite-medis-rsa-kudus' => ['nama' => "Ketua dan Anggota Komite Medis RS 'Aisyiyah Kudus"],
             'komite-medis-rssa-kudus' => ['nama' => "Ketua dan Anggota Komite Medis RS Sarkies 'Aisyiyah Kudus"],
+
+            //pdm
+            'kh-noor-muslikhan' => ['nama' => 'KH. Noor Muslikhan, S.Sos'],
+            'drs-zulfa-kurniawan' => ['nama' => 'Drs. Zulfa Kurniawan, M.SE'],
+            'budiyono' => ['nama' => 'Budiyono, S.Sos'],
+            'prof-achmad-hilal-madjdi' => ['nama' => 'Prof. Dr. Achmad Hilal Madjdi, M.Pd'],
+            'dr-rizka-himawan' => ['nama' => 'Dr. Rizka Himawan, S.Psi.,M.Si'],
+            'ali-zamroni' => ['nama' => 'Ali Zamroni, S.Pd.,M.Pd'],
+            'dr-moh-inami' => ['nama' => 'Dr. Moh. In\'Ami, M.Ag'],
+            'muhammad-abdur-rozaq' => ['nama' => 'Muhammad Abdur Rozaq, S.Pd.I.,M.Pd'],
+            'nuruz-zaman' => ['nama' => 'Nuruz Zaman, ST'],
+            'jamaluddin-kamal' => ['nama' => 'Jamaluddin Kamal, M.Pd'],
+            'drs-yusuf-supriyanto' => ['nama' => 'Drs. Yusuf Supriyanto'],
+            
+            //pda
+            'eny-alifah-kurnia' => ['nama' => 'Eny Alifah Kurnia, S.Pd.,M.Pd.I'],
+            'fajar-sri-utami' => ['nama' => 'Fajar Sri Utami, S.Pd.,M.Pd'],
+            'noor-sulichah' => ['nama' => 'Noor Sulichah, SP'],
+            'dewi-masitoh' => ['nama' => 'Ir. Dewi Masitoh, MM'],
+            'khosifah' => ['nama' => 'Khosifah, S.Pd.I'],
+            'iftitahiyah' => ['nama' => 'Iftitahiyah, SP.,S.Pd'],
+            'deka-ayu-khotima' => ['nama' => 'Deka Ayu Khotima, S.Pd.,M.Pd'],
+            'yayuk-zuliyana' => ['nama' => 'Yayuk Zuliyana, S.Pd'],
+            'aris-naini' => ['nama' => 'Aris Naini, S.Pd.AUD'],
+            'husna' => ['nama' => 'Husna, S.Pd'],
+            'dian-handayani' => ['nama' => 'Dian Handayani, S.Pd.,M.Pd'],
+            'muslimah' => ['nama' => 'Muslimah, S.Pd.I'],
+            'noor-asnah' => ['nama' => 'Noor Asnah, SE'],
+            'nurmi-eliyati-arifah' => ['nama' => 'Nurmi Eliyati Arifah, SE'],
+            'kholidah' => ['nama' => 'Kholidah, S.Pd.I'],
+            'nor-asadiyah' => ['nama' => 'Nor As\'adiyah, S.Pd'],
+            'fithrya-kumala-zaimy' => ['nama' => 'Fithrya Kumala Zaimy, SE'],
+            'noor-azizah' => ['nama' => 'Noor Azizah, S.SiT.,M.Kes'],
+            'endang-sri-handayani' => ['nama' => 'Endang Sri Handayani, S.Pd.,M.Pd'],
         ];
 
         if (!array_key_exists($slug, $invitations)) {
