@@ -561,7 +561,7 @@
                     <div class="badge-dot"></div>
                     Formulir Kehadiran
                 </div>
-                <div class="header-title">Silaturahmi Syawalan RS 'Aisyiyah Group Kudus</div>
+                <div class="header-title">RS Sarkies 'Aisyiyah Kudus</div>
                 <div class="header-sub">Isilah data berikut dengan baik dan benar</div>
             </div>
 
