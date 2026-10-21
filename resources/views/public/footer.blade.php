@@ -61,14 +61,14 @@
               <ul class="contact-list list-unstyled mb-0">
                 <li class="mb-1">
                 <strong>Whatsapp Pengaduan:</strong>
-                <a href="https://wa.me/6282140651288" target="_blank" class="text-decoration-none">
-                  0821-4065-1288
+                <a href="https://wa.me/6285814150000" target="_blank" class="text-decoration-none">
+                  0858-1415-0000
                 </a>
               </li>
               <li class="mb-1">
                 <strong>Whatsapp Pendaftaran:</strong>
-                <a href="https://wa.me/6285814150000" target="_blank" class="text-decoration-none">
-                  0858-1415-0000
+                <a href="https://wa.me/6282140651288" target="_blank" class="text-decoration-none">
+                  0821-4065-1288
                 </a>
               </li>
 
