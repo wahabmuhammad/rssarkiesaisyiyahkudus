@@ -1,10 +1,10 @@
 {{-- resources/views/coe/sidebar.blade.php --}}
 @php
   $items = [
-    ['slug' => 'skin-aesthetic',    'label' => 'Skin & Aesthetic Clinic',                 'url' => url('/coe/skin-aesthetic')],
-    ['slug' => 'orthopedic-centre', 'label' => 'Orthopedic Centre',                       'url' => url('/coe/orthopedic-centre')],
-    ['slug' => 'klinik-kandungan',  'label' => 'Klinik Kandungan', 'route' => 'klinik-kandungan', 'url' => url('/coe/klinik-kandungan')],
     ['slug' => 'pain-center',       'label' => 'Pain Clinic', 'route' => 'pain-center',    'url' => url('/coe/pain-center')],
+    ['slug' => 'mcu',       'label' => 'Medical Check Up', 'route' => 'mcu',    'url' => url('/coe/mcu')],
+    ['slug' => 'vaksin',       'label' => 'Vaksin', 'route' => 'vaksin',    'url' => url('/coe/vaksin')],
+    ['slug' => 'klinik-kandungan',  'label' => 'Klinik Kandungan', 'route' => 'klinik-kandungan', 'url' => url('/coe/klinik-kandungan')],
   ];
 
   $currentRoute = optional(request()->route())->getName();

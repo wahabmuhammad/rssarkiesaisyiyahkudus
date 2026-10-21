@@ -1,101 +1,114 @@
-@include('public.header')
+@extends('components.layouts.public')
+@section('title','Ketersediaan Kamar')
 
-{{-- MUAT FONT AWESOME 6 LANGSUNG DI HALAMAN INI --}}
-<link rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-      referrerpolicy="no-referrer" />
-
-<section id="kamar" class="py-5 bg-white">
-  <div class="container">
-    <!-- Breadcrumb -->
-    <nav aria-label="breadcrumb">
-      <ol class="breadcrumb bg-transparent p-0 mb-4">
-        <li class="breadcrumb-item"><a href="{{ url('/') }}">Beranda</a></li>
-        <li class="breadcrumb-item active" aria-current="page">Ketersediaan Kamar</li>
-      </ol>
-    </nav>
-
-    <!-- Judul -->
-    <div class="text-center mb-5">
-      <h2 class="fw-bold text-primary">Ketersediaan Kamar</h2>
-      <h5 class="text-muted">Rumah Sakit Sarkies 'Aisyiyah Kudus</h5>
-    </div>
-
-    @php
-      // Pakai named route + fallback URL root (bukan /kamar/...)
-      $rooms = [
-        ['name'=>'VIP A',      'route'=>'vip-a',      'url'=>url('/vip-a'),      'total'=>19,'available'=>4],
-        ['name'=>'VIP B',      'route'=>'vip-b',      'url'=>url('/vip-b'),      'total'=>20,'available'=>4],
-        ['name'=>'Kelas I',    'route'=>'kelas-1',    'url'=>url('/kelas-1'),    'total'=>66,'available'=>1],
-        ['name'=>'Kelas II',   'route'=>'kelas-2',    'url'=>url('/kelas-2'),    'total'=>80,'available'=>12],
-        ['name'=>'Kelas III',  'route'=>'kelas-3',    'url'=>url('/kelas-3'),    'total'=>120,'available'=>25],
-        ['name'=>'ICU / NICU', 'route'=>'icu-nicu',   'url'=>url('/icu-nicu'),   'total'=>10,'available'=>1],
-        ['name'=>'Peristi',    'route'=>'peristi',    'url'=>url('/peristi'),    'total'=>8,'available'=>3],
-      ];
-    @endphp
-
-    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
-      @foreach($rooms as $r)
-        @php
-          // Prioritaskan named route; kalau belum didefinisikan, pakai URL fallback
-          $href = (isset($r['route']) && Route::has($r['route'])) ? route($r['route']) : ($r['url'] ?? '#');
-        @endphp
-        <div class="col">
-          <article class="room-card h-100 position-relative text-center">
-            <div class="room-icon mx-auto mb-3"><i class="fa-solid fa-bed" aria-hidden="true"></i></div>
-            <h4 class="fw-bold mb-3">{{ $r['name'] }}</h4>
-            <div class="d-flex justify-content-center gap-4 fw-semibold mb-2">
-              <span>Tempat Tidur {{ $r['total'] }}</span>
-            </div>
-            <a href="{{ $href }}" class="stretched-link room-link mt-3 d-inline-block">Detail kamar</a>
-          </article>
-        </div>
-      @endforeach
-
-
-    </div>
-  </div>
-</section>
-
-@include('public.footer')
-
+@push('head')
 <style>
-  /* ---- PAKSA FONT AWESOME 6 SOLID TIDAK KETIMPA ---- */
-  i.fa-solid{
-    font-family: "Font Awesome 6 Free" !important;
-    font-weight: 900 !important;
-    font-style: normal !important;
-    line-height: 1;
-  }
-  i.fa-solid::before{ display:inline-block; }
+  /* ===== SAMA POLA DENGAN AWARDS ===== */
+  .page-crumb{font-size:.95rem;color:#6b7280}
+  .kamar-shell{padding-top:14px;padding-bottom:60px}
 
-  /* --- kartu tetap --- */
-  #kamar .room-card{
-    padding: 28px 22px;
-    border-radius: 20px;
-    background: linear-gradient(180deg,#f1f7ff 0%,#f7fbff 100%);
-    border: 1px solid #e7f0ff;
-    box-shadow: 0 10px 26px rgba(31,93,215,.08);
-    transition: transform .2s ease, box-shadow .2s ease;
-  }
-  #kamar .room-card:hover{
-    transform: translateY(-4px);
-    box-shadow: 0 16px 38px rgba(31,93,215,.14);
+  .kamar-title{
+    font-weight:600;
+    font-size:clamp(1.25rem,2vw,1.75rem);
+    line-height:1.25;
+    margin-bottom:.25rem;
   }
 
-  /* --- IKON: diperkecil & biru #1E88E5 --- */
-  #kamar .room-icon{
-    width: 84px; height: 84px; border-radius: 999px;
-    display:flex; align-items:center; justify-content:center;
-    background:#E3F2FD; color:#1E88E5; font-size: 34px;
-    box-shadow: 0 12px 24px rgba(30,136,229,.22);
+  @media (max-width:575.98px){
+    .kamar-title{ font-size:1.6rem; }
   }
 
-  /* seragamkan warna biru komponen lain */
-  #kamar .room-link{ color:#1E88E5; font-weight:600; text-decoration:none; }
-  #kamar .room-link:hover{ text-decoration:underline; }
+  .room-card{
+    border-radius:18px;
+    background:#fff;
+    border:1px solid #eef2f7;
+    box-shadow:0 8px 24px rgba(16,24,40,.06);
+    height:100%;
+    text-align:center;
+    padding:24px 18px 26px;
+  }
 
-  @media (max-width: 575.98px){
-    #kamar .room-icon{ width:72px; height:72px; font-size:28px; }
+  .room-icon{
+    width:72px;
+    height:72px;
+    margin:0 auto 12px;
+    border-radius:999px;
+    background:#E3F2FD;
+    color:#1E88E5;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:28px;
+    box-shadow:0 10px 22px rgba(30,136,229,.25);
   }
 </style>
+@endpush
+
+@section('content')
+<div class="container">
+
+  {{-- Breadcrumb --}}
+  <nav class="page-crumb my-3" aria-label="breadcrumb">
+    <ol class="breadcrumb mb-0">
+      <li class="breadcrumb-item"><a href="{{ url('/') }}">Beranda</a></li>
+      <li class="breadcrumb-item active">Ketersediaan Kamar</li>
+    </ol>
+  </nav>
+
+  {{-- ===== SHELL (SAMA PERSIS DENGAN AWARDS) ===== --}}
+  <div class="kamar-shell row g-4 align-items-start">
+
+    {{-- TITLE --}}
+    <div class="col-12">
+      <h1 class="kamar-title">Ketersediaan Kamar</h1>
+      <p class="text-muted mb-3">
+        Rumah Sakit Sarkies ‘Aisyiyah Kudus
+      </p>
+    </div>
+
+    {{-- GRID KAMAR --}}
+    <div class="col-12">
+      <div class="row g-4">
+
+        @php
+          $rooms = [
+            ['name'=>'VIP A','route'=>'vip-a','url'=>url('/vip-a'),'total'=>19],
+            ['name'=>'VIP B','route'=>'vip-b','url'=>url('/vip-b'),'total'=>20],
+            ['name'=>'Kelas I','route'=>'kelas-1','url'=>url('/kelas-1'),'total'=>66],
+            ['name'=>'Kelas II','route'=>'kelas-2','url'=>url('/kelas-2'),'total'=>80],
+            ['name'=>'Kelas III','route'=>'kelas-3','url'=>url('/kelas-3'),'total'=>120],
+            ['name'=>'ICU / NICU','route'=>'icu-nicu','url'=>url('/icu-nicu'),'total'=>10],
+            ['name'=>'Peristi','route'=>'peristi','url'=>url('/peristi'),'total'=>8],
+          ];
+        @endphp
+
+        @foreach($rooms as $r)
+          @php
+            $href = Route::has($r['route']) ? route($r['route']) : $r['url'];
+          @endphp
+
+          {{-- ⬇️ INI KUNCI RESPONSIVE --}}
+          <div class="col-12 col-md-6 col-lg-4">
+            <article class="room-card h-100">
+              <div class="room-icon">
+                <i class="fa-solid fa-bed"></i>
+              </div>
+
+              <h3 class="h6 fw-bold mb-1">{{ $r['name'] }}</h3>
+              <div class="text-muted small mb-3">
+                Total tempat tidur: {{ $r['total'] }}
+              </div>
+
+              <a href="{{ $href }}" class="btn btn-outline-primary btn-sm w-100">
+                Detail Kamar
+              </a>
+            </article>
+          </div>
+        @endforeach
+
+      </div>
+    </div>
+
+  </div>
+</div>
+@endsection

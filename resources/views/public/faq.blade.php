@@ -2,7 +2,7 @@
     <div class="container" data-aos="fade-up">
 
         <div class="section-title">
-            <h2>Frequently Asked Questioins</h2>
+            <h2>Frequently Asked Questions</h2>
             <p>Pertanyaan yang sering diajukan untuk membantu Anda menemukan informasi dengan lebih mudah.</p>
         </div>
 

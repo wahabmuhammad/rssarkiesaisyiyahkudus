@@ -68,7 +68,7 @@
     <!-- LIST CARD: track horizontal -->
     <div class="row g-4 flex-nowrap overflow-auto" id="promoTrack" role="region" aria-label="Daftar Promo & Paket">
       @foreach ($items as $it)
-        <div class="col-lg-4 col-md-6" data-category="{{ $it['cat'] }}">
+        <div class="col-lg-4 col-md-6 col-10" data-category="{{ $it['cat'] }}">
           <div class="card shadow-sm h-100 border-0">
             <img src="{{ $it['img'] }}" class="card-img-top" alt="{{ $it['title'] }}">
             <div class="card-body">

@@ -28,11 +28,15 @@ Route::get('/jadwal-dokter', [App\Http\Controllers\indexController::class, 'jadw
 
 Route::get('/pain-center', [App\Http\Controllers\indexController::class, 'painCenter'])->name('pain-center');
 
-Route::get('/orthopedic-center', [App\Http\Controllers\indexController::class, 'orthopedicCenter'])->name('orthopedic-center');
+Route::get('/mcu', [App\Http\Controllers\indexController::class, 'mcu'])->name('mcu');
+
+Route::get('/vaksin', [App\Http\Controllers\indexController::class, 'vaksin'])->name('vaksin');
 
 Route::get('/klinik-kandungan', [App\Http\Controllers\indexController::class, 'klinikKandungan'])->name('klinik-kandungan');
 
 Route::get('/diagnostic-center', [App\Http\Controllers\indexController::class, 'diagnosticCenter'])->name('diagnostic-center');
+
+Route::get('healthy-corner', [App\Http\Controllers\indexController::class, 'healthyCorner'])->name('healthy-corner');
 
 Route::get('/intensive-care', [App\Http\Controllers\indexController::class, 'intensiveCare'])->name('intensive-care');
 
