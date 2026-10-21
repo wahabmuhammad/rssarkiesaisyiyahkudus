@@ -60,7 +60,7 @@
                         <i class="bx bx-phone"></i>
                     </div>
                     <div>
-                        <h6 class="fw-bold mb-1">Telepon Pendaftaran</h6>
+                        <h6 class="fw-bold mb-1">Telepon Pendaftaran / Call Center</h6>
                         <a href="tel:+62914150500" class="text-decoration-none text-dark">
                             (0291) 4150500
                         </a>
@@ -73,7 +73,7 @@
                         <i class="bx bxl-whatsapp"></i>
                     </div>
                     <div>
-                        <h6 class="fw-bold mb-1">Whatsapp Pendaftaran</h6>
+                        <h6 class="fw-bold mb-1">Whatsapp Pendaftaran / Call Center</h6>
                         <a href="https://wa.me/6285814150000" target="_blank" rel="noopener"
                         class="text-decoration-none text-dark">
                             0858-1415-0000
